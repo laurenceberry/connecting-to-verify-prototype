@@ -28,6 +28,16 @@
 
         {{ govukInput({
           "label": {
+            "text": "Mobile number",
+            "hintText": "We'll send you a security code by text message"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "mobile-number",
+          name: "mobile-number"
+        }) }}
+
+        {{ govukInput({
+          "label": {
             "text": "Password",
             "hintText": "Must be at least 10 characters"
           },

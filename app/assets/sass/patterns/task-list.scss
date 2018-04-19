@@ -1,4 +1,4 @@
-// task list pattern taken from digital marketplace. the css is a mess sorry
+// task list pattern taken from digital marketplace. the css is a bit of a mess sorry
 
 ol.steps {
   padding-left: 1em;
@@ -11,7 +11,7 @@ ol.steps {
   }
 
   .instruction-list-item-top {
-    margin-left: 1.57895em;
+    margin-left: 1.5em;
     padding-left: 0;
     margin-bottom: 5px;
 
@@ -24,7 +24,7 @@ ol.steps {
   }
 
   .tick {
-    margin-left: -1.57895em;
+    margin-left: -1.5em;
   }
 
 }
