@@ -1,0 +1,93 @@
+// task list pattern taken from digital marketplace. the css is a mess sorry
+
+ol.steps {
+  padding-left: 1em;
+  list-style: none;
+  padding-left: 0;
+
+  .step-number {
+    min-width: 1.11111em;
+    float: left;
+  }
+
+  .instruction-list-item-top {
+    margin-left: 1.57895em;
+    padding-left: 0;
+    margin-bottom: 5px;
+
+    li {
+      a {
+        text-decoration: none;
+      }
+    }
+
+  }
+
+  .tick {
+    margin-left: -1.57895em;
+  }
+
+}
+
+.tick {
+  float: left;
+  width: 15px;
+  height: 14px;
+  margin: .1875em 5px 0 0;
+}
+
+
+@media (min-width: 1074px) {
+  ol.steps {
+    padding-left: 0;
+  }
+}
+
+.instruction-list {
+  list-style-type: decimal;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+@media (min-width: 641px) {
+
+  .instruction-list {
+    @include govuk-font-regular-19;
+  }
+
+}
+
+.instruction-list-item {
+
+  h2 {
+    @include govuk-font-bold-24;
+    margin-bottom: 10px
+  }
+
+}
+
+ul.instruction-list .divider:first-child,
+ol.instruction-list .divider:first-child,
+li.instruction-list-item.divider:first-of-type {
+  padding-top: 0;
+}
+
+.instruction-list .divider:first-child {
+  border-top: none;
+}
+
+.instruction-list li {
+  margin-bottom: 5px;
+}
+
+.divider {
+  padding: 20px 0 20px 0;
+  border-top: 1px solid $govuk-border-colour;
+}
+
+.divider p.instruction-list-item-top,
+.divider a.instruction-list-item-action,
+.divider p.instruction-list-item-box {
+    margin-top: 1em;
+}
