@@ -15,12 +15,6 @@ ol.steps {
     padding-left: 0;
     margin-bottom: 5px;
 
-    li {
-      a {
-        text-decoration: none;
-      }
-    }
-
   }
 
   .tick {
@@ -65,12 +59,6 @@ ol.steps {
     margin-bottom: 10px
   }
 
-}
-
-ul.instruction-list .divider:first-child,
-ol.instruction-list .divider:first-child,
-li.instruction-list-item.divider:first-of-type {
-  padding-top: 0;
 }
 
 .instruction-list .divider:first-child {
