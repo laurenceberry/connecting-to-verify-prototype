@@ -7,13 +7,76 @@
 {% block content %}
 
 <div class="govuk-o-width-container">
+
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Components",
+        "href": "#"
+      },
+      {
+        "text": "GOV.UK Verify",
+        "href": "#"
+      },
+      {
+        "text": "Get started",
+        "href": "#"
+      }
+    ]
+  }) }}
+
   <main role="main" class="govuk-o-main-wrapper">
     <div class="govuk-o-grid">
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
-      	<h1 class="govuk-heading-l">Design and build</h1>
-        <a href="/before_you_connect/index" class="govuk-body">Before you connect</a>
+      	<h1 class="govuk-heading-xl">Design your service to work with GOV.UK Verify</h1>
+        
+        <h2 class="govuk-heading-l">The GOV.UK Verify user journey</h2>
+        
+        <ul class="govuk-list govuk-list--number">
+          <li>Your service sends it’s user’s to GOV.UK Verify.</li>
+          <li>They choose who checks their identity.</li>
+          <li>Once they’ve been checked GOV.UK Verify returns them to your service. You can access their name, date of birth and address.
+          </li>
+        </ul>
+
+        <ul class="govuk-list">
+          <a href="https://govuk-verify-loa1.herokuapp.com/start-view-share-driving-licence?requestId=view-share-driving-licence">View the journey for a low risk service</a><br>
+          <a href="https://govuk-verify.herokuapp.com">View the journey for a higher risk service</a>
+        </ul>
+
+
+        <h3 class="govuk-heading-s">Services that need additional assurance</h3>
+        <p class="govuk-body">Some services, for example, ‘Get a Passwort’ need to be more certain the user is who they say they are. Something about how to get to a higher level of assurance and maybe examples.</p>
+
+
+        <h3 class="govuk-heading-s">When a user can’t be successfully verified</h3>
+
+        <p class="govuk-body">If a user can’t successfully verify they’ll need to be able to send you additional identification.</p>
+        <ul class="govuk-list">
+          <a href="https://govuk-verify.herokuapp.com/fail?driving_licence_issuer=waste-animal&requestId=view-share-driving-licence-loa2&registration=true&user_age=true&user_uk=true&driving_licence=true&passport=true&mobile_phone=true&apps=true&idp=post-office&driving_licence_done=true&passport_done=true&idTest3=Le&radio-group=Post%20Office&id-test-credit-limit=a&kbvs_done=true" class="govuk-body">View an example</a> for when a user has not been successfully verified.
+        </ul>
+
+
+        <br>
+        <h2 class="govuk-heading-l">Prototype your service with <br>GOV.UK Verify </h2>
+        <ul class="govuk-list">
+          <a href="#">Use GOV.UK Verify in a prototype</a>
+        </ul>
+        <br>
+        <h2 class="govuk-heading-l">Next steps</h2>
+        <ul class="govuk-list">
+          <p class="govuk-body">
+            If you’re aren’t going to have a service assessment you must <a href="#">share how you’ve designed your service with GOV.UK Verify</a> so we can make sure ther aren’t any security issues.
+          </p>
+          
+        </ul>
+        <br>
+        <a href="/before_you_connect/index" class="govuk-body">Return to getting started</a>
+
       </div>
-      <iframe src="https://giphy.com/embed/JIX9t2j0ZTN9S" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+      
     </div>
   </main>
 </div>
