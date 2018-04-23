@@ -7,13 +7,109 @@
 {% block content %}
 
 <div class="govuk-o-width-container">
+
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Components",
+        "href": "#"
+      },
+      {
+        "text": "GOV.UK Verify",
+        "href": "#"
+      },
+      {
+        "text": "Get started",
+        "href": "#"
+      }
+    ]
+  }) }}
+
   <main role="main" class="govuk-o-main-wrapper">
     <div class="govuk-o-grid">
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
-      	<h1 class="govuk-heading-l">Check I need GOV.UK Verify?</h1>
-        <a href="/design_and_build/index" class="govuk-body">Design and build</a>
+        <h1 class="govuk-heading-xl">Check if GOV.UK Verify is right for your service</h1>
+
+        <p class="govuk-body">
+          You can use GOV.UK Verify if you need to check and prove users’ identity as part of your service.
+        </p>
+        
+        <h2 class="govuk-heading-l">When to use GOV.UK Verify</h2>
+        <p class="govuk-body">
+          You should use GOV.UK Verify if your service:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            needs legal confirmation that a user is who they say they are, for example, if they’re signing a mortgage deed
+          </li>
+          <li>
+            shows a user’s personal information to them, such as their driving licence or passport details
+          </li>
+          <li>
+            pays money to a user
+          </li>
+          <li>
+            gives the user something valuable, like a Blue Badge or council house
+          </li>
+        </ul>
+
+        <h2 class="govuk-heading-l">When you won’t need to use <br>GOV.UK Verify</h2>
+        <p class="govuk-body">
+          You won’t need to use GOV.UK Verify if your service:
+        </p>        
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            receives payments from a user
+          </li>
+          <li>
+            doesn’t keep any personal information about a user
+          </li>
+        </ul>
+        <p class="govuk-body">
+          If you only need a way to recognise returning users, consider using <a href="https://www.gov.uk/service-manual/design/user-accounts">user accounts</a> in your service instead of GOV.UK Verify.
+        </p>
+
+        <h2 class="govuk-heading-l">Choose the right level of assurance</h2>
+        <p class="govuk-body">
+          GOV.UK Verify offers 2 different levels of assurance (LOA). Which one you pick depends on how sure you need to be your users are who they say they are. 
+        </p>
+        <h3 class="govuk-heading-s">LOA1</h3>
+
+        <p class="govuk-body">
+          You can use LOA 1 if there aren’t any serious consequences to a user impersonating someone else when using your service. 
+        </p>
+        <p class="govuk-body">
+          For example, the Driver and Vehicle Licensing Agency (DVLA) use LOA1 in their <a href="https://www.gov.uk/view-driving-licence">view driving licence information</a> service. This is because users can only get information from this service - they can’t use it to apply for anything more valuable. It’s less likely a user would try to impersonate someone else to use this service.
+        </p>
+        <p class="govuk-body">
+          It can only take 5 minutes for users to prove their identity if your service uses the LOA 1.
+        </p>
+
+        <h3 class="govuk-heading-s">LOA2</h3>
+
+        <p class="govuk-body">
+          If there are serious consequences to a user impersonating someone else when using your service, you’ll need the LOA 2. 
+        </p>
+        <p class="govuk-body">
+          For example, HM Revenue and Customs (HMRC) use LOA 2 in their <a href="https://www.gov.uk/log-in-file-self-assessment-tax-return">file Self Assessment tax return</a> service. This is because a user could be fined if someone else impersonates them and uses this service to give incorrect information to HMRC. 
+        </p>
+        <p class="govuk-body">
+          You should use the LOA 2 if you need to able to take users to court if they give fraudulent information in your service. 
+        </p>
+        <p class="govuk-body">
+          It will take up to 15 minutes for users to prove their identity if your service uses LOA 2.
+        </p>
+
+        <h3 class="govuk-heading-s">If you need a higher level of assurance</h3>
+
+
+        <br>
+        <a href="/before_you_connect/index" class="govuk-body">Return to getting started</a>
+
       </div>
-      <iframe src="https://giphy.com/embed/3R9LDINpbGX2o" width="480" height="265" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+      
     </div>
   </main>
 </div>
