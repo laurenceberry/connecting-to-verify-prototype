@@ -10,12 +10,6 @@ router.get('/', function (req, res) {
 
 module.exports = router
 
-router.get('/what_is_verify', function (req, res) {
-  res.render(
-    "what_is_verify/" + req.params.page
-  );
-})
-
 router.get('/check_i_need_verify', function (req, res) {
   res.render(
     "check_i_need_verify/" + req.params.page
