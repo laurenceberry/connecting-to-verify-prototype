@@ -61,3 +61,18 @@ $path: "/public/images/";
 // @import 'patterns/task-list';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+
+ol.task-list{
+  padding-left: 30px;
+}
+
+.task-list-section{
+  margin-top: 50px;
+  position: relative;
+}
+
+.task-list-section-number{
+  position: absolute;
+  left: -30px;
+}

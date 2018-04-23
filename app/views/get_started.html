@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Components",
+        "href": "#"
+      },
+      {
+        "text": "GOV.UK Verify",
+        "href": "#"
+      }
+    ]
+  }) }}
+
+  <main role="main" class="govuk-o-main-wrapper">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+        <h1 class="govuk-heading-xl">
+          Get started
+        </h1>
+
+        <ol class="task-list govuk-body">
+          <h2 class="task-list-section">
+            <span class="task-list-section-number">1.</span>Check if GOV.UK Verify is right for you
+          </h2>
+          <div class="task-list-items">
+            <p>
+              You can use GOV.UK&nbsp;Verify  if you need to check and prove users’ identity as part of your service.
+            </p>
+            
+            <a href="/check_i_need_verify/index">Link</a>
+          </div>
+
+          <h2 class="task-list-section">
+              <span class="task-list-section-number">2.</span> Designing your service
+          </h2>
+          <div class="task-list-items">
+            <p>
+              You can use GOV.UK&nbsp;Verify  if you need to check and prove users’ identity as part of your service.
+            </p>
+
+            <a href="/design_and_build/index">Link</a>
+          </div>
+
+          <h2 class="task-list-section">
+              <span class="task-list-section-number">3.</span> Building your service
+          </h2>
+          <div class="task-list-items">
+            <p>
+              You can use GOV.UK&nbsp;Verify  if you need to check and prove users’ identity as part of your service.
+            </p>
+
+            <a href="/before_you_connect/index">Link</a>
+          </div>
+
+          <h2 class="task-list-section">
+              <span class="task-list-section-number">4.</span> Connect
+          </h2>
+          <div class="task-list-items">
+            <p>
+              You can use GOV.UK&nbsp;Verify  if you need to check and prove users’ identity as part of your service.
+            </p>
+
+            <a href="/connect_to_verify/index">Link</a>
+          </div>
+
+          <h2 class="task-list-section">
+              <span class="task-list-section-number">5.</span> Sign the MoU
+          </h2>
+          <div class="task-list-items">
+            <p>
+              You can use GOV.UK&nbsp;Verify  if you need to check and prove users’ identity as part of your service.
+            </p>
+
+            <a href="#">Link</a>
+          </div>
+
+
+        </ol>
+      </div>
+      
+    </div>
+  </main>
+</div>
+
+{% endblock %}
