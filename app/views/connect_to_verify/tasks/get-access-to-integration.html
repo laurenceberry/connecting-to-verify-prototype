@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+  <a href="../tech-task-list" class="govuk-c-back-link">Back</a>
+
+  <main role="main" class="govuk-o-main-wrapper">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Get access to Integration environment
+        </h1>
+
+        <div class="govuk-o-form-group">
+          <fieldset class="govuk-c-fieldset">
+            <legend class="govuk-c-fieldset__legend">
+              <h2 class="govuk-heading-m">Submit URLs</h1>
+            </legend>
+
+            <p class="govuk-body">
+              The Verify Integration environment will use these URLs to connect to specific parts of your service.
+            </p>
+
+            <div class="govuk-o-form-group">
+              <label class="govuk-c-label" for="address-line-1">
+                Service start page URL
+              </label>
+              <input class="govuk-c-input govuk-!-width-three-quarters" id="address-line-1" name="address-line-1" type="text">
+              <details class="govuk-c-details">
+                <summary class="govuk-c-details__summary">
+                  <span class="govuk-c-details__summary-text">
+                    What is this?
+                  </span>
+                </summary>
+                <div class="govuk-c-details__text">
+                  Your service start page URL is the URL that gives users access to your service. For example, <code>https://gov.uk/your-service-name</code>
+                </div>
+              </details>
+            </div>
+
+            <div class="govuk-o-form-group">
+              <label class="govuk-c-label" for="address-line-1">
+                Service entity ID
+              </label>
+              <input class="govuk-c-input govuk-!-width-three-quarters" id="address-line-1" name="address-line-1" type="text">
+              <details class="govuk-c-details">
+                <summary class="govuk-c-details__summary">
+                  <span class="govuk-c-details__summary-text">
+                    What is this?
+                  </span>
+                </summary>
+                <div class="govuk-c-details__text">
+                  Your service entity id is a URL that Verify will use to uniquely identify your service. For example <code>https://gds-verify/connect-to-verify</code>
+                </div>
+              </details>
+            </div>
+
+            <div class="govuk-o-form-group">
+              <label class="govuk-c-label" for="address-line-1">
+                Verify SAML response URL
+              </label>
+              <input class="govuk-c-input govuk-!-width-three-quarters" id="address-line-1" name="address-line-1" type="text">
+              <details class="govuk-c-details">
+                <summary class="govuk-c-details__summary">
+                  <span class="govuk-c-details__summary-text">
+                    What is this?
+                  </span>
+                </summary>
+                <div class="govuk-c-details__text">
+                  The Verify SAML response URL is the URL you use to receive SAML responses from Verify. For example, <code>https://{your-service-name}.{your-integration-domain}/verify/response</code>
+                </div>
+              </details>
+            </div>
+
+            <div class="govuk-o-form-group">
+              <label class="govuk-c-label" for="address-line-1">
+                Matching Service Adapter URL
+              </label>
+              <input class="govuk-c-input govuk-!-width-three-quarters" id="address-line-1" name="address-line-1" type="text">
+              <details class="govuk-c-details">
+                <summary class="govuk-c-details__summary">
+                  <span class="govuk-c-details__summary-text">
+                    What is this?
+                  </span>
+                </summary>
+                <div class="govuk-c-details__text">
+                  Your matching service adapter matching URL is the URL used to receive Verify matching requests. For example, <code>https://{your-integration-domain}/matching-service/POST</code>
+                </div>
+              </details>
+            </div>
+
+            <div class="govuk-o-form-group">
+              <label class="govuk-c-label" for="address-line-1">
+                Matching Service Adapter: user account creation URL
+              </label>
+              <input class="govuk-c-input govuk-!-width-three-quarters" id="address-line-1" name="address-line-1" type="text">
+              <details class="govuk-c-details">
+                <summary class="govuk-c-details__summary">
+                  <span class="govuk-c-details__summary-text">
+                    What is this?
+                  </span>
+                </summary>
+                <div class="govuk-c-details__text">
+                  Your matching service adapter user account creation URL is the URL used to receive Verify account create requests. For example, <code>https://{your-integration-domain}/unknown-user-attribute-query</code>
+                </div>
+              </details>
+            </div>
+
+          </fieldset>
+        </div>
+
+
+        {{ govukButton({
+          "text": "Get access",
+          "href": "../tech-task-list"
+        }) }}
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
