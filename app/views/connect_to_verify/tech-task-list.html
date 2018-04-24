@@ -6,7 +6,17 @@
 
 {% block content %}
 
+
 <div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content">
+      <span class="govuk-c-phase-banner__text">
+        Signed in as {{ data["name-of-service"] }}. <a class="govuk-link" href="https://connect-to-verify-start.herokuapp.com/verify">Sign out</a>
+      </span>
+    </p>
+  </div>
+
   <main role="main" class="govuk-o-main-wrapper">
     <div class="govuk-o-grid">
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
@@ -56,6 +66,14 @@
       				</li>
       				<li>
       					<a href="#">Build and deploy in Production</a>
+      				</li>
+      			</ul>
+      		</li>
+          <li class="instruction-list-item divider">
+      			<h2 class="instruction-list-item-body"><span class="step-number" role="presentation">4.</span>Before you go live</h2>
+      			<ul class="instruction-list-item-top">
+              <li>
+                <a href="#">Sign an agreement with GOV.UK Verify</a>
       				</li>
       			</ul>
       		</li>

@@ -18,11 +18,11 @@
       },
       {
         "text": "GOV.UK Verify",
-        "href": "#"
+        "href": "https://connect-to-verify-start.herokuapp.com/verify"
       },
       {
         "text": "Get started",
-        "href": "#"
+        "href": "/get_started"
       }
     ]
   }) }}
@@ -32,27 +32,32 @@
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
       	<h1 class="govuk-heading-xl">Build your service to work with GOV.UK Verify</h1>
 
-        <h2 class="govuk-heading-l">Choose technology</h2>
-
-        <h3 class="govuk-heading-s">Using SAML (Security Assertion Markup Language)</h3>
-
         <p class="govuk-body">
-          Your government service must be able to send SAML requests to, and receive SAML responses from, the GOV.UK Verify hub. You will need someone on your team who can write SAML code.
+          To connect to Verify, you will need the right team in place and have a plan for how you will build your service.
         </p>
 
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Read about <a href="https://alphagov.github.io/rp-onboarding-tech-docs/pages/saml/samlWorks.html">SAML</a></li>
-          <li>Service Manual guidance on <a href="https://www.gov.uk/service-manual/technology/choosing-technology-an-introduction">choosing technology</a></li>
-        </ul>
+        <h2 class="govuk-heading-l">Have the right team</h2>
+
+        <p class="govuk-body">
+          Your service must be able to send <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/saml/saml.html">SAML (Security Assertion Markup Language)</a> requests to, and receive SAML responses from, the GOV.UK Verify hub. You will need someone on your team who can work with SAML code.
+        </p>
+
+        <h2 class="govuk-heading-l">Decide how your service will match identities</h2>
+
+        <p class="govuk-body">
+
+        </p>
 
         <h2 class="govuk-heading-l">Next steps</h2>
 
         <p class="govuk-body">
-          (How does someone know that they're ready?) <a href="../connect_to_verify/index">Connect to Verify</a>
+          A developer on your team needs to create an account to connect to Verify. This account will keep track of your progress and store important keys and certificates.
         </p>
 
-        <br>
-        <a href="/before_you_connect/index" class="govuk-body">Return to getting started</a>
+        {{ govukButton({
+          "text": "Connect to Verify",
+          "href": "/connect_to_verify/create-account"
+        }) }}
 
       </div>
 
