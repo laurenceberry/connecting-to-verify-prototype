@@ -152,3 +152,12 @@ nav.pagination .label{
   text-decoration: underline;
   display: block;
 }
+
+.panel{
+  border-left: solid 5px #bfc1c3;
+  padding: 0px 15px;
+  span{
+    font-weight: bold;
+    display: block;
+  }
+}

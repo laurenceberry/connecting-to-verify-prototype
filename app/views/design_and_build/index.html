@@ -30,48 +30,51 @@
   <main role="main" class="govuk-o-main-wrapper">
     <div class="govuk-o-grid">
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
-      	<h1 class="govuk-heading-xl">Design your service to work with GOV.UK Verify</h1>
+      	<h1 class="govuk-heading-xl">Design your service</h1>
+
+        <p class="govuk-body">
+          Find out how to design your service to work with GOV.UK Verify. 
+        </p>
         
-        <h2 class="govuk-heading-l">The GOV.UK Verify user journey</h2>
+        <h2 class="govuk-heading-l">Where GOV.UK fits in your service’s user journey</h2>
         
         <ul class="govuk-list govuk-list--number">
-          <li>Your service sends it’s user’s to GOV.UK Verify.</li>
-          <li>They choose who checks their identity.</li>
-          <li>Once they’ve been checked GOV.UK Verify returns them to your service. You can access their name, date of birth and address.
+          <li>
+            You should send the user to GOV.UK Verify at the point when you need to check who they are.
+          </li>
+          <li>
+            GOV.UK Verify will ask the user to choose a certified company. The certified company will check the user’s identity and send them back to your service if the check is successful. 
+          </li>
+          <li>
+            The user can then continue to use your service. Your service will only have access to the user’s name, date of birth and address - any other personal information is kept by the certified company. 
           </li>
         </ul>
 
-        <ul class="govuk-list">
-          <a href="https://govuk-verify-loa1.herokuapp.com/start-view-share-driving-licence?requestId=view-share-driving-licence">View the journey for a low risk service</a><br>
-          <a href="https://govuk-verify.herokuapp.com">View the journey for a higher risk service</a>
-        </ul>
+        <p class="govuk-body">
+          You can see how GOV.UK Verify works with a <a href="https://govuk-verify-loa1.herokuapp.com/start-view-share-driving-licence?requestId=view-share-driving-licence">LOA 1 service</a> and <a href="https://govuk-verify.herokuapp.com">LOA 2 service</a>. 
+        </p>
 
 
-        <h3 class="govuk-heading-s">Services that need additional assurance</h3>
-        <p class="govuk-body">Some services, for example, ‘Get a Passwort’ need to be more certain the user is who they say they are. Something about how to get to a higher level of assurance and maybe examples.</p>
+        <h3 class="govuk-heading-s">If a user can’t be verified</h3>
+        <p class="govuk-body">
+          You need to give the GOV.UK Verify team information about any other ways users can complete the service, for example by post or by phone. GOV.UK Verify will show this information to a user if their identity can’t be checked by a certified company.
+        </p>
 
 
-        <h3 class="govuk-heading-s">When a user can’t be successfully verified</h3>
+        <h3 class="govuk-heading-s">Test with your users</h3>
 
         <p class="govuk-body">If a user can’t successfully verify they’ll need to be able to send you additional identification.</p>
-        <ul class="govuk-list">
-          <a href="https://govuk-verify.herokuapp.com/fail?driving_licence_issuer=waste-animal&requestId=view-share-driving-licence-loa2&registration=true&user_age=true&user_uk=true&driving_licence=true&passport=true&mobile_phone=true&apps=true&idp=post-office&driving_licence_done=true&passport_done=true&idTest3=Le&radio-group=Post%20Office&id-test-credit-limit=a&kbvs_done=true" class="govuk-body">View an example</a> for when a user has not been successfully verified.
-        </ul>
+        
+        <p class="govuk-body">
+          <a href="#">Create a reusable link</a> to integrate your service prototype with GOV.UK Verify and test with users.
+        </p>
 
+        <h3 class="govuk-heading-s">Assessing your service</h3>
+        
+        <p class="govuk-body">
+          If your service isn’t being assessed by GDS, you’ll still need to <a href="#">share how GOV.UK Verify fits in your service</a>. This is to check there aren’t any security issues with the way you’ve built your service.
+        </p>
 
-        <br>
-        <h2 class="govuk-heading-l">Prototype your service with <br>GOV.UK Verify </h2>
-        <ul class="govuk-list">
-          <a href="#">Use GOV.UK Verify in a prototype</a>
-        </ul>
-        <br>
-        <h2 class="govuk-heading-l">Next steps</h2>
-        <ul class="govuk-list">
-          <p class="govuk-body">
-            If you’re aren’t going to have a service assessment you must <a href="#">share how you’ve designed your service with GOV.UK Verify</a> so we can make sure ther aren’t any security issues.
-          </p>
-          
-        </ul>
 
         <nav class="pagination" role="navigation" aria-label="Pagination">
           <ul>
