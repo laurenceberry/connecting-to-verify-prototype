@@ -66,6 +66,9 @@ $path: "/public/images/";
 
 ol.task-list{
   padding-left: 30px;
+//   a{
+//     text-decoration: none;
+//   }
 }
 
 .task-list-section{
@@ -76,4 +79,76 @@ ol.task-list{
 .task-list-section-number{
   position: absolute;
   left: -30px;
+  // color: #000;
+}
+
+// ol.task-list{
+//   padding-left: 0px;
+//   a{
+//     text-decoration: none;
+//   }
+// }
+
+// .task-list-section{
+//   margin-top: 50px;
+
+// }
+
+
+
+nav.pagination ul{
+  list-style: none;
+  padding-left: 0;
+  margin-top: 50px;
+  font-size: 19px;
+}
+
+nav.pagination li{
+  display: inline-block;
+  width: 50%;
+}
+
+nav.pagination li.previous{
+  margin-left: -15px;
+}
+
+nav.pagination li.next{
+  float: right;
+  text-align: right;
+}
+
+nav.pagination a{
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+nav.pagination a:visited{
+  color: #005ea5;
+}
+
+nav.pagination li:hover{
+  background-color: #f8f8f8;
+}
+
+nav.pagination .title{
+  display: block;
+  font-size: 27px;
+  line-height: 1.25;
+
+}
+
+nav.pagination .icon{
+  
+}
+
+nav.pagination .previous .icon{
+  
+}
+
+nav.pagination .label{
+  text-decoration: underline;
+  display: block;
 }
