@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+  <a href="../tech-task-list" class="govuk-c-back-link">Back</a>
+
+  <main role="main" class="govuk-o-main-wrapper">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Send and receive messages from Verify
+        </h1>
+
+        <p class="govuk-body">
+          Here is some text about what you have to do to do this thing.
+        </p>
+
+        <p class="govuk-body">
+          <a href="#">Download some stuff</a>
+        </p>
+
+        {{ govukButton({
+          "text": "Mark as done",
+          "href": "../tech-task-list"
+        }) }}
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

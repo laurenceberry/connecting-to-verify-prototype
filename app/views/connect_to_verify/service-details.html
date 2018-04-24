@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+  <main role="main" class="govuk-o-main-wrapper">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+        <h1 class="govuk-heading-l">
+          Tell us about your service
+        </h1>
+
+        {% from "input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          "label": {
+            "text": "Name of service",
+            "hintText": "Enter the name as it will appear to users throughout their Verify journey"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "name-of-service",
+          name: "name-of-service"
+        }) }}
+
+        {{ govukInput({
+          "label": {
+            "text": "Organisation that delivers the service"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "organisation",
+          name: "organisation"
+        }) }}
+
+        {{ govukButton({
+          "text": "Continue",
+          "href": "tech-task-list"
+        }) }}
+
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

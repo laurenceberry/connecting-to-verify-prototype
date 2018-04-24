@@ -7,13 +7,55 @@
 {% block content %}
 
 <div class="govuk-o-width-container">
+
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Components",
+        "href": "#"
+      },
+      {
+        "text": "GOV.UK Verify",
+        "href": "#"
+      },
+      {
+        "text": "Get started",
+        "href": "#"
+      }
+    ]
+  }) }}
+
   <main role="main" class="govuk-o-main-wrapper">
     <div class="govuk-o-grid">
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
-      	<h1 class="govuk-heading-l">Before you connect</h1>
-        <a href="/connect_to_verify/index" class="govuk-body">Connect to GOV.UK Verify</a>
+      	<h1 class="govuk-heading-xl">Build your service to work with GOV.UK Verify</h1>
+
+        <h2 class="govuk-heading-l">Choose technology</h2>
+
+        <h3 class="govuk-heading-s">Using SAML (Security Assertion Markup Language)</h3>
+
+        <p class="govuk-body">
+          Your government service must be able to send SAML requests to, and receive SAML responses from, the GOV.UK Verify hub. You will need someone on your team who can write SAML code.
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Read about <a href="https://alphagov.github.io/rp-onboarding-tech-docs/pages/saml/samlWorks.html">SAML</a></li>
+          <li>Service Manual guidance on <a href="https://www.gov.uk/service-manual/technology/choosing-technology-an-introduction">choosing technology</a></li>
+        </ul>
+
+        <h2 class="govuk-heading-l">Next steps</h2>
+
+        <p class="govuk-body">
+          (How does someone know that they're ready?) <a href="../connect_to_verify/index">Connect to Verify</a>
+        </p>
+
+        <br>
+        <a href="/before_you_connect/index" class="govuk-body">Return to getting started</a>
+
       </div>
-      <iframe src="https://giphy.com/embed/12PA1eI8FBqEBa" width="269" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cat-sea-chicks-12PA1eI8FBqEBa">via GIPHY</a></p>
+
     </div>
   </main>
 </div>

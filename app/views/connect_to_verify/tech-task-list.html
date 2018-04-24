@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+  <main role="main" class="govuk-o-main-wrapper">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Connect to GOV.UK Verify
+        </h1>
+
+        <ol class="instruction-list steps">
+      		<li class="instruction-list-item divider">
+      			<h2 class="instruction-list-item-body"><span class="step-number" role="presentation">1.</span>Development and testing</h2>
+      			<ul class="instruction-list-item-top">
+      				<li>
+      					<!-- <span class="tick"><img alt="done" height="14" src="/public/images/tick.svg" width="15"></span> -->
+                <a href="tasks/example-task-page">Send and receive messages from Verify</a>
+      				</li>
+      				<li>
+      					<a href="#">Build a matching service</a>
+      				</li>
+      				<li>
+      					<a href="#">Test in Integration</a>
+      				</li>
+      			</ul>
+      		</li>
+          <li class="instruction-list-item divider">
+      			<h2 class="instruction-list-item-body"><span class="step-number" role="presentation">2.</span>Connect to Integration</h2>
+      			<ul class="instruction-list-item-top">
+              <li>
+                <a href="#">Get certificates</a>
+      				</li>
+              <li>
+                <a href="tasks/get-access-to-integration">Get access to Integration environment</a>
+      				</li>
+      				<li>
+      					<a href="#">Build and deploy in Integration</a>
+      				</li>
+      			</ul>
+      		</li>
+          <li class="instruction-list-item divider">
+      			<h2 class="instruction-list-item-body"><span class="step-number" role="presentation">3.</span>Connect to Production</h2>
+      			<ul class="instruction-list-item-top">
+              <li>
+                <a href="#">Get certificates</a>
+      				</li>
+              <li>
+                <a href="tasks/get-access-to-production">Get access to Production environment</a>
+      				</li>
+      				<li>
+      					<a href="#">Build and deploy in Production</a>
+      				</li>
+      			</ul>
+      		</li>
+      	</ol>
+
+
+
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
