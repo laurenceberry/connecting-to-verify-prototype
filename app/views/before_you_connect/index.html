@@ -47,10 +47,34 @@
         <h2 class="govuk-heading-m">Matching</h2>
 
         <p class="govuk-body">
-          A simple explaination of matching so the user can understand wether they did it or not.
+          A simple explaination of matching so the user can understand whether they did it or not.
         </p>
-        <a href="" class="govuk-body">How to build a service with matching (this would be progressive disclosure)</a>
+        
+        <details>
 
+          <summary class="govuk-body"><a href=""><span class="summary">How to build a service with matching</span></a></summary>
+          <div class="panel panel-border-narrow">
+
+            <h3 class="govuk-heading-s">Build a local matching service</h3>
+            <p class="govuk-body">
+              The local matching service tries to match a user’s assured identity with a record in the government service’s data sources. This allows the government service to interact with the user. You need to build this yourself.<br>
+              <a href="">Download the local matching service</a>
+            </p>
+            
+            <h3 class="govuk-heading-s">Set up Matching Service Adapter</h3>
+            <p class="govuk-body">
+              The matching service adapter converts SAML, the language to communicate with the Verify hub into JSON for your service and vice versa. It also performs encryption, decryption, and signing of SAML messages.<br>
+              <a href="">Download the local matching service</a>
+            </p>
+
+            <h3 class="govuk-heading-s">Set up the Verify Service Provider</h3>
+            <p class="govuk-body">
+              The Verify Service Provider helps create SAML requests and translate responses from SAML to JSON, which is more readable.<br>
+              <a href="">Download the local matching service</a>
+            </p>
+
+          </div>
+        </details>
 
 
         <nav class="pagination" role="navigation" aria-label="Pagination">
