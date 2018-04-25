@@ -7,13 +7,88 @@
 {% block content %}
 
 <div class="govuk-o-width-container">
+
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Components",
+        "href": "#"
+      },
+      {
+        "text": "GOV.UK Verify",
+        "href": "https://connect-to-verify-start.herokuapp.com/verify"
+      },
+      {
+        "text": "Get started",
+        "href": "/get_started"
+      }
+    ]
+  }) }}
+
   <main role="main" class="govuk-o-main-wrapper">
     <div class="govuk-o-grid">
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
-      	<h1 class="govuk-heading-l">Connect to GOV.UK Verify</h1>
-        <a href="connected" class="govuk-body">Go Live</a>
+        <h1 class="govuk-heading-xl">Before you start <br>:(this page looks ugly):</h1>
+
+        <p class="govuk-body">
+          You must have:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            built your service locally
+          </li>
+          <li>
+            something
+          </li>
+          <li>
+            something
+          </li>
+          <li>
+            something else
+          </li>
+        </ul>
+        <br><br>
+
+        {{ govukButton({
+          "text": "Connect to Verify",
+          "href": "/connect_to_verify/create-account"
+        }) }}
+
+
+
+        <nav class="pagination" role="navigation" aria-label="Pagination">
+          <ul>
+              <li class="previous">
+                <a href="/before_you_connect/index">
+                  <span class="title">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                      <path fill="currentColor" d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                    </svg>
+                    Previous
+                  </span>
+                  <span class="label">Build your service</span>
+                </a>
+              </li>
+
+              <li class="next">
+                <a href="#">
+                  <span class="title">
+                    Next
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                      <path fill="currentColor" d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                    </svg>
+                  </span>
+                  <span class="label">Sign the agreement
+                </a>
+              </li>
+
+          </ul>
+        </nav>
+
       </div>
-      <iframe src="https://giphy.com/embed/3oKIPCSX4UHmuS41TG" width="480" height="464" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
     </div>
   </main>
 </div>
