@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Components",
+        "href": "#"
+      },
+      {
+        "text": "GOV.UK Verify",
+        "href": "https://connect-to-verify-start.herokuapp.com/verify"
+      },
+      {
+        "text": "Get started",
+        "href": "/get_started"
+      },
+      {
+        "text": "Design your service",
+        "href": "/design_and_build/index"
+      }
+    ]
+  }) }}
+
+  <main role="main" class="govuk-o-main-wrapper">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+        <h1 class="govuk-heading-xl">Your link to the GOV.UK&nbsp;Verify prototype</h1>
+
+      </div>
+
+      <div class="govuk-o-grid__item govuk-o-grid__item--full">
+        {% from "table/macro.njk" import govukTable %}
+
+        {{ govukTable({
+          "caption": "",
+          "firstCellIsHeader": true,
+          "head": [
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            }
+          ],
+          "rows": [
+            [
+              {
+                "text": "Your link"
+              },
+              {
+                "text": "https://www.prototype-link"
+              }
+            ],
+            [
+              {
+                "text": "Level of assurance"
+              },
+              {
+                "text": "LOA 1"
+              }
+            ],
+            [
+              {
+                "text": "Service"
+              },
+              {
+                "text": "Check Your Food Is Vegetarian"
+              }
+            ],
+            [
+              {
+                "text": "Organisation"
+              },
+              {
+                "text": "Food Standards Agency"
+              }
+            ],
+            [
+              {
+                "text": "Why we use GOV.UK Verify"
+              },
+              {
+                "text": "Dummy text here dummy text here dummy text here."
+              }
+            ],
+            [
+              {
+                "text": "Other ways to access this service"
+              },
+              {
+                "text": "Dummy text here dummy text here dummy text here."
+              }
+            ],
+            [
+              {
+                "text": "Points to"
+              },
+              {
+                "text": "http://my-service-prototype"
+              }
+            ]
+          ]
+        }) }}
+
+        <p class="govuk-body"><a href="/design_and_build/edit" class="govuk-body">Edit your link’s details</a></p><br>
+      </div>
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+        
+        <h2 class="govuk-heading-m">Save this page</h2>
+        <p class="govuk-body">You’ll need to save the URL for this page to make changes to your link. Anyone with the URL for this page can make chanes to your link.</p>
+
+        <a href="/design_and_build/edit" class="govuk-body">Bookmark this page</a><br>
+        <a href="/design_and_build/edit" class="govuk-body">Email a link to this page</a>
+
+        <br>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+{% endblock %}
