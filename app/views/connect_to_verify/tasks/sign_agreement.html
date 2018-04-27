@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+  <a href="../tech-task-list" class="govuk-c-back-link">Back</a>
+
+  <main role="main" class="govuk-o-main-wrapper">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Sign agreement with GOV.UK Verify
+        </h1>
+
+        <p class="govuk-body">
+          Before a service can go live, the service manager needs to sign an agreement with GOV.UK Verify. Enter their email address so that we can send it to them.
+        </p>
+
+        <p class="govuk-body">
+          Once we have received the signed document, you will get a notification saying you are ready to go to Production.
+        </p>
+
+        <form action="#">
+          {% from "input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+            "label": {
+              "text": "Service manager's email"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "agreement-email",
+            name: "agreement-email"
+          }) }}
+
+          {{ govukButton({
+            "name": "button",
+            "text": "Send",
+            "element": "button"
+          }) }}
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

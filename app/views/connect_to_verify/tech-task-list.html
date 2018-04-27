@@ -12,7 +12,7 @@
   <div class="govuk-c-phase-banner">
     <p class="govuk-c-phase-banner__content">
       <span class="govuk-c-phase-banner__text">
-        Signed in as {{ data["name-of-service"] }}. <a class="govuk-link" href="https://connect-to-verify-start.herokuapp.com/verify">Sign out</a>
+        <a class="govuk-link" href="https://connect-to-verify-start.herokuapp.com/verify">Sign out</a>
       </span>
     </p>
   </div>
@@ -28,14 +28,14 @@
         <ol class="instruction-list steps">
 
           <li class="instruction-list-item divider">
-            
+
             <h2 class="instruction-list-item-body"><span class="step-number" role="presentation">1.</span>Before you connect</h2>
             <ul class="instruction-list-item-top">
               <li>
-                <a href="">Check you’re setup right</a>
+                <a href="tasks/service_content">Add your service’s content</a>
               </li>
               <li>
-                <a href="#">Add your service’s content for GOV.UK Verify</a>
+                <a href="">Check your setup is working</a>
               </li>
             </ul>
           </li>
@@ -44,10 +44,10 @@
       			<h2 class="instruction-list-item-body"><span class="step-number" role="presentation">2.</span>Connect to Integration</h2>
       			<ul class="instruction-list-item-top">
               <li>
-                <a href="tasks/get-access-to-integration">Get access to Integration environment</a>
+                <a href="tasks/get_access_to_integration">Get access to Integration environment</a>
       				</li>
               <li>
-                <a href="#">Test your service</a>
+                <a href="#">Test in Integration</a>
               </li>
       				<li>
       					<a href="#">Deploy to Integration</a>
@@ -58,21 +58,24 @@
       			<h2 class="instruction-list-item-body"><span class="step-number" role="presentation">3.</span>Connect to Production</h2>
       			<ul class="instruction-list-item-top">
               <li>
-                <a href="tasks/get-access-to-production">Get access to Production environment</a>
+                <a href="#">Get certificates</a>
       				</li>
+              <li>
+                <a href="tasks/get_access_to_production">Get access to Production environment</a>
+      				</li>
+              <li>
+                <a href="#">Test in Production</a>
+              </li>
       				<li>
       					<a href="#">Deploy to Production</a>
       				</li>
-              <li>
-                <a href="#">Testing in production</a>
-              </li>
       			</ul>
       		</li>
           <li class="instruction-list-item divider">
       			<h2 class="instruction-list-item-body"><span class="step-number" role="presentation">4.</span>Before you go live</h2>
       			<ul class="instruction-list-item-top">
               <li>
-                <a href="#">Sign an agreement with GOV.UK Verify</a>
+                <a href="tasks/sign_agreement">Sign an agreement with GOV.UK Verify</a>
       				</li>
       			</ul>
       		</li>

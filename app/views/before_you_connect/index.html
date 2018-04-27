@@ -33,46 +33,88 @@
       	<h1 class="govuk-heading-xl">Build your service to work with GOV.UK Verify</h1>
 
         <p class="govuk-body">
-          To connect to Verify, you will need the right team in place and have a plan for how you will build your service.
+         You need to consider how you will build your service to connect to Verify.
         </p>
 
-        <h2 class="govuk-heading-m">Download the code</h2>
+        <h3 class="govuk-heading-m">Set up the Verify Service Provider</h3>
+        <p class="govuk-body">
+          Verify uses SAML to securely exchange information about identities. The Verify Service Provider helps create SAML requests and translate responses from SAML to JSON, which is easier to read.
+        </p>
+        <p class="govuk-body">
+          <a href="#">Download the Verify Service Provider</a>
+        </p>
+
+        <h2 class="govuk-heading-m">Decide if you need to use matching</h2>
+        <p class="govuk-body">
+          Matching is a process where you make sure that a verified user is the same one as the one on your database. There are two different levels of matching you can use. Some services do not need matching at all.
+        </p>
+
+        <table class="govuk-c-table">
+          <caption class="govuk-c-table__caption visually-hidden">Decide if you need matching</caption>
+          <thead class="govuk-c-table__head">
+            <tr class="govuk-c-table__row">
+              <th class="govuk-c-table__header" scope="col">Service needs to link to existing data</th>
+              <th class="govuk-c-table__header" scope="col">Service needs to keep users' data</th>
+              <th class="govuk-c-table__header" scope="col">Level of matching needed</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-c-table__body">
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell ">No</td>
+              <td class="govuk-c-table__cell ">No</td>
+              <td class="govuk-c-table__cell ">Not needed</td>
+            </tr>
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell ">No</td>
+              <td class="govuk-c-table__cell ">Yes</td>
+              <td class="govuk-c-table__cell ">Simple matching</td>
+            </tr>
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell ">Yes</td>
+              <td class="govuk-c-table__cell ">Yes</td>
+              <td class="govuk-c-table__cell ">Full matching</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- <h2 class="govuk-heading-m">Download the code</h2>
 
         <p class="govuk-body">
           Something about how you can set up the code to run GOV.UK Verify locally.
         </p>
         <a href="" class="govuk-body">Download the code</a>
-        <br><br>
+        <br><br> -->
 
-        <h2 class="govuk-heading-m">Matching</h2>
-
-        <p class="govuk-body">
-          A simple explaination of matching so the user can understand whether they did it or not.
-        </p>
-        
         <details>
-
-          <summary class="govuk-body"><a href=""><span class="summary">How to build a service with matching</span></a></summary>
+          <summary class="govuk-body"><a href=""><span class="summary">How to build a service with simple matching</span></a></summary>
           <div class="panel panel-border-narrow">
-
             <h3 class="govuk-heading-s">Build a local matching service</h3>
             <p class="govuk-body">
-              The local matching service tries to match a user’s assured identity with a record in the government service’s data sources. This allows the government service to interact with the user. You need to build this yourself.<br>
+              The local matching service tries to match a user’s assured identity with a record in the government service’s data sources. This allows the government service to interact with the user. You need to build this yourself.
+            </p>
+            <p class="govuk-body">
               <a href="">Download the local matching service</a>
             </p>
-            
+          </div>
+        </details>
+
+        <details>
+          <summary class="govuk-body"><a href=""><span class="summary">How to build a service with full matching</span></a></summary>
+          <div class="panel panel-border-narrow">
+            <h3 class="govuk-heading-s">Build a local matching service</h3>
+            <p class="govuk-body">
+              The local matching service tries to match a user’s assured identity with a record in the government service’s data sources. This allows the government service to interact with the user. You need to build this yourself.
+            </p>
+            <p class="govuk-body">
+              <a href="">Download the local matching service</a>
+            </p>
             <h3 class="govuk-heading-s">Set up Matching Service Adapter</h3>
             <p class="govuk-body">
-              The matching service adapter converts SAML, the language to communicate with the Verify hub into JSON for your service and vice versa. It also performs encryption, decryption, and signing of SAML messages.<br>
-              <a href="">Download the local matching service</a>
+              The matching service adapter converts SAML, the language to communicate with the Verify hub into JSON for your service and vice versa. It also performs encryption, decryption, and signing of SAML messages.
             </p>
-
-            <h3 class="govuk-heading-s">Set up the Verify Service Provider</h3>
             <p class="govuk-body">
-              The Verify Service Provider helps create SAML requests and translate responses from SAML to JSON, which is more readable.<br>
               <a href="">Download the local matching service</a>
             </p>
-
           </div>
         </details>
 

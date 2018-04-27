@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+  <a href="../tech-task-list" class="govuk-c-back-link">Back</a>
+
+  <main role="main" class="govuk-o-main-wrapper">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Add your service's content
+        </h1>
+
+        <form action="../tech-task-list" method="post">
+
+          {% from "textarea/macro.njk" import govukTextarea %}
+
+          {{ govukTextarea({
+            "name": "hub-page",
+            "id": "hub-page",
+            "label": {
+              "text": "Hub page text",
+              "hintText": "This text should explain why your service needs to verify users' identities"
+            }
+          }) }}
+
+          <details class="govuk-c-details">
+            <summary class="govuk-c-details__summary">
+              <span class="govuk-c-details__summary-text">
+                See an example
+              </span>
+            </summary>
+            <div class="govuk-c-details__text">
+              Image
+            </div>
+          </details>
+
+          {{ govukButton({
+            "text": "Save and continue"
+          }) }}
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
