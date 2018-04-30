@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content">
+      <span class="govuk-c-phase-banner__text">
+        {{ data["name-of-service"] }} <a class="govuk-link" href="https://connect-to-verify-start.herokuapp.com/verify">Sign out</a>
+      </span>
+    </p>
+  </div>
+  <a href="../tech-task-list" class="govuk-c-back-link">Back</a>
+
+  <main role="main" class="govuk-o-main-wrapper">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Get access to Integration environment
+        </h1>
+
+        <p class="govuk-body">
+          Give details about your service so that we can connect you to the Integration environment.
+        </p>
+
+      </div>
+
+      <div class="govuk-o-grid__item govuk-o-grid__item--full">
+
+        <table class="govuk-c-table">
+          <thead class="govuk-c-table__head">
+            <tr class="govuk-c-table__row">
+              <th class="govuk-c-table__header" scope="col"></th>
+              <th class="govuk-c-table__header" scope="col"></th>
+              <th class="govuk-c-table__header" scope="col"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-c-table__body">
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell first" scope="row">Name</td>
+              <td class="govuk-c-table__cell ">
+                {% if data['connection-name'] %}
+                 {{data['connection-name']}}
+                {% else %}
+                  <a href="integration-name">Answer required</a>
+                {% endif %}
+              </td>
+              <td class="govuk-c-table__cell action">
+                {% if data['connection-name'] %}
+                 <a href="integration-name">Edit</a>
+                {% endif %}
+              </td>
+            </tr>
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell first" scope="row">Start page URL</td>
+              <td class="govuk-c-table__cell ">
+                {% if data['start-page-url'] %}
+                 {{data['start-page-url']}}
+                {% else %}
+                  <a href="integration-start-page-url">Answer required</a>
+                {% endif %}
+              </td>
+              <td class="govuk-c-table__cell action">
+                {% if data['start-page-url'] %}
+                 <a href="integration-start-page-url">Edit</a>
+                {% endif %}
+              </td>
+            </tr>
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell first" scope="row">Entity ID</td>
+              <td class="govuk-c-table__cell ">
+                {% if data['entity-id'] %}
+                 {{data['entity-id']}}
+                {% else %}
+                  <a href="integration-entity-id">Answer required</a>
+                {% endif %}
+              </td>
+              <td class="govuk-c-table__cell action">
+                {% if data['entity-id'] %}
+                 <a href="integration-entity-id">Edit</a>
+                {% endif %}
+              </td>
+            </tr>
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell first" scope="row">SAML reponse URL</td>
+              <td class="govuk-c-table__cell ">
+                {% if data['saml-response-url'] %}
+                 {{data['saml-response-url']}}
+                {% else %}
+                  <a href="integration-saml-response-url">Answer required</a>
+                {% endif %}
+              </td>
+              <td class="govuk-c-table__cell action">
+                {% if data['saml-response-url'] %}
+                 <a href="integration-saml-response-url">Edit</a>
+                {% endif %}
+              </td>
+            </tr>
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell first" scope="row">Test user data</td>
+              <td class="govuk-c-table__cell ">
+                {% if data['test-user-name'] and data['test-user-password'] %}
+                 Username: {{data['test-user-name']}}
+                 <br>
+                 Password: {{data['test-user-password']}}
+                {% else %}
+                  <a href="integration-test-user-data">Answer required</a>
+                {% endif %}
+              </td>
+              <td class="govuk-c-table__cell action">
+                {% if data['test-user-data'] and data['test-user-password'] %}
+                 <a href="integration-test-user-data">Edit</a>
+                {% endif %}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        {% from "button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          "text": "Get access",
+          "href": "integration-requested"
+        }) }}
+
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
