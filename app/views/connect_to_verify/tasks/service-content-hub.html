@@ -33,7 +33,11 @@
           {{ govukTextarea({
             "name": "hub-page",
             "value": data['hub-page'],
-            "id": "hub-page"
+            "id": "hub-page",
+            "label": {
+              "text": "",
+              "hintText": "For example, “DVLA uses Verify to help prevent other people from accessing your driving licence information, as it stops someone from pretending to be you.”"
+            }
           }) }}
 
           {{ govukButton({
