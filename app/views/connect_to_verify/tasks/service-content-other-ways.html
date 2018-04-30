@@ -24,21 +24,23 @@
           What are the other ways to complete the transaction?
         </h1>
 
-        <p class="govuk-body">This will be used to show users the alternative routes to access your service.</p>
+        <p class="govuk-body">You need to describe other ways to access your service for users who can’t be verified.</p>
+
+        <p class="govuk-body">For example:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>information the user will need to have to hand</li>
+          <li>phone numbers</li>
+          <li>opening times</li>
+          <li>call charges</li>
+          <li>information the user will need to supply</li>
+          <li>postal addresses</li>
+          <li>when the user can expect a response</li>
+        </ul>
+
 
         <form action="service-content-overview" method="post">
 
           {% from "textarea/macro.njk" import govukTextarea %}
-
-          {{ govukInput({
-            "name": "other-ways-title",
-            "value": "Other ways to "+ data['name-of-service'],
-            "id": "other-ways-title",
-            "label": {
-              "text": "Page heading"
-            }
-
-          }) }}
 
           {{ govukTextarea({
             "name": "other-ways",
@@ -46,7 +48,7 @@
             "id": "other-ways",
             "label": {
               "text": "Details",
-              "hintText": "You can use valid HTML content, including URLs"
+              "hintText": "You can use HTML content, including URLs"
             }
 
           }) }}
