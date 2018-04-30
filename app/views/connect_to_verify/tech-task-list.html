@@ -22,17 +22,30 @@
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
         <h1 class="govuk-heading-xl">
-          Connect to GOV.UK Verify
+          Connect {{data['name-of-service']}} to GOV.UK Verify
         </h1>
 
         <ol class="instruction-list steps">
 
           <li class="instruction-list-item divider">
 
-            <h2 class="instruction-list-item-body"><span class="step-number" role="presentation">1.</span>Before you connect</h2>
+            <h2 class="instruction-list-item-body"><span class="step-number" role="presentation">1.</span>Before you start</h2>
             <ul class="instruction-list-item-top">
               <li>
-                <a href="tasks/service_content">Add your service’s content</a>
+                {% if data['name-of-service'] %}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14">
+                    <path id="Unnamed" fill="black" stroke="black" stroke-width="0" d="M 0.00,10.00            L 4.00,10.00 4.00,0.00 7.00,0.00 7.00,13.00 0.00 13.00z" transform="translate(2, 0.5) rotate(40, 7.50, 7.00)"/>
+                  </svg>
+                {% endif %}
+                <a href="/connect_to_verify/service-details">Tell us about your service</a>
+              </li>
+              <li>
+                {% if data['hub-page'] and data['other-ways'] %}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14">
+                    <path id="Unnamed" fill="black" stroke="black" stroke-width="0" d="M 0.00,10.00            L 4.00,10.00 4.00,0.00 7.00,0.00 7.00,13.00 0.00 13.00z" transform="translate(2, 0.5) rotate(40, 7.50, 7.00)"/>
+                  </svg>
+                {% endif %}
+                <a href="tasks/service-content-overview">Add your content</a>
               </li>
               <li>
                 <a href="">Check your setup is working</a>

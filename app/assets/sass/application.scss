@@ -67,9 +67,6 @@ $path: "/public/images/";
 
 ol.task-list{
   padding-left: 30px;
-//   a{
-//     text-decoration: none;
-//   }
 }
 
 .task-list-section{
@@ -77,23 +74,20 @@ ol.task-list{
   position: relative;
 }
 
+.instruction-list-item-top li{
+  position: relative;
+}
+
+.instruction-list-item-top svg{
+  position: absolute;
+  left: -26px;
+  top: 4px;
+}
+
 .task-list-section-number{
   position: absolute;
   left: -30px;
-  // color: #000;
 }
-
-// ol.task-list{
-//   padding-left: 0px;
-//   a{
-//     text-decoration: none;
-//   }
-// }
-
-// .task-list-section{
-//   margin-top: 50px;
-
-// }
 
 
 
@@ -161,4 +155,8 @@ nav.pagination .label{
     font-weight: bold;
     display: block;
   }
+}
+
+td.govuk-c-table__cell.action{
+  text-align: right;
 }
