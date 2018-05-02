@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content">
+      <span class="govuk-c-phase-banner__text">
+        {{ data["name-of-service"] }} <a class="govuk-link" href="https://connect-to-verify-start.herokuapp.com/verify">Sign out</a>
+      </span>
+    </p>
+  </div>
+  <a href="integration-overview" class="govuk-c-back-link">Back</a>
+
+  <main role="main" class="govuk-o-main-wrapper">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Start page URL
+        </h1>
+
+        <p class="govuk-body">
+          Your start page URL is the URL that gives users access to your service. It might be:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>a page on GOV.UK, for example <code class="code">https://www.gov.uk/update-company-car-details</code></li>
+            <li>a similar landing page in your testing environment</li>
+          </ul>
+        </p>
+
+
+        <form action="integration-overview" method="post">
+
+          {% from "input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+            "label": {
+              "text": "Connection name",
+              "classes": "visually-hidden"
+            },
+            classes: "govuk-!-width-three-quarters",
+            value: data['start-page-url'],
+            id: "start-page-url",
+            name: "start-page-url"
+          }) }}
+
+          {{ govukButton({
+            "text": "Save and continue"
+          }) }}
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

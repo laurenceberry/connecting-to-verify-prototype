@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content">
+      <span class="govuk-c-phase-banner__text">
+        {{ data["name-of-service"] }} <a class="govuk-link" href="https://connect-to-verify-start.herokuapp.com/verify">Sign out</a>
+      </span>
+    </p>
+  </div>
+  <a href="integration-overview" class="govuk-c-back-link">Back</a>
+
+  <main role="main" class="govuk-o-main-wrapper">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Test user data
+        </h1>
+
+        <p class="govuk-body">
+          Create basic authentication credentials so that you can create and manage test users.
+        </p>
+
+        <form action="integration-overview" method="post">
+
+          {% from "input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+            "label": {
+              "text": "Username"
+            },
+            text: "{{data['test-user-name']}}",
+            classes: "govuk-!-width-one-half",
+            id: "test-user-name",
+            name: "test-user-name"
+          }) }}
+
+          {{ govukInput({
+            "label": {
+              "text": "Password",
+              "hintText": "Must be at least 8 characters"
+            },
+            value: data['test-user-password'],
+            classes: "govuk-!-width-one-half",
+            id: "test-user-password",
+            name: "test-user-password"
+          }) }}
+
+          {{ govukButton({
+            "text": "Save and continue"
+          }) }}
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

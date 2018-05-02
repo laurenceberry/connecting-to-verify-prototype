@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Components",
+        "href": "#"
+      },
+      {
+        "text": "GOV.UK Verify",
+        "href": "https://connect-to-verify-start.herokuapp.com/verify"
+      },
+      {
+        "text": "Get started",
+        "href": "/get_started"
+      },
+      {
+        "text": "Design your service",
+        "href": "/design_and_build/index"
+      }
+    ]
+  }) }}
+
+  <main role="main" class="govuk-o-main-wrapper">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+        <h1 class="govuk-heading-xl">Create a link to the GOV.UK&nbsp;Verify prototype</h1>
+
+        <a href="/design_and_build/edit" class="govuk-body">Setup the link</a>
+
+        <br><br>
+        <h2 class="govuk-heading-m">Using the link</h2>
+        <h2 class="govuk-heading-m">Editing the link</h2>
+
+
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+{% endblock %}

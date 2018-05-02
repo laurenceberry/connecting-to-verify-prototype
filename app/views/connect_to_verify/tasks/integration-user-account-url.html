@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content">
+      <span class="govuk-c-phase-banner__text">
+        {{ data["name-of-service"] }} <a class="govuk-link" href="https://connect-to-verify-start.herokuapp.com/verify">Sign out</a>
+      </span>
+    </p>
+  </div>
+  <a href="integration-overview" class="govuk-c-back-link">Back</a>
+
+  <main role="main" class="govuk-o-main-wrapper">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-l">
+          User account creation URL
+        </h1>
+
+        <p class="govuk-body">
+          If your service needs to create user accounts, enter the URL that will accept ‘Unknown User Attribute’ query requests. For example <code class="code">https://{your-integration-domain}/unknown-user-attribute-query</code>
+        </p>
+
+        <form action="integration-overview" method="post">
+
+          {% from "input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+            "label": {
+              "text": "User account creation URL",
+              "classes": "visually-hidden"
+            },
+            value: data['user-account-url'],
+            id: "user-account-url",
+            name: "user-account-url"
+          }) }}
+
+          {{ govukButton({
+            "text": "Save and continue"
+          }) }}
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

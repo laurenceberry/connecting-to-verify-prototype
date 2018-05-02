@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content">
+      <span class="govuk-c-phase-banner__text">
+        {{ data["name-of-service"] }} <a class="govuk-link" href="https://connect-to-verify-start.herokuapp.com/verify">Sign out</a>
+      </span>
+    </p>
+  </div>
+  <a href="integration-overview" class="govuk-c-back-link">Back</a>
+
+  <main role="main" class="govuk-o-main-wrapper">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-l">
+          SAML response URL
+        </h1>
+
+        <p class="govuk-body">
+          Provide a unique URL to receive SAML responses. For example <code class="code">https://{your-service-name}.{your-integration-domain}/verify/response</code>
+        </p>
+
+        <form action="integration-overview" method="post">
+
+          {% from "input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+            "label": {
+              "text": "Connection name",
+              "classes": "visually-hidden"
+            },
+            value: data['saml-response-url'],
+            id: "saml-response-url",
+            name: "saml-response-url"
+          }) }}
+
+          {{ govukButton({
+            "text": "Save and continue"
+          }) }}
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
