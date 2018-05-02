@@ -28,6 +28,10 @@
           Give details about your setup so that we can connect you to the Integration environment. Integration allows you to test your prototype service with dummy user data.
         </p>
 
+        <p class="govuk-body">
+          You can create multiple connections to Integration for different environments.
+        </p>
+
       </div>
 
       <div class="govuk-o-grid__item govuk-o-grid__item--full">
@@ -45,7 +49,7 @@
               <td class="govuk-c-table__cell first" scope="row">Name</td>
               <td class="govuk-c-table__cell ">
                 {% if data['connection-name'] %}
-                 {{data['connection-name']}}
+                  {{data['connection-name']}}
                 {% else %}
                   <a href="integration-name">Answer required</a>
                 {% endif %}
@@ -87,7 +91,7 @@
               </td>
             </tr>
             <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">SAML reponse URL</td>
+              <td class="govuk-c-table__cell first" scope="row">SAML response URL</td>
               <td class="govuk-c-table__cell ">
                 {% if data['saml-response-url'] %}
                  {{data['saml-response-url']}}
@@ -98,6 +102,36 @@
               <td class="govuk-c-table__cell action">
                 {% if data['saml-response-url'] %}
                  <a href="integration-saml-response-url">Edit</a>
+                {% endif %}
+              </td>
+            </tr>
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell first" scope="row">Matching URL</td>
+              <td class="govuk-c-table__cell ">
+                {% if data['matching-url'] %}
+                 {{data['matching-url']}}
+                {% else %}
+                  <a href="integration-matching-url">Answer required</a>
+                {% endif %}
+              </td>
+              <td class="govuk-c-table__cell action">
+                {% if data['matching-url'] %}
+                 <a href="integration-matching-url">Edit</a>
+                {% endif %}
+              </td>
+            </tr>
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell first" scope="row">User account creation URL</td>
+              <td class="govuk-c-table__cell ">
+                {% if data['user-account-url'] %}
+                 {{data['user-account-url']}}
+                {% else %}
+                  <a href="integration-user-account-url">Answer required</a>
+                {% endif %}
+              </td>
+              <td class="govuk-c-table__cell action">
+                {% if data['user-account-url'] %}
+                 <a href="integration-user-account-url">Edit</a>
                 {% endif %}
               </td>
             </tr>

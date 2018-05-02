@@ -21,11 +21,11 @@
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
         <h1 class="govuk-heading-l">
-          SAML response URL
+          User account creation URL
         </h1>
 
         <p class="govuk-body">
-          Provide a unique URL to receive SAML responses. For example <code class="code">https://{your-service-name}.{your-integration-domain}/verify/response</code>
+          If your service needs to create user accounts, enter the URL that will accept ‘Unknown User Attribute’ query requests. For example <code class="code">https://{your-integration-domain}/unknown-user-attribute-query</code>
         </p>
 
         <form action="integration-overview" method="post">
@@ -34,12 +34,12 @@
 
           {{ govukInput({
             "label": {
-              "text": "Connection name",
+              "text": "User account creation URL",
               "classes": "visually-hidden"
             },
-            value: data['saml-response-url'],
-            id: "saml-response-url",
-            name: "saml-response-url"
+            value: data['user-account-url'],
+            id: "user-account-url",
+            name: "user-account-url"
           }) }}
 
           {{ govukButton({
