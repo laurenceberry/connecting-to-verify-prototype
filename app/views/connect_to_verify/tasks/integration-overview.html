@@ -61,21 +61,6 @@
               </td>
             </tr>
             <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">Start page URL</td>
-              <td class="govuk-c-table__cell ">
-                {% if data['start-page-url'] %}
-                 {{data['start-page-url']}}
-                {% else %}
-                  <a href="integration-start-page-url">Answer required</a>
-                {% endif %}
-              </td>
-              <td class="govuk-c-table__cell action">
-                {% if data['start-page-url'] %}
-                 <a href="integration-start-page-url">Edit</a>
-                {% endif %}
-              </td>
-            </tr>
-            <tr class="govuk-c-table__row">
               <td class="govuk-c-table__cell first" scope="row">Entity ID</td>
               <td class="govuk-c-table__cell ">
                 {% if data['entity-id'] %}
@@ -87,6 +72,21 @@
               <td class="govuk-c-table__cell action">
                 {% if data['entity-id'] %}
                  <a href="integration-entity-id">Edit</a>
+                {% endif %}
+              </td>
+            </tr>
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell first" scope="row">Start page URL</td>
+              <td class="govuk-c-table__cell ">
+                {% if data['start-page-url'] %}
+                 {{data['start-page-url']}}
+                {% else %}
+                  <a href="integration-start-page-url">Answer required</a>
+                {% endif %}
+              </td>
+              <td class="govuk-c-table__cell action">
+                {% if data['start-page-url'] %}
+                 <a href="integration-start-page-url">Edit</a>
                 {% endif %}
               </td>
             </tr>
@@ -136,19 +136,62 @@
               </td>
             </tr>
             <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">Test user data</td>
+              <td class="govuk-c-table__cell first" scope="row">Encryption certificate for your service</td>
               <td class="govuk-c-table__cell ">
-                {% if data['test-user-name'] and data['test-user-password'] %}
-                 Username: {{data['test-user-name']}}
-                 <br>
-                 Password: {{data['test-user-password']}}
+                {% if data['--'] %}
+                  {{data['--']}}
                 {% else %}
-                  <a href="integration-test-user-data">Answer required</a>
+                  <a href="../../page-doesnt-exist">Answer required</a>
                 {% endif %}
               </td>
               <td class="govuk-c-table__cell action">
-                {% if data['test-user-name'] and data['test-user-password'] %}
-                 <a href="integration-test-user-data">Edit</a>
+                {% if data['--'] %}
+                 <a href="../../page-doesnt-exist">Edit</a>
+                {% endif %}
+              </td>
+            </tr>
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell first" scope="row">Signing certificate for your service</td>
+              <td class="govuk-c-table__cell ">
+                {% if data['--'] %}
+                  {{data['--']}}
+                {% else %}
+                  <a href="../../page-doesnt-exist">Answer required</a>
+                {% endif %}
+              </td>
+              <td class="govuk-c-table__cell action">
+                {% if data['--'] %}
+                 <a href="../../page-doesnt-exist">Edit</a>
+                {% endif %}
+              </td>
+            </tr>
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell first" scope="row">Encryption certificate for your Matching Service Adapter</td>
+              <td class="govuk-c-table__cell ">
+                {% if data['--'] %}
+                  {{data['--']}}
+                {% else %}
+                  <a href="../../page-doesnt-exist">Answer required</a>
+                {% endif %}
+              </td>
+              <td class="govuk-c-table__cell action">
+                {% if data['--'] %}
+                 <a href="../../page-doesnt-exist">Edit</a>
+                {% endif %}
+              </td>
+            </tr>
+            <tr class="govuk-c-table__row">
+              <td class="govuk-c-table__cell first" scope="row">Signing certificate for your Matching Service Adapter</td>
+              <td class="govuk-c-table__cell ">
+                {% if data['--'] %}
+                  {{data['--']}}
+                {% else %}
+                  <a href="../../page-doesnt-exist">Answer required</a>
+                {% endif %}
+              </td>
+              <td class="govuk-c-table__cell action">
+                {% if data['--'] %}
+                 <a href="../../page-doesnt-exist">Edit</a>
                 {% endif %}
               </td>
             </tr>
