@@ -14,24 +14,33 @@
       </span>
     </p>
   </div>
-  <a href="../tech-task-list" class="govuk-c-back-link">Back</a>
+  <a href="certificates-send" class="govuk-c-back-link">Back</a>
 
   <main role="main" class="govuk-o-main-wrapper">
     <div class="govuk-o-grid">
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
         <h1 class="govuk-heading-l">
-          Get certificates
+          Upload signing certificate for your service
         </h1>
 
-        <p class="govuk-body">
-          In order to connect to Production, you need to get certificates from GOV.UK Verify.
-        </p>
+        {% from "file-upload/macro.njk" import govukFileUpload %}
+
+        {{ govukFileUpload({
+          id: 'signing-cert-service',
+          name: 'signing-cert-service',
+          label: {
+            text: 'Upload a .csr file'
+          }
+        }) }}
+
+        {% from "button/macro.njk" import govukButton %}
 
         {{ govukButton({
-          "text": "Get certificates",
-          "href": "#"
+          "text": "Save and continue",
+          "href": "certificates-send"
         }) }}
+
 
       </div>
     </div>
