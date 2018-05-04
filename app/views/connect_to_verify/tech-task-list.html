@@ -38,10 +38,12 @@
                 {% if data['other-ways'] %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
                 <a href="tasks/service-content-other-ways">Describe other ways to use your service</a>
               </li>
-              <!--This is the compliance tool bit, might go outside the user account
               <li>
-                <a href="">Check your setup is working</a>
-              </li> -->
+                <a href="tasks/integration-certificates">Create self signed certificates</a>
+              </li>
+              <li>
+                <a href="tasks/integration-certificates">Check your setup is working</a>
+              </li>
             </ul>
           </li>
 
@@ -51,6 +53,9 @@
               Use the integration environment to test complete user journeys, both success and failure scenarios.
             </p><br>
       			<ul class="instruction-list-item-top">
+              <li>
+                <a href="tasks/integration-certificates">Create self signed certificates</a>
+              </li>
               <li>
                 {% if data['test-user-name'] %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
                 <a href="tasks/integration-overview">Get access to Integration environment</a>
