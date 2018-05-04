@@ -19,7 +19,7 @@ $path: "/public/images/";
   font-size: 14px;
   direction: ltr;
   text-align: left;
-  white-space: pre;
+  // white-space: pre;
   word-spacing: normal;
   word-break: normal;
   line-height: 1.5;
@@ -35,6 +35,8 @@ $path: "/public/images/";
 
   border: 1px solid $govuk-border-colour;
   padding: 4px 4px 2px;
+
+  display: inline-block;
   
 }
 

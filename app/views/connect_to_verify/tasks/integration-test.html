@@ -16,32 +16,74 @@
   </div>
   <a href="../tech-task-list" class="govuk-c-back-link">Back</a>
 
-  <main role="main" class="govuk-o-main-wrapper">
+  <main role="main" class="govuk-o-main-wrapper govuk-body">
     <div class="govuk-o-grid">
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
         <h1 class="govuk-heading-l">
-          Run end-to-end tests in integration
+          Run end-to-end tests
         </h1>
 
-        {% from "warning-text/macro.njk" import govukWarningText %}
+        
 
+        {% from "warning-text/macro.njk" import govukWarningText %}
         {{ govukWarningText(
           {
-            "text": "If you carry out penetration testing (pen testing) on your end-to-end system, you must not extend this to the hub domain. You must only run penetration tests on your own system. If you think you have a valid reason for running penetration tests in the hub domain, you must first contact GOV.UK Verify support at idasupport+onboarding@digital.cabinet-office.gov.uk.",
+            "text": "You must not extend penetration testing to the hub domain. Only run penetration tests on your own system.",
             "iconFallbackText": "Warning"
           })
         }}
 
-        <p class="govuk-body">
+        <p>
+          As a minimum, test the following end-to-end user scenarios:
+        </p>
+        <ul class="govuk-list--bullet">
+          <li>authentication success and authentication failure </li>
+          <li>match and no-match </li>
+          <li>all the possible outcomes of your matching service, including <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/matchingstrategy.html#cycle3">Cycle 3</a> and <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/createnewaccounts.html#createnewaccounts">user account creation</a>, if implemented.</li>
+        </ul>
+
+        <p>After each test run, you should delete the test users.</p>
+
+        <p>You should run end-to-end testing in the integration environment as part of your continuous integration pipeline. For more information, see <a href="">Testing code</a> in the Government Service Design Manual.</p>
+
+        <h2 class="govuk-heading-m">Create test users</h2>
+        
+        <p>Create test users and load them into the test identity provider. Add the same test users to your local matching datastore in the integration environment.</p>
+
+        <p>
+          Make an HTTP POST to the user administration API with a JSON document containing an array of user data.
+        </p>
+        <p>
+          For example:
+          <code class="code">curl --user '{username}:{password}' -H 'Content-Type: application/json' -d @create-user.json https://idp-stub-integration.ida.digital.cabinet-office.gov.uk/{idp-name}/users</code>
         </p>
 
+        <p><code class="code">username</code> and <code class="code">password</code> are your credentials for managing test users.</p>
+        
+        <h2 class="govuk-heading-m">View test users</h2>
 
+        <p>GET the users resource from the relevant test identity provider.</p>
 
-        <!-- <h2 class="govuk-heading-m">
-          Edit an existing connection
-        </h2> -->
+        <p>For example:<code class="code">curl https://idp-stub-integration.ida.digital.cabinet-office.gov.uk/{idp-name}/users where idp-name is the name of the test identity provider.</code></p>
 
+        <p>The test users are returned in JSON format. To view the page you must provide your credentials for managing test users. You create the credentials by submitting the environment access form.</p>
+
+        <h2 class="govuk-heading-m">Delete test users</h2>
+
+        <p>To delete test users from the test identity provider, POST a JSON document to the user administration API containing the usernames you want to delete.
+        </p>
+
+        <p>
+          For example:
+          <code class="code">curl --data '{"username": "user1"}'  --user '{username}:{password}' -H 'Content-Type: application/json'  https://idp-stub-integration.ida.digital.cabinet-office.gov.uk/{idp-name}/users/delete</code>
+        </p>
+
+        <p><code class="code">username</code> and <code class="code">password</code> are your credentials for managing test users.</p>
+
+        <h2 class="govuk-heading-m">Share your results</h2>
+
+        <p>To connect to production you’ll need to <a href="../../page-doesnt-exist">show us the results of your end-to-end tests</a></p>
 
 
       </div>
