@@ -66,13 +66,15 @@ $path: "/public/images/";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+p{
+  @extend .govuk-body;
+}
 
 ol.task-list{
   padding-left: 30px;
 }
 
-.task-list-section{
-  margin-top: 50px;
+.task-list h2{
   position: relative;
 }
 
@@ -173,3 +175,4 @@ td.govuk-c-table__cell.action{
   border: 5px solid lightgrey;
   margin-bottom: 25px;
 }
+
