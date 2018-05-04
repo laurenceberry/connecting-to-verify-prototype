@@ -58,7 +58,7 @@
                 "text": "Your link"
               },
               {
-                "text": "https://www.prototype-link"
+                "text": "http://verify-prototype/"+data['proto-service-name']
               }
             ],
             [
@@ -66,7 +66,7 @@
                 "text": "Level of assurance"
               },
               {
-                "text": "LOA 1"
+                "text": data['proto-loa']
               }
             ],
             [
@@ -74,7 +74,7 @@
                 "text": "Service"
               },
               {
-                "text": "Check Your Food Is Vegetarian"
+                "text": data['proto-service-name']
               }
             ],
             [
@@ -82,15 +82,7 @@
                 "text": "Organisation"
               },
               {
-                "text": "Food Standards Agency"
-              }
-            ],
-            [
-              {
-                "text": "Why we use GOV.UK Verify"
-              },
-              {
-                "text": "Dummy text here dummy text here dummy text here."
+                "text": data['proto-org-name']
               }
             ],
             [
@@ -98,7 +90,7 @@
                 "text": "Other ways to access this service"
               },
               {
-                "text": "Dummy text here dummy text here dummy text here."
+                "text": data['proto-other-ways']
               }
             ],
             [
@@ -106,7 +98,7 @@
                 "text": "Points to"
               },
               {
-                "text": "http://my-service-prototype"
+                "text": data['proto-url']
               }
             ]
           ]
@@ -119,8 +111,8 @@
         <h2 class="govuk-heading-m">Save this page</h2>
         <p class="govuk-body">You’ll need to save the URL for this page to make changes to your link. Anyone with the URL for this page can make chanes to your link.</p>
 
-        <a href="/design_and_build/edit" class="govuk-body">Bookmark this page</a><br>
-        <a href="/design_and_build/edit" class="govuk-body">Email a link to this page</a>
+        <a href="t" id="bookmark-this" class="govuk-body">Bookmark this page</a><br>
+        <a href="" class="govuk-body">Email a link to this page</a>
 
         <br>
       </div>

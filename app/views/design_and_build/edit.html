@@ -38,8 +38,88 @@
 
         <p>Create a reusable link to use GOV.UK Verify in prototype.</p>
 
-        <a href="/design_and_build/your_link" class="govuk-body">Save</a>
+        <form action="your_link" method="post">
 
+          {% from "input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+            "label": {
+              "text": "Service name",
+              "hintText": "What you call your service when you’re talking to users, for example, ‘Check your state pension’.",
+              "classes": "govuk-!-width-two-thirds"
+            },
+            classes: "govuk-!-width-two-thirds",
+            value: data['proto-service-name'],
+            id: "proto-service-name",
+            name: "proto-service-name"
+          }) }}
+
+
+          {{ govukInput({
+            "label": {
+              "text": "Organisation",
+              "hintText": "What users call your organisatiomn, for example ‘Department fof Work and Pensions’.",
+              "classes": "govuk-!-width-two-thirds"
+            },
+            classes: "govuk-!-width-two-thirds",
+            value: data['proto-org-name'],
+            id: "proto-org-name",
+            name: "proto-org-name"
+          }) }}
+
+
+          {{ govukInput({
+            "label": {
+              "text": "Service ‘verified’ page URL",
+              "hintText": "Users are sent here after successful verification, for example ‘https://prototype.service.com/verified’.",
+              "classes": "govuk-!-width-two-thirds"
+            },
+            classes: "govuk-!-width-two-thirds",
+            value: data['proto-url'],
+            id: "proto-url",
+            name: "proto-url"
+          }) }}
+
+
+          {{ govukTextarea({
+            "label": {
+              "text": "Other ways to access this service",
+              "hintHtml": "Describe how users can access your service if they fail to prove their identity using GOV.UK Verify. This could be an online or offline channel. <a href='/design_and_build/unsuccessful'>View the example unsuccessful verification page</a> to see where this text is used.",
+              "classes": "govuk-!-width-two-thirds"
+            },
+            classes: "govuk-!-width-two-thirds",
+            value: data['proto-other-ways'],
+            id: "proto-other-ways",
+            name: "proto-other-ways"
+          }) }}
+
+
+          {% from 'radios/macro.njk' import govukRadios %}
+
+          {{ govukRadios({
+            "idPrefix": "proto-loa",
+            "name": "proto-loa",
+            "fieldset": {
+              "legendHtml": '<label class="govuk-body">Level of assurancs</label>',
+              "legendHintText": "This includes changing your last name or spelling your name differently."
+            },
+            "items": [
+              {
+                "value": "Level 1",
+                "text": "Level 1"
+              },
+              {
+                "value": "Level 2",
+                "text": "Level 2"
+              }
+            ]
+          }) }}
+
+          {{ govukButton({
+            "text": "Save and continue"
+          }) }}
+
+        </form>
 
       </div>
 
