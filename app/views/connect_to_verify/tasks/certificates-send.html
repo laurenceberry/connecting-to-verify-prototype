@@ -73,12 +73,12 @@
                 {% if data['encryption-cert-msa'] %}
                   {{data['encryption-cert-msa']}}
                 {% else %}
-                  <a href="#">Answer required</a>
+                  <a href="certificates-encryption-msa">Answer required</a>
                 {% endif %}
               </td>
               <td class="govuk-c-table__cell action">
                 {% if data['encryption-cert-msa'] %}
-                 <a href="#">Edit</a>
+                 <a href="certificates-encryption-msa">Edit</a>
                 {% endif %}
               </td>
             </tr>
@@ -88,12 +88,12 @@
                 {% if data['signing-cert-msa'] %}
                   {{data['signing-cert-msa']}}
                 {% else %}
-                  <a href="#">Answer required</a>
+                  <a href="certificates-signing-msa">Answer required</a>
                 {% endif %}
               </td>
               <td class="govuk-c-table__cell action">
                 {% if data['signing-cert-msa'] %}
-                 <a href="#">Edit</a>
+                 <a href="certificates-signing-msa">Edit</a>
                 {% endif %}
               </td>
             </tr>
@@ -104,7 +104,7 @@
 
         {{ govukButton({
           "text": "Send",
-          "href": "integration-requested"
+          "href": "certificates-sent"
         }) }}
 
 

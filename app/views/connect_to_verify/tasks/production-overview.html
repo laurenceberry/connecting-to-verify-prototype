@@ -28,6 +28,10 @@
           Give details about your setup so that we can connect you to the Production environment.
         </p>
 
+        <p class="govuk-body">
+          The Production environment is where you deploy your live end-to-end service. It’s a restricted environment for security reasons.
+        </p>
+
       </div>
 
       <div class="govuk-o-grid__item govuk-o-grid__item--full">
@@ -112,23 +116,6 @@
               </td>
               <td class="govuk-c-table__cell action">
                 {% if data['--'] %}
-                 <a href="#">Edit</a>
-                {% endif %}
-              </td>
-            </tr>
-            <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">Test user data</td>
-              <td class="govuk-c-table__cell ">
-                {% if data['--'] and data['--'] %}
-                 Username: {{data['--']}}
-                 <br>
-                 Password: {{data['--']}}
-                {% else %}
-                  <a href="#">Answer required</a>
-                {% endif %}
-              </td>
-              <td class="govuk-c-table__cell action">
-                {% if data['--'] and data['--'] %}
                  <a href="#">Edit</a>
                 {% endif %}
               </td>
