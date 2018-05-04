@@ -66,7 +66,7 @@ $path: "/public/images/";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
-p{
+p, a, ul{
   @extend .govuk-body;
 }
 
@@ -174,5 +174,9 @@ td.govuk-c-table__cell.action{
   max-width: 100%;
   border: 5px solid lightgrey;
   margin-bottom: 25px;
+}
+
+ul.govuk-list--bullet{
+  margin-top: -15px;
 }
 
