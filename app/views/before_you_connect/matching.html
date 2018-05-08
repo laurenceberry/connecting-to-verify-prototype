@@ -57,17 +57,17 @@
           If you're not going to be working with an existing database, you'll still need to build a local matching service and set up the Matching Service Adapter. This is so your can service can tell GOV.UK Verify that you don't need to match the user's identity.
         </p>
         <p class="govuk-body">
-          You must <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/matchingstrategy.html"> define your matching strategy</a> before you start. 
+          You must <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/matchingstrategy.html"> define your matching strategy</a> before you start.
         </p>
 
         <h2 class="govuk-heading-m">How to build a local matching service</h2>
         <p class="govuk-body">
-          You must build your own local matching service and host it on your own infrastructure. 
+          You must build your own local matching service and host it on your own infrastructure.
         </p>
 
         <ul class="govuk-body govuk-list--number">
           <li>Look at an <a href="https://github.com/alphagov/verify-local-matching-service-example">example of a local matching service</a> to find out how it should work.</li>
-          <li>Build your local matching service, making sure it can <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/buildmatchingservice.html#respondjsonmr">respond to JSON matching requests</a>.</li>
+          <li>Build your local matching service. It must be able to <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/buildmatchingservice.html#respondjsonmr">respond to JSON matching requests</a>.</li>
           <li><a href="https://github.com/alphagov/verify-matching-service-adapter/tree/master/verify-matching-service-test-tool">Download the matching service test tool</a> to make sure what you’ve built can find and match records correctly. </li>
         </ul>
 
