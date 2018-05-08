@@ -201,13 +201,30 @@
           </tbody>
         </table>
 
-        {% from "button/macro.njk" import govukButton %}
 
-        {{ govukButton({
-          "text": "Get access",
-          "href": "integration-requested"
-        }) }}
+        <form action="integration-requested" method="post">
 
+          {% from "input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+            "label": {
+              "text": "integration-complete",
+              "classes": "visually-hidden"
+            },
+            classes: "visually-hidden",
+            id: "integration-complete",
+            "value": "true",
+            name: "integration-complete"
+          }) }}
+
+
+          {% from "button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            "text": "Get access"
+          }) }}
+
+        </form>
 
       </div>
     </div>
