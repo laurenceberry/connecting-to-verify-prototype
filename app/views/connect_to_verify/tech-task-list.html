@@ -57,11 +57,9 @@
                 <a href="tasks/integration-overview">Get access to Integration environment</a>
       				</li>
               <li>
-                <a href="/connect_to_verify/tasks/integration-test">Run end-to-end tests</a>
+                {% if data['integration-test-result'] %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
+                <a href="/connect_to_verify/tasks/integration-test">Run end-to-end tests and share results</a>
               </li>
-      				<li>
-      					<a href="../../page-doesnt-exist">Show us the results of your end-to-end tests</a>
-      				</li>
       			</ul>
       		</li>
           <li class="instruction-list-item divider">

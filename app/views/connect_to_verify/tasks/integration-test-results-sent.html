@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Connect ‘"+data['name-of-service']+"’ to GOV.UK Verify",
+        "href": "../tech-task-list"
+      }
+    ]
+  }) }}
+
+  <main role="main" class="govuk-o-main-wrapper">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Results of ent-to-end testing on integration sent
+        </h1>
+
+        <p class="govuk-body">
+          Please allow GOV.UK Verify up to X days to process your request.
+        </p>
+
+        <p class="govuk-body">
+          You will receive an email once you are connected.
+        </p>
+
+        <p class="govuk-body">
+          <a href="../tech-task-list">Back to task list</a>
+        </p>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
