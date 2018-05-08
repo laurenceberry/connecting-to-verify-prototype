@@ -7,14 +7,15 @@
 {% block content %}
 
 <div class="govuk-o-width-container">
+  <br>
 
-  <div class="govuk-c-phase-banner">
+<!--   <div class="govuk-c-phase-banner">
     <p class="govuk-c-phase-banner__content">
       <span class="govuk-c-phase-banner__text">
         <a class="govuk-link" href="https://connect-to-verify-start.herokuapp.com/verify">Sign out</a>
       </span>
     </p>
-  </div>
+  </div> -->
 
   <main role="main" class="govuk-o-main-wrapper">
     <div class="govuk-o-grid">
@@ -51,9 +52,6 @@
               Use the integration environment to test complete user journeys, both success and failure scenarios.
             </p><br>
       			<ul class="instruction-list-item-top">
-              <li>
-                <a href="tasks/integration-certificates">Create self signed certificates</a>
-              </li>
               <li>
                 {% if data['test-user-name'] %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
                 <a href="tasks/integration-overview">Get access to Integration environment</a>

@@ -7,14 +7,17 @@
 {% block content %}
 
 <div class="govuk-o-width-container">
-  <div class="govuk-c-phase-banner">
-    <p class="govuk-c-phase-banner__content">
-      <span class="govuk-c-phase-banner__text">
-        {{ data["name-of-service"] }} <a class="govuk-link" href="https://connect-to-verify-start.herokuapp.com/verify">Sign out</a>
-      </span>
-    </p>
-  </div>
-  <a href="../tech-task-list" class="govuk-c-back-link">Back</a>
+
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Connect ‘"+data['name-of-service']+"’ to GOV.UK Verify",
+        "href": "../tech-task-list"
+      }
+    ]
+  }) }}
 
   <main role="main" class="govuk-o-main-wrapper">
     <div class="govuk-o-grid">
