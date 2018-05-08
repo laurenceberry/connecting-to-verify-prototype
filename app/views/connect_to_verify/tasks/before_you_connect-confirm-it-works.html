@@ -43,6 +43,26 @@
 
         <p>[INSERT UPLOAD GUIDANCE AND FORM HERE]</p>
 
+
+        <form action="../tech-task-list" method="post">
+
+          {% from "input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+            "label": {
+              "text": "Upload",
+              "hintText": "Something about the formats you can upload’."
+            },
+            id: "compliance-result",
+            name: "compliance-result"
+          }) }}
+
+          {{ govukButton({
+            "text": "Upload and continue"
+          }) }}
+
+        </form>
+
       </div>
 
     </div>
