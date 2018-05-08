@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+
+  <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content">
+      <span class="govuk-c-phase-banner__text">
+        {{ data["name-of-service"] }} <a class="govuk-link" href="https://connect-to-verify-start.herokuapp.com/verify">Sign out</a>
+      </span>
+    </p>
+  </div>
+  <a href="../tech-task-list" class="govuk-c-back-link">Back</a>
+
+  <main role="main" class="govuk-o-main-wrapper">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+        <h1 class="govuk-heading-xl">Confirm your setup is working</h1>
+        <h2 class="govuk-heading-m">Make sure your service works with GOV.UK Verify</h2>
+
+        <p>
+          You should test your service to make sure it can properly handle SAML requests and responses.
+        </p>
+
+        <p>
+          If it can’t, any information your service sends or receives about your users won’t be secure.
+        </p>
+
+        <p>
+          Test your service using the <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/saml/samlComplianceTool.html">SAML compliance tool</a>. You can also use this tool to test your local matching service works correctly.
+        </p>
+
+        <p>
+          You need to <a href="https://connecting-to-verify-prototype.herokuapp.com/before_you_connect/compliance-certificates">create certificates</a> before you can use the compliance tool.
+        </p>
+
+        <h2 class="govuk-heading-m">Send us your results</h2>
+
+        <p>[INSERT UPLOAD GUIDANCE AND FORM HERE]</p>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+{% endblock %}
