@@ -49,21 +49,6 @@
           </thead>
           <tbody class="govuk-c-table__body">
             <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">Name</td>
-              <td class="govuk-c-table__cell ">
-                {% if data['connection-name'] %}
-                  {{data['connection-name']}}
-                {% else %}
-                  <a href="integration-name">Answer required</a>
-                {% endif %}
-              </td>
-              <td class="govuk-c-table__cell action">
-                {% if data['connection-name'] %}
-                 <a href="integration-name">Edit</a>
-                {% endif %}
-              </td>
-            </tr>
-            <tr class="govuk-c-table__row">
               <td class="govuk-c-table__cell first" scope="row">Entity ID</td>
               <td class="govuk-c-table__cell ">
                 {% if data['entity-id'] %}
@@ -144,12 +129,12 @@
                 {% if data['--'] %}
                   {{data['--']}}
                 {% else %}
-                  <a href="../../page-doesnt-exist">Answer required</a>
+                  <a href="integration-certificates-encryption-service">Answer required</a>
                 {% endif %}
               </td>
               <td class="govuk-c-table__cell action">
                 {% if data['--'] %}
-                 <a href="../../page-doesnt-exist">Edit</a>
+                 <a href="integration-certificates-encryption-service">Edit</a>
                 {% endif %}
               </td>
             </tr>
@@ -159,12 +144,12 @@
                 {% if data['--'] %}
                   {{data['--']}}
                 {% else %}
-                  <a href="../../page-doesnt-exist">Answer required</a>
+                  <a href="integration-certificates-signing-service">Answer required</a>
                 {% endif %}
               </td>
               <td class="govuk-c-table__cell action">
                 {% if data['--'] %}
-                 <a href="../../page-doesnt-exist">Edit</a>
+                 <a href="integration-certificates-signing-service">Edit</a>
                 {% endif %}
               </td>
             </tr>
@@ -174,12 +159,12 @@
                 {% if data['--'] %}
                   {{data['--']}}
                 {% else %}
-                  <a href="../../page-doesnt-exist">Answer required</a>
+                  <a href="integration-certificates-encryption-msa">Answer required</a>
                 {% endif %}
               </td>
               <td class="govuk-c-table__cell action">
                 {% if data['--'] %}
-                 <a href="../../page-doesnt-exist">Edit</a>
+                 <a href="integration-certificates-encryption-msa">Edit</a>
                 {% endif %}
               </td>
             </tr>
@@ -189,12 +174,12 @@
                 {% if data['--'] %}
                   {{data['--']}}
                 {% else %}
-                  <a href="../../page-doesnt-exist">Answer required</a>
+                  <a href="integration-certificates-signing-msa">Answer required</a>
                 {% endif %}
               </td>
               <td class="govuk-c-table__cell action">
                 {% if data['--'] %}
-                 <a href="../../page-doesnt-exist">Edit</a>
+                 <a href="integration-certificates-signing-msa">Edit</a>
                 {% endif %}
               </td>
             </tr>

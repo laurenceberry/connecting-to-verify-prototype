@@ -8,8 +8,6 @@
 
 <div class="govuk-o-width-container">
 
-  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
-
   {{ govukBreadcrumbs({
     "items": [
       {
@@ -28,33 +26,29 @@
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
         <h1 class="govuk-heading-l">
-          Connection name
+          Upload encryption certificate for your service
         </h1>
 
-        <p class="govuk-body">
-          Give a name to your Integration environment request so that you can refer to it later.
-        </p>
+        <form action="integration-certificates-signing-service" method="post">
 
-        <form action="integration-overview" method="post">
+          {% from "file-upload/macro.njk" import govukFileUpload %}
 
-          {% from "input/macro.njk" import govukInput %}
-
-          {{ govukInput({
-            "label": {
-              "text": "Connection name",
-              "classes": "govuk-!-width-two-thirds visually-hidden"
-            },
-            classes: "govuk-!-width-two-thirds",
-            value: data['connection-name'],
-            id: "connection-name",
-            name: "connection-name"
+          {{ govukFileUpload({
+            id: 'encryption-cert-service',
+            name: 'encryption-cert-service',
+            label: {
+              text: 'Upload a .csr file'
+            }
           }) }}
+
+          {% from "button/macro.njk" import govukButton %}
 
           {{ govukButton({
             "text": "Save and continue"
           }) }}
 
         </form>
+
 
       </div>
     </div>

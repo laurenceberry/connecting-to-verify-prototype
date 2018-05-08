@@ -26,32 +26,29 @@
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
         <h1 class="govuk-heading-l">
-          SAML response URL
+          Upload encryption certificate for your Matching Service Adapter
         </h1>
 
-        <p class="govuk-body">
-          Provide a unique URL to receive SAML responses. For example <code class="code">https://{your-service-name}.{your-integration-domain}/verify/response</code>
-        </p>
+        <form action="integration-certificates-signing-msa" method="post">
 
-        <form action="integration-matching-url" method="post">
+          {% from "file-upload/macro.njk" import govukFileUpload %}
 
-          {% from "input/macro.njk" import govukInput %}
-
-          {{ govukInput({
-            "label": {
-              "text": "Connection name",
-              "classes": "visually-hidden"
-            },
-            value: data['saml-response-url'],
-            id: "saml-response-url",
-            name: "saml-response-url"
+          {{ govukFileUpload({
+            id: 'encryption-cert-msa',
+            name: 'encryption-cert-msa',
+            label: {
+              text: 'Upload a .csr file'
+            }
           }) }}
+
+          {% from "button/macro.njk" import govukButton %}
 
           {{ govukButton({
             "text": "Save and continue"
           }) }}
 
         </form>
+
 
       </div>
     </div>
