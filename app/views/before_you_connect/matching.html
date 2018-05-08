@@ -56,11 +56,23 @@
         <p class="govuk-body">
           If you're not going to be working with an existing database, you'll still need to build a local matching service and set up the Matching Service Adapter. This is so your can service can tell GOV.UK Verify that you don't need to match the user's identity.
         </p>
+
+        <h2 class="govuk-heading-m">Define a matching strategy</h2>
+
         <p class="govuk-body">
-          You must <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/matchingstrategy.html"> define your matching strategy</a> before you start.
+          Before you start to build anything, you must decide what happens if:
+        </p>
+        <ul class="govuk-body govuk-list--bullet">
+          <li>an identity is successfully matched to a record in your database</li>
+          <li>an identity is matched to more than one record in your database</li>
+          <li>no match is found</li>
+        </ul>
+
+        <p class="govuk-body">
+          This is known as <a href=”http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/matchingstrategy.html”>defining a matching strategy</a>.
         </p>
 
-        <h2 class="govuk-heading-m">How to build a local matching service</h2>
+        <h2 class="govuk-heading-m">Build a local matching service</h2>
         <p class="govuk-body">
           You must build your own local matching service and host it on your own infrastructure.
         </p>
@@ -68,13 +80,17 @@
         <ul class="govuk-body govuk-list--number">
           <li>Look at an <a href="https://github.com/alphagov/verify-local-matching-service-example">example of a local matching service</a> to find out how it should work.</li>
           <li>Build your local matching service. It must be able to <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/buildmatchingservice.html#respondjsonmr">respond to JSON matching requests</a>.</li>
-          <li><a href="https://github.com/alphagov/verify-matching-service-adapter/tree/master/verify-matching-service-test-tool">Download the matching service test tool</a> to make sure what you’ve built can find and match records correctly. </li>
         </ul>
 
-        <h2 class="govuk-heading-m">How to set up the Matching Service Adapter</h2>
+        <h2 class="govuk-heading-m">Set up the Matching Service Adapter</h2>
 
         <p class="govuk-body"><a href="https://github.com/alphagov/verify-matching-service-adapter">Download the Matching Service Adapter</a> and follow the instructions on how to install and configure it.</p>
 
+        <h2 class="govuk-heading-m">Make sure you can find and match records correctly</h2>
+
+        <p class=govuk-body>
+          <a href=“https://github.com/alphagov/verify-matching-service-adapter/tree/master/verify-matching-service-test-tool”>Use the matching service test tool</a> to test your local matching service works the way it should.
+        </p>
 
         <br>
         <a href="/before_you_connect/index">Return to build your service</a>
