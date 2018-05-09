@@ -33,22 +33,25 @@
           Upload encryption certificate for your service
         </h1>
 
-        {% from "file-upload/macro.njk" import govukFileUpload %}
+        <form action="certificates-signing-service" method="post">
 
-        {{ govukFileUpload({
-          id: 'encryption-cert-service',
-          name: 'encryption-cert-service',
-          label: {
-            text: 'Upload a .csr file'
-          }
-        }) }}
+          {% from "file-upload/macro.njk" import govukFileUpload %}
 
-        {% from "button/macro.njk" import govukButton %}
+          {{ govukFileUpload({
+            id: 'encryption-cert-service',
+            name: 'encryption-cert-service',
+            label: {
+              text: 'Upload a .csr file'
+            }
+          }) }}
 
-        {{ govukButton({
-          "text": "Save and continue",
-          "href": "certificates-send"
-        }) }}
+          {% from "button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            "text": "Save and continue"
+          }) }}
+
+        </form>
 
 
       </div>

@@ -33,22 +33,26 @@
           Upload signing certificate for your Matching Service Adapter
         </h1>
 
-        {% from "file-upload/macro.njk" import govukFileUpload %}
 
-        {{ govukFileUpload({
-          id: 'signing-cert-msa',
-          name: 'signing-cert-msa',
-          label: {
-            text: 'Upload a .csr file'
-          }
-        }) }}
+        <form action="certificates-send" method="post">
 
-        {% from "button/macro.njk" import govukButton %}
+          {% from "file-upload/macro.njk" import govukFileUpload %}
 
-        {{ govukButton({
-          "text": "Save and continue",
-          "href": "certificates-send"
-        }) }}
+          {{ govukFileUpload({
+            id: 'signing-cert-msa',
+            name: 'signing-cert-msa',
+            label: {
+              text: 'Upload a .csr file'
+            }
+          }) }}
+
+          {% from "button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            "text": "Save and continue"
+          }) }}
+
+        </form>
 
 
       </div>
