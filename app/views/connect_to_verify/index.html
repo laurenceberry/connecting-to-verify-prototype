@@ -33,14 +33,18 @@
         <h1 class="govuk-heading-xl">Connect to GOV.UK Verify</h1>
 
         <p class="govuk-body">
-          You must have already built and hosted you service before you can connect it to GOV.UK Verify. </p>
+          You must have already built and hosted your service before you can connect it to GOV.UK Verify. </p>
+
+          <p class=“govuk-body”>
+            You must have also checked your service can:
+          </p>
+          <ul class="govuk-body govuk-list--bullet">
+            <li><a href=“https://connecting-to-verify-prototype.herokuapp.com/before_you_connect/matching”>match verified identities with existing data</a></li>
+            <li><a href=“https://connecting-to-verify-prototype.herokuapp.com/before_you_connect/verify-service-provider”>safely exchange information with GOV.UK Verify</a></li>
+          </ul>
 
         <p class="govuk-body">
-          You must also have checked your service can <a href=“https://connecting-to-verify-prototype.herokuapp.com/before_you_connect/verify-service-provider”>safely exchange information with GOV.UK Verify</a>.
-        </p>
-
-        <p class="govuk-body">
-          You need to create an account associated with your service. You’ll then get access to the Integration environment, which you can use to test complete user journeys.
+          You need to create an account. You’ll get access to the Integration environment, which you can use to test the end-to-end user journey before your service goes live. You can then connect to GOV.UK Verify.
         </p>
 
         {{ govukButton({
