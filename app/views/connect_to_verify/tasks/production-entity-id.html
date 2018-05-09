@@ -15,8 +15,8 @@
         "href": "../tech-task-list"
       },
       {
-        "text": "Get access to Integration environment",
-        "href": "integration-overview"
+        "text": "Get access to Production environment",
+        "href": "production-overview"
       }
     ]
   }) }}
@@ -34,10 +34,10 @@
         </p>
 
         <p class="govuk-body">
-          Please make your entity ID descriptive, by including the name of your service and department. For example: <code class="code">https://{your-service-name}.{your-department}.gov.uk/{test|qa|integration}</code>
+          Please make your entity ID descriptive, by including the name of your service and department. For example <code class="code">https://{your-service-name}.{your-department}.gov.uk/{production}</code>
         </p>
 
-        <form action="integration-start-page-url" method="post">
+        <form action="production-start-page-url" method="post">
 
           {% from "input/macro.njk" import govukInput %}
 
@@ -46,9 +46,9 @@
               "text": "Connection name",
               "classes": "visually-hidden"
             },
-            value: data['entity-id'],
-            id: "entity-id",
-            name: "entity-id"
+            value: data['prod-entity-id'],
+            id: "prod-entity-id",
+            name: "prod-entity-id"
           }) }}
 
           {{ govukButton({

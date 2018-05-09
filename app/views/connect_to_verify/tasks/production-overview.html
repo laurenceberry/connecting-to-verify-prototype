@@ -47,77 +47,77 @@
           </thead>
           <tbody class="govuk-c-table__body">
             <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">Start page URL</td>
+              <td class="govuk-c-table__cell first" scope="row">Entity ID</td>
               <td class="govuk-c-table__cell ">
-                {% if data['--'] %}
-                 {{data['--']}}
+                {% if data['prod-entity-id'] %}
+                 {{data['prod-entity-id']}}
                 {% else %}
-                  <a href="#">Answer required</a>
+                  <a href="production-entity-id">Answer required</a>
                 {% endif %}
               </td>
               <td class="govuk-c-table__cell action">
-                {% if data['--'] %}
-                 <a href="#">Edit</a>
+                {% if data['prod-entity-id'] %}
+                 <a href="production-entity-id">Edit</a>
                 {% endif %}
               </td>
             </tr>
             <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">Entity ID</td>
+              <td class="govuk-c-table__cell first" scope="row">Start page URL</td>
               <td class="govuk-c-table__cell ">
-                {% if data['--'] %}
-                 {{data['--']}}
+                {% if data['prod-start-page-url'] %}
+                 {{data['prod-start-page-url']}}
                 {% else %}
-                  <a href="#">Answer required</a>
+                  <a href="production-start-page-url">Answer required</a>
                 {% endif %}
               </td>
               <td class="govuk-c-table__cell action">
-                {% if data['--'] %}
-                 <a href="#">Edit</a>
+                {% if data['prod-start-page-url'] %}
+                 <a href="production-start-page-url">Edit</a>
                 {% endif %}
               </td>
             </tr>
             <tr class="govuk-c-table__row">
               <td class="govuk-c-table__cell first" scope="row">SAML response URL</td>
               <td class="govuk-c-table__cell ">
-                {% if data['--'] %}
-                 {{data['--']}}
+                {% if data['prod-saml-response-url'] %}
+                 {{data['prod-saml-response-url']}}
                 {% else %}
-                  <a href="#">Answer required</a>
+                  <a href="production-saml-response-url">Answer required</a>
                 {% endif %}
               </td>
               <td class="govuk-c-table__cell action">
-                {% if data['--'] %}
-                 <a href="#">Edit</a>
+                {% if data['prod-saml-response-url'] %}
+                 <a href="production-saml-response-url">Edit</a>
                 {% endif %}
               </td>
             </tr>
             <tr class="govuk-c-table__row">
               <td class="govuk-c-table__cell first" scope="row">Matching URL</td>
               <td class="govuk-c-table__cell ">
-                {% if data['--'] %}
-                 {{data['--']}}
+                {% if data['prod-matching-url'] %}
+                 {{data['prod-matching-url']}}
                 {% else %}
-                  <a href="#">Answer required</a>
+                  <a href="production-matching-url">Answer required</a>
                 {% endif %}
               </td>
               <td class="govuk-c-table__cell action">
-                {% if data['--'] %}
-                 <a href="#">Edit</a>
+                {% if data['prod-matching-url'] %}
+                 <a href="production-matching-url">Edit</a>
                 {% endif %}
               </td>
             </tr>
             <tr class="govuk-c-table__row">
               <td class="govuk-c-table__cell first" scope="row">User account creation URL</td>
               <td class="govuk-c-table__cell ">
-                {% if data['--'] %}
-                 {{data['--']}}
+                {% if data['prod-user-account-url'] %}
+                 {{data['prod-user-account-url']}}
                 {% else %}
-                  <a href="#">Answer required</a>
+                  <a href="production-user-account-url">Answer required</a>
                 {% endif %}
               </td>
               <td class="govuk-c-table__cell action">
-                {% if data['--'] %}
-                 <a href="#">Edit</a>
+                {% if data['prod-user-account-url'] %}
+                 <a href="production-user-account-url">Edit</a>
                 {% endif %}
               </td>
             </tr>
@@ -128,7 +128,7 @@
 
         {{ govukButton({
           "text": "Get access",
-          "href": "#"
+          "href": "production-requested"
         }) }}
 
 

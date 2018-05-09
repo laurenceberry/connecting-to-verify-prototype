@@ -15,8 +15,8 @@
         "href": "../tech-task-list"
       },
       {
-        "text": "Get access to Integration environment",
-        "href": "integration-overview"
+        "text": "Get access to Production environment",
+        "href": "production-overview"
       }
     ]
   }) }}
@@ -26,29 +26,25 @@
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
         <h1 class="govuk-heading-l">
-          Entity ID
+          Matching URL
         </h1>
 
         <p class="govuk-body">
-          Your entity ID must be a globally unique URL. We use this to identify your specific service.
+          Provide the URL you will use to receive matching service requests. For example <code class="code">https://{your-production-domain}/matching-service/POST</code>
         </p>
 
-        <p class="govuk-body">
-          Please make your entity ID descriptive, by including the name of your service and department. For example: <code class="code">https://{your-service-name}.{your-department}.gov.uk/{test|qa|integration}</code>
-        </p>
-
-        <form action="integration-start-page-url" method="post">
+        <form action="production-user-account-url" method="post">
 
           {% from "input/macro.njk" import govukInput %}
 
           {{ govukInput({
             "label": {
-              "text": "Connection name",
+              "text": "Matching URL",
               "classes": "visually-hidden"
             },
-            value: data['entity-id'],
-            id: "entity-id",
-            name: "entity-id"
+            value: data['prod-matching-url'],
+            id: "prod-matching-url",
+            name: "prod-matching-url"
           }) }}
 
           {{ govukButton({

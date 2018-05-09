@@ -15,8 +15,8 @@
         "href": "../tech-task-list"
       },
       {
-        "text": "Get access to Integration environment",
-        "href": "integration-overview"
+        "text": "Get access to Production environment",
+        "href": "production-overview"
       }
     ]
   }) }}
@@ -26,18 +26,15 @@
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
         <h1 class="govuk-heading-l">
-          Entity ID
+          Start page URL
         </h1>
 
         <p class="govuk-body">
-          Your entity ID must be a globally unique URL. We use this to identify your specific service.
+          Your start page URL is the URL that gives users access to your service. It should be a start page on GOV.UK. For example <code class="code">https://www.gov.uk/update-company-car-details</code>
         </p>
 
-        <p class="govuk-body">
-          Please make your entity ID descriptive, by including the name of your service and department. For example: <code class="code">https://{your-service-name}.{your-department}.gov.uk/{test|qa|integration}</code>
-        </p>
 
-        <form action="integration-start-page-url" method="post">
+        <form action="production-saml-response-url" method="post">
 
           {% from "input/macro.njk" import govukInput %}
 
@@ -46,9 +43,10 @@
               "text": "Connection name",
               "classes": "visually-hidden"
             },
-            value: data['entity-id'],
-            id: "entity-id",
-            name: "entity-id"
+            classes: "govuk-!-width-three-quarters",
+            value: data['prod-start-page-url'],
+            id: "prod-start-page-url",
+            name: "prod-start-page-url"
           }) }}
 
           {{ govukButton({
