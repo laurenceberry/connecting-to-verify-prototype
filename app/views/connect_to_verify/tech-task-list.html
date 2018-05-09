@@ -40,12 +40,12 @@
                 <a href="tasks/service-content-other-ways">Describe other ways to use your service</a>
               </li>
               <li>
-                {% if data['compliance-result'] %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
-                <a href="tasks/before_you_connect-confirm-it-works">Confirm your setup is working</a>
-              </li>
-              <li>
                 {% if data['agreement-sent'] == "true" %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
                 <a href="tasks/sign_agreement">Sign GOV.UK Verify’s agreements</a>
+              </li>
+              <li>
+                {% if data['compliance-result'] %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
+                <a href="tasks/before_you_connect-confirm-it-works">Confirm your setup is working</a>
               </li>
             </ul>
           </li>
