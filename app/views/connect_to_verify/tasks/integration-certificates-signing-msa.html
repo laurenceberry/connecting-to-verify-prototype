@@ -26,16 +26,20 @@
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
         <h1 class="govuk-heading-l">
-          Upload signing certificate for your Matching Service Adapter
+          Signing certificate for your Matching Service Adapter
         </h1>
+
+        <p class="govuk-body">
+          You need to <a href="/before_you_connect/self-signed-certificates">create a self-signed certificate</a> to connect your Matching Service Adapter to Integration.
+        </p>
 
         <form action="integration-overview" method="post">
 
           {% from "file-upload/macro.njk" import govukFileUpload %}
 
           {{ govukFileUpload({
-            id: 'signing-cert-msa',
-            name: 'signing-cert-msa',
+            id: 'int-signing-cert-msa',
+            name: 'int-signing-cert-msa',
             label: {
               text: 'Upload a .csr file'
             }

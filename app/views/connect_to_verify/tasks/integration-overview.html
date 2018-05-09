@@ -126,14 +126,14 @@
             <tr class="govuk-c-table__row">
               <td class="govuk-c-table__cell first" scope="row">Encryption certificate for your service</td>
               <td class="govuk-c-table__cell ">
-                {% if data['--'] %}
-                  {{data['--']}}
+                {% if data['int-encryption-cert-service'] %}
+                  {{data['int-encryption-cert-service']}}
                 {% else %}
                   <a href="integration-certificates-encryption-service">Answer required</a>
                 {% endif %}
               </td>
               <td class="govuk-c-table__cell action">
-                {% if data['--'] %}
+                {% if data['int-encryption-cert-service'] %}
                  <a href="integration-certificates-encryption-service">Edit</a>
                 {% endif %}
               </td>
@@ -141,14 +141,14 @@
             <tr class="govuk-c-table__row">
               <td class="govuk-c-table__cell first" scope="row">Signing certificate for your service</td>
               <td class="govuk-c-table__cell ">
-                {% if data['--'] %}
-                  {{data['--']}}
+                {% if data['int-signing-cert-service'] %}
+                  {{data['int-signing-cert-service']}}
                 {% else %}
                   <a href="integration-certificates-signing-service">Answer required</a>
                 {% endif %}
               </td>
               <td class="govuk-c-table__cell action">
-                {% if data['--'] %}
+                {% if data['int-signing-cert-service'] %}
                  <a href="integration-certificates-signing-service">Edit</a>
                 {% endif %}
               </td>
@@ -156,14 +156,14 @@
             <tr class="govuk-c-table__row">
               <td class="govuk-c-table__cell first" scope="row">Encryption certificate for your Matching Service Adapter</td>
               <td class="govuk-c-table__cell ">
-                {% if data['--'] %}
-                  {{data['--']}}
+                {% if data['int-encryption-cert-msa'] %}
+                  {{data['int-encryption-cert-msa']}}
                 {% else %}
                   <a href="integration-certificates-encryption-msa">Answer required</a>
                 {% endif %}
               </td>
               <td class="govuk-c-table__cell action">
-                {% if data['--'] %}
+                {% if data['int-encryption-cert-msa'] %}
                  <a href="integration-certificates-encryption-msa">Edit</a>
                 {% endif %}
               </td>
@@ -171,14 +171,14 @@
             <tr class="govuk-c-table__row">
               <td class="govuk-c-table__cell first" scope="row">Signing certificate for your Matching Service Adapter</td>
               <td class="govuk-c-table__cell ">
-                {% if data['--'] %}
-                  {{data['--']}}
+                {% if data['int-signing-cert-msa'] %}
+                  {{data['int-signing-cert-msa']}}
                 {% else %}
                   <a href="integration-certificates-signing-msa">Answer required</a>
                 {% endif %}
               </td>
               <td class="govuk-c-table__cell action">
-                {% if data['--'] %}
+                {% if data['int-signing-cert-msa'] %}
                  <a href="integration-certificates-signing-msa">Edit</a>
                 {% endif %}
               </td>

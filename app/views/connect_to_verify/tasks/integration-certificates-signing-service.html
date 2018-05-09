@@ -26,16 +26,20 @@
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
         <h1 class="govuk-heading-l">
-          Upload signing certificate for your service
+          Signing certificate for your service
         </h1>
+
+        <p class="govuk-body">
+          You need to <a href="/before_you_connect/self-signed-certificates">create a self-signed certificate</a> to connect your service to Integration.
+        </p>
 
         <form action="integration-certificates-encryption-msa" method="post">
 
           {% from "file-upload/macro.njk" import govukFileUpload %}
 
           {{ govukFileUpload({
-            id: 'signing-cert-service',
-            name: 'signing-cert-service',
+            id: 'int-signing-cert-service',
+            name: 'int-signing-cert-service',
             label: {
               text: 'Upload a .csr file'
             }
