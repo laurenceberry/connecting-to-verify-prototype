@@ -25,29 +25,34 @@
           Sign agreement with GOV.UK Verify
         </h1>
 
-        <p class="govuk-body">
-          Before a service can go live, the service manager needs to sign an agreement with GOV.UK Verify. Enter their email address so that we can send it to them.
+        <p>
+          Before a service can go live, your organisation needs to sign GOV.UK Verify’s Memorandum of Understanding and your team needs to agree to our Terms of Use.
         </p>
 
-        <p class="govuk-body">
-          Once we have received the signed document, you will get a notification saying you are ready to go to Production.
-        </p>
-
-        <form action="#">
+        <form action="../tech-task-list">
           {% from "input/macro.njk" import govukInput %}
 
           {{ govukInput({
             "label": {
-              "text": "Service manager's email"
+              "text": "Enter the email of the responsible person on your team"
             },
             classes: "govuk-!-width-two-thirds",
             id: "agreement-email",
             name: "agreement-email"
           }) }}
 
+          {% from "input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+            id: "agreement-sent",
+            name: "agreement-sent",
+            value: "true",
+            classes: "visually-hidden"
+          }) }}
+
           {{ govukButton({
             "name": "button",
-            "text": "Send",
+            "text": "Send agreements",
             "element": "button"
           }) }}
 
