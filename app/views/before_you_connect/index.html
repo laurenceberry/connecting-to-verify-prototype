@@ -33,12 +33,33 @@
       	<h1 class="govuk-heading-xl">Build your service to work with GOV.UK Verify</h1>
 
         <p class=“govuk-body”>
-You must build additional features into your service to:
-</p>
-<ul class="govuk-body govuk-list--bullet">
-          <li><a href="matching">match verified identities with existing data</a></li>
-          <li><a href="verify-service-provider">safely exchange information with GOV.UK Verify</a></li>
-        </ul>
+          You need to build additional features into your service before you can connect it to GOV.UK Verify.
+        </p>
+
+        <h2 class=“govuk-heading-m”>
+          1. Match verified identities with existing data
+        </h2>
+
+        <p>
+          After a user has been verified by a certified company, your service will have access to their name, address and date of birth. You might then need to use these details to match their identity to a record in your database.
+        </p>
+
+        <p>
+          <a href=“matching”>Build a local matching service and set up the Matching Service Adapter</a> to do this.
+        </p>
+
+        <h2 class=“govuk-heading-m”>
+          2. Safely exchange information with GOV.UK Verify
+        </h2>
+
+        <p>
+          GOV.UK Verify uses Security Assertion Markup Language (SAML) to safely exchange information about users with your service.
+        </p>
+
+        <p>
+          <a href=“verify-service-provider”>Download the Verify Service Provider</a> to easily send and receive SAML requests and responses.
+        </p>
+
 
         <nav class="pagination" role="navigation" aria-label="Pagination">
           <ul>
