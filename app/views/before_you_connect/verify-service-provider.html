@@ -43,16 +43,16 @@
         <h2 class="govuk-heading-m">Make sure your service works with GOV.UK Verify</h2>
 
         <p>
-          You should <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/saml/samlComplianceTool.html">test your service</a> to make sure it can properly handle SAML requests and responses.
+          You should test your service to make sure it can properly handle SAML requests and responses.
         </p>
 
         <p>
           If it can’t, any information your service sends or receives about your users won’t be secure.
         </p>
 
-        <p>
-          You need to <a href="self-signed-certificates">create certificates</a> before you can use the compliance tool.
-        </p>
+        <ul class="govuk-body govuk-list--number">
+          <li><a href=“self-signed-certificates”>Create 4 self-signed certificates</a>. You must create new certificates every time you need to do a test.</li>
+          <li>Test your service with the <a href=“http://alphagov.github.io/rp-onboarding-tech-docs/pages/saml/samlComplianceTool.html”>SAML compliance tool</a>.</li>
         <br>
         <a href="/before_you_connect/index">Return to build your service</a>
 
