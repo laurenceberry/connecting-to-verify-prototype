@@ -37,7 +37,7 @@ $path: "/public/images/";
   padding: 4px 4px 2px;
 
   display: inline-block;
-  
+
 }
 
 
@@ -187,4 +187,14 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 
 #global-header .header-proposition #proposition-link li, #global-header .header-proposition #proposition-links li {
   float: right;
+}
+
+.banner{
+  margin: -10px 0 1px 0;
+  padding: 15px 0;
+  background-color: #005ea5;
+}
+
+.banner h2, .banner a{
+  color: #fff;
 }
