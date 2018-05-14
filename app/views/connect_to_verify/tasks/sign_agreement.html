@@ -22,23 +22,32 @@
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
 
         <h1 class="govuk-heading-l">
-          Sign GOV.UK Verify’s agreements
+          Sign and return a memorandum of understanding
         </h1>
 
         <p>
           Before a service can go live, your organisation needs to sign GOV.UK Verify’s Memorandum of Understanding and your team needs to agree to our Terms of Use.
         </p>
 
-        <form action="../tech-task-list">
-          {% from "input/macro.njk" import govukInput %}
+        <ul class="govuk-list">
+          <li><a href="https://www.gov.uk/government/publications/govuk-verify-code-of-interoperability/govuk-verify-code-of-interoperability-june-2017">Read the terms of use</a></li>
+          <li><a href="#">Download the Memorandum of Understanding</a></li>
+        </ul>
 
-          {{ govukInput({
-            "label": {
-              "text": "Enter the email of the responsible person on your team"
-            },
-            classes: "govuk-!-width-two-thirds",
-            id: "agreement-email",
-            name: "agreement-email"
+        <h2 class="govuk-heading-m">Return your signed memorandum of understanding</h2>
+
+        <p>The memorandum of understanding should be signed by the person responsible for your service, for example, a service owner or product manager.</p>
+
+        <form action="../tech-task-list" method="post">
+
+          {% from "file-upload/macro.njk" import govukFileUpload %}
+
+          {{ govukFileUpload({
+            id: 'encryption-cert-service',
+            name: 'encryption-cert-service',
+            label: {
+              text: 'Upload image files'
+            }
           }) }}
 
           {% from "input/macro.njk" import govukInput %}
@@ -50,10 +59,10 @@
             classes: "visually-hidden"
           }) }}
 
+          {% from "button/macro.njk" import govukButton %}
+
           {{ govukButton({
-            "name": "button",
-            "text": "Send agreements",
-            "element": "button"
+            "text": "Upoad and send"
           }) }}
 
         </form>
