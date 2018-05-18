@@ -30,30 +30,32 @@
   <p>{{cookieText | safe }}</p>
 {% endblock %}
 
-{% block proposition_header %}
+{% if example == "true" %}
+  {% block proposition_header %}
 
-  <div class="header-proposition">
-    <div class="content">
-      <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
-      <nav id="proposition-menu">
-        <a href="/" id="proposition-name">
-          {# Set serviceName in config.js. Use a block to override on a page. #}
-          {% block service_name %}
-            {% if serviceName %} {{ serviceName }} {% endif %}
-          {% endblock %}
-        </a>
-        
-        <ul id="proposition-links">
-          <li><a href="https://connect-to-verify-start.herokuapp.com/verify">Sign out</a></li>
-          <li><a href="http://govuk-verify-product-page.herokuapp.com/verify/support" >Support</a></li>
-          <li><a href="http://alphagov.github.io/identity-assurance-documentation/" >Documentation</a></li>
-        </ul>
-        
-      </nav>
+    <div class="header-proposition">
+      <div class="content">
+        <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
+        <nav id="proposition-menu">
+          <a href="/" id="proposition-name">
+            {# Set serviceName in config.js. Use a block to override on a page. #}
+            {% block service_name %}
+              {% if serviceName %} {{ serviceName }} {% endif %}
+            {% endblock %}
+          </a>
+
+          <ul id="proposition-links">
+            <li><a href="https://connect-to-verify-start.herokuapp.com/verify">Sign out</a></li>
+            <li><a href="http://govuk-verify-product-page.herokuapp.com/verify/support" >Support</a></li>
+            <li><a href="http://alphagov.github.io/identity-assurance-documentation/" >Documentation</a></li>
+          </ul>
+
+        </nav>
+      </div>
     </div>
-  </div>
 
-{% endblock %}
+  {% endblock %}
+{% endif %}
 
 {% block header_class %}
   with-proposition

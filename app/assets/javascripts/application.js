@@ -10,7 +10,7 @@ $(document).ready(function () {
   // add code here
 
 	jQuery(function($) {
-	  
+
 	  $('#bookmark-this').click(function(e) {
 	    var bookmarkURL = window.location.href;
 	    var bookmarkTitle = document.title;
@@ -39,7 +39,22 @@ $(document).ready(function () {
 
 	    return false;
 	  });
-	  
+
 	});
+
+
+  $(document).ready(function(){
+  resizeDiv();
+  });
+
+  window.onresize = function(event) {
+  resizeDiv();
+  }
+
+  function resizeDiv() {
+  vpw = $(window).width();
+  vph = $(window).height() - 105;
+  $('#example').css({'height': vph + 'px'});
+  }
 
 })

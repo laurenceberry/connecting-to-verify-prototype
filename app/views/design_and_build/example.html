@@ -1,0 +1,22 @@
+{% extends "layout_no_head.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="banner">
+  <div class="govuk-o-width-container">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+        <h2 class="govuk-heading-m">{{data['bannerText']}} </h2>
+        <a href="javascript:history.back()">{{data['returnText']}}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<iframe src="{{data['exampleURL']}}" min-height="600px" width="100%" frameBorder="0" id="example"></iframe>
+
+{% endblock %}
