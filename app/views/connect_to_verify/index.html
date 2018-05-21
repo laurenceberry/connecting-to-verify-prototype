@@ -30,21 +30,21 @@
   <main role="main" class="govuk-o-main-wrapper">
     <div class="govuk-o-grid">
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
-        <h1 class="govuk-heading-xl">Access integration and production environments</h1>
+        <h1 class="govuk-heading-xl">
+          <span class="govuk-caption-xl">Connect to GOV.UK Verify</span>
+          Get access to Integration and Production environments
+        </h1>
 
         <p class="govuk-body">
-          You must have already built and hosted your service before you can connect it to GOV.UK Verify. </p>
+          Once you've built and hosted your service, you can ask for access to the Integration and Production environments. The GOV.UK Verify team will review your request.
+        </p>
 
-          <p class=“govuk-body”>
-            You must have also checked your service can:
-          </p>
-          <ul class="govuk-body govuk-list--bullet">
-            <li><a href="/before_you_connect/matching">match verified identities with existing data</a></li>
-            <li><a href="/before_you_connect/verify-service-provider">safely exchange information with GOV.UK Verify</a></li>
-          </ul>
+        <p class=“govuk-body”>
+          You can use the Integration environment to test your service's end-to-end user journey. The Integration environment doesn't use information about real users or link to real certified companies' websites.
+        </p>
 
         <p class="govuk-body">
-          You need to create an account. You’ll get access to the Integration environment, which you can use to test the end-to-end user journey before your service goes live. You can then connect to GOV.UK Verify.
+          You should only ask for access to the Production environment when your service is ready to go live.
         </p>
 
         {{ govukButton({
