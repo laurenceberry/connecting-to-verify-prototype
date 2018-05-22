@@ -25,8 +25,8 @@
         "href": "/get_started"
       },
       {
-        "text": "Design your service",
-        "href": "/design_and_build/index"
+        "text": "Test your service with your users",
+        "href": "/design_and_build/test_with_users"
       }
     ]
   }) }}
@@ -34,9 +34,13 @@
   <main role="main" class="govuk-o-main-wrapper govuk-body">
     <div class="govuk-o-grid">
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
-        <h1 class="govuk-heading-xl">Setup your link to the GOV.UK&nbsp;Verify prototype</h1>
+        <h1 class="govuk-heading-l">
+          Create a prototype link
+        </h1>
 
-        <p>Create a reusable link to use GOV.UK Verify in prototype.</p>
+        <p>
+          Create a reusable link to integrate your service prototype with GOV.UK Verify and test with users.
+        </p>
 
         <form action="your_link" method="post">
 
@@ -45,7 +49,7 @@
           {{ govukInput({
             "label": {
               "text": "Service name",
-              "hintText": "What you call your service when you’re talking to users, for example ‘Check your State Pension’.",
+              "hintText": "The name of your service as it appears to users. For example ‘Check your State Pension’.",
               "classes": "govuk-!-width-two-thirds"
             },
             classes: "govuk-!-width-two-thirds",
@@ -58,7 +62,7 @@
           {{ govukInput({
             "label": {
               "text": "Organisation",
-              "hintText": "What users call your organisation, for example ‘Department for Work and Pensions’.",
+              "hintText": "What users call your organisation. For example ‘Department for Work and Pensions’.",
               "classes": "govuk-!-width-two-thirds"
             },
             classes: "govuk-!-width-two-thirds",
@@ -70,8 +74,8 @@
 
           {{ govukInput({
             "label": {
-              "text": "Service ‘verified’ page URL",
-              "hintText": "Users are sent here after successful verification, for example ‘https://prototype.service.com/verified’.",
+              "text": "Confirmation page",
+              "hintText": "The URL of the page in your prototype where users are sent after successful verification",
               "classes": "govuk-!-width-two-thirds"
             },
             classes: "govuk-!-width-two-thirds",
@@ -83,8 +87,8 @@
 
           {{ govukTextarea({
             "label": {
-              "text": "Other ways to access this service",
-              "hintHtml": "Describe how users can access your service if they fail to prove their identity using GOV.UK Verify. This could be an online or offline channel. <a href='/design_and_build/unsuccessful'>View an example unsuccessful verification page</a> to see where this text is used.",
+              "text": "Other ways to access the service",
+              "hintHtml": "Describe how users can access your service if they cannot prove their identity using GOV.UK Verify. <a href='/design_and_build/unsuccessful'>View an example unsuccessful verification page</a> to see where this text is used.",
               "classes": "govuk-!-width-two-thirds"
             },
             classes: "govuk-!-width-two-thirds",
@@ -101,7 +105,7 @@
             "name": "proto-loa",
             "fieldset": {
               "legendHtml": '<label class="govuk-body">Level of assurance</label>',
-              "legendHintHtml": "The level of assurance you choose depends on how confident you need to be that your users are who they say they are. Find out more about the <a href ='/check_i_need_verify/assurance'> different levels of assurance</a>."
+              "legendHintHtml": "Find out more about the <a href ='/check_i_need_verify/assurance'> different levels of assurance</a>."
             },
             "items": [
               {
