@@ -32,46 +32,52 @@
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
       	<h1 class="govuk-heading-xl">
           <span class="govuk-caption-xl">Build your service</span>
-          Safely exchange information with GOV.UK Verify
+          Make sure your service works with GOV.UK Verify
         </h1>
 
         <p>
-          GOV.UK Verify uses Security Assertion Markup Language (SAML) to safely exchange information about users with your service.
-        </p>
-
-        <img src="../public/images/verify-build-vsp.svg" alt="" class="diagram">
-
-        <p>
-          The Verify Service Provider is a software tool that helps your service send SAML requests to GOV.UK Verify. It also makes it easier to receive and translate SAML responses.
+          Use the <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/saml/samlComplianceTool.html">Security Assertion Markup Language (SAML) compliance tool</a> to test that your service can properly work with GOV.UK Verify.
         </p>
 
         <p>
-          <a href="https://github.com/alphagov/verify-service-provider">Download the Verify Service Provider</a> and follow the instructions to configure and run it. You need Java 8 to do this.
+          If it can't, any information your service sends or receives about your users won't be secure.
+        </p>
+
+        <h2 class="govuk-heading-m">
+          Submit the results of the test
+        </h2>
+
+        <p>
+          You must prove you've tested your service with the SAML compliance tool when you ask for access to the Integration and Production environments.
+        </p>
+
+        <p>
+          To do this, you can send the GOV.UK Verify team a series of screenshots or a recording of the screen as the tests were taking place.
         </p>
 
         <nav class="pagination" role="navigation" aria-label="Pagination">
           <ul>
             <li class="previous">
-              <a href="build-matching-service">
+              <a href="verify-service-provider">
                 <span class="title">
                   <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
                     <path fill="currentColor" d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
                   </svg>
                   Previous
                 </span>
-                <span class="label">Build a matching service</span>
+                <span class="label">Safely exchange information with GOV.UK Verify</span>
               </a>
             </li>
 
             <li class="next">
-              <a href="make-sure-service-works">
+              <a href="../connect_to_verify/index">
                 <span class="title">
                   Next
                   <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
                     <path fill="currentColor" d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
                   </svg>
                 </span>
-                <span class="label">Make sure your service works with GOV.UK Verify</span>
+                <span class="label">Get access to Integration and Production environments</span>
               </a>
             </li>
 
