@@ -66,92 +66,105 @@
           </li>
         </ul>
 
-          <h2 class="govuk-heading-m">
-            Level 1
-          </h2>
+        <h2 class="govuk-heading-l">
+          Level 1
+        </h2>
 
-          <p class="govuk-body">
-            You should use level 1 if:
+        <p class="govuk-body">
+          You should use level 1 if:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            users can't use your service to claim benefits or payments
+          </li>
+          <li>
+            your service will need to check other information about a user as well as their identity, such as their driving licence number
+          </li>
+        </ul>
+
+        <p class="govuk-body">
+          If your service also lets users update personal information about themselves then you might need level 2 instead.
+        </p>
+
+        <div class="panel govuk-body govuk-!-mb-r6 govuk-!-mt-r6">
+          <p>
+            <span>Example</span>
+            The Driver and Vehicle Licensing Agency (DVLA) use level 1 in their <a href="https://www.gov.uk/view-driving-licence">view driving licence information</a> service. This is because users can only get information from this service. They can’t use it to apply for anything more valuable or change their details.
           </p>
+        </div>
 
-          <ul class="govuk-list govuk-list--bullet">
-            <li>
-              users can't use your service to claim benefits or payments
-            </li>
-            <li>
-              your service will need to check other information about a user as well as their identity, such as their driving licence number
-            </li>
-          </ul>
+        <p class="govuk-body">
+          It takes users an average of 5 minutes to prove their identity with level 1. They only need to do this once.
+        </p>
 
-          <p class="govuk-body">
-            If your service also lets users update personal information about themselves then you might need level 2 instead.
-          </p>
+        <p class="govuk-body">
+          They'll be asked a series of questions that only they know the answer to. They usually won't need to provide any additional documents.
+        </p>
 
-          <br>
+        <h2 class="govuk-heading-l">
+          Level 2
+        </h2>
 
-          <div class="panel govuk-body">
-            <p>
-              <span>Example</span>
-              The Driver and Vehicle Licensing Agency (DVLA) use level 1 in their <a href="https://www.gov.uk/view-driving-licence">view driving licence information</a> service. This is because users can only get information from this service. They can’t use it to apply for anything more valuable or change their details.
+        <p class="govuk-body">
+          You should use level 2 if:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            your service gives users benefits, money or anything else valuable
+          </li>
+          <li>
+            you need to able to take users to court if they fraudulently use your service
+          </li>
+        </ul>
+
+        <div class="panel govuk-body govuk-!-mb-r6 govuk-!-mt-r6">
+          <p>
+            <span>Example</span>
+            HM Revenue and Customs (HMRC) use level 2 in their <a href="https://www.gov.uk/log-in-file-self-assessment-tax-return">file a Self Assessment tax return</a> service. This is because a user could be fined if someone else pretends to be them and uses this service to give false information to HMRC.
             </p>
-          </div>
+        </div>
 
-          <br>
+        <p class="govuk-body">
+          It takes users an average of 15 minutes to prove their identity. They only need to do this once.
+        </p>
 
-          <p class="govuk-body">
-            It takes users an average of 5 minutes to prove their identity with level 1. They only need to do this once.
-          </p>
+        <p class="govuk-body">
+          They'll usually need at least one document (for example a driving licence or passport) to prove their identity. They might also need financial documents, such as a bank or credit card statement.
+        </p>
 
-          <p class="govuk-body">
-            They'll be asked a series of questions that only they know the answer to. They usually won't need to provide any additional documents.
-          </p>
+        <p class="govuk=body">
+          Email <a href="https://connecting-to-verify-prototype.herokuapp.com/check_i_need_verify/assurance">new email address</a> if you need more information about the different levels of assurance.
+        </p>
 
-          <h2 class="govuk-heading-m">
-            Level 2
-          </h2>
+          <nav class="pagination" role="navigation" aria-label="Pagination">
+            <ul>
+                <li class="previous">
+                  <a href="/check_i_need_verify/assurance">
+                    <span class="title">
+                      <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                        <path fill="currentColor" d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                      </svg>
+                      Previous
+                    </span>
+                    <span class="label">Choose the right level of assurance</span>
+                  </a>
+                </li>
 
-          <p class="govuk-body">
-            You should use level 2 if:
-          </p>
-
-          <ul class="govuk-list govuk-list--bullet">
-            <li>
-              your service gives users benefits, money or anything else valuable
-            </li>
-            <li>
-              you need to able to take users to court if they fraudulently use your service
-            </li>
-          </ul>
-
-          <br>
-
-          <div class="panel govuk-body">
-            <p>
-              <span>Example</span>
-              HM Revenue and Customs (HMRC) use level 2 in their <a href="https://www.gov.uk/log-in-file-self-assessment-tax-return">file a Self Assessment tax return</a> service. This is because a user could be fined if someone else pretends to be them and uses this service to give false information to HMRC.
-              </p>
-          </div>
-
-          <br>
-
-          <p class="govuk-body">
-            It takes users an average of 15 minutes to prove their identity. They only need to do this once.
-          </p>
-
-          <p class="govuk-body">
-            They'll usually need at least one document (for example a driving licence or passport) to prove their identity. They might also need financial documents, such as a bank or credit card statement.
-          </p>
-
-          <br>
-
-          <p class="govuk=body">
-            Email <a href="https://connecting-to-verify-prototype.herokuapp.com/check_i_need_verify/assurance">new email address</a> if you need more information about the different levels of assurance.
-          </p>
-
-
-
-
-
+                <li class="next">
+                  <a href="../design_and_build/index">
+                    <span class="title">
+                      Next
+                      <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                        <path fill="currentColor" d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                      </svg>
+                    </span>
+                    <span class="label">Design your service</span>
+                  </a>
+                </li>
+            </ul>
+          </nav>
 
     </div>
   </main>

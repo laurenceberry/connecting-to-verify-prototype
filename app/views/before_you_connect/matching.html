@@ -30,70 +30,88 @@
   <main role="main" class="govuk-o-main-wrapper">
     <div class="govuk-o-grid">
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
-      	<h1 class="govuk-heading-xl">Matching verified identities with existing data</h1>
+      	<h1 class="govuk-heading-xl">
+          <span class="govuk-caption-xl">Build your service</span>
+          Match verified identities with existing data
+        </h1>
 
-        <p class="govuk-body">
-         After a user has been verified by a certified company, your service will have access to their name, address and date of birth. You might then need to use these details to match their identity to a record in your database.
+        <p>
+          After a user has been verified by a certified company, your service will have access to their name, address and date of birth. You might need to use this information to match their identity to a record in your database.
         </p>
 
-        <div class="panel govuk-body">
+        <div class="panel govuk-body govuk-!-mb-r6 govuk-!-mt-r6">
           <p>
             <span>Example</span>
-            When a user <a href="https://www.gov.uk/view-driving-licence">views their driving licence information</a>, the Driver and Vehicle Licensing Agency (DVLA) will match their details to a record in their database of people with driving licences.
-            <br><br>
-            This means they can be sure the user who’s trying to use the service is the same person they have a record of.
+            When a user views their driving licence information, the Driver and Vehicle Licensing Agency (DVLA) will match their details to a record in their database of people with driving licences.</p>
+            <p>By doing this they can be sure the user is trying to view their own driving licence information and not someone else's.
           </p>
         </div>
 
-        <p class="govuk-body">
-          To do this, you must:
-        </p>
-        <ul class="govuk-body govuk-list--bullet">
-          <li>build a local matching service</li>
-          <li>set up the Matching Service Adapter - this lets your local matching service communicate with GOV.UK Verify</li>
-        </ul>
-
-        <p class="govuk-body">
-          If you're not going to be working with an existing database, you'll still need to build a local matching service and set up the Matching Service Adapter. This is so your can service can tell GOV.UK Verify that you don't need to match the user's identity.
+        <p>
+          You need to make sure your service can match verified identities with existing data even if it doesn't currently need to. For example, you might want to collect the data now and use it for matching later or store the information for auditing purposes.
         </p>
 
-        <h2 class="govuk-heading-m">Define a matching strategy</h2>
+        <h2 class="govuk-heading-m">
+          Decide how you'll match identities and records
+        </h2>
 
-        <p class="govuk-body">
-          Before you build anything, you must decide what happens if:
+        <p>
+          Before you build your matching service, you need to decide what counts as a successful match.
         </p>
-        <ul class="govuk-body govuk-list--bullet">
+
+        <p>
+          It's possible a verified identity will be slightly different to a record in your database. This could be because your database contains incorrect or out-of-date information. You need to decide if things like spelling mistakes will affect if an identity can be matched.
+        </p>
+
+        <div class="panel govuk-body govuk-!-mb-r6 govuk-!-mt-r6">
+          <p>
+            <span>Example</span>
+            Jonathan McDonald is successfully verified by a certified company. The service he wants to use tries to match this verified identity against a record in their database.</p>
+            <p>The only record they find is for a Johnathan MacDonald. This is the same user, but the identity and record don't match because their name is spelt differently.</p>
+            <p>There are often spelling mistakes in this particular database because the data is collected over the phone. The service decides that spelling mistakes don't automatically disprove a match. This match is successful and Jonathan McDonald can continue to use the service.
+          </p>
+        </div>
+
+        <p>You must also decide what will happen if:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
           <li>an identity is successfully matched to a record in your database</li>
           <li>an identity is matched to more than one record in your database</li>
           <li>no match is found</li>
         </ul>
 
-        <p class="govuk-body">
-          This is known as <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/matchingstrategy.html">defining a matching strategy</a>.
+        <p>
+          This is known as <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/matchingstrategy.html">deciding a matching strategy</a>.
         </p>
 
-        <h2 class="govuk-heading-m">Build a local matching service</h2>
-        <p class="govuk-body">
-          You must build your own local matching service and host it on your own infrastructure.
-        </p>
+        <nav class="pagination" role="navigation" aria-label="Pagination">
+          <ul>
+            <li class="previous">
+              <a href="index">
+                <span class="title">
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                    <path fill="currentColor" d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                  </svg>
+                  Previous
+                </span>
+                <span class="label">Find out what you need to build</span>
+              </a>
+            </li>
 
-        <ul class="govuk-body govuk-list--number">
-          <li>Look at an <a href="https://github.com/alphagov/verify-local-matching-service-example">example of a local matching service</a> to find out how it should work.</li>
-          <li>Build your local matching service. It must be able to <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/buildmatchingservice.html#respondjsonmr">respond to JSON matching requests</a>.</li>
-        </ul>
+            <li class="next">
+              <a href="build-matching-service">
+                <span class="title">
+                  Next
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                    <path fill="currentColor" d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                  </svg>
+                </span>
+                <span class="label">Build a matching service
+              </a>
+            </li>
 
-        <h2 class="govuk-heading-m">Set up the Matching Service Adapter</h2>
-
-        <p class="govuk-body"><a href="https://github.com/alphagov/verify-matching-service-adapter">Download the Matching Service Adapter</a> and follow the instructions on how to install and configure it.</p>
-
-        <h2 class="govuk-heading-m">Make sure you can find and match records correctly</h2>
-
-        <p class=govuk-body>
-          <a href="https://github.com/alphagov/verify-matching-service-adapter/tree/master/verify-matching-service-test-tool">Use the matching service test tool</a> to test your local matching service works the way it should.
-        </p>
-
-        <br>
-        <a href="/before_you_connect/index">Return to build your service</a>
+          </ul>
+        </nav>
 
       </div>
 
