@@ -25,8 +25,8 @@
         "href": "/get_started"
       },
       {
-        "text": "Design your service",
-        "href": "/design_and_build/index"
+        "text": "Test your service with your users",
+        "href": "/design_and_build/test_with_users"
       }
     ]
   }) }}
@@ -34,11 +34,29 @@
   <main role="main" class="govuk-o-main-wrapper">
     <div class="govuk-o-grid">
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
-        <h1 class="govuk-heading-xl">Your link to the GOV.UK&nbsp;Verify prototype</h1>
+        <h1 class="govuk-heading-l">Your prototype link</h1>
+
+        <p>
+          This link will send the user to a customised GOV.UK Verify prototype. Use it in a button or form to integrate it with your prototype.
+        </p>
+
+        <div class="panel govuk-body govuk-!-p-r3">
+          <p class="govuk-!-mb-r0">
+            <a href="#" class="govuk-!-w-bold">http://verify-prototype/servicename?=nameurl?=alinketcetc</a>
+          </p>
+        </div>
+
+        <p>
+          Make sure you save this link or <a href="t" id="bookmark-this">bookmark this page</a> so you can access it later.
+        </p>
+
+        <p>
+          <a href="test_with_users">Return to test your service with your users</a>
+        </p>
 
       </div>
 
-      <div class="govuk-o-grid__item govuk-o-grid__item--full">
+      <!-- <div class="govuk-o-grid__item govuk-o-grid__item--full">
         {% from "table/macro.njk" import govukTable %}
 
         {{ govukTable({
@@ -105,17 +123,19 @@
         }) }}
 
         <p class="govuk-body"><a href="/design_and_build/edit" class="govuk-body">Edit your link’s details</a></p><br>
-      </div>
+      </div> -->
+
+<!--
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
-        
-        <h2 class="govuk-heading-m">Save this page</h2>
+
+        <h2 class="govuk-heading-s">Save this page</h2>
         <p class="govuk-body">You’ll need to save the URL for this page to make changes to your link. Anyone with the URL for this page can make chanes to your link.</p>
 
         <a href="t" id="bookmark-this" class="govuk-body">Bookmark this page</a><br>
         <a href="" class="govuk-body">Email a link to this page</a>
 
         <br>
-      </div>
+      </div> -->
 
     </div>
   </main>
