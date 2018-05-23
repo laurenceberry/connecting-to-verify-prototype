@@ -26,81 +26,15 @@
         </h1>
 
         <p class="govuk-body">
-          To connect to Production, you need to generate 4 certificates and get them signed by GOV.UK Verify. The certificates are:
+          To connect to Production, you need to <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/pki/pkiRequestCert.html?highlight=csr#generate-private-keys">generate 4 private keys and corresponding certificate signing requests</a>. Then you need to get them signed by GOV.UK Verify. They are:
         </p>
 
         <ul class="govuk-list govuk-list--bullet">
-          <li>encryption certificate for your service</li>
-          <li>signing certificate for your service</li>
-          <li>encryption certificate for your Matching Service Adapter</li>
-          <li>signing certificate for your Matching Service Adapter</li>
+          <li>an encryption certificate for your service</li>
+          <li>a signing certificate for your service</li>
+          <li>an encryption certificate for your Matching Service Adapter</li>
+          <li>a signing certificate for your Matching Service Adapter</li>
         </ul>
-
-        <p class="govuk-body">
-          Repeat the following instructions for each of the certificates.
-        </p>
-
-        <h2 class="govuk-heading-m">
-          Generate a private key
-        </h2>
-
-        <p class="govuk-body">
-          Run the following command from the command line:
-        </p>
-
-        <p class="govuk-body">
-          <code class="code">openssl genrsa -out &lt;file name&gt;.key 2048</code>
-        </p>
-
-        <p class="govuk-body">
-          Running this command will create a private key, in a .key format. Use a descriptive file name.
-        </p>
-
-        {% from "warning-text/macro.njk" import govukWarningText %}
-
-        {{ govukWarningText(
-          {
-            "text": "You must store private key files securely. We advise encrypting them or storing them offline",
-            "iconFallbackText": "Warning"
-          })
-        }}
-
-        <h2 class="govuk-heading-m">
-          Generate a certificate signing request
-        </h2>
-
-        <p class="govuk-body">
-          Use the private key you just generated to create a certificate signing request. The resulting .csr file will contain the corresponding public key.
-        </p>
-
-        <p class="govuk-body">
-          Run the following command from the command line:
-        </p>
-
-        <p class="govuk-body">
-          <code class="code">openssl req -new -key &lt;file name&gt;.key -out &lt;file name&gt;.csr</code>
-        </p>
-
-        <p class="govuk-body">
-          Where:
-        </p>
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li><code class="code">&lt;file name&gt;.key</code> is the private key file you just generated</li>
-          <li><code class="code">&lt;file name&gt;.csr</code> is a meaningful name that describes the certificate you are getting signed</li>
-        </ul>
-
-        <p class="govuk-body">
-          On running this command, you will get some prompts asking for country, county or city, locality, organisation name, organisation unit. Answer these as accurately as you can.
-        </p>
-
-        <h3 class="govuk-heading-s">
-          Storing certificate signing requests
-        </h3>
-
-        <p class="govuk-body">
-          Certificate signing request files don’t have the same security issues as private key files. However, we advise you store a copy of them with the corresponding private key files.
-        </p>
 
         <h2 class="govuk-heading-m">
           Send certificate signing requests
