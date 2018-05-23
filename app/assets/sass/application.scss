@@ -154,7 +154,7 @@ nav.pagination .label{
 }
 
 .panel{
-  border-left: solid 5px #bfc1c3;
+  border-left: solid 10px $govuk-grey-3;
   padding: 0px 15px;
   margin-bottom: 25px;
   span{
@@ -177,7 +177,7 @@ td.govuk-c-table__cell.action{
 
 .diagram{
   max-width: 100%;
-  border: 1px solid grey;
+  border: 2px solid $govuk-border-colour;
   margin-bottom: 25px;
 }
 
