@@ -35,19 +35,32 @@
           Safely exchange information with GOV.UK Verify
         </h1>
 
-        <p>
+        <p class="govuk-body">
           GOV.UK Verify uses Security Assertion Markup Language (SAML) to safely exchange information about users with your service.
         </p>
 
-        <p>
-          The Verify Service Provider is a software tool that helps your service send SAML requests to GOV.UK Verify. It also makes it easier to receive and translate SAML responses.
+        <p class="govuk-body">
+          The Verify Service Provider is a piece of software that helps your service communicate with GOV.UK Verify. It does this by converting:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            JSON requests you send to GOV.UK Verify into SAML
+          </li>
+          <li>
+            SAML responses GOV.UK Verify sends to your service to JSON
+          </li>
+        </ul>
+
+        <p class="govuk-body">
+          This means you don't need to be familiar with SAML to use GOV.UK Verify in your service. You only need to know how to use JSON.
         </p>
 
         <img src="../public/images/verify-build-vsp.svg" alt="" class="diagram">
 
-        <p>
+        <p class="govuk-body">
           <a href="https://github.com/alphagov/verify-service-provider">Download the Verify Service Provider</a> and follow the instructions to configure and run it. You need Java 8 to do this.
-        </p>    
+        </p>
 
         <nav class="pagination" role="navigation" aria-label="Pagination">
           <ul>
