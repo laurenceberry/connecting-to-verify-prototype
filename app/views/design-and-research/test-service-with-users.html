@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Components",
+        "href": "#"
+      },
+      {
+        "text": "GOV.UK Verify",
+        "href": "https://connect-to-verify-start.herokuapp.com/verify"
+      },
+      {
+        "text": "Get started",
+        "href": "/get-started"
+      }
+    ]
+  }) }}
+
+  <main role="main" class="govuk-o-main-wrapper">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+        <h1 class="govuk-heading-xl">
+          <span class="govuk-caption-xl">Design and research your service</span>
+          Test your service with your users
+        </h1>
+
+        <p class="govuk-body">
+          <a href="create-prototype-link">Create a link</a> to integrate your service prototype with GOV.UK Verify. You can use this link to test your prototype in user research sessions.
+        </p>
+
+        <p class="govuk-body">
+          Doing this won't automatically connect your live service to GOV.UK Verify.
+        </p>
+
+        <nav class="pagination" role="navigation" aria-label="Pagination">
+          <ul>
+              <li class="previous">
+                <a href="index">
+                  <span class="title">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                      <path fill="currentColor" d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                    </svg>
+                    Previous
+                  </span>
+                  <span class="label">Design your service</span>
+                </a>
+              </li>
+
+              <li class="next">
+                <a href="../build-your-service/index">
+                  <span class="title">
+                    Next
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                      <path fill="currentColor" d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                    </svg>
+                  </span>
+                  <span class="label">Find out what you need to build</span>
+                </a>
+              </li>
+          </ul>
+        </nav>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+{% endblock %}

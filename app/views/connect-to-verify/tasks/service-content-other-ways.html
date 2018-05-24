@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Connect ‘"+data['name-of-service']+"’ to GOV.UK Verify",
+        "href": "../tech-task-list"
+      }
+    ]
+  }) }}
+
+  <main role="main" class="govuk-o-main-wrapper">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Describe other ways to use your service
+        </h1>
+
+        <p class="govuk-body">GOV.UK Verify will show this to users who could not be successfully verified.</p>
+
+        <p>
+          <a href="/design-and-research/unsuccessful">See an example unsuccessful page</a>
+        </p>
+
+
+        <form action="../tech-task-list" method="post">
+
+          {% from "textarea/macro.njk" import govukTextarea %}
+
+          {{ govukTextarea({
+            "name": "other-ways",
+            "value": data['other-ways'],
+            "id": "other-ways",
+            "label": {
+              "hintText": "You can use Markdown or HTML content, including URLs"
+            }
+
+          }) }}
+
+          {{ govukButton({
+            "text": "Save and continue"
+          }) }}
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

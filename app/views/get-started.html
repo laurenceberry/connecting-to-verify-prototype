@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Components",
+        "href": "#"
+      },
+      {
+        "text": "GOV.UK Verify",
+        "href": "https://connect-to-verify-start.herokuapp.com/verify"
+      }
+    ]
+  }) }}
+
+  <main role="main" class="govuk-o-main-wrapper">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+        <h1 class="govuk-heading-xl">
+          Get started
+        </h1>
+
+        <ol class="task-list">
+          <h2 class="govuk-heading-m">
+            <span class="task-list-section-number">1.</span>Check if you need GOV.UK Verify
+          </h2>
+          <ul class="govuk-list">
+            <li><a href="/check-if-you-need-verify/index">Find out if GOV.UK Verify is right for your service</a></li>
+            <li><a href="/check-if-you-need-verify/assurance">Choose the right level of assurance</a></li>
+          </ul>
+
+          <h2 class="govuk-heading-m">
+              <span class="task-list-section-number">2.</span> Design and research your service
+          </h2>
+          <ul class="govuk-list">
+            <li><a href="/design-and-research/index">Design your service</a></li>
+            <li><a href="/design-and-research/test-service-with-users">Test your service with your users</a></li>
+          </ul>
+
+          <h2 class="govuk-heading-m">
+              <span class="task-list-section-number">3.</span> Build your service
+          </h2>
+          <ul class="govuk-list">
+            <li><a href="/build-your-service/index">Find out what you need to build</a></li>
+            <li><a href="/build-your-service/matching">Match verified identities with existing data</a></li>
+            <li><a href="/build-your-service/create-matching-service">Create a matching service</a></li>
+            <li><a href="/build-your-service/safely-exchange-information">Safely exchange information with GOV.UK Verify</a></li>
+          </ul>
+
+          <h2 class="govuk-heading-m">
+              <span class="task-list-section-number">4.</span> Connect to GOV.UK Verify
+          </h2>
+          <ul class="govuk-list">
+            <li><a href="/connect-to-verify/index">Get access to environments</a></li>
+          </ul>
+
+        </ol>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+{% endblock %}

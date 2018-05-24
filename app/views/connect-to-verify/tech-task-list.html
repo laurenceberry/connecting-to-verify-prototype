@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-o-width-container">
+  <br>
+
+<!--   <div class="govuk-c-phase-banner">
+    <p class="govuk-c-phase-banner__content">
+      <span class="govuk-c-phase-banner__text">
+        <a class="govuk-link" href="https://connect-to-verify-start.herokuapp.com/verify">Sign out</a>
+      </span>
+    </p>
+  </div> -->
+
+  <main role="main" class="govuk-o-main-wrapper">
+    <div class="govuk-o-grid">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Connect ‘{{data['name-of-service']}}’ to GOV.UK Verify
+        </h1>
+
+        <ol class="instruction-list steps">
+
+          <li class="instruction-list-item divider">
+
+            <h2 class="instruction-list-item-body"><span class="step-number" role="presentation">1.</span>Before you start</h2>
+            <ul class="instruction-list-item-top">
+              <li>
+                {% if data['name-of-service'] %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
+                <a href="/connect-to-verify/tell-us-about-your-service">Tell us about your service</a>
+              </li>
+              <li>
+                {% if data['other-ways'] %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
+                <a href="tasks/service-content-other-ways">Describe other ways to use your service</a>
+              </li>
+              <li>
+                {% if data['agreement-sent'] == "true" %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
+                <a href="tasks/sign_agreement">Sign and return a memorandum of understanding</a>
+              </li>
+              <li>
+                {% if data['compliance-result'] %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
+                <a href="tasks/confirm-your-setup">Confirm your setup is working</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="instruction-list-item divider">
+      			<h2 class="instruction-list-item-body"><span class="step-number" role="presentation">2.</span>Connect to Integration</h2>
+            <p class="govuk-body instruction-list-item-top">
+              Use the integration environment to test complete user journeys, both success and failure scenarios.
+            </p><br>
+      			<ul class="instruction-list-item-top">
+              <li>
+                {% if data['integration-complete'] == "true" %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
+                <a href="tasks/integration-overview">Get access to Integration environment</a>
+      				</li>
+              <li>
+                {% if data['integration-test-result'] %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
+                <a href="/connect-to-verify/tasks/integration-test">Run end-to-end tests and share results</a>
+              </li>
+      			</ul>
+      		</li>
+          <li class="instruction-list-item divider">
+      			<h2 class="instruction-list-item-body"><span class="step-number" role="presentation">3.</span>Connect to Production</h2>
+      			<ul class="instruction-list-item-top">
+              <li>
+                <a href="tasks/certificates">Get certificates</a>
+      				</li>
+              <li>
+                <a href="tasks/production-overview">Get access to Production environment</a>
+      				</li>
+      			</ul>
+      		</li>
+      	</ol>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

@@ -10,27 +10,27 @@ router.get('/', function (req, res) {
 
 module.exports = router
 
-router.get('/check_i_need_verify', function (req, res) {
+router.get('/check-if-you-need-verify', function (req, res) {
   res.render(
-    "check_i_need_verify/" + req.params.page
+    "check-if-you-need-verify/" + req.params.page
   );
 })
 
-router.get('/design_and_build', function (req, res) {
+router.get('/design-and-research', function (req, res) {
   res.render(
-    "design_and_build/" + req.params.page
+    "design-and-research/" + req.params.page
   );
 })
 
-router.get('/before_you_connect', function (req, res) {
+router.get('/build-your-service', function (req, res) {
   res.render(
-    "before_you_connect/" + req.params.page
+    "build-your-service/" + req.params.page
   );
 })
 
-router.get('/connect_to_verify', function (req, res) {
+router.get('/connect-to-verify', function (req, res) {
   res.render(
-    "connect_to_verify/" + req.params.page
+    "connect-to-verify/" + req.params.page
   );
 
 })
