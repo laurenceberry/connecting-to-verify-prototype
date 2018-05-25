@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="govuk-o-width-container">
+<div class="govuk-width-container">
 
   {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
@@ -27,19 +27,19 @@
     ]
   }) }}
 
-  <main role="main" class="govuk-o-main-wrapper">
-    <div class="govuk-o-grid">
-      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
       	<h1 class="govuk-heading-xl">
           <span class="govuk-caption-xl">Build your service</span>
           Create a matching service
         </h1>
 
-        <p class="govuk-body">
+        <p>
          A matching service makes it easier to match verified identities with records in your database and send the results to GOV.UK Verify.
         </p>
 
-        <p class="govuk-body">
+        <p>
           To create a matching service you need to:
         </p>
 
@@ -54,7 +54,7 @@
           Build a local matching service
         </h2>
 
-        <p class="govuk-body">
+        <p>
           A local matching service helps you find a match between a user's verified identity and a record in your database. You must build your own local matching service and host it on your own infrastructure.
         </p>
 
@@ -63,7 +63,7 @@
           <li>Build your local matching service. It must be able to <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/buildmatchingservice.html#respondjsonmr">respond to JSON matching requests</a>.</li>
         </ol>
 
-        <p class="govuk-body">
+        <p>
           Email <a href="mailto:connect-to-verify-prototype@digital.cabinet-office.gov.uk">connect-to-verify-prototype@digital.cabinet-office.gov.uk</a> if you need help building your local matching service.
         </p>
 
@@ -71,11 +71,11 @@
           Install the Matching Service Adapter
         </h2>
 
-        <p class="govuk-body">
+        <p>
           The Matching Service Adapter is a software tool that helps your local matching service communicate with GOV.UK Verify.
         </p>
 
-        <p class="govuk-body">
+        <p>
           <a href="https://github.com/alphagov/verify-matching-service-adapter">Download the Matching Service Adapter</a> and follow the instructions on how to install and configure it.
         </p>
 
@@ -83,7 +83,7 @@
           Test your matching service
         </h2>
 
-        <p class="govuk-body">
+        <p>
           Use the <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/saml/samlComplianceTool.html">Compliance Tool</a> to test that your matching service works properly.
         </p>
 

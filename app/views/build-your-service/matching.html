@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="govuk-o-width-container">
+<div class="govuk-width-container">
 
   {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
@@ -27,15 +27,15 @@
     ]
   }) }}
 
-  <main role="main" class="govuk-o-main-wrapper">
-    <div class="govuk-o-grid">
-      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
       	<h1 class="govuk-heading-xl">
           <span class="govuk-caption-xl">Build your service</span>
           Match verified identities with existing data
         </h1>
 
-        <p class="govuk-body">
+        <p>
           After a user has been verified by a certified company, your service will receive their name, address and date of birth. You might need to use this information to match their identity to a record in your database.
         </p>
 
@@ -47,7 +47,7 @@
           </p>
         </div>
 
-        <p class="govuk-body">
+        <p>
           You need to make sure your service can match verified identities with existing data even if it doesn't currently need to. For example, you might want to collect the data now and use it for matching later or store the information for auditing purposes.
         </p>
 
@@ -55,11 +55,11 @@
           Decide how you'll match identities and records
         </h2>
 
-        <p class="govuk-body">
+        <p>
           Before you build your matching service, you must decide how you'll match identities and records. This is known as <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/matchingstrategy.html">deciding a matching strategy</a>.
         </p>
 
-        <p class="govuk-body">
+        <p>
           You need to decide what counts as a successful match. It's possible an identity that's been verified by a certified company will be slightly different to a record in your database. This could be because your database contains incorrect or out-of-date information. You should decide if things like spelling mistakes will affect if an identity can be matched.
         </p>
 
@@ -72,7 +72,7 @@
           </p>
         </div>
 
-        <p class="govuk-body">
+        <p>
           You must also decide what will happen if:
         </p>
 

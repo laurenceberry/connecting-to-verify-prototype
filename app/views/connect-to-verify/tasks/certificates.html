@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="govuk-o-width-container">
+<div class="govuk-width-container">
 
   {{ govukBreadcrumbs({
     "items": [
@@ -17,15 +17,15 @@
     ]
   }) }}
 
-  <main role="main" class="govuk-o-main-wrapper">
-    <div class="govuk-o-grid">
-      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
         <h1 class="govuk-heading-l">
           Get certificates
         </h1>
 
-        <p class="govuk-body">
+        <p>
           To connect to Production, you need to <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/pki/pkiRequestCert.html?highlight=csr#generate-private-keys">generate 4 private keys and corresponding certificate signing requests</a>. Then you need to get them signed by GOV.UK Verify. They are:
         </p>
 
@@ -40,7 +40,7 @@
           Send certificate signing requests
         </h2>
 
-        <p class="govuk-body">
+        <p>
           Once you have generated all 4 certificate signing requests, you need to send them to GOV.UK Verify to be signed.
         </p>
 

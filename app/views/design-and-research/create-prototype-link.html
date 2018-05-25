@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="govuk-o-width-container">
+<div class="govuk-width-container">
 
   {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
@@ -31,9 +31,9 @@
     ]
   }) }}
 
-  <main role="main" class="govuk-o-main-wrapper govuk-body">
-    <div class="govuk-o-grid">
-      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+  <main role="main" class="govuk-main-wrapper govuk-body">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
           Create a prototype link
         </h1>
@@ -48,9 +48,11 @@
 
           {{ govukInput({
             "label": {
-              "text": "Service name",
-              "hintText": "The name of your service as it appears to users, for example ‘Check your State Pension’",
-              "classes": "govuk-!-width-two-thirds"
+              "text": "Service name"
+            },
+            "hint": {
+              "text": "The name of your service as it appears to users, for example ‘Check your State Pension’",
+              classes: "govuk-!-width-two-thirds"
             },
             classes: "govuk-!-width-two-thirds",
             value: data['proto-service-name'],
@@ -60,9 +62,11 @@
 
           {{ govukInput({
             "label": {
-              "text": "Organisation",
-              "hintText": "What users call your organisation, for example ‘Department for Work and Pensions’",
-              "classes": "govuk-!-width-two-thirds"
+              "text": "Organisation"
+            },
+            "hint": {
+              "text": "What users call your organisation, for example 'Department for Work and Pensions'",
+              classes: "govuk-!-width-two-thirds"
             },
             classes: "govuk-!-width-two-thirds",
             value: data['proto-org-name'],
@@ -72,9 +76,11 @@
 
           {{ govukInput({
             "label": {
-              "text": "Confirmation page",
-              "hintText": "The URL of the page in your prototype where users are sent once they're verified",
-              "classes": "govuk-!-width-two-thirds"
+              "text": "Confirmation page"
+            },
+            "hint": {
+              "text": "The URL of the page in your prototype where users are sent once they're verified",
+              classes: "govuk-!-width-two-thirds"
             },
             classes: "govuk-!-width-two-thirds",
             value: data['proto-url'],
@@ -84,9 +90,11 @@
 
           {{ govukTextarea({
             "label": {
-              "text": "Other ways to access the service",
-              "hintHtml": "Describe how users can access your service if they cannot prove their identity using GOV.UK Verify - <a href='example?bannerText=Example of what a user will see if they can&rsquo;t be verified&guidanceText=&returnText=Return to Create a prototype link&goBackURL=edit&exampleURL=/design-and-research/unsuccessful'>see an example of how this will be used</a>",
-              "classes": "govuk-!-width-two-thirds"
+              "text": "Other ways to access the service"
+            },
+            "hint": {
+              "html": "Describe how users can access your service if they cannot prove their identity using GOV.UK Verify - <a href='example?bannerText=Example of what a user will see if they can&rsquo;t be verified&guidanceText=&returnText=Return to Create a prototype link&goBackURL=edit&exampleURL=/design-and-research/unsuccessful'>see an example of how this will be used</a>",
+              classes: "govuk-!-width-two-thirds"
             },
             classes: "govuk-!-width-two-thirds",
             value: data['proto-other-ways'],
@@ -100,8 +108,12 @@
             "idPrefix": "proto-loa",
             "name": "proto-loa",
             "fieldset": {
-              "legendHtml": '<label class="govuk-body">Level of assurance</label>',
-              "legendHintHtml": "Find out more about the <a href ='/check-if-you-need-verify/assurance'> different levels of assurance</a>"
+              "legend": {
+                "text": 'Level of assurance'
+              }
+            },
+            "hint": {
+              "html": "Find out more about the <a href ='/check-if-you-need-verify/assurance'> different levels of assurance</a>"
             },
             "items": [
               {

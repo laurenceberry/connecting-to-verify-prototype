@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="govuk-o-width-container">
+<div class="govuk-width-container">
 
   {{ govukBreadcrumbs({
     "items": [
@@ -21,9 +21,9 @@
     ]
   }) }}
 
-  <main role="main" class="govuk-o-main-wrapper">
-    <div class="govuk-o-grid">
-      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
         <h1 class="govuk-heading-l">
           Send certificate signing requests
@@ -31,72 +31,72 @@
 
       </div>
 
-      <div class="govuk-o-grid__item govuk-o-grid__item--full">
+      <div class="govuk-grid-row__item govuk-grid-column-full">
 
-        <table class="govuk-c-table">
-          <thead class="govuk-c-table__head">
-            <tr class="govuk-c-table__row">
-              <th class="govuk-c-table__header" scope="col"></th>
-              <th class="govuk-c-table__header" scope="col"></th>
-              <th class="govuk-c-table__header" scope="col"></th>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col"></th>
+              <th class="govuk-table__header" scope="col"></th>
+              <th class="govuk-table__header" scope="col"></th>
             </tr>
           </thead>
-          <tbody class="govuk-c-table__body">
-            <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">Encryption certificate for your service</td>
-              <td class="govuk-c-table__cell ">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell first" scope="row">Encryption certificate for your service</td>
+              <td class="govuk-table__cell ">
                 {% if data['encryption-cert-service'] %}
                   {{data['encryption-cert-service']}}
                 {% else %}
                   <a href="certificates-encryption-service">Answer required</a>
                 {% endif %}
               </td>
-              <td class="govuk-c-table__cell action">
+              <td class="govuk-table__cell action">
                 {% if data['encryption-cert-service'] %}
                  <a href="certificates-encryption-service">Edit</a>
                 {% endif %}
               </td>
             </tr>
-            <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">Signing certificate for your service</td>
-              <td class="govuk-c-table__cell ">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell first" scope="row">Signing certificate for your service</td>
+              <td class="govuk-table__cell ">
                 {% if data['signing-cert-service'] %}
                   {{data['signing-cert-service']}}
                 {% else %}
                   <a href="certificates-signing-service">Answer required</a>
                 {% endif %}
               </td>
-              <td class="govuk-c-table__cell action">
+              <td class="govuk-table__cell action">
                 {% if data['signing-cert-service'] %}
                  <a href="certificates-signing-service">Edit</a>
                 {% endif %}
               </td>
             </tr>
-            <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">Encryption certificate for your Matching Service Adapter</td>
-              <td class="govuk-c-table__cell ">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell first" scope="row">Encryption certificate for your Matching Service Adapter</td>
+              <td class="govuk-table__cell ">
                 {% if data['encryption-cert-msa'] %}
                   {{data['encryption-cert-msa']}}
                 {% else %}
                   <a href="certificates-encryption-msa">Answer required</a>
                 {% endif %}
               </td>
-              <td class="govuk-c-table__cell action">
+              <td class="govuk-table__cell action">
                 {% if data['encryption-cert-msa'] %}
                  <a href="certificates-encryption-msa">Edit</a>
                 {% endif %}
               </td>
             </tr>
-            <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">Signing certificate for your Matching Service Adapter</td>
-              <td class="govuk-c-table__cell ">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell first" scope="row">Signing certificate for your Matching Service Adapter</td>
+              <td class="govuk-table__cell ">
                 {% if data['signing-cert-msa'] %}
                   {{data['signing-cert-msa']}}
                 {% else %}
                   <a href="certificates-signing-msa">Answer required</a>
                 {% endif %}
               </td>
-              <td class="govuk-c-table__cell action">
+              <td class="govuk-table__cell action">
                 {% if data['signing-cert-msa'] %}
                  <a href="certificates-signing-msa">Edit</a>
                 {% endif %}

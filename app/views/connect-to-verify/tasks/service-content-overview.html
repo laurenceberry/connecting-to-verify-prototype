@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="govuk-o-width-container">
+<div class="govuk-width-container">
   <div class="govuk-c-phase-banner">
     <p class="govuk-c-phase-banner__content">
       <span class="govuk-c-phase-banner__text">
@@ -16,46 +16,46 @@
   </div>
   <a href="../tech-task-list" class="govuk-c-back-link">Back</a>
 
-  <main role="main" class="govuk-o-main-wrapper">
-    <div class="govuk-o-grid">
-      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
         <h1 class="govuk-heading-l">
           Add your content
         </h1>
-        <p class="govuk-body">Add custom content to be displayed within GOV.UK Verify.</p>
+        <p>Add custom content to be displayed within GOV.UK Verify.</p>
 
       </div>
-      <div class="govuk-o-grid__item govuk-o-grid__item--full">
+      <div class="govuk-grid-row__item govuk-grid-column-full">
 
-        <table class="govuk-c-table">
-          <tbody class="govuk-c-table__body divider">
-            <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">Why your service needs to verify users’ identities</td>
-              <td class="govuk-c-table__cell ">
+        <table class="govuk-table">
+          <tbody class="govuk-table__body divider">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell first" scope="row">Why your service needs to verify users’ identities</td>
+              <td class="govuk-table__cell ">
                 {% if data['hub-page'] %}
                  {{data['hub-page']}}
                 {% else %}
                   <a href="/connect-to-verify/tasks/service-content-hub">Answer required</a>
                 {% endif %}
               </td>
-              <td class="govuk-c-table__cell action">
+              <td class="govuk-table__cell action">
                 {% if data['hub-page'] %}
                  <a href="/connect-to-verify/tasks/service-content-hub">Edit</a>
                 {% endif %}
               </td>
             </tr>
 
-            <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">Other ways to complete the transaction</td>
-              <td class="govuk-c-table__cell ">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell first" scope="row">Other ways to complete the transaction</td>
+              <td class="govuk-table__cell ">
                 {% if data['other-ways'] %}
                 {{ data['other-ways'] | striptags(true) | escape | nl2br }}
                 {% else %}
                   <a href="/connect-to-verify/tasks/service-content-other-ways">Answer required</a>
                 {% endif %}
               </td>
-              <td class="govuk-c-table__cell action">
+              <td class="govuk-table__cell action">
                 {% if data['other-ways'] %}
                  <a href="/connect-to-verify/tasks/service-content-other-ways">Edit</a>
                 {% endif %}

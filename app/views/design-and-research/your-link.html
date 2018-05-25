@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="govuk-o-width-container">
+<div class="govuk-width-container">
 
   {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
@@ -31,9 +31,9 @@
     ]
   }) }}
 
-  <main role="main" class="govuk-o-main-wrapper">
-    <div class="govuk-o-grid">
-      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">Your prototype link</h1>
 
         <p>
@@ -56,7 +56,7 @@
 
       </div>
 
-      <!-- <div class="govuk-o-grid__item govuk-o-grid__item--full">
+      <!-- <div class="govuk-grid-row__item govuk-grid-column-full">
         {% from "table/macro.njk" import govukTable %}
 
         {{ govukTable({
@@ -122,17 +122,17 @@
           ]
         }) }}
 
-        <p class="govuk-body"><a href="/design-and-research/edit" class="govuk-body">Edit your link’s details</a></p><br>
+        <p><a href="/design-and-research/edit">Edit your link’s details</a></p><br>
       </div> -->
 
 <!--
-      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+      <div class="govuk-grid-column-two-thirds">
 
         <h2 class="govuk-heading-s">Save this page</h2>
-        <p class="govuk-body">You’ll need to save the URL for this page to make changes to your link. Anyone with the URL for this page can make chanes to your link.</p>
+        <p>You’ll need to save the URL for this page to make changes to your link. Anyone with the URL for this page can make chanes to your link.</p>
 
-        <a href="t" id="bookmark-this" class="govuk-body">Bookmark this page</a><br>
-        <a href="" class="govuk-body">Email a link to this page</a>
+        <a href="t" id="bookmark-this">Bookmark this page</a><br>
+        <a href="">Email a link to this page</a>
 
         <br>
       </div> -->

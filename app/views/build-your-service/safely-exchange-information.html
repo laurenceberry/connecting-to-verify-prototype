@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="govuk-o-width-container">
+<div class="govuk-width-container">
 
   {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
@@ -27,23 +27,23 @@
     ]
   }) }}
 
-  <main role="main" class="govuk-o-main-wrapper">
-    <div class="govuk-o-grid">
-      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
       	<h1 class="govuk-heading-xl">
           <span class="govuk-caption-xl">Build your service</span>
           Safely exchange information with GOV.UK Verify
         </h1>
 
-        <p class="govuk-body">
+        <p>
           GOV.UK Verify uses Security Assertion Markup Language (SAML) to safely exchange information about users with your service.
         </p>
 
-        <p class="govuk-body">
+        <p>
           Any requests for information your service sends to GOV.UK Verify will be sent as SAML messages. Any responses you get back will also be in SAML.
         </p>
 
-        <p class="govuk-body">
+        <p>
           You can download a piece of software (known as the 'Verify Service Provider') to:
         </p>
 
@@ -56,13 +56,13 @@
           </li>
         </ul>
 
-        <p class="govuk-body">
+        <p>
           This means that if you’re using the Verify Service Provider, you don’t need to be familiar with SAML to use GOV.UK Verify in your service. Your team only needs to manage JSON files.
         </p>
 
         <img src="../public/images/verify-build-vsp.svg" alt="" class="diagram">
 
-        <p class="govuk-body">
+        <p>
           <a href="https://github.com/alphagov/safely-exchange-information">Download the Verify Service Provider</a> and follow the instructions to configure and run it. You need Java 8 to do this.
         </p>
 
@@ -70,11 +70,11 @@
           Test the Verify Service Provider
         </h2>
 
-        <p class="govuk-body">
+        <p>
           Use the <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/saml/samlComplianceTool.html">Compliance Tool</a> to test that the Verify Service Provider properly works with your service.
         </p>
 
-        <p class="govuk-body">
+        <p>
           If it can't, any information your service sends or receives about your users won't be secure. 
         </p>
         

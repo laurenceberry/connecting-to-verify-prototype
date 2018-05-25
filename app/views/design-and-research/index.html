@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="govuk-o-width-container">
+<div class="govuk-width-container">
 
   {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
@@ -27,9 +27,9 @@
     ]
   }) }}
 
-  <main role="main" class="govuk-o-main-wrapper">
-    <div class="govuk-o-grid">
-      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
           <span class="govuk-caption-xl">Design and research your service</span>
           Design your service using GOV.UK Verify
@@ -71,7 +71,7 @@
 
         <h3 class="govuk-heading-m">If a user can't be verified</h3>
 
-        <p class="govuk-body">GOV.UK Verify will show any users who can't be verified the other ways they can use your service, for example by phone or by post.</p>
+        <p>GOV.UK Verify will show any users who can't be verified the other ways they can use your service, for example by phone or by post.</p>
 
         <p>
           See an example of what GOV.UK Verify <a href="example?bannerText=Example of what a user will see if they can't be verified&guidanceText=&returnText=Return to Design your service&goBackURL=index&exampleURL=/design-and-research/unsuccessful">shows a user who can't be verified</a>.

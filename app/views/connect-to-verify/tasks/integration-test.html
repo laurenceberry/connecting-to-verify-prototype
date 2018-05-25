@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="govuk-o-width-container">
+<div class="govuk-width-container">
 
   {{ govukBreadcrumbs({
     "items": [
@@ -17,9 +17,9 @@
     ]
   }) }}
 
-  <main role="main" class="govuk-o-main-wrapper govuk-body">
-    <div class="govuk-o-grid">
-      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+  <main role="main" class="govuk-main-wrapper govuk-body">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
         <h1 class="govuk-heading-l">
           Run end-to-end tests
@@ -97,19 +97,19 @@
 
 
   </div>
-  <div class="govuk-o-grid__item govuk-o-grid__item--full">
-    <table class="govuk-c-table">
-      <caption class="govuk-c-table__caption">Possible values</caption>
-      <thead class="govuk-c-table__head">
-        <tr class="govuk-c-table__row">
-          <th class="govuk-c-table__header" scope="col">Attribute</th>
-          <th class="govuk-c-table__header" scope="col">Value</th>
+  <div class="govuk-grid-row__item govuk-grid-column-full">
+    <table class="govuk-table">
+      <caption class="govuk-table__caption">Possible values</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Attribute</th>
+          <th class="govuk-table__header" scope="col">Value</th>
         </tr>
       </thead>
-      <tbody class="govuk-c-table__body">
-        <tr class="govuk-c-table__row">
-          <td class="govuk-c-table__cell" scope="row">levelOfAssurance</td>
-          <td class="govuk-c-table__cell ">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">levelOfAssurance</td>
+          <td class="govuk-table__cell ">
             <p>Level of assurance:</p>
             <ul class="govuk-list--bullet">
               <li>LEVEL_X</li>
@@ -120,13 +120,13 @@
             </ul>
           </td>
         </tr>
-        <tr class="govuk-c-table__row">
-          <td class="govuk-c-table__cell" scope="row">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">
             firstName
             surnames
             dateOfBirth
           </td>
-          <td class="govuk-c-table__cell ">
+          <td class="govuk-table__cell ">
             <p>These attributes can contain the following fields:</p>
             <ul class="govuk-list--bullet">
               <li>value (variable type)</li>
@@ -136,9 +136,9 @@
             </ul>
           </td>
         </tr>
-        <tr class="govuk-c-table__row">
-          <td class="govuk-c-table__cell" scope="row">gender</td>
-          <td class="govuk-c-table__cell ">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">gender</td>
+          <td class="govuk-table__cell ">
             <p>Gender must be one of the following values:</p>
             <ul class="govuk-list--bullet">
               <li>FEMALE</li>
@@ -147,9 +147,9 @@
             </ul>
           </td>
         </tr>
-        <tr class="govuk-c-table__row">
-          <td class="govuk-c-table__cell" scope="row">address</td>
-          <td class="govuk-c-table__cell ">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">address</td>
+          <td class="govuk-table__cell ">
             <p>Address consists of:</p>
             <ul class="govuk-list--bullet">
               <li>boolean verified</li>
@@ -167,7 +167,7 @@
     <br><br>
 
   </div><br>
-  <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+  <div class="govuk-grid-column-two-thirds">
 
         <h2 class="govuk-heading-m">View test users</h2>
 

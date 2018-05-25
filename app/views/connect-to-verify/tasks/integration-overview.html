@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="govuk-o-width-container">
+<div class="govuk-width-container">
 
   {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
@@ -19,165 +19,165 @@
     ]
   }) }}
 
-  <main role="main" class="govuk-o-main-wrapper">
-    <div class="govuk-o-grid">
-      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
         <h1 class="govuk-heading-l">
           Get access to Integration environment
         </h1>
 
-        <p class="govuk-body">
+        <p>
           Give details about your setup so that we can connect you to the Integration environment. Integration allows you to test your prototype service with dummy user data.
         </p>
 
-        <p class="govuk-body">
+        <p>
           You can create multiple connections to Integration for different environments.
         </p>
 
       </div>
 
-      <div class="govuk-o-grid__item govuk-o-grid__item--full">
+      <div class="govuk-grid-row__item govuk-grid-column-full">
 
-        <table class="govuk-c-table">
-          <thead class="govuk-c-table__head">
-            <tr class="govuk-c-table__row">
-              <th class="govuk-c-table__header" scope="col"></th>
-              <th class="govuk-c-table__header" scope="col"></th>
-              <th class="govuk-c-table__header" scope="col"></th>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col"></th>
+              <th class="govuk-table__header" scope="col"></th>
+              <th class="govuk-table__header" scope="col"></th>
             </tr>
           </thead>
-          <tbody class="govuk-c-table__body">
-            <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">Entity ID</td>
-              <td class="govuk-c-table__cell ">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell first" scope="row">Entity ID</td>
+              <td class="govuk-table__cell ">
                 {% if data['entity-id'] %}
                  {{data['entity-id']}}
                 {% else %}
                   <a href="integration-entity-id">Answer required</a>
                 {% endif %}
               </td>
-              <td class="govuk-c-table__cell action">
+              <td class="govuk-table__cell action">
                 {% if data['entity-id'] %}
                  <a href="integration-entity-id">Edit</a>
                 {% endif %}
               </td>
             </tr>
-            <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">Start page URL</td>
-              <td class="govuk-c-table__cell ">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell first" scope="row">Start page URL</td>
+              <td class="govuk-table__cell ">
                 {% if data['start-page-url'] %}
                  {{data['start-page-url']}}
                 {% else %}
                   <a href="integration-start-page-url">Answer required</a>
                 {% endif %}
               </td>
-              <td class="govuk-c-table__cell action">
+              <td class="govuk-table__cell action">
                 {% if data['start-page-url'] %}
                  <a href="integration-start-page-url">Edit</a>
                 {% endif %}
               </td>
             </tr>
-            <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">SAML response URL</td>
-              <td class="govuk-c-table__cell ">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell first" scope="row">SAML response URL</td>
+              <td class="govuk-table__cell ">
                 {% if data['saml-response-url'] %}
                  {{data['saml-response-url']}}
                 {% else %}
                   <a href="integration-saml-response-url">Answer required</a>
                 {% endif %}
               </td>
-              <td class="govuk-c-table__cell action">
+              <td class="govuk-table__cell action">
                 {% if data['saml-response-url'] %}
                  <a href="integration-saml-response-url">Edit</a>
                 {% endif %}
               </td>
             </tr>
-            <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">Matching URL</td>
-              <td class="govuk-c-table__cell ">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell first" scope="row">Matching URL</td>
+              <td class="govuk-table__cell ">
                 {% if data['matching-url'] %}
                  {{data['matching-url']}}
                 {% else %}
                   <a href="integration-matching-url">Answer required</a>
                 {% endif %}
               </td>
-              <td class="govuk-c-table__cell action">
+              <td class="govuk-table__cell action">
                 {% if data['matching-url'] %}
                  <a href="integration-matching-url">Edit</a>
                 {% endif %}
               </td>
             </tr>
-            <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">User account creation URL</td>
-              <td class="govuk-c-table__cell ">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell first" scope="row">User account creation URL</td>
+              <td class="govuk-table__cell ">
                 {% if data['user-account-url'] %}
                  {{data['user-account-url']}}
                 {% else %}
                   <a href="integration-user-account-url">Answer required</a>
                 {% endif %}
               </td>
-              <td class="govuk-c-table__cell action">
+              <td class="govuk-table__cell action">
                 {% if data['user-account-url'] %}
                  <a href="integration-user-account-url">Edit</a>
                 {% endif %}
               </td>
             </tr>
-            <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">Encryption certificate for your service</td>
-              <td class="govuk-c-table__cell ">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell first" scope="row">Encryption certificate for your service</td>
+              <td class="govuk-table__cell ">
                 {% if data['int-encryption-cert-service'] %}
                   {{data['int-encryption-cert-service']}}
                 {% else %}
                   <a href="integration-certificates-encryption-service">Answer required</a>
                 {% endif %}
               </td>
-              <td class="govuk-c-table__cell action">
+              <td class="govuk-table__cell action">
                 {% if data['int-encryption-cert-service'] %}
                  <a href="integration-certificates-encryption-service">Edit</a>
                 {% endif %}
               </td>
             </tr>
-            <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">Signing certificate for your service</td>
-              <td class="govuk-c-table__cell ">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell first" scope="row">Signing certificate for your service</td>
+              <td class="govuk-table__cell ">
                 {% if data['int-signing-cert-service'] %}
                   {{data['int-signing-cert-service']}}
                 {% else %}
                   <a href="integration-certificates-signing-service">Answer required</a>
                 {% endif %}
               </td>
-              <td class="govuk-c-table__cell action">
+              <td class="govuk-table__cell action">
                 {% if data['int-signing-cert-service'] %}
                  <a href="integration-certificates-signing-service">Edit</a>
                 {% endif %}
               </td>
             </tr>
-            <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">Encryption certificate for your Matching Service Adapter</td>
-              <td class="govuk-c-table__cell ">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell first" scope="row">Encryption certificate for your Matching Service Adapter</td>
+              <td class="govuk-table__cell ">
                 {% if data['int-encryption-cert-msa'] %}
                   {{data['int-encryption-cert-msa']}}
                 {% else %}
                   <a href="integration-certificates-encryption-msa">Answer required</a>
                 {% endif %}
               </td>
-              <td class="govuk-c-table__cell action">
+              <td class="govuk-table__cell action">
                 {% if data['int-encryption-cert-msa'] %}
                  <a href="integration-certificates-encryption-msa">Edit</a>
                 {% endif %}
               </td>
             </tr>
-            <tr class="govuk-c-table__row">
-              <td class="govuk-c-table__cell first" scope="row">Signing certificate for your Matching Service Adapter</td>
-              <td class="govuk-c-table__cell ">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell first" scope="row">Signing certificate for your Matching Service Adapter</td>
+              <td class="govuk-table__cell ">
                 {% if data['int-signing-cert-msa'] %}
                   {{data['int-signing-cert-msa']}}
                 {% else %}
                   <a href="integration-certificates-signing-msa">Answer required</a>
                 {% endif %}
               </td>
-              <td class="govuk-c-table__cell action">
+              <td class="govuk-table__cell action">
                 {% if data['int-signing-cert-msa'] %}
                  <a href="integration-certificates-signing-msa">Edit</a>
                 {% endif %}

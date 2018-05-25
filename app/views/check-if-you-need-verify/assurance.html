@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="govuk-o-width-container">
+<div class="govuk-width-container">
 
   {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
@@ -27,21 +27,21 @@
     ]
   }) }}
 
-  <main role="main" class="govuk-o-main-wrapper">
-    <div class="govuk-o-grid">
-      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
         <span class="govuk-caption-xl">Check if you need GOV.UK Verify</span>
         <h1 class="govuk-heading-xl">Choose the right level of assurance</h1>
 
-        <p class="govuk-body">
+        <p>
           You can choose how thorough you want your service's identity checks to be by picking a 'level of assurance'.
         </p>
 
-        <p class="govuk-body">
+        <p>
           Which one you pick depends on how confident your service needs to be that a user is who they say they are.
         </p>
 
-        <p class="govuk-body">
+        <p>
           To help make your choice, you should think about:
         </p>
 
@@ -64,7 +64,7 @@
           Level 1
         </h2>
 
-        <p class="govuk-body">
+        <p>
           You should use level 1 if your service gives users access to personal information.
         </p>
 
@@ -75,11 +75,11 @@
           </p>
         </div>
 
-        <p class="govuk-body">
+        <p>
           It takes users an average of 5 minutes to prove their identity with level 1. They only need to do this once.
         </p>
 
-        <p class="govuk-body">
+        <p>
           They'll be asked a series of questions that only they know the answer to. They usually won't need to provide any additional documents.
         </p>
 
@@ -87,7 +87,7 @@
           Level 2
         </h2>
 
-        <p class="govuk-body">
+        <p>
           You should use level 2 if:
         </p>
 
@@ -110,11 +110,11 @@
             </p>
         </div>
 
-        <p class="govuk-body">
+        <p>
           It takes users an average of 15 minutes to prove their identity with level 2. They only need to do this once.
         </p>
 
-        <p class="govuk-body">
+        <p>
           They'll usually need at least one document (for example a driving licence or passport) to prove their identity. They might also need financial documents, such as a bank or credit card statement.
         </p>
 

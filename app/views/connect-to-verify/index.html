@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="govuk-o-width-container">
+<div class="govuk-width-container">
 
   {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
@@ -27,15 +27,15 @@
     ]
   }) }}
 
-  <main role="main" class="govuk-o-main-wrapper">
-    <div class="govuk-o-grid">
-      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
           <span class="govuk-caption-xl">Connect to GOV.UK Verify</span>
           Get access to environments
         </h1>
 
-        <p class="govuk-body">
+        <p>
           Once you've built and hosted your service, you can ask for access to the Integration and Production environments. The GOV.UK Verify team will review your request.
         </p>
 
@@ -43,7 +43,7 @@
           Use the Integration environment to test your service's end-to-end user journey. The Integration environment doesn't use information about real users or link to real certified companies' websites.
         </p>
 
-        <p class="govuk-body">
+        <p>
           You should only ask for access to the Production environment when your service is ready to go live.
         </p>
 

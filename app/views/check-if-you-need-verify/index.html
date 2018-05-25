@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="govuk-o-width-container">
+<div class="govuk-width-container">
 
   {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
@@ -27,15 +27,15 @@
     ]
   }) }}
 
-  <main role="main" class="govuk-o-main-wrapper">
-    <div class="govuk-o-grid">
-      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
           <span class="govuk-caption-xl">Check if you need GOV.UK Verify</span>
           Find out if GOV.UK Verify is right for your service
         </h1>
 
-        <p class="govuk-body">
+        <p>
           Use GOV.UK Verify if your service:
         </p>
         <ul class="govuk-list govuk-list--bullet">
@@ -57,7 +57,7 @@
         </ul>
 
         <h2 class="govuk-heading-m">When you shouldn't use GOV.UK Verify</h2>
-        <p class="govuk-body">
+        <p>
           Don't use GOV.UK Verify if your service:
         </p>
         <ul class="govuk-list govuk-list--bullet">
