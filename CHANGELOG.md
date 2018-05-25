@@ -1,4 +1,27 @@
+# Unreleased
+
+New features:
+
+- [#39 Add code highlighting](https://github.com/alphagov/govuk-prototype-kit-private-beta/pull/39)
+
+Bug fixes:
+
+- [#47 Fix and move GitHub links from home page and nav to the About page](https://github.com/alphagov/govuk-prototype-kit-private-beta/pull/47)
+
+# 7.0.0-beta.6
+
+Breaking changes:
+
+- [#40 Update GOV.UK Frontend to 0.0.29](https://github.com/alphagov/govuk-prototype-kit-private-beta/pull/40)
+
+New features:
+
+- [#38 Add Cookies and Privacy policy usage](https://github.com/alphagov/govuk-prototype-kit-private-beta/pull/38)
+
+- [#25 Track app usage](https://github.com/alphagov/govuk-prototype-kit-private-beta/pull/25)
+
 # 7.0.0-beta.5
+
 - [#36 Update GOV.UK Frontend to 0.0.28](https://github.com/alphagov/govuk-prototype-kit-private-beta/pull/36)
 
 # 7.0.0-beta.4
