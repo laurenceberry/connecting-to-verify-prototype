@@ -60,24 +60,27 @@
           {% from "input/macro.njk" import govukInput %}
 
           {{ govukInput({
-            "label": {
-              "text": "Name of service",
-              "hintText": "Enter the name as it will appear to users, for example, “view or share your driving licence information”."
+            label: {
+              text: "Name of service"
             },
-            classes: "govuk-!-width-two-thirds",
+            hint: {
+              text: "Enter the name as it will appear to users, for example, “view or share your driving licence information”.",
+              classes: "govuk-!-width-two-thirds"
+            },
             id: "name-of-service",
+            name: "name-of-service",
             value: data['name-of-service'],
-            name: "name-of-service"
+            classes: "govuk-!-width-two-thirds"
           }) }}
 
           {{ govukInput({
-            "label": {
-              "text": "Organisation that delivers the service"
+            label: {
+              text: "Organisation that delivers the service"
             },
-            classes: "govuk-!-width-two-thirds",
             id: "organisation",
+            name: "organisation",
             value: data['organisation'],
-            name: "organisation"
+            classes: "govuk-!-width-two-thirds"
           }) }}
 
           {{ govukButton({

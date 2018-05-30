@@ -47,10 +47,12 @@
           You should only ask for access to the Production environment when your service is ready to go live.
         </p>
 
+        {% from "button/macro.njk" import govukButton %}
+
         {{ govukButton({
-          "text": "Start now",
-          "href": "create-account",
-          "classes": "govuk-c-button--start govuk-!-mt-r2 govuk-!-mb-r8"
+          text: "Create account",
+          href: "create-account",
+          classes: "govuk-button--start"
         }) }}
 
         <nav class="pagination" role="navigation" aria-label="Pagination">
