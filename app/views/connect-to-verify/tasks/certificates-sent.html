@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Connect ‘"+data['name-of-service']+"’ to GOV.UK Verify",
+        "href": "../tech-task-list"
+      }
+    ]
+  }) }}
+
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Certificate signing requests sent
+        </h1>
+
+        <p>
+          Please allow GOV.UK Verify up to X days to sign the certificates and add them to our technical infrastructure. You will receive an email once this is done.
+        </p>
+
+        <h2 class="govuk-heading-m">
+          Renewing certificates
+        </h2>
+
+        <p>
+          You will need to renew your certificates in 9 months' time.
+        </p>
+
+        <p>
+          <a href="../tech-task-list">Back to task list</a>
+        </p>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

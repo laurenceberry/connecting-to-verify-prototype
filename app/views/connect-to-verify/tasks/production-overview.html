@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Connect ‘"+data['name-of-service']+"’ to GOV.UK Verify",
+        "href": "../tech-task-list"
+      }
+    ]
+  }) }}
+
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Get access to Production environment
+        </h1>
+
+        <p>
+          Give details about your setup so that we can connect you to the Production environment.
+        </p>
+
+        <p>
+          The Production environment is where you deploy your live end-to-end service. It’s a restricted environment for security reasons.
+        </p>
+
+      </div>
+
+      <div class="govuk-grid-row__item govuk-grid-column-full">
+
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col"></th>
+              <th class="govuk-table__header" scope="col"></th>
+              <th class="govuk-table__header" scope="col"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell first" scope="row">Entity ID</td>
+              <td class="govuk-table__cell ">
+                {% if data['prod-entity-id'] %}
+                 {{data['prod-entity-id']}}
+                {% else %}
+                  <a href="production-entity-id">Answer required</a>
+                {% endif %}
+              </td>
+              <td class="govuk-table__cell action">
+                {% if data['prod-entity-id'] %}
+                 <a href="production-entity-id">Edit</a>
+                {% endif %}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell first" scope="row">Start page URL</td>
+              <td class="govuk-table__cell ">
+                {% if data['prod-start-page-url'] %}
+                 {{data['prod-start-page-url']}}
+                {% else %}
+                  <a href="production-start-page-url">Answer required</a>
+                {% endif %}
+              </td>
+              <td class="govuk-table__cell action">
+                {% if data['prod-start-page-url'] %}
+                 <a href="production-start-page-url">Edit</a>
+                {% endif %}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell first" scope="row">SAML response URL</td>
+              <td class="govuk-table__cell ">
+                {% if data['prod-saml-response-url'] %}
+                 {{data['prod-saml-response-url']}}
+                {% else %}
+                  <a href="production-saml-response-url">Answer required</a>
+                {% endif %}
+              </td>
+              <td class="govuk-table__cell action">
+                {% if data['prod-saml-response-url'] %}
+                 <a href="production-saml-response-url">Edit</a>
+                {% endif %}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell first" scope="row">Matching URL</td>
+              <td class="govuk-table__cell ">
+                {% if data['prod-matching-url'] %}
+                 {{data['prod-matching-url']}}
+                {% else %}
+                  <a href="production-matching-url">Answer required</a>
+                {% endif %}
+              </td>
+              <td class="govuk-table__cell action">
+                {% if data['prod-matching-url'] %}
+                 <a href="production-matching-url">Edit</a>
+                {% endif %}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell first" scope="row">User account creation URL</td>
+              <td class="govuk-table__cell ">
+                {% if data['prod-user-account-url'] %}
+                 {{data['prod-user-account-url']}}
+                {% else %}
+                  <a href="production-user-account-url">Answer required</a>
+                {% endif %}
+              </td>
+              <td class="govuk-table__cell action">
+                {% if data['prod-user-account-url'] %}
+                 <a href="production-user-account-url">Edit</a>
+                {% endif %}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+        <p>
+          When approved you will recieve an email confirmation and your connection to GOV.UK Verify will be ready to use.
+        </p>
+
+        {% from "button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          "text": "Get access",
+          "href": "production-requested"
+        }) }}
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

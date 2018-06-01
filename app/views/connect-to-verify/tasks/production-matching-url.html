@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Connect ‘"+data['name-of-service']+"’ to GOV.UK Verify",
+        "href": "../tech-task-list"
+      },
+      {
+        "text": "Get access to Production environment",
+        "href": "production-overview"
+      }
+    ]
+  }) }}
+
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Matching URL
+        </h1>
+
+        <p>
+          Provide the URL you will use to receive matching service requests. For example <code class="code">https://{your-production-domain}/matching-service/POST</code>
+        </p>
+
+        <form action="production-user-account-url" method="post">
+
+          {% from "input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+            "label": {
+              "text": "Matching URL",
+              "classes": "visually-hidden"
+            },
+            value: data['prod-matching-url'],
+            id: "prod-matching-url",
+            name: "prod-matching-url"
+          }) }}
+
+          {{ govukButton({
+            "text": "Save and continue"
+          }) }}
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

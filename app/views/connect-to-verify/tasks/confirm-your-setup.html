@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Connect ‘"+data['name-of-service']+"’ to GOV.UK Verify",
+        "href": "../tech-task-list"
+      }
+    ]
+  }) }}
+
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Confirm your setup is working</h1>
+        <h2 class="govuk-heading-m">Make sure your service works with GOV.UK Verify</h2>
+
+        <p>
+          You should test your service to make sure it can properly handle SAML requests and responses.
+        </p>
+
+        <p>
+          If it can’t, any information your service sends or receives about your users won’t be secure.
+        </p>
+
+        <p>
+          Test your service using the <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/saml/samlComplianceTool.html">SAML compliance tool</a>.
+        </p>
+
+        <p>
+          You need to <a href="/build-your-service/self-signed-certificates">create certificates</a> before you can use the compliance tool.
+        </p>
+
+        <h2 class="govuk-heading-m">Send us your results</h2>
+
+        <p>To make sure everything is set up correctly we need to see screenshots of the results of the Compliance Test Tool. The images must include the URL.</p>
+
+        <form action="confirm-your-setup-result" method="post">
+
+          {% from "file-upload/macro.njk" import govukFileUpload %}
+
+          {{ govukFileUpload({
+            id: 'encryption-cert-service',
+            name: 'encryption-cert-service',
+            label: {
+              text: 'Upload image files'
+            }
+          }) }}
+
+          {% from "input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+            id: "compliance-result",
+            name: "compliance-result",
+            value: "true",
+            classes: "visually-hidden"
+          }) }}
+
+          {% from "button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            "text": "Upload and continue"
+          }) }}
+
+        </form>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+{% endblock %}

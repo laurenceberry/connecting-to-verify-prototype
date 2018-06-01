@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Connect ‘"+data['name-of-service']+"’ to GOV.UK Verify",
+        "href": "../tech-task-list"
+      },
+      {
+        "text": "Get access to Integration environment",
+        "href": "integration-overview"
+      }
+    ]
+  }) }}
+
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+          SAML response URL
+        </h1>
+
+        <p>
+          Provide a unique URL to receive SAML responses. For example <code class="code">https://{your-service-name}.{your-integration-domain}/verify/response</code>
+        </p>
+
+        <form action="integration-matching-url" method="post">
+
+          {% from "input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+            "label": {
+              "text": "Connection name",
+              "classes": "visually-hidden"
+            },
+            value: data['saml-response-url'],
+            id: "saml-response-url",
+            name: "saml-response-url"
+          }) }}
+
+          {{ govukButton({
+            "text": "Save and continue"
+          }) }}
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Components",
+        "href": "#"
+      },
+      {
+        "text": "GOV.UK Verify",
+        "href": "https://connect-to-verify-start.herokuapp.com/verify"
+      },
+      {
+        "text": "Get started",
+        "href": "/get-started"
+      }
+    ]
+  }) }}
+
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          <span class="govuk-caption-xl">Design and research your service</span>
+          Design your service using GOV.UK Verify
+        </h1>
+
+        <p>
+          You service should send users to GOV.UK Verify at the point you need to check who they are. This is usually near the start of the user journey.
+        </p>
+
+        <img src="../public/images/verify-journey.png" alt="" class="diagram">
+
+
+        <p>
+          The user will choose a certified company to verify their identity. Once they've been verified, they'll be sent back to your service. You'll be able to see their name, address and date of birth.
+        </p>
+
+        <p>
+          Email <a href="mailto:connect-to-verify-prototype@digital.cabinet-office.gov.uk">connect-to-verify-prototype@digital.cabinet-office.gov.uk</a> if you have any questions about how GOV.UK Verify fits into your service.
+        </p>
+
+        <h3 class="govuk-heading-m">See an example user journey</h3>
+
+        <p>
+          See where GOV.UK Verify fits into the user journey for a:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="example?bannerText=Example of a level 1 user journey for GOV.UK Verify&guidanceText=&returnText=Return to Design your service&goBackURL=index&exampleURL=https://govuk-verify-loa1.herokuapp.com/start-view-share-driving-licence?requestId=view-share-driving-licence">level 1 service</a>
+          </li>
+          <li>
+            <a href="example?bannerText=Example of a level 2 user journey for GOV.UK Verify&guidanceText=By entering the phone number 07712225464 when prompted, users will go down the 'fail verification' journey.&returnText=Return to Design your service&goBackURL=index&exampleURL=https://govuk-verify.herokuapp.com/start-pages/start-view-share-driving-licence-loa2">level 2 service</a>
+          </li>
+        </ul>
+
+        <p>
+          You don't need to submit any personal information to see either of the example user journeys.
+        </p>
+
+        <h3 class="govuk-heading-m">If a user can't be verified</h3>
+
+        <p>GOV.UK Verify will show any users who can't be verified the other ways they can use your service, for example by phone or by post.</p>
+
+        <p>
+          See an example of what GOV.UK Verify <a href="example?bannerText=Example of what a user will see if they can't be verified&guidanceText=&returnText=Return to Design your service&goBackURL=index&exampleURL=/design-and-research/unsuccessful">shows a user who can't be verified</a>.
+        </p>
+
+        <nav class="pagination" role="navigation" aria-label="Pagination">
+          <ul>
+              <li class="previous">
+                <a href="/check-if-you-need-verify/assurance">
+                  <span class="title">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                      <path fill="currentColor" d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                    </svg>
+                    Previous
+                  </span>
+                  <span class="label">Choose the right level of assurance</span>
+                </a>
+              </li>
+
+              <li class="next">
+                <a href="test-service-with-users">
+                  <span class="title">
+                    Next
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                      <path fill="currentColor" d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                    </svg>
+                  </span>
+                  <span class="label">Test your service with your users</span>
+                </a>
+              </li>
+          </ul>
+        </nav>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+{% endblock %}

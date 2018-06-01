@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Connect ‘"+data['name-of-service']+"’ to GOV.UK Verify",
+        "href": "../tech-task-list"
+      }
+    ]
+  }) }}
+
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Get certificates
+        </h1>
+
+        <p>
+          To connect to Production, you need to <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/pki/pkiRequestCert.html?highlight=csr#generate-private-keys">generate 4 private keys and corresponding certificate signing requests</a>. Then you need to get them signed by GOV.UK Verify. They are:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>an encryption certificate for your service</li>
+          <li>a signing certificate for your service</li>
+          <li>an encryption certificate for your Matching Service Adapter</li>
+          <li>a signing certificate for your Matching Service Adapter</li>
+        </ul>
+
+        <h2 class="govuk-heading-m">
+          Send certificate signing requests
+        </h2>
+
+        <p>
+          Once you have generated all 4 certificate signing requests, you need to send them to GOV.UK Verify to be signed.
+        </p>
+
+        {{ govukButton({
+          "text": "Send certificate signing requests",
+          "href": "certificates-send"
+        }) }}
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
