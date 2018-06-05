@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Connect to Verify
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a class="govuk-back-link" href="/matching/existing-database">Back</a>
+
+  <main role="main" class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Does your service need to recognise returning users?
+        </h1>
+
+        <p class="govuk-body">
+          Users will need to use some services more often than others.
+        </p>
+
+        <p class="govuk-body">
+          For example, some users will have to <a href="https://www.gov.uk/log-in-file-self-assessment-tax-return">file a Self Assessment tax return</a> every year. This service needs to remember who its users are so they don't have to submit the same information about themselves every time they use it.
+        </p>
+
+        <p class="govuk-body">
+          Users can only do other things once, such as <a href="https://www.gov.uk/get-state-pension">claim their State Pension</a>. This service doesn't need to remember who its users are because they won't have to use it again.
+        </p>
+
+        <div class="govuk-!-pb-r5"></div>
+
+          <form class="form" action="/returning-users-answer" method="post">
+
+        <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changed-name-1" name="returning-users" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="returning-users">
+        Yes
+      </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changed-name-2" name="returning-users" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="returning-users">
+        No
+      </label>
+      </div>
+    </div>
+
+    <div class="govuk-!-pb-r6"></div>
+
+          <input class="govuk-button" type="submit" value="Continue">
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

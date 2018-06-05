@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Connect to Verify
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Components",
+        "href": "#"
+      },
+      {
+        "text": "GOV.UK Verify",
+        "href": "https://connect-to-verify-start.herokuapp.com/verify"
+      },
+      {
+        "text": "Get started",
+        "href": "/get-started"
+      }
+    ]
+  }) }}
+
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+          Find out how identities are matched
+        </h1>
+
+        <p class="govuk-body">
+          The GOV.UK Verify team will decide how your service should match identities with records, as well as what counts as a successful match.
+        </p>
+
+        <p class="govuk-body">
+          They'll also tell you what to do when:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>an identity is successfully matched to a record in your database</li>
+          <li>an identity is matched to more than one record in your database</li>
+          <li>no match is found</li>
+        </ul>
+
+        <p class="govuk-body">
+          This is known as a 'matching strategy'. <a href="https://support-form.cloudapps.digital/support">Contact the GOV.UK Verify team</a> to get your matching strategy.
+        </p>
+
+        <nav class="pagination" role="navigation" aria-label="Pagination">
+          <ul>
+            <li class="previous">
+              <a href="/matching/outcome-2-user-records">
+                <span class="title">
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                    <path fill="currentColor" d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                  </svg>
+                  Previous
+                </span>
+                <span class="label">Create new records for users</span>
+              </a>
+            </li>
+
+            <li class="next">
+              <a href="/matching/outcome-2-create">
+                <span class="title">
+                  Next
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                    <path fill="currentColor" d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                  </svg>
+                </span>
+                <span class="label">Create a matching service
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+{% endblock %}

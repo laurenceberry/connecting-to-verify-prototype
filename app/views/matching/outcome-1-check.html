@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Connect to Verify
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Components",
+        "href": "#"
+      },
+      {
+        "text": "GOV.UK Verify",
+        "href": "https://connect-to-verify-start.herokuapp.com/verify"
+      },
+      {
+        "text": "Get started",
+        "href": "/get-started"
+      }
+    ]
+  }) }}
+
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      	<h1 class="govuk-heading-l">
+          Check the quality of your data
+        </h1>
+
+        <p class="govuk-body">
+          Before you start matching identities with records, you must <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/evaluatedata.html">check the data is good enough to use</a>. It'll be more difficult to find a match if the data you're using is out of date or incomplete.
+        </p>
+
+        <p class="govuk-body">
+          The data should:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>contain accurate data from a reliable source</li>
+          <li>include the user's name, address and date of birth</li>
+          <li>cover the right demographic for your service, for example a database of 18 to 25 year olds won't be useful for a service that lets users claim their State Pension</li>
+        </ul>
+
+        <p class="govuk-body">
+          It shouldn't:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>contain duplicate records or multiple records for the same user</li>
+          <li>contain things like symbols or special characters</li>
+        </ul>
+
+        <p class="govuk-body">
+          Find out what you need to do to <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/preparedata.html">prepare the data</a> before you start looking for matches.
+        </p>
+
+        <nav class="pagination" role="navigation" aria-label="Pagination">
+          <ul>
+            <li class="next">
+              <a href="outcome-1-decide">
+                <span class="title">
+                  Next
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                    <path fill="currentColor" d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                  </svg>
+                </span>
+                <span class="label">Decide how you'll match identities with records
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+{% endblock %}

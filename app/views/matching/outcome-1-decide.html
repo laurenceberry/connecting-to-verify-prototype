@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Connect to Verify
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Components",
+        "href": "#"
+      },
+      {
+        "text": "GOV.UK Verify",
+        "href": "https://connect-to-verify-start.herokuapp.com/verify"
+      },
+      {
+        "text": "Get started",
+        "href": "/get-started"
+      }
+    ]
+  }) }}
+
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      	<h1 class="govuk-heading-l">
+          Decide how you'll match identities with records
+        </h1>
+
+        <p class="govuk-body">
+          You need to decide how your service will match identities with records, as well as what counts as a successful match.
+        </p>
+
+        <p class="govuk-body">
+          You also need to decide what happens when:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>an identity is successfully matched to a record in your database</li>
+          <li>an identity is matched to more than one record in your database</li>
+          <li>no match is found</li>
+        </ul>
+
+        <p class="govuk-body">
+          This is known as <a href=http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/matchingstrategy.html>deciding a matching strategy</a>.
+        </p>
+
+        <p class="govuk-body">
+          It's possible an identity that's been verified by a certified company will be slightly different to a record in the database. You should also look for records that are a close match and decide what you'll do with them.
+        </p>
+
+        <div class="panel govuk-body govuk-!-mb-r6 govuk-!-mt-r6">
+          <p>
+            <span>Example</span>
+            Jonathan McDonald is successfully verified by a certified company. The service he wants to use tries to match this verified identity against a record in their database.</p>
+            <p>The only record they find is for a Johnathan MacDonald. This is the same user, but the identity and record don't match because their name is spelt differently.</p>
+            <p>There are often spelling mistakes in this particular database because the data is collected over the phone. The service applies <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/matchingstrategy.html#decide-rules-for-matching-and-confidence-scores">'fuzzy matching'</a> rules to decide Jonathan McDonald is the same person as the Johnathan MacDonald in the database.</p>
+            <p>This match is successful and Jonathan McDonald can continue to use the service.
+          </p>
+        </div>
+
+        <nav class="pagination" role="navigation" aria-label="Pagination">
+          <ul>
+            <li class="previous">
+              <a href="/matching/outcome-1-check">
+                <span class="title">
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                    <path fill="currentColor" d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                  </svg>
+                  Previous
+                </span>
+                <span class="label">Check the quality of your data</span>
+              </a>
+            </li>
+
+            <li class="next">
+              <a href="/matching/outcome-1-create">
+                <span class="title">
+                  Next
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                    <path fill="currentColor" d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                  </svg>
+                </span>
+                <span class="label">Create a matching service
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+{% endblock %}
