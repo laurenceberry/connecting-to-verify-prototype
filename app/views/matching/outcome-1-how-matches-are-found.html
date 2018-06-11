@@ -42,12 +42,34 @@
           Your service will need to run each cycle until a successful match is found.
         </p>
 
+        <h2 class="govuk-heading-m">
+          If you find more than one match
+        </h2>
+
         <p class="govuk-body">
-          If more than one match is found during the first cycle, GOV.UK Verify will ask the user for another piece of information about themselves, such as their driving licence number. This will then be used with their name, address and date of birth in another matching cycle.
+          The user will need to give another piece of information about themselves, such as their driving licence number, if more than one match is found during the first 2 cycles. This will then be used with their name, address and date of birth in another matching cycle.
         </p>
 
         <p class="govuk-body">
           You must decide what information your service will need to collect if this happens. You should also think about what your service will do if the user can't provide this information.
+        </p>
+
+        <div class="panel govuk-body govuk-!-mb-r6 govuk-!-mt-r6">
+          <p class="govuk-body">
+            <span>Example</span>
+            If more than one match is found when a user tries to <a href="https://www.gov.uk/get-state-pension">claim their State Pension</a>, the Department for Work and Pensions (DWP) will ask them for their National Insurance number.
+          </p>
+            <p>
+              The service can then use this (as well as the user’s name, address and date of birth) to find a match in DWP’s database of people who have National Insurance numbers.
+          </p>
+        </div>
+
+        <h2 class="govuk-heading-m">
+          If you don't find any matches
+        </h2>
+
+        <p class="govuk-body">
+          You can choose to <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/createnewaccounts.html">create a new record in your database</a> if you've run all 3 matching cycles but still haven't found a record that matches the user's identity.
         </p>
 
         <nav class="pagination" role="navigation" aria-label="Pagination">
@@ -61,18 +83,6 @@
                   Previous
                 </span>
                 <span class="label">Create a matching service</span>
-              </a>
-            </li>
-
-            <li class="next">
-              <a href="/matching/outcome-1-user-records">
-                <span class="title">
-                  Next
-                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
-                    <path fill="currentColor" d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-                  </svg>
-                </span>
-                <span class="label">Create new records for users
               </a>
             </li>
 
