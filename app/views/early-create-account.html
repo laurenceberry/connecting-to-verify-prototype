@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Components",
+        "href": "#"
+      },
+      {
+        "text": "GOV.UK Verify",
+        "href": "https://connect-to-verify-start.herokuapp.com/verify"
+      },
+      {
+        "text": "Get started",
+        "href": "/get-started"
+      }
+    ]
+  }) }}
+
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+          Create an account
+        </h1>
+
+        <form action="get-started" method="post">
+
+          {% from "input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+            label: {
+              text: "Email"
+            },
+            hint: {
+              html: "Must be from a government organisation"
+            },
+            id: "email-address",
+            name: "email-address",
+            classes: "govuk-!-width-two-thirds"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Mobile number"
+            },
+            hint: {
+              html: "We'll send you a security code by text message"
+            },
+            id: "mobile-number",
+            name: "mobile-number",
+            classes: "govuk-!-width-two-thirds"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Password"
+            },
+            hint: {
+              html: "Must be at least 10 characters"
+            },
+            id: "password",
+            name: "password",
+            type: "password",
+            classes: "govuk-!-width-two-thirds"
+          }) }}
+
+          {% from "button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

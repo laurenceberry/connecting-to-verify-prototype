@@ -31,7 +31,6 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          <span class="govuk-caption-xl">Connect to GOV.UK Verify</span>
           Get access to environments
         </h1>
 
@@ -49,11 +48,23 @@
 
         {% from "button/macro.njk" import govukButton %}
 
+        {% if data['email-address'] %}
+
+        {{ govukButton({
+          text: "Continue",
+          href: "tech-task-list"        
+        }) }}
+
+        {% else %}
+
         {{ govukButton({
           text: "Create account",
           href: "create-account",
           classes: "govuk-button--start"
         }) }}
+
+        {% endif %}
+
 
         <nav class="pagination" role="navigation" aria-label="Pagination">
           <ul>
@@ -71,6 +82,29 @@
 
           </ul>
         </nav>
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+
+        <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-heading-s" id="subsection-title">
+            You are in step 4 of 4: Connect to GOV.UK Verify
+          </h2>
+
+          {% if data['email-address'] %}
+          {% else %}
+          <p>
+            <a href="../early-create-account">Create an account</a> to keep track of your progress
+          </p>
+          {% endif %}
+
+          <p>
+            <a href="../get-started">Go back to task list</a>
+          </p>
+
+
+        </aside>
 
       </div>
 
