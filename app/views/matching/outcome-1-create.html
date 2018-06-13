@@ -31,85 +31,28 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
       	<h1 class="govuk-heading-l">
-          Create a matching service
+          How to match identities with records
         </h1>
 
         <p class="govuk-body">
-          A matching service matches verified identities with records in your database. It does this by following the rules you set when you decided your matching strategy. It also sends any results to GOV.UK Verify.
+          You must <a href="/build-your-service/create-matching-service">create a matching service</a> to match verified identities with records in your database.
         </p>
 
         <p class="govuk-body">
-          To create a matching service, you need to:
-        </p>
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li>build a local matching service</li>
-          <li>install the Matching Service Adapter</li>
-        </ul>
-
-        <img src="../public/images/verify-build-matching.svg" alt="" class="diagram">
-
-        <h2 class="govuk-heading-m">
-          Build a local matching service
-        </h2>
-
-        <p class="govuk-body">
-          A local matching service helps you find a match between a user's verified identity and a record in your database. You must build your own local matching service and host it on your own infrastructure.
-        </p>
-
-        <ol class="govuk-list govuk-list--number">
-          <li>See an <a href="https://github.com/alphagov/verify-local-matching-service-example">example local matching service</a> to find out how it should work.</li>
-          <li>Build your local matching service. It must be able to <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/buildmatchingservice.html#respondjsonmr">respond to JSON matching requests</a>.</li>
-          <li><a href="https://github.com/alphagov/verify-matching-service-adapter/tree/master/verify-matching-service-test-tool">Use the matching service test tool</a> to check it can find and match records.</li>
-        </ol>
-
-        <p class="govuk-body">
-          <a href="https://support-form.cloudapps.digital/support">Contact the GOV.UK Verify team</a> if you need help building your local matching service.
-        </p>
-
-        <h2 class="govuk-heading-m">
-          Install the Matching Service Adapter
-        </h2>
-
-        <p class="govuk-body">
-          The Matching Service Adapter is a software tool that helps your local matching service communicate with GOV.UK Verify. You must host the Matching Service Adapter on your own infrastructure.
-        </p>
-
-        <p class="govuk-body">
-          <a href="https://github.com/alphagov/verify-matching-service-adapter">Download the Matching Service Adapter</a> and follow the instructions on how to install and configure it. Check you have the most recent version of the Matching Service Adapter - new versions are regularly released.
-        </p>
-
-        <h2 class="govuk-heading-m">
-          Test your matching service
-        </h2>
-
-        <p class=govuk-body>
-          Use the <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/matching/testmatching.html#testmatching">Compliance Tool</a> to test that your matching service works properly.
+          The matching service does this by following the rules you set when you decided your matching strategy. It also sends any results to GOV.UK Verify.
         </p>
 
         <nav class="pagination" role="navigation" aria-label="Pagination">
           <ul>
             <li class="previous">
-              <a href="/matching/outcome-1-decide">
+              <a href="/matching/outcome-1-how-matches-are-found">
                 <span class="title">
                   <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
                     <path fill="currentColor" d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
                   </svg>
                   Previous
                 </span>
-                <span class="label">Decide how you'll match identities with records</span>
-              </a>
-            </li>
-
-            <li class="next">
-              <a href="/matching/outcome-1-how-matches-are-found">
-                <span class="title">
-                  Next
-                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
-                    <path fill="currentColor" d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-                  </svg>
-                </span>
-                <span class="label">How matches are found
+                <span class="label">How matches are found</span>
               </a>
             </li>
 

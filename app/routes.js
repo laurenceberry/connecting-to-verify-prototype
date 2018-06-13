@@ -29,11 +29,11 @@ router.post('/returning-users-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (returningUsers == "yes"){
     // Send user to next page
-    res.redirect('/matching/outcome-2-user-records')
+    res.redirect('/matching/outcome-2')
   }
   else {
     // Send user to next question
-    res.redirect('/matching/outcome-3-create')
+    res.redirect('/matching/outcome-3')
   }
 
 })
