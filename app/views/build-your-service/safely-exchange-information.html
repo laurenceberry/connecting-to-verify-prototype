@@ -31,7 +31,6 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
       	<h1 class="govuk-heading-xl">
-          <span class="govuk-caption-xl">Build your service</span>
           Safely exchange information with GOV.UK Verify
         </h1>
 
@@ -75,9 +74,21 @@
         </p>
 
         <p>
-          If it can't, any information your service sends or receives about your users won't be secure. 
+          If it can't, any information your service sends or receives about your users won't be secure.
         </p>
-        
+
+        {% from "button/macro.njk" import govukButton %}
+
+        {% if data['email-address'] %}
+
+        {{ govukButton({
+          text: "Mark as done",
+          href: "#",
+          classes: "govuk-!-mt-r3"
+        }) }}
+
+        {% endif %}
+
         <nav class="pagination" role="navigation" aria-label="Pagination">
           <ul>
             <li class="previous">
@@ -106,6 +117,29 @@
 
           </ul>
         </nav>
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+
+        <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-heading-s" id="subsection-title">
+            You are in step 3 of 4: Build your service
+          </h2>
+
+          {% if data['email-address'] %}
+          {% else %}
+          <p>
+            <a href="../early-create-account">Create an account</a> to keep track of your progress
+          </p>
+          {% endif %}
+
+          <p>
+            <a href="../get-started">Go back to task list</a>
+          </p>
+
+
+        </aside>
 
       </div>
 

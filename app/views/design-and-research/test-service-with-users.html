@@ -31,7 +31,6 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          <span class="govuk-caption-xl">Design and research your service</span>
           Test your service with your users
         </h1>
 
@@ -42,6 +41,18 @@
         <p>
           Doing this won't automatically connect your live service to GOV.UK Verify.
         </p>
+
+        {% from "button/macro.njk" import govukButton %}
+
+        {% if data['email-address'] %}
+
+        {{ govukButton({
+          text: "Mark as done",
+          href: "#",
+          classes: "govuk-!-mt-r3"
+        }) }}
+
+        {% endif %}
 
         <nav class="pagination" role="navigation" aria-label="Pagination">
           <ul>
@@ -70,6 +81,29 @@
               </li>
           </ul>
         </nav>
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+
+        <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-heading-s" id="subsection-title">
+            You are in step 2 of 4: Design and research your service
+          </h2>
+
+          {% if data['email-address'] %}
+          {% else %}
+          <p>
+            <a href="../early-create-account">Create an account</a> to keep track of your progress
+          </p>
+          {% endif %}
+
+          <p>
+            <a href="../get-started">Go back to task list
+          </p>
+
+
+        </aside>
 
       </div>
 

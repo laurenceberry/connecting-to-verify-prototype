@@ -30,7 +30,6 @@
   <main role="main" class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-xl">Check if you need GOV.UK Verify</span>
         <h1 class="govuk-heading-xl">Choose the right level of assurance</h1>
 
         <p>
@@ -122,6 +121,18 @@
           Email <a href="mailto:connect-to-verify-prototype@digital.cabinet-office.gov.uk">connect-to-verify-prototype@digital.cabinet-office.gov.uk</a> if you need more information about the different levels of assurance.
         </p>
 
+        {% from "button/macro.njk" import govukButton %}
+
+        {% if data['email-address'] %}
+
+        {{ govukButton({
+          text: "Mark as done",
+          href: "#",
+          classes: "govuk-!-mt-r3"
+        }) }}
+
+        {% endif %}
+
           <nav class="pagination" role="navigation" aria-label="Pagination">
             <ul>
                 <li class="previous">
@@ -151,6 +162,30 @@
           </nav>
 
     </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-s" id="subsection-title">
+          You are in step 1 of 4: Check if you need GOV.UK Verify
+        </h2>
+
+        {% if data['email-address'] %}
+        {% else %}
+        <p>
+          <a href="../early-create-account">Create an account</a> to keep track of your progress
+        </p>
+        {% endif %}
+
+        <p>
+          <a href="../get-started">Go back to task list</a>
+        </p>
+
+
+      </aside>
+
+    </div>
+
   </main>
 </div>
 
