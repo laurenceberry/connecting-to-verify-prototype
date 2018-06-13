@@ -34,7 +34,7 @@
           Create an account
         </h1>
 
-        <form action="get-started" method="post">
+        <form onsubmit="history.back()" method="post" id="account-form">
 
           {% from "input/macro.njk" import govukInput %}
 
@@ -75,11 +75,9 @@
             classes: "govuk-!-width-two-thirds"
           }) }}
 
-          {% from "button/macro.njk" import govukButton %}
-
-          {{ govukButton({
-            text: "Continue"
-          }) }}
+          <button type="submit" class="govuk-button" id="account-button">
+            Save and continue
+          </button>
 
         </form>
 

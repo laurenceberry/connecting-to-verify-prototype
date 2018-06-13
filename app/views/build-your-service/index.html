@@ -53,17 +53,27 @@
 
         <img src="../public/images/verify-build-simple.svg" alt="" class="diagram">
 
-        {% from "button/macro.njk" import govukButton %}
+        <form action="../get-started" method="post">
 
-        {% if data['email-address'] %}
+          {% from "button/macro.njk" import govukButton %}
+          {% from "input/macro.njk" import govukInput %}
 
-        {{ govukButton({
-          text: "Mark as done",
-          href: "#",
-          classes: "govuk-!-mt-r3"
-        }) }}
+          {% if data['email-address'] %}
 
-        {% endif %}
+            {{ govukInput({
+              id: "what-to-build-complete",
+              name: "what-to-build-complete",
+              value: "true",
+              classes: "visually-hidden"
+            }) }}
+
+            {{ govukButton({
+              "text": "Mark as complete"
+            }) }}
+
+          {% endif %}
+
+        </form>
 
         <nav class="pagination" role="navigation" aria-label="Pagination">
           <ul>

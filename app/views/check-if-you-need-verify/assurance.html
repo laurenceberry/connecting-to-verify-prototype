@@ -121,17 +121,27 @@
           Email <a href="mailto:connect-to-verify-prototype@digital.cabinet-office.gov.uk">connect-to-verify-prototype@digital.cabinet-office.gov.uk</a> if you need more information about the different levels of assurance.
         </p>
 
-        {% from "button/macro.njk" import govukButton %}
+        <form action="../get-started" method="post">
 
-        {% if data['email-address'] %}
+          {% from "button/macro.njk" import govukButton %}
+          {% from "input/macro.njk" import govukInput %}
 
-        {{ govukButton({
-          text: "Mark as done",
-          href: "#",
-          classes: "govuk-!-mt-r3"
-        }) }}
+          {% if data['email-address'] %}
 
-        {% endif %}
+            {{ govukInput({
+              id: "level-of-assurance-complete",
+              name: "level-of-assurance-complete",
+              value: "true",
+              classes: "visually-hidden"
+            }) }}
+
+            {{ govukButton({
+              "text": "Mark as complete"
+            }) }}
+
+          {% endif %}
+
+        </form>
 
           <nav class="pagination" role="navigation" aria-label="Pagination">
             <ul>

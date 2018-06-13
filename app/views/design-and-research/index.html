@@ -76,17 +76,27 @@
           See an example of what GOV.UK Verify <a href="example?bannerText=Example of what a user will see if they can't be verified&guidanceText=&returnText=Return to Design your service&goBackURL=index&exampleURL=/design-and-research/unsuccessful">shows a user who can't be verified</a>.
         </p>
 
-        {% from "button/macro.njk" import govukButton %}
+        <form action="../get-started" method="post">
 
-        {% if data['email-address'] %}
+          {% from "button/macro.njk" import govukButton %}
+          {% from "input/macro.njk" import govukInput %}
 
-        {{ govukButton({
-          text: "Mark as done",
-          href: "#",
-          classes: "govuk-!-mt-r3"
-        }) }}
+          {% if data['email-address'] %}
 
-        {% endif %}
+            {{ govukInput({
+              id: "design-your-service-complete",
+              name: "design-your-service-complete",
+              value: "true",
+              classes: "visually-hidden"
+            }) }}
+
+            {{ govukButton({
+              "text": "Mark as complete"
+            }) }}
+
+          {% endif %}
+
+        </form>
 
         <nav class="pagination" role="navigation" aria-label="Pagination">
           <ul>

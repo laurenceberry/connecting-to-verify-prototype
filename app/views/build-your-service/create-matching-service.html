@@ -86,17 +86,27 @@
           Use the <a href="http://alphagov.github.io/rp-onboarding-tech-docs/pages/saml/samlComplianceTool.html">Compliance Tool</a> to test that your matching service works properly.
         </p>
 
-        {% from "button/macro.njk" import govukButton %}
+        <form action="../get-started" method="post">
 
-        {% if data['email-address'] %}
+          {% from "button/macro.njk" import govukButton %}
+          {% from "input/macro.njk" import govukInput %}
 
-        {{ govukButton({
-          text: "Mark as done",
-          href: "#",
-          classes: "govuk-!-mt-r3"
-        }) }}
+          {% if data['email-address'] %}
 
-        {% endif %}
+            {{ govukInput({
+              id: "create-matching-service-complete",
+              name: "create-matching-service-complete",
+              value: "true",
+              classes: "visually-hidden"
+            }) }}
+
+            {{ govukButton({
+              "text": "Mark as complete"
+            }) }}
+
+          {% endif %}
+
+        </form>
 
         <nav class="pagination" role="navigation" aria-label="Pagination">
           <ul>
