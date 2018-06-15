@@ -43,27 +43,27 @@ router.post('/returning-users-answer', function (req, res) {
 // create account page_title
 
 router.post('/account-created', function (req, res) {
-
   // Make a variable and give it the value from 'email address'
-  var existingDatabase = req.session.data['email-address'];
+  const existingDatabase = req.session.data['email-address'];
   // Make a variable and make it the URL of the previous page
-  var previousPage = document.referrer;
-
+  const previousPage = req.body.referrer || '/';
   // if there is something written in the email address field
-  if (typeof existingDatabase !== 'undefined'){
+  if (typeof existingDatabase !== 'undefined') {
     // Send user to next page
     res.redirect(previousPage);
-  }
-  else {
+  } else {
     // go back to get started page
     res.redirect('get-started');
   }
-
 })
 
 // Add your routes here - above the module.exports line
 
 module.exports = router
+
+router.get('/early-create-account', function (req, res) {
+  res.render('early-create-account', { referrer: req.header('Referer') })
+});
 
 router.get('/check-if-you-need-verify', function (req, res) {
   res.render(

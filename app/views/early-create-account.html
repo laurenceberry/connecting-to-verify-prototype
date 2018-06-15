@@ -36,6 +36,8 @@
 
         <form class="form" action="/account-created" method="post">
 
+          <input id="referrer" name="referrer" type="hidden" value="{{ referrer }}">
+
           {% from "input/macro.njk" import govukInput %}
 
           {{ govukInput({
