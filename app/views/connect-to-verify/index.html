@@ -50,18 +50,18 @@
 
         {% if data['email-address'] %}
 
-        {{ govukButton({
-          text: "Continue",
-          href: "tech-task-list"        
-        }) }}
+          {{ govukButton({
+            text: "Continue",
+            href: "tech-task-list"
+          }) }}
 
         {% else %}
 
-        {{ govukButton({
-          text: "Create account",
-          href: "create-account",
-          classes: "govuk-button--start"
-        }) }}
+          {{ govukButton({
+            text: "Create account",
+            href: "create-account",
+            classes: "govuk-button--start"
+          }) }}
 
         {% endif %}
 
@@ -95,14 +95,9 @@
           {% if data['email-address'] %}
           {% else %}
           <p>
-            <a href="../early-create-account">Create an account</a> to keep track of your progress
+            <a href="../early-create-account">Create an account</a> to keep track of your progress.
           </p>
           {% endif %}
-
-          <p>
-            <a href="../get-started">Go back to task list</a>
-          </p>
-
 
         </aside>
 
