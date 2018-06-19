@@ -8,7 +8,28 @@
 
 <div class="govuk-width-container">
 
-  <a class="govuk-back-link" href="/matching/match-identities">Back</a>
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Components",
+        "href": "#"
+      },
+      {
+        "text": "GOV.UK Verify",
+        "href": "https://connect-to-verify-start.herokuapp.com/verify"
+      },
+      {
+        "text": "Get started",
+        "href": "/get-started"
+      },
+      {
+        "text": "Match verified identities with existing data",
+        "href": "/matching/match-identities"
+      }
+    ]
+  }) }}
 
   <main role="main" class="govuk-main-wrapper">
 
@@ -51,9 +72,7 @@
       </div>
     </div>
 
-    <div class="govuk-!-pb-r3"></div>
-
-          <input class="govuk-button" type="submit" value="Continue">
+          <input class="govuk-button govuk-!-mt-r5" type="submit" value="Continue">
 
         </form>
 

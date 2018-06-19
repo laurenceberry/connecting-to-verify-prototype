@@ -10,6 +10,8 @@
 
   {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
   {{ govukBreadcrumbs({
     "items": [
       {
@@ -23,6 +25,10 @@
       {
         "text": "Get started",
         "href": "/get-started"
+      },
+      {
+        "text": "Match verified identities with existing data",
+        "href": "/matching/match-identities"
       }
     ]
   }) }}
@@ -35,13 +41,14 @@
         </h1>
 
         <p class="govuk-body">
-          You need to tell GOV.UK Verify your service hasn't matched a verified identity with an existing record.
+          You need to tell GOV.UK Verify your service hasn’t matched a verified identity with an existing record.
         </p>
 
         <p class="govuk-body">
-          You must <a href="/build-your-service/create-matching-service">create a matching service</a> to do this.
+          You must create a matching service to do this.
         </p>
 
+        <a class="govuk-button govuk-!-mt-r5" href="/build-your-service/create-matching-service">Create a matching service</a>
 
     </div>
   </main>
