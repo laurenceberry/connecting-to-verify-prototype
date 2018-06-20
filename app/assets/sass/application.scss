@@ -201,3 +201,90 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 .banner h2, .banner a, .banner p{
   color: #fff;
 }
+
+
+// user journey list
+
+.user-journey-list {
+
+  ol {
+    border-left: 2px solid $govuk-grey-2;
+    padding: 15px;
+
+    h2 {
+      max-width: 18em;
+    }
+
+    li {
+      position: relative;
+      border: 2px solid $govuk-black;
+      border-top: 15px solid $govuk-black;
+      padding: 5px;
+      margin-bottom: 30px;
+      width: 240px;
+      height: 160px;
+      box-sizing: border-box;
+
+      p {
+        padding: 5px;
+        font-weight: bold;
+      }
+
+      .blue-bg {
+        color: white;
+        background-color: $govuk-blue;
+        height: 66%;
+      }
+
+    }
+
+    ol {
+      position: absolute;
+      top: 65px;
+      left: 550px;
+      padding-top: 58px;
+    }
+
+    ol:before {
+      content: '';
+      display: block;
+      position: relative;
+      height: 2px;
+      width: 314px;
+      background-color: $govuk-grey-2;
+      top: -58px;
+      left: -329px;
+    }
+
+  }
+
+  .idp {
+    border: 2px solid $govuk-grey-1;
+    border-top: 15px solid $govuk-grey-1;
+  }
+
+  li:before {
+    content: '';
+    display: block;
+    position: relative;
+    height: 2px;
+    width: 15px;
+    background-color: $govuk-grey-2;
+    top: 60px;
+    left: -22px;
+  }
+
+  ol:after {
+    content: '';
+    display: block;
+    position: relative;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 18px solid #bfc1c3;
+    left: -28px;
+    top: 16px;
+  }
+
+}

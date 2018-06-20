@@ -1,0 +1,174 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Components",
+        "href": "#"
+      },
+      {
+        "text": "GOV.UK Verify",
+        "href": "https://connect-to-verify-start.herokuapp.com/verify"
+      },
+      {
+        "text": "Get started",
+        "href": "/get-started"
+      }
+    ]
+  }) }}
+
+  <main role="main" class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          How the level 1 user journey works
+        </h1>
+        <p class="govuk-!-mb-r7">
+          This is a typical user journey. Each identity provider verifies identities in different ways. This depends on the evidence the user can provide and the methods supported by the identity provider.
+        </p>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full user-journey-list">
+
+        <ol class="govuk-list">
+          <h2 class="govuk-heading-m">Service</h2>
+          <li>
+            <p>Use the service, get asked to prove identity</p>
+          </li>
+          <h2 class="govuk-heading-m">Verify hub</h2>
+          <li>
+            <p class="blue-bg">Say whether you've used Verify before</p>
+            <!-- if you've used Verify before -->
+            <ol>
+              <h2 class="govuk-heading-m">Sign in</h2>
+              <li>
+                <p>Select identity provider to sign in with</p>
+              </li>
+              <li class="idp">
+                <p>Sign in with username or email and password</p>
+              </li>
+              <li class="idp">
+                <p>Receive two factor authentication code</p>
+              </li>
+              <li class="idp">
+                <p>Enter two factor authentication code</p>
+              </li>
+              <li>
+                <p class="blue-bg">Confirm</p>
+              </li>
+              <li>
+                <p>Redirect to service</p>
+              </li>
+              <li>
+                <p>Continue using service</p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p class="blue-bg">Read about what GOV.UK Verify is</p>
+          </li>
+          <li>
+            <p class="blue-bg">Read about the identity providers</p>
+          </li>
+          <li>
+            <p class="blue-bg">Read how long it will take, and that you'll need to create an account</p>
+          </li>
+          <li>
+            <p>Choose an identity provider</p>
+          </li>
+          <li>
+            <p>Read that you're about to go to the identity provider</p>
+          </li>
+          <h2 class="govuk-heading-m">Identity provider: create an account</h2>
+          <li class="idp">
+            <p>Create a username or email and password</p>
+          </li>
+          <li class="idp">
+            <p>Receive a confirmation code by email</p>
+          </li>
+          <li class="idp">
+            <p>Check email for confirmation code</p>
+          </li>
+          <li class="idp">
+            <p>Enter confirmation code</p>
+          </li>
+          <h2 class="govuk-heading-m">Identity provider: two factor authentication</h2>
+          <li class="idp">
+            <p>Add phone number</p>
+          </li>
+          <li class="idp">
+            <p>Choose two factor authentication method</p>
+          </li>
+          <li class="idp">
+            <p>Receive authentication code</p>
+          </li>
+          <li class="idp">
+            <p>Enter authentication code</p>
+          </li>
+          <h2 class="govuk-heading-m">Identity provider: add personal details</h2>
+          <li class="idp">
+            <p>Add name, age and gender</p>
+          </li>
+          <li class="idp">
+            <p>Postcode lookup</p>
+          </li>
+          <li class="idp">
+            <p>Confirm address</p>
+          </li>
+          <li class="idp">
+            <p>Confirm all details</p>
+          </li>
+          <li class="idp">
+            <p>Get details checked</p>
+          </li>
+          <h2 class="govuk-heading-m">Identity provider: knowledge-based verification</h2>
+          <li class="idp">
+            <p>Knowledge-based verification question 1</p>
+          </li>
+          <li class="idp">
+            <p>Knowledge-based verification question 2</p>
+            <ol>
+              <h2 class="govuk-heading-m">Knowledge-based verification unsuccessful</h2>
+              <li>
+                <p>Verify has failed to verify you</p>
+              </li>
+              <li>
+                <p>Other ways to use this service</p>
+              </li>
+            </ol>
+          </li>
+          <h2 class="govuk-heading-m">Confirmation: from the identity provider back to the Verify Hub</h2>
+          <li class="idp">
+            <p>Successfully verified</p>
+          </li>
+          <li>
+            <p class="blue-bg">Confirm</p>
+          </li>
+          <li>
+            <p>Re-direct to service</p>
+          </li>
+          <li>
+            <p>Continue using service</p>
+          </li>
+        </ol>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
