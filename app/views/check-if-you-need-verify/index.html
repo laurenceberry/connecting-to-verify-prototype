@@ -35,44 +35,52 @@
         </h1>
 
         <p>
-          Use GOV.UK Verify if your service:
+          You should use GOV.UK Verify if your service needs to check a user's identity.
         </p>
+
+        <p>
+          Your service might need to do this if it:
+        </p>
+
         <ul class="govuk-list govuk-list--bullet">
-          <li>
-            needs to legally confirm a user is who they say they are, for example if they’re signing a mortgage deed
-          </li>
           <li>
             shows a user personal information about themselves, such as their driving licence or passport details
           </li>
           <li>
-            pays money to a user
-          </li>
-          <li>
-            gives the user something valuable, like a Blue Badge or council house
+            gives the user something valuable, such as money, benefits or a Blue Badge
           </li>
           <li>
             replaces a form that needs to be physically signed by a user
           </li>
         </ul>
 
-        <h2 class="govuk-heading-m">When you shouldn't use GOV.UK Verify</h2>
+        <div class="panel govuk-body govuk-!-mb-r6 govuk-!-mt-r6">
+          <p>
+            <span>Example</span>
+            The Department for Work and Pensions (DWP) uses GOV.UK Verify to check the identities of users who <a href="https://www.gov.uk/universal-credit/how-to-claim">apply for Universal Credit</a>. This is because the service needs to be sure it pays the right person, and that no one else is trying to claim benefits in their name.
+          </p>
+          <p>
+            GOV.UK Verify can check things like a user's bank account history or passport details. By using it in their service, DWP can be confident its users are who they say they are.
+          </p>
+        </div>
+
+        <h2 class="govuk-heading-l">
+          When you shouldn't use GOV.UK Verify
+        </h2>
+
         <p>
-          Don't use GOV.UK Verify if your service:
+          You shouldn't use GOV.UK Verify if your service needs to recognise returning users but not check their identities. Your service should <a href="https://www.gov.uk/service-manual/design/user-accounts">let the user create an account</a> instead.
         </p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>
-            receives payments from a user
-          </li>
-          <li>
-            doesn't keep any personal information about a user
-          </li>
-          <li>
-            needs a user to physically go somewhere (such as a court or Post Office) to prove their identity
-          </li>
-          <li>
-            needs to recognise a returning user but not check their identity - your service should <a href="https://www.gov.uk/service-manual/design/user-accounts">let a user create an account</a> instead
-          </li>
-        </ul>
+
+        <div class="panel govuk-body govuk-!-mb-r6 govuk-!-mt-r6">
+          <p>
+            <span>Example</span>
+            HM Courts and Tribunals Service lets a user create an account to <a href="https://www.gov.uk/tax-tribunal/appeal-to-tribunal">appeal to the tax tribunal</a> online. This is because the user might need to save their appeal and come back to it at a later date.
+          </p>
+          <p>
+            The service uses user accounts because it just needs to remember the user is the same person who started the appeal. As the service doesn't need to know anything else about the user's identity, it doesn't need to use GOV.UK Verify.
+          </p>
+        </div>
 
         <form action="../get-started" method="post">
 
