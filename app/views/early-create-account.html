@@ -34,7 +34,9 @@
           Create an account
         </h1>
 
-        <form onsubmit="history.back()" method="post" id="account-form">
+        <form class="form" action="/account-created" method="post">
+
+          <input id="referrer" name="referrer" type="hidden" value="{{ referrer }}">
 
           {% from "input/macro.njk" import govukInput %}
 
