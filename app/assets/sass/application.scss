@@ -218,29 +218,31 @@ ul.govuk-list--bullet, ul.govuk-list--number{
     li {
       position: relative;
       border: 2px solid $govuk-black;
-      border-top: 15px solid $govuk-black;
+      border-top: 20px solid $govuk-black;
       padding: 5px;
       margin-bottom: 30px;
-      width: 240px;
-      height: 160px;
+      width: 210px;
+      height: 140px;
       box-sizing: border-box;
 
       p {
         padding: 5px;
         font-weight: bold;
+        @extend %govuk-body-s;
       }
 
       .blue-bg {
         color: white;
         background-color: $govuk-blue;
         height: 66%;
+        margin-top: -2px;
       }
 
     }
 
     ol {
       position: absolute;
-      top: 65px;
+      top: 50px;
       left: 550px;
       padding-top: 58px;
     }
@@ -250,17 +252,26 @@ ul.govuk-list--bullet, ul.govuk-list--number{
       display: block;
       position: relative;
       height: 2px;
-      width: 314px;
+      width: 342px;
       background-color: $govuk-grey-2;
       top: -58px;
-      left: -329px;
+      left: -359px;
     }
 
   }
 
   .idp {
     border: 2px solid $govuk-grey-1;
-    border-top: 15px solid $govuk-grey-1;
+    border-top: 20px solid $govuk-grey-1;
+  }
+
+  .phone {
+    border-radius: 5px;
+    border: 2px solid $govuk-grey-1;
+    border-top: 20px solid $govuk-grey-1;
+    border-bottom: 20px solid $govuk-grey-1;
+    width: 120px;
+    height: 180px;
   }
 
   li:before {
