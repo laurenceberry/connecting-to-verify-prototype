@@ -242,9 +242,9 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 
     ol {
       position: absolute;
-      top: 50px;
+      top: 55px;
       left: 550px;
-      padding-top: 58px;
+      padding-top: 43px;
     }
 
     ol:before {
@@ -254,7 +254,7 @@ ul.govuk-list--bullet, ul.govuk-list--number{
       height: 2px;
       width: 342px;
       background-color: $govuk-grey-2;
-      top: -58px;
+      top: -43px;
       left: -359px;
     }
 
@@ -266,12 +266,25 @@ ul.govuk-list--bullet, ul.govuk-list--number{
   }
 
   .phone {
-    border-radius: 5px;
-    border: 2px solid $govuk-grey-1;
-    border-top: 20px solid $govuk-grey-1;
-    border-bottom: 20px solid $govuk-grey-1;
-    width: 120px;
-    height: 180px;
+
+    li {
+      border-radius: 8px;
+      border: 2px solid $govuk-grey-1;
+      border-top: 15px solid $govuk-grey-1;
+      border-bottom: 15px solid $govuk-grey-1;
+      width: 50px;
+      height: 90px;
+
+      p {
+        position: relative;
+        top: 10px;
+        left: 50px;
+        overflow-x: visible;
+        width: 20em;
+      }
+
+    }
+
   }
 
   li:before {
@@ -281,8 +294,12 @@ ul.govuk-list--bullet, ul.govuk-list--number{
     height: 2px;
     width: 15px;
     background-color: $govuk-grey-2;
-    top: 60px;
+    top: 50px;
     left: -22px;
+  }
+
+  .phone:before {
+    top: 25px;
   }
 
   ol:after {
