@@ -15,27 +15,11 @@ router.post('/existing-database-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (existingDatabase == "yes"){
     // Send user to next page
-    res.redirect('/matching/outcome-1-check')
+    res.redirect('/matching/result')
   }
   else {
     // Send user to next question
     res.redirect('/matching/returning-users')
-  }
-
-})
-
-router.post('/returning-users-answer', function (req, res) {
-
-  // Make a variable and give it the value from 'returning-users'
-  var returningUsers = req.session.data['returning-users']
-  // Check whether the variable matches a condition
-  if (returningUsers == "yes"){
-    // Send user to next page
-    res.redirect('/matching/outcome-2')
-  }
-  else {
-    // Send user to next question
-    res.redirect('/matching/outcome-3')
   }
 
 })
