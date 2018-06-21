@@ -205,11 +205,12 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 
 // user journey list
 
-.user-journey-list {
+.user-journey-diagram {
 
   ol {
-    border-left: 2px solid $govuk-grey-2;
-    padding: 15px;
+    border-left: 3px solid $govuk-grey-2;
+    padding: 30px;
+    counter-reset: section;
 
     h2 {
       max-width: 18em;
@@ -229,33 +230,40 @@ ul.govuk-list--bullet, ul.govuk-list--number{
         padding: 5px;
         font-weight: bold;
         @extend %govuk-body-s;
+        margin-top: -44px;
       }
 
       .blue-bg {
         color: white;
         background-color: $govuk-blue;
         height: 66%;
-        margin-top: -2px;
+        margin-top: -44px;
       }
 
     }
 
     ol {
+      counter-reset: section;
       position: absolute;
       top: 55px;
       left: 550px;
       padding-top: 43px;
+
+      li:before {
+        counter-increment: section;
+        content: counters(section, ".") " ";
+      }
     }
 
     ol:before {
       content: '';
       display: block;
       position: relative;
-      height: 2px;
-      width: 342px;
-      background-color: $govuk-grey-2;
+      height: 3px;
+      width: 330px;
+      background-color: #bfc1c3;
       top: -43px;
-      left: -359px;
+      left: -360px;
     }
 
   }
@@ -288,14 +296,22 @@ ul.govuk-list--bullet, ul.govuk-list--number{
   }
 
   li:before {
-    content: '';
-    display: block;
+    counter-increment: section;
+    content: counter(section);
+    display: inline-block;
     position: relative;
-    height: 2px;
-    width: 15px;
-    background-color: $govuk-grey-2;
-    top: 50px;
-    left: -22px;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    top: 30px;
+    left: -60px;
+    font-weight: bold;
+    background-color: $govuk-white;
+    border: 3px solid $govuk-grey-2;
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    padding-top: 8px;
   }
 
   .phone:before {
@@ -311,8 +327,8 @@ ul.govuk-list--bullet, ul.govuk-list--number{
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
     border-top: 18px solid #bfc1c3;
-    left: -28px;
-    top: 16px;
+    left: -44px;
+    top: 44px;
   }
 
 }
