@@ -226,13 +226,6 @@ ul.govuk-list--bullet, ul.govuk-list--number{
       height: 140px;
       box-sizing: border-box;
 
-      p {
-        padding: 5px;
-        font-weight: bold;
-        @extend %govuk-body-s;
-        margin-top: -44px;
-      }
-
       .blue-bg {
         color: white;
         background-color: $govuk-blue;
@@ -242,12 +235,19 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 
     }
 
+    li > p {
+      padding: 5px;
+      font-weight: bold;
+      @extend %govuk-body-s;
+      margin-top: -44px;
+    }
+
     ol {
       counter-reset: section;
       position: absolute;
       top: 55px;
       left: 550px;
-      padding-top: 43px;
+      padding-top: 20px;
 
       li:before {
         counter-increment: section;
@@ -262,7 +262,7 @@ ul.govuk-list--bullet, ul.govuk-list--number{
       height: 3px;
       width: 330px;
       background-color: #bfc1c3;
-      top: -43px;
+      top: -20px;
       left: -360px;
     }
 
