@@ -50,7 +50,7 @@
             gives the user something valuable, such as money, benefits or a Blue Badge
           </li>
           <li>
-            replaces a form that needs to be physically signed by a user
+            needs a user to sign something
           </li>
         </ul>
 
@@ -65,22 +65,41 @@
         </div>
 
         <h2 class="govuk-heading-l">
-          When you shouldn't use GOV.UK Verify
+          When GOV.UK Verify might not be right for your service
         </h2>
 
         <p>
-          You shouldn't use GOV.UK Verify if your service needs to recognise returning users but not check their identities. Your service should <a href="https://www.gov.uk/service-manual/design/user-accounts">let the user create an account</a> instead.
+          You might not need to use GOV.UK Verify if your service:
         </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            receives payments from a user
+          </li>
+          <li>
+            doesn't keep any personal information about a user
+          </li>
+          <li>
+            needs a user to physically go somewhere (such as a court or Post Office) to prove their identity
+          </li>
+          <li>
+            needs to recognise returning users but not check their identities - your service should <a href="https://design-system.service.gov.uk/patterns/create-accounts/">let the user create an account</a> instead
+          </li>
+        </ul>
 
         <div class="panel govuk-body govuk-!-mb-r6 govuk-!-mt-r6">
           <p>
             <span>Example</span>
-            HM Courts and Tribunals Service lets a user create an account to <a href="https://www.gov.uk/tax-tribunal/appeal-to-tribunal">appeal to the tax tribunal</a> online. This is because the user might need to save their appeal and come back to it at a later date.
+            HM Courts and Tribunals Service lets a user create an account to <a href="https://www.gov.uk/tax-tribunal/appeal-to-tribunal">appeal to the tax tribunal</a> online. This is because the user might need to save their appeal and come back to it later.
           </p>
           <p>
-            The service uses user accounts because it just needs to remember the user is the same person who started the appeal. As the service doesn't need to know anything else about the user's identity, it doesn't need to use GOV.UK Verify.
+            The service just needs to remember that the user is the same person who started the appeal. As it doesn’t need to know anything else about the user’s identity, the service can use user accounts instead of GOV.UK Verify.
           </p>
         </div>
+
+        <p>
+          Email <a href="mailto:connect-to-verify-prototype@digital.cabinet-office.gov.uk">connect-to-verify-prototype@digital.cabinet-office.gov.uk</a> if you need help deciding whether GOV.UK Verify is right for your service.
+        </p>
 
         <form action="../get-started" method="post">
 
