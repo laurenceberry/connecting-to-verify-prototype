@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <main role="main" class="govuk-main-wrapper govuk-body">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Prove your identity to continue
+              </h1>
+            </legend>
+            <p class="govuk-!-mt-r6 govuk-!-mb-r6">You’ll need an account to prove your identity and check your income tax for the current year.</p>
+            <div class="govuk-radios" data-module="radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="option-1" name="option" type="radio" value="sign-in-with-government-gateway" data-aria-controls="conditional-how-contacted-conditional-1">
+                <label class="govuk-label govuk-radios__label" for="option-1">
+                  <span class="govuk-heading-s govuk-!-mb-r1">Sign in with Government Gateway</span>
+                  <span class="govuk-hint">You’ll have a user ID if you’ve signed up to do things like file your Self Assessment tax return online.</span>
+                </label>
+              </div>
+
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="hoption-2" name="option" type="radio" value="sign-in-with-gov-uk-verify" data-aria-controls="conditional-how-contacted-conditional-2">
+              <label class="govuk-label govuk-radios__label" for="option-2">
+                <span class="govuk-heading-s govuk-!-mb-r1">Sign in with GOV.UK Verify</span>
+                <span class="govuk-hint govuk-!-mb-r0">You’ll have an account if you’ve already proved your identity with either Barclays, CitizenSafe, Digidentity, Experian, Post Office, Royal Mail or SecureIdentity.</span>
+              </label>
+            </div>
+            <p>or</p>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="option-3" name="option" type="radio" value="create-an-account" data-aria-controls="conditional-how-contacted-conditional-3">
+              <label class="govuk-label govuk-radios__label" for="option-3">
+                <span class="govuk-heading-s govuk-!-mb-r1">Create an account</span>
+                <span class="govuk-hint">If you do not already have one of these accounts, we'll help you choose whether to use Government Gateway or GOV.UK Verify.</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <a class="govuk-button">Continue</a>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}

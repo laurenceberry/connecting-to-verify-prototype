@@ -35,14 +35,18 @@
         </h1>
 
         <p>
-          Your service should send users to GOV.UK Verify at the point you need to check who they are. This is usually near the start of the user journey.
+          You service should send users to GOV.UK Verify at the point you need to check their identity. For most services, this will be near the start of the user journey.
         </p>
 
-        <img src="../public/images/verify-journey.png" alt="" class="diagram">
-
-        <p>
-          The user will choose a certified company to verify their identity. Once they've been verified, they'll be sent back to your service. You'll be able to see their name, address and date of birth.
+        <h2 class="govuk-heading-s govuk-!-mb-r2">Sign up journey</h2>
+        <p class="visually-hidden">
+          The user will choose a certified company to verify their identity. Once they’ve been verified, they’ll be sent back to your service. You’ll be able to see their name, address and date of birth.
         </p>
+        <img src="../public/images/verify-registration-journey.png" alt="" class="diagram">
+
+        <h2 class="govuk-heading-s govuk-!-mb-r2">Sign in journey</h2>
+        <p class="visually-hidden">It will take less than a minute to sign in to your service.</p>
+        <img src="../public/images/verify-signin-journey.png" alt="" class="diagram">
 
         <p>
           Email <a href="mailto:connect-to-verify-prototype@digital.cabinet-office.gov.uk">connect-to-verify-prototype@digital.cabinet-office.gov.uk</a> if you have any questions about how GOV.UK Verify fits into your service.
@@ -66,13 +70,68 @@
         <!-- <p>
           You don't need to submit any personal information to see either of the example user journeys.
         </p> -->
+<!--
+        COMMENTED OUT BUT SHOULD BE EXPLORED NEXT QUARTER
+        HERE ARE SOME USEFUL LINKS:
 
-        <h3 class="govuk-heading-m">If a user can't be verified</h3>
+        https://docs.google.com/document/d/1Ws3qTsn4aT3pdCi3XhSOMLj05w8cxc9AOeZ_WI1fgx8/edit#heading=h.gg2gkuvk6a06
 
-        <p>GOV.UK Verify will show any users who can't be verified the other ways they can use your service, for example by phone or by post.</p>
+        https://docs.google.com/presentation/d/1d6LOr2wVKUBjwsPiPb5G64HmNAzIIKIjeXmy0CpKmqE/edit#slide=id.g3b8af99af9_0_16
+
+        https://docs.google.com/document/d/1sHwv5Hci4kKV3L9Kx8su3ry1vuOqZPi_UB80TJjovDA/edit#heading=h.thzewd3llzp2
+
+        xxx Laurence
+
+        <h3 class="govuk-heading-m">How to let users choose which verification method to use</h3>
+
+        <p>You might need to provide the user with a number of different methods to sign in. This can be helpful if users already have an existing account (Government Gateway for instance) preventing them from needing to create a second account. How this decision is presented to the user should be determined by a number of different factors:
+
+        <ul class="govuk-list--bullet">
+          <li>which sign in methods are available to users</li>
+          <li>how many users have existing accounts</li>
+          <li>how regularly users sign back into the service</li>
+          <li>how well the demographics of the service match those of  successful sign-ins</li>
+          <li>the benefits of using one method over another within the service journey.</li>
+        </ul>
+
+        <p>See an <a href="example?bannerText=Example of how you should let users choose a verification method&guidanceText=&returnText=Return to Design your service&goBackURL=index&exampleURL=/design-and-research/verification-method">example of how you should let users choose a verification method</a>.</p>
+
+
+ -->
+
+        <h3 class="govuk-heading-m">How to send users to GOV.UK Verify from your service</h3>
+        <p>
+          You should let your users know they’re leaving your service before you send them to GOV.UK Verify. GDS has created different design patterns to help you do this.
+        </p>
+        <h4 class="govuk-heading-s govuk-!-mb-r2">If users can sign in to your service in more than one way</h4>
 
         <p>
-          See an example of what GOV.UK Verify <a href="example?bannerText=Example of what a user will see if they can't be verified&guidanceText=&returnText=Return to Design your service&goBackURL=index&exampleURL=/design-and-research/unsuccessful">shows a user who can't be verified</a>.
+          Use the <a href="example?bannerText=Example of the multiple sign in page&guidanceText=&returnText=Return to Design your service&goBackURL=index&exampleURL=">multiple sign in page pattern</a> if there’s more than one way for users to sign in to your service. For example, users can sign in to some HM Revenue and Customs services with either GOV.UK Verify or Government Gateway.
+        </p>
+
+        <img src="../public/images/prepare-multiple-accounts.png" alt="" class="diagram">
+
+        <p>
+          You can also use the <a href="example?bannerText=Example of the create account page&guidanceText=&returnText=Return to Design your service&goBackURL=index&exampleURL=">create an account pattern</a> to show new users the different ways to use your service.
+        </p>
+
+        <img src="../public/images/prepare-create-account.png" alt="" class="diagram">
+
+        <h4 class="govuk-heading-s govuk-!-mb-r2">If users can only sign in to your service with GOV.UK Verify</h4>
+
+        <p>
+          Use the <a href="example?bannerText=Example of the single sign on page&guidanceText=&returnText=Return to Design your service&goBackURL=index&exampleURL=">single sign on pattern</a> if there’s only one way to use your service.
+        </p>
+
+        <img src="../public/images/prepare-single-signon.png" alt="" class="diagram">
+
+
+        <h3 class="govuk-heading-m">If a user can’t be verified</h3>
+
+        <p>GOV.UK Verify will show any users who can’t be verified the other ways they can use your service, for example by phone or by post.</p>
+
+        <p>
+          See an  <a href="example?bannerText=Example of what a user will see if they can’t be verified&guidanceText=&returnText=Return to Design your service&goBackURL=index&exampleURL=/design-and-research/unsuccessful">example of what GOV.UK Verify shows a user who can’t be verified</a>.
         </p>
 
         <form action="../get-started" method="post">
