@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <main role="main" class="govuk-main-wrapper govuk-body">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <h1 class="govuk-heading-xl">How GOV.UK Verify works</h1>
+
+        <p>
+          GOV.UK Verify works with different organisations, known as 'certified companies', to prove users' identities.
+        </p>
+
+        <p>The certified companies have met government and industry standards to provide identity assurance services as part of GOV.UK Verify.</p>
+
+        <p>The certified companies that currently work with GOV.UK Verify are:</p>
+        <ul class="govuk-list--bullet">
+          <li><a href="https://www.barclays.co.uk/identity/">Barclays</a></li>
+          <li><a href="https://www.citizensafe.co.uk/">CitizenSafe</a></li>
+          <li><a href="https://www.digidentity.eu/en/home/">Digidentity</a></li>
+          <li><a href="https://www.experian.co.uk/identity-and-fraud/govuk-verify/">Experian</a></li>
+          <li><a href="https://www.postoffice.co.uk/government-verify">Post Office</a></li>
+          <li><a href="https://www.royalmail.com/personal/identity-verification">Royal Mail</a></li>
+          <li><a href="https://secureidentity.co.uk/">SecureIdentity</a></li>
+        </ul>
+      </div>
+      <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-s govuk-!-mb-r2">How users are verified during the sign up journey</h1>
+        <img src="../public/images/how-it-works.png" alt="" class="diagram">
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+        <p>Proving users' identities this way means: </p>
+        <ul class="govuk-list--bullet">
+          <li>their data isn't stored in one place</li>
+          <li>your service doesn't know which certified company they've chosen</li>
+          <li>the certified company doesn't know the user is trying to use your service</li>
+        </ul>
+
+        <p>After the user has proved their identity, your service will be sent their name, address and date of birth. You won't see any of the other information they sent the certified company to prove their identity.</p>
+
+        <p>The user will be able to sign back in to your service at any time. They can do this using the details of the account they created with a certified company.</p>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
