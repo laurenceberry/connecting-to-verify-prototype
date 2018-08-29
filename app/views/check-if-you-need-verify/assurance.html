@@ -33,34 +33,46 @@
         <h1 class="govuk-heading-xl">Choose the right level of assurance</h1>
 
         <p>
-          GOV.UK Verify is designed to protect services and users from online fraud. It provides 2 different levels of assurance (LOAs) - LOA 1 and LOA 2.
+          GOV.UK Verify is designed to protect services and users from online identity fraud. It provides 2 different levels of assurance (LOAs) - LOA 1 and LOA 2.
         </p>
 
         <p>
-          The higher the LOA, the more confident you can be that your users are who they say they are. Which LOA you choose depends on your assessment of the risk of fraud to your service.
+          The higher the LOA, the more confident you can be that your users are who they say they are. You should do an assessment to understand how high the risk of identity fraud to your service is - this will help you choose the right LOA for your service.
         </p>
 
         <p>
-          LOA 1 is the lowest level of assurance offered by GOV.UK Verify. It is usually appropriate if your risk assessment indicates your service’s fraud risk is low.
+          LOA 1 is the lowest level of assurance offered by GOV.UK Verify. It is usually appropriate if your risk assessment indicates your service’s risk of identity fraud is low.
         </p>
 
         <p>
-          If your risk assessment indicates your service faces a high risk of fraud (for instance, because it offers something of high value such as money or a licence), you might want to use LOA 2.
+          If your risk assessment indicates your service faces a high risk of identity fraud (for instance, because it offers something of high value such as money or a licence), you might want to use LOA 2.
+        </p>
+
+        <h2 class="govuk-heading-l">
+          Assessing the risk of identity fraud to your service
+        </h2>
+
+        <p>
+          Doing a risk assessment will help you understand the factors that could make your service more or less likely to be targeted by identity fraud. You should consider why your service needs identity assurance and the risks you are trying to protect against.
         </p>
 
         <p>
-          To help make your choice, you should think about:
+          You should focus on the risks associated with someone using another person’s identity to access your service. This is different from the issues associated with eligibility, which is about whether users have the right to use your service.
+        </p>
+
+        <p>
+          To help make your choice of LOA, you should think about:
         </p>
 
       <ul class="govuk-list govuk-list--bullet">
         <li>
-          whether your service has been targeted by fraud or cyber crime in the past
+          whether your service has been targeted by identity fraud or cyber crime in the past
         </li>
         <li>
-          how many users your service has and how well-known it is
+          how much money your organisation could lose
         </li>
         <li>
-          how much money your organisation could lose or how much damage could be done to its reputation if your service is threatened or attacked
+        how much damage could be done to your organisation's reputation if your service is threatened or attacked
         </li>
         <li>
           what users can get from your service, for example benefits or personal information
@@ -75,7 +87,7 @@
         </h2>
 
         <p>
-          LOA 1 checks the user's identity by verifying their name, address and date of birth against an authoritative source, such as a credit agency or the Driver and Vehicle Licensing Agency (DVLA).
+          LOA 1 uses one or more pieces of identity evidence, as well as questions that only the user would know the answer to, to check their identity.
         </p>
 
         <p>
@@ -87,17 +99,17 @@
           do not give users money or benefits
         </li>
         <li>
-          do not let users see sensitive information
+          do not provide access to sensitive information, such as a user's health or criminal records
         </li>
       </ul>
 
         <div class="panel govuk-body govuk-!-mb-r6 govuk-!-mt-r6">
           <p>
             <span>Example</span>
-            The Driver and Vehicle Licensing Agency (DVLA) use LOA 1 in their <a href="https://www.gov.uk/view-driving-licence">view driving licence information</a> service. This is because the service lets users see information that is not sensitive.
+            The Driver and Vehicle Licensing Agency (DVLA) uses LOA 1 in their <a href="https://www.gov.uk/view-driving-licence">view driving licence information</a> service. This is because the service lets users see information that is not sensitive, and faces a low risk of identity fraud.
           </p>
           <p>
-            If a user impersonated someone else to use this service, they would not be able to use this information to do any harm to that person.
+            If a user impersonated someone else to use this service, it is unlikely they would be able to use this information to do any harm to that person.
           </p>
         </div>
 
@@ -111,7 +123,7 @@
 
         <ul class="govuk-list govuk-list--bullet">
           <li>
-            about 5 minutes to create an account with a certified company – they only need to do this once
+            about 5 minutes to create an account with an identity provider (also called a 'certified company') – they only need to do this once
           </li>
           <li>
             less than a minute to sign in to your service after they've created an account
@@ -135,7 +147,7 @@
         </ul>
 
         <p>
-          95% of users over 16 will be able to create an account and prove their identity with an LOA 1 service.
+          Around 95% of users over 16 will be able to create an account and prove their identity with an LOA 1 service.
         </p>
 
         <h2 class="govuk-heading-l">
@@ -155,23 +167,19 @@
             gives users money or benefits
           </li>
           <li>
-            lets users update information about themselves or see sensitive information
+            lets users update information about themselves or access sensitive information, such as health or criminal records
           </li>
         </ul>
 
         <div class="panel govuk-body govuk-!-mb-r6 govuk-!-mt-r6">
           <p>
             <span>Example</span>
-              The Department for Business, Energy and Industrial Strategy (BEIS) use LOA2 in their <a href="https://www.gov.uk/claim-redundancy">claim for redundancy and monies owed</a> service. This is because users receive money from this service.
+              The Department for Business, Energy and Industrial Strategy (BEIS) use LOA2 in their <a href="https://www.gov.uk/claim-redundancy">claim for redundancy and monies owed</a> service. This is because it could face a high risk of identity fraud.
           </p>
           <p>
             If a user impersonated someone else to use this service, they could get money they're not entitled to. This could also stop the real user from being paid money they're owed.
           </p>
         </div>
-
-        <p>
-          If you ever need to take users to court for fraudulently using your service, it's unlikely you’ll be held responsible if you used LOA 2. This is because the court will see that your service carried out rigorous checks when you tried to prove the user’s identity.
-        </p>
 
         <h3 class="govuk-heading-m">
           LOA 2 and your users
@@ -183,7 +191,7 @@
 
         <ul class="govuk-list govuk-list--bullet">
           <li>
-            about 15 minutes to create an account with a certified company – they only need to do this once
+            about 10 to 15 minutes to create an account with an identity provider – they only need to do this once
           </li>
           <li>
             less than a minute to sign in to your service after they've created an account
@@ -204,7 +212,7 @@
         </ul>
 
         <p>
-          80% of users over 16 will be able to create an account and prove their identity with an LOA 2 service.
+          Around 80% of users over 16 will be able to create an account and prove their identity with an LOA 2 service.
         </p>
 
         <p>
