@@ -74,8 +74,14 @@
 
         <p>After the user has proved their identity, your service will be sent their name, address and date of birth. You will not see any of the other information they sent the identity provider to prove their identity.</p>
 
-        <p>The user will be able to sign back in to your service at any time. They can do this using the account they created with an identity provider.</p>
+        <p>
+          The user can use the account they created with an identity provider to:
+        </p>
 
+        <ul class="govuk-list--bullet">
+          <li>sign back in to your service at any time</li>
+          <li>sign in to other government services that use GOV.UK Verify</li>
+        </ul>
         <form action="../get-started" method="post">
 
           {% from "button/macro.njk" import govukButton %}
