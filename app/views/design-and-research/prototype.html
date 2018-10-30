@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {% block breadcrumbs %}
+    {% include "includes/breadcrumbs.html" %}
+  {% endblock %}
+
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          Use a prototype of the GOV.UK Verify journey
+        </h1>
+
+        <div class="govuk-!-mt-r5 govuk-!-mb-r0">
+          <a href="/get-started">Return to overview</a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+{% endblock %}

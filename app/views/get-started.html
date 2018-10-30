@@ -27,7 +27,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          Get started
+          Connecting to GOV.UK Verify
         </h1>
 
         <ol class="task-list">
@@ -36,64 +36,89 @@
           </h2>
           <ul class="govuk-list">
             <li>
-              {% if data['how-it-works'] %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
               <a href="/check-if-you-need-verify/how-it-works">How GOV.UK Verify works</a>
             </li>
             <li>
-              {% if data['right-for-your-service-complete'] %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
               <a href="/check-if-you-need-verify/index">Find out if GOV.UK Verify is right for your service</a>
             </li>
             <li>
-              {% if data['level-of-assurance-complete'] %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
+              <a href="/check-if-you-need-verify/assess-the-risk">Assess the risk to your service</a>
+            </li>
+            <li>
               <a href="/check-if-you-need-verify/assurance">Choose the right level of assurance</a>
+            </li>
+            <li>
+              <a href="/check-if-you-need-verify/intend-to-use-verify">Tell us you intend to use GOV.UK verify</a>
             </li>
           </ul>
 
           <h2 class="govuk-heading-m">
-              <span class="task-list-section-number">2.</span> Design and research your service
+            <span class="task-list-section-number">2.</span> Plan to build your service
           </h2>
           <ul class="govuk-list">
             <li>
-              {% if data['design-your-service-complete'] %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
+              <a href="#">Choose technology</a>
+            </li>
+            <li>
+              <a href="#">Match verified identities with existing data</a>
+            </li>
+          </ul>
+
+          <h2 class="govuk-heading-m">
+            <span class="task-list-section-number">3.</span> Design and research your service
+          </h2>
+          <ul class="govuk-list">
+            <li>
               <a href="/design-and-research/index">Design your service</a>
             </li>
             <li>
-              {% if data['test-your-service-complete'] %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
-              <a href="/design-and-research/test-service-with-users">Test your service with your users</a>
+              <a href="/design-and-research/prototype">Use a prototype of the GOV.UK Verify journey</a>
             </li>
           </ul>
 
           <h2 class="govuk-heading-m">
-              <span class="task-list-section-number">3.</span> Build your service
+              <span class="task-list-section-number">4.</span> Build your service
           </h2>
           <ul class="govuk-list">
             <li>
-              {% if data['what-to-build-complete'] %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
-              <a href="/build-your-service/index">Find out what you need to build</a>
-            </li>
-            <!-- <li>
-              {% if data['match-identities-complete'] %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
-              <a href="/matching/match-identities">Match verified identities with existing data</a>
-            </li> -->
-            <!-- <li>
-              {% if data['create-matching-service-complete'] %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
-              <a href="/build-your-service/create-matching-service">Create a matching service</a>
-            </li> -->
-            <li>
-              {% if data['create-matching-service-complete'] %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
-              <a href="/matching/match-identities">Match verified identities with existing data</a>
+              <a href="#">Find out what you need to build</a>
             </li>
             <li>
-              {% if data['exchange-information-complete'] %}<img src="../public/images/tick.svg" alt="Done">{% endif %}
-              <a href="/build-your-service/safely-exchange-information">Safely exchange information with GOV.UK Verify</a>
+              <a href="#">Safely exchange information with GOV.UK Verify</a>
+            </li>
+            <li>
+              <a href="#">Test your service locally</a>
+            </li>
+            <li>
+              <a href="https://verify-environment-access.cloudapps.digital/">Connect to Integration environment</a>
+            </li>
+            <li>
+              <a href="#">Do end-to-end testing in Integration</a>
             </li>
           </ul>
 
           <h2 class="govuk-heading-m">
-              <span class="task-list-section-number">4.</span> Connect to GOV.UK Verify
+            <span class="task-list-section-number">5.</span> Go live
           </h2>
           <ul class="govuk-list">
-            <li><a href="/connect-to-verify/index">Get access to environments</a></li>
+            <li>
+              <a href="/go-live/sign-mou">Sign a memorandum of understanding</a>
+            </li>
+            <li>
+              <a href="https://verify-environment-access.cloudapps.digital/">Connect to Production environment</a>
+            </li>
+          </ul>
+
+          <h2 class="govuk-heading-m">
+            <span class="task-list-section-number">6.</span> Manage your live service
+          </h2>
+          <ul class="govuk-list">
+            <li>
+              <a href="#">Rotate your keys</a>
+            </li>
+            <li>
+              <a href="https://verifystatus.digital.cabinet-office.gov.uk/">Check for releases and new features</a>
+            </li>
           </ul>
 
         </ol>

@@ -180,7 +180,7 @@ td.govuk-table__cell.action{
 
 .diagram{
   max-width: 100%;
-  border: 2px solid $govuk-border-colour;
+  border: 1px solid $govuk-border-colour;
   margin-bottom: 25px;
 }
 
@@ -345,4 +345,10 @@ ul.govuk-list--bullet, ul.govuk-list--number{
     left: -355px;
   }
 
+}
+
+// fix for breadcrumb font size being too large
+
+.govuk-breadcrumbs__link {
+  font-size: 16px!important;
 }

@@ -8,24 +8,9 @@
 
 <div class="govuk-width-container">
 
-  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
-
-  {{ govukBreadcrumbs({
-    "items": [
-      {
-        "text": "Components",
-        "href": "#"
-      },
-      {
-        "text": "GOV.UK Verify",
-        "href": "https://connect-to-verify-start.herokuapp.com/verify"
-      },
-      {
-        "text": "Get started",
-        "href": "/get-started"
-      }
-    ]
-  }) }}
+  {% block breadcrumbs %}
+    {% include "includes/breadcrumbs.html" %}
+  {% endblock %}
 
   <main role="main" class="govuk-main-wrapper">
     <div class="govuk-grid-row">
@@ -52,14 +37,14 @@
           If you think your service needs a very high level of confidence about your users' identities, email <a href="mailto:connect-to-verify-prototype@digital.cabinet-office.gov.uk">connect-to-verify-prototype@digital.cabinet-office.gov.uk</a> to discuss:
         </p>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          LOA 3 - appropriate when a user could face serious consequences from someone else using their identity, such a s physical harm or financial ruin
-        </li>
-        <li>
-          LOA 4 - appropriate when a user's life could be threatened by someone else using their identity
-        </li>
-      </ul>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            LOA 3 - appropriate when a user could face serious consequences from someone else using their identity, such a s physical harm or financial ruin
+          </li>
+          <li>
+            LOA 4 - appropriate when a user's life could be threatened by someone else using their identity
+          </li>
+        </ul>
 
         <h2 class="govuk-heading-l">
           Assessing the risk of identity fraud to your service
@@ -107,14 +92,14 @@
           LOA 1 is suitable for most services that:
         </p>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          do not give users money or benefits
-        </li>
-        <li>
-          do not provide access to sensitive information, such as a user's criminal records
-        </li>
-      </ul>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            do not give users money or benefits
+          </li>
+          <li>
+            do not provide access to sensitive information, such as a user's criminal records
+          </li>
+        </ul>
 
         <div class="panel govuk-body govuk-!-mb-r6 govuk-!-mt-r6">
           <p>

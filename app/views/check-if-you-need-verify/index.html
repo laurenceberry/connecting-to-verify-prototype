@@ -8,24 +8,9 @@
 
 <div class="govuk-width-container">
 
-  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
-
-  {{ govukBreadcrumbs({
-    "items": [
-      {
-        "text": "Components",
-        "href": "#"
-      },
-      {
-        "text": "GOV.UK Verify",
-        "href": "https://connect-to-verify-start.herokuapp.com/verify"
-      },
-      {
-        "text": "Get started",
-        "href": "/get-started"
-      }
-    ]
-  }) }}
+  {% block breadcrumbs %}
+    {% include "includes/breadcrumbs.html" %}
+  {% endblock %}
 
   <main role="main" class="govuk-main-wrapper">
     <div class="govuk-grid-row">

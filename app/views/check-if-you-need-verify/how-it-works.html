@@ -8,24 +8,9 @@
 
 <div class="govuk-width-container">
 
-  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
-
-  {{ govukBreadcrumbs({
-    "items": [
-      {
-        "text": "Components",
-        "href": "#"
-      },
-      {
-        "text": "GOV.UK Verify",
-        "href": "https://connect-to-verify-start.herokuapp.com/verify"
-      },
-      {
-        "text": "Get started",
-        "href": "/get-started"
-      }
-    ]
-  }) }}
+  {% block breadcrumbs %}
+    {% include "includes/breadcrumbs.html" %}
+  {% endblock %}
 
   <main role="main" class="govuk-main-wrapper govuk-body">
     <div class="govuk-grid-row">
@@ -46,22 +31,18 @@
           The certified companies that currently work with GOV.UK Verify are Barclays, CitizenSafe, Digidentity, Experian, Post Office, Royal Mail and SecureIdentity.
         </p>
 
-        <h2 class="govuk-heading-s govuk-!-mb-r2">How users are verified during the sign up journey</h1>
+        <h2 class="govuk-heading-l">How users are verified during the sign up journey</h2>
 
-      <p>
-        When signing in to your service for the first time, users will be asked to set up an account with one of the identity providers.
-      </p>
+        <p>
+          When signing in to your service for the first time, users will be asked to set up an account with one of the identity providers.
+        </p>
 
-      <p>
-        They’ll ask the user to provide evidence and answer questions about themselves. This will be checked against different records, such as their driving licence, passport, mobile phone contract or credit reference checks.
-      </p>
+        <p>
+          They’ll ask the user to provide evidence and answer questions about themselves. This will be checked against different records, such as their driving licence, passport, mobile phone contract or credit reference checks.
+        </p>
 
-    </div>
-    <div class="govuk-grid-column-full">
-      <img src="../public/images/how-it-works-2.png" alt="" class="diagram">
-    </div>
+        <img src="../public/images/how-verify-works.png" alt="" class="diagram">
 
-      <div class="govuk-grid-column-two-thirds">
         <p>
           Proving users' identities this way means the privacy of their data is protected to a high standard, because:
         </p>

@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {% block breadcrumbs %}
+    {% include "includes/breadcrumbs.html" %}
+  {% endblock %}
+
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Tell us you intend to use GOV.UK verify</h1>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            Need to work out what info service need (maybe in a later iteration)
+          </li>
+          <li>
+            Could use google form for MVP
+          </li>
+        </ul>
+
+        <div class="govuk-!-mt-r5 govuk-!-mb-r0">
+          <a href="/get-started">Return to overview</a>
+        </div>
+
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
