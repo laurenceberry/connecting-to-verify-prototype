@@ -39,19 +39,12 @@
         <nav id="proposition-menu">
           <a href="/" id="proposition-name">
             {# Set serviceName in config.js. Use a block to override on a page. #}
-            {% block service_name %}
-              {% if serviceName %} {{ serviceName }} {% endif %}
-            {% endblock %}
           </a>
 
           <ul id="proposition-links">
-            {% if data['email-address'] %}
-            <li><a href="https://connect-to-verify-start.herokuapp.com/verify">Sign out</a></li>
-            {% else %}
-            <li><a href="#">Sign in</a></li>
-            {% endif %}
             <li><a href="http://govuk-verify-product-page.herokuapp.com/verify/support" >Support</a></li>
-            <li><a href="http://alphagov.github.io/rp-onboarding-tech-docs/" >Documentation</a></li>
+            <li><a href="#" >Documentation</a></li>
+            <li><a href="/get-started" >Connect</a></li>
           </ul>
 
         </nav>
