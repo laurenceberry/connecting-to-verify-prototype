@@ -1,0 +1,326 @@
+// PRODUCT OVERVIEW PAGE STYLES
+
+// Intro panel on product overview pages
+
+.product-overview-intro {
+    background-color: $govuk-blue;
+    margin-top: -10px;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    .govuk-body-l,
+    .govuk-heading-xl,
+    .govuk-breadcrumbs__link {
+      color: #fff;
+    }
+
+    .govuk-heading-xl {
+      margin: 30px 0;
+    }
+
+  	.govuk-button--start {
+      background-color: #fff;
+      color: $govuk-blue;
+      vertical-align: middle;
+      margin-right: 10px;
+      box-shadow: 0 2px 0 darken($govuk-blue, 10%);
+      background-image: url("../images/icon-pointer-blue.png");
+      background-size: 20px;
+      background-position: 97.5% 50%;
+
+      &:hover {
+        color: $govuk-link-hover-colour;
+      }
+  	}
+
+    .govuk-breadcrumbs {
+      border-bottom: 1px solid #377FB9;
+      padding-bottom: 3px;
+      margin-top: 10px;
+
+      a {
+        color: #fff;
+      }
+
+      .active {
+        color: white;
+        padding-top: 3px;
+        font-weight: bold;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      margin-top: 15px;
+
+      @media screen and (max-width: 640px) {
+        margin-top: 0;
+        max-width: 400px;
+      }
+    }
+
+    img.component-logo {
+      width: 110px;
+      margin: 30px 0 30px-half;
+      float: right;
+
+      @media screen and (max-width: 640px) {
+          width: 100px;
+          margin-bottom: 0;
+          float: left;
+      }
+    }
+
+}
+
+//section rule separators
+
+  .content-section {
+    margin-top: 30px;
+    border-top: 1px solid $govuk-border-colour;
+    padding-top: 30px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+// Related Items
+
+.govuk-related-items {
+    border-top: 10px solid #005ea5 !important;
+    padding-top: 5px;
+    margin-top: 45px;
+
+    h2 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    ul {
+
+        li {
+            margin-bottom: 0.75em;
+
+            &:last-child {
+                margin-bottom: 1.5em;
+            }
+        }
+    }
+}
+
+// Video
+
+.video-wrapper {
+  padding: 5px;
+  border: 1px solid $govuk-border-colour;
+}
+
+.video-container {
+  position:relative;
+  padding-bottom:56.25%;
+  padding-top:30px;
+  height:0;
+  overflow:hidden;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
+// Product site header
+
+#global-header.govuk-product{
+
+  .product-name {
+    font-weight: 300;
+    padding-left: 5px;
+    font-size: 24px;
+    white-space: nowrap;
+  }
+
+  // Right aligned header links
+  .header-wrapper{
+    .header-global,
+    .header-proposition{
+      width: 50%;
+
+      @media screen and (max-width: 940px) {
+        width: 100%;
+      }
+
+      @media screen and (max-width: 768px) {
+
+      }
+
+    }
+  }
+
+  .header-logo {
+    width: 100%;
+  }
+
+  .header-global {
+    display: block;
+  }
+
+  .header-proposition {
+    display: block;
+  }
+
+  .header-proposition #proposition-menu{
+    margin-top: 6px;
+  }
+
+}
+
+// Phase tag if needed
+
+#global-header .phase-banner {
+    border: 0;
+    margin-left: 10px;
+
+  .phase-tag{
+    font-size: 14px;
+    vertical-align: middle;
+    background: $govuk-blue;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 2px 5px -0px 6px;
+    font-weight: bold;
+  }
+
+}
+
+// Right-aligned header links
+#global-header .header-proposition #proposition-links.right-aligned {
+
+  float: right;
+
+
+  @media screen and (max-width: 940px) {
+    float: left;
+    margin-top: 6px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+
+  li {
+    float: left;
+    padding: 0 0 0 15px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding-left: 0;
+    }
+
+  }
+}
+
+// Menu trigger spacing fix
+a.js-header-toggle.menu.js-hidden {
+    line-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: none !important;
+}
+
+// department logos (adapted from GOV.UK organisation pages)
+
+.org__margin {
+  margin: 0 0 30px -15px;
+}
+
+.org-logo {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.1538461538;
+  font-weight: 400;
+}
+
+.org-logo__container {
+  text-transform: none;
+  text-decoration: none;
+  display: block;
+  color: #0b0c0c;
+  height: auto;
+  width: auto;
+  direction: ltr;
+}
+
+.org-logo__name {
+  position: relative;
+  top: 3px;
+}
+
+.org-logo__crest {
+  border-left: 2px solid #0b0c0c;
+  padding-top: 20px;
+  padding-left: 6px;
+}
+
+.org-logo__crest--single-identity {
+    background: url("https://assets.publishing.service.gov.uk/government/assets/crests/org_crest_27px_x2-3eb6258ba699c8ae2c3cf370e8a4422f37bdae95ae084a99115841a8bf0543a7.png") no-repeat 5px 0;
+    background-size: auto 20px;
+}
+
+.org-logo__crest--hmrc {
+  background: url("https://assets.publishing.service.gov.uk/government/assets/crests/hmrc_crest_27px_x2-50c5ae1eac742b467695f5889f93024627e14f1c03a39db7a8e55edfe5d4417a.png") no-repeat 5px 0;
+  background-size: auto 20px;
+}
+
+.brand--department-for-environment-food-rural-affairs .brand__border-color {
+  border-color: #00a33b;
+}
+
+.brand--department-for-transport .brand__border-color {
+  border-color: #006c56;
+}
+
+.brand--department-for-work-pensions .brand__border-color {
+  border-color: #00beb7;
+}
+
+.brand--hm-revenue-customs .brand__border-color {
+    border-color: #009390;
+}
+
+@media (min-width: 641px) {
+
+  .org-logo {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .org-logo__crest {
+      padding-top: 25px;
+      padding-left: 7px;
+  }
+
+  .org-logo__crest--single-identity {
+    background: url("https://assets.publishing.service.gov.uk/government/assets/crests/org_crest_27px_x2-3eb6258ba699c8ae2c3cf370e8a4422f37bdae95ae084a99115841a8bf0543a7.png") no-repeat 6px 0;
+    background-size: auto 26px;
+  }
+
+  .org-logo__crest--hmrc {
+    background: url("https://assets.publishing.service.gov.uk/government/assets/crests/hmrc_crest_27px_x2-50c5ae1eac742b467695f5889f93024627e14f1c03a39db7a8e55edfe5d4417a.png") no-repeat 6px 0;
+    background-size: auto 26px;
+  }
+
+  .column-half.org__margin {
+    width: 50%;
+  }
+
+}

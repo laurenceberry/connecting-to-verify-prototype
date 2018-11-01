@@ -1,0 +1,72 @@
+
+{% macro headerNav(homepage_url, navItems, section) %}
+
+<div class="header-proposition">
+  <div class="content">
+    <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
+    <nav id="proposition-menu">
+
+        <ul id="proposition-links">
+          <li><a href="http://govuk-verify-product-page.herokuapp.com/verify/support" >Support</a></li>
+          <li><a href="#" >Documentation</a></li>
+          <li><a href="/get-started" >Connect</a></li>
+        </ul>
+
+    </nav>
+  </div>
+</div>
+
+{% endmacro %}
+
+{% macro productName(name, phase) %}
+
+GOV.UK&nbsp;&nbsp;{% if name %}<span class="product-name">{{ name }}{% endif %}</span>{% if phase %}<span class="phase-banner"><strong class="phase-tag">{{ phase }}</strong></span>{% endif %}
+
+{% endmacro %}
+
+{% macro taskList(steps) %}
+    <div data-module="tasklist" class="pub-c-task-list pub-c-task-list--large pub-c-task-list--active">
+      <div class="pub-c-task-list__controls"></div>
+      <ol class="pub-c-task-list__groups">
+        {% for step in steps %}
+        <li class="pub-c-task-list__group ">
+          {% set step_index = loop.index %}
+          <span class="pub-c-task-list__number">
+            <span class="visuallyhidden">Step</span> {{ step_index }}
+          </span>
+          <div class="pub-c-task-list__step js-step" id="check-you&#39;re-allowed-to-drive" data-track-count="tasklistSection">
+            {% for task in step %}
+            {% set task_index = loop.index %}
+            <div class="pub-c-task-list__header js-toggle-panel" data-position="{{ step_index }}.{{ task_index }}">
+              <h2 class="pub-c-task-list__title js-step-title">
+                <button class="pub-c-task-list__button pub-c-task-list__button--title js-step-title-button" aria-expanded="false" aria-controls="step-panel-{{ step_index }}.{{ loop.index }}">
+                  {{ task.name }}
+                </button>
+              </h2>
+              <span class="pub-c-task-list__icon pub-c-task-list__icon--plus"></span><span class="pub-c-task-list__icon pub-c-task-list__icon--minus"></span>
+            </div>
+            <div class="pub-c-task-list__panel js-panel js-hidden" id="step-panel-{{ step_index }}.{{ loop.index }}">
+              {% if task.content %}
+              <div class="pub-c-task-list__panel-content">
+                <p class="pub-c-task-list__panel-description">
+                {{ task.content }}
+                </p>
+              </div>
+              {% endif %}
+              <ol class="pub-c-task-list__panel-links" data-length="3">
+                {% for subtask in task.subtasks %}
+                <li class="pub-c-task-list__panel-link ">
+                  <a href="{{ subtask.href }}" class="pub-c-task-list__panel-link-item js-panel-link" data-position="{{ step_index }}.{{ task_index }}.{{ loop.index }}">
+                    {{ subtask.name }}
+                  </a>
+                </li>
+                {% endfor %}
+              </ol>
+            </div>
+            {% endfor %}
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+{% endmacro %}

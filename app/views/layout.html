@@ -30,6 +30,8 @@
   <p>{{cookieText | safe }}</p>
 {% endblock %}
 
+{% set global_header_text = 'GOV.UK <span class="product-name">Verify</span>' | safe %}
+
 {% if example == "true" %}
   {% block proposition_header %}
 
