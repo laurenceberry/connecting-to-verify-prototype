@@ -2,15 +2,17 @@
 
 {% set section = "index" %}
 
-{% block content %}
-
 {% set productName = "Verify" %}
 
 {% set homepage_url = "/product-page" %}
 
 {% set phase = "beta" %}
 
-<!-- This is the HTML for the product page, which takes some variables from govuk-verify.html -->
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
 
 <div class="product-overview-intro">
   <div class="govuk-width-container">
