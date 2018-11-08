@@ -31,11 +31,11 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          GOV.UK Verify Service Level Agreement
+          GOV.UK Verify service level agreement
         </h1>
 
         <p>
-          This page outlines the operational support service offered by GOV.UK Verify.
+          GOV.UK offers the following service uptime and support.
         </p>
 
         <h2 class="govuk-heading-m">
@@ -96,7 +96,7 @@
       <div class="govuk-grid-column-two-thirds">
 
         <p>
-          All planned maintenance work is carried out from 6am to 10am UTC Monday to Friday. You'll be given five working days' notice before planned work is carried out. In the event of emergency maintenance, we will provide as much notice as we can.
+          All planned maintenance work is carried out from 6am to 10am Monday to Friday. You'll be given 5 working days' notice before planned work is carried out. In the event of emergency maintenance, we will provide as much notice as we can.
         </p>
 
         <h2 class="govuk-heading-m">
@@ -104,7 +104,7 @@
         </h2>
 
         <p>
-          GOV.UK Verify live support hours are 8am to 6pm UTC Monday to Friday. Critical incidents that occur outside these times will be dealt by our on-call engineer.
+          GOV.UK Verify live support hours are 8am to 6pm Monday to Friday. Critical incidents that occur outside these times will be dealt by our on-call engineer.
         </p>
 
       </div>
@@ -116,6 +116,7 @@
         {{ govukTable({
           caption: "Support levels",
           captionClasses: "visually-hidden",
+          classes: "sla-table-2",
           firstCellIsHeader: false,
           head: [
             {
@@ -137,7 +138,7 @@
                 text: "Critical"
               },
               {
-                text: "Security breach, users unable to contact all of the services or identity providers or Document Checking Service API, "
+                text: "Security breach, users unable to contact all of the services or identity providers or Document Checking Service API"
               },
               {
                 text: "20 minutes"

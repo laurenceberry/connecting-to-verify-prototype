@@ -20,11 +20,7 @@
         <h1 class="govuk-heading-xl">Choose the right level of assurance</h1>
 
         <p>
-          GOV.UK Verify is designed to protect services and users from online identity fraud. It provides 2 different levels of assurance (LOAs) - LOA 1 and LOA 2.
-        </p>
-
-        <p>
-          The higher the LOA, the more confident you can be that your users are who they say they are. You should do an assessment to understand how high the risk of identity fraud to your service is - this will help you choose the right LOA for your service.
+          Once you have carried out an assessment of the risk of identity fraud your service faces, you should choose the level of assurance (LOA) that is most appropriate for your service.
         </p>
 
         <p>
@@ -36,7 +32,7 @@
         </p>
 
         <p>
-          If you think your service needs a very high level of confidence about your users' identities, email <a href="mailto:connect-to-verify-prototype@digital.cabinet-office.gov.uk">connect-to-verify-prototype@digital.cabinet-office.gov.uk</a> to discuss:
+          If you think your service needs a very high level of confidence about your users' identities, email <a href="mailto:idasupport@digital.cabinet-office.gov.uk">idasupport@digital.cabinet-office.gov.uk</a> to discuss:
         </p>
 
         <ul class="govuk-list govuk-list--bullet">
@@ -47,40 +43,6 @@
             LOA 4 - appropriate when a user's life could be threatened by someone else using their identity
           </li>
         </ul>
-
-        <h2 class="govuk-heading-l">
-          Assessing the risk of identity fraud to your service
-        </h2>
-
-        <p>
-          Doing a risk assessment will help you understand the factors that could make your service more or less likely to be targeted by identity fraud. You should consider why your service needs identity assurance and the risks you are trying to protect against.
-        </p>
-
-        <p>
-          You should focus on the risks associated with someone using a false identity or another person’s identity to access your service. This is different from the issues associated with eligibility, which is about whether users have the right to use your service (for example, users are only eligible to <a href="https://www.gov.uk/apply-universal-credit">apply for Universal Credit</a> if they live in certain areas).
-        </p>
-
-        <p>
-          To help make your choice of LOA, you should think about:
-        </p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          whether your service has been targeted by identity fraud or cyber crime in the past
-        </li>
-        <li>
-          how much money your organisation could lose
-        </li>
-        <li>
-        how much damage could be done to your organisation's reputation if your service is threatened or attacked
-        </li>
-        <li>
-          what users can get from your service, for example benefits or personal information
-        </li>
-        <li>
-          what financial, physical or emotional damage could be done to a user if someone else impersonated them when using your service
-        </li>
-      </ul>
 
         <h2 class="govuk-heading-l">
           LOA 1
@@ -208,30 +170,8 @@
         </ul>
 
         <p>
-          Email <a href="mailto:connect-to-verify-prototype@digital.cabinet-office.gov.uk">connect-to-verify-prototype@digital.cabinet-office.gov.uk</a> if you need help choosing the right level of assurance for your service.
+          Email <a href="mailto:idasupport@digital.cabinet-office.gov.uk">idasupport@digital.cabinet-office.gov.uk</a> if you need help choosing the right level of assurance for your service.
         </p>
-
-        <form action="../get-started" method="post">
-
-          {% from "button/macro.njk" import govukButton %}
-          {% from "input/macro.njk" import govukInput %}
-
-          {% if data['email-address'] %}
-
-            {{ govukInput({
-              id: "level-of-assurance-complete",
-              name: "level-of-assurance-complete",
-              value: "true",
-              classes: "visually-hidden"
-            }) }}
-
-            {{ govukButton({
-              "text": "Mark as complete"
-            }) }}
-
-          {% endif %}
-
-        </form>
 
         <div class="govuk-!-mt-r5 govuk-!-mb-r0">
           <a href="/get-started">Return to overview</a>

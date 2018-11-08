@@ -357,8 +357,17 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 
 // fix for tables
 
-.govuk-table {
+.sla-table-2 {
   tr {
     vertical-align: top;
+
+    td {
+      width: 20%
+    }
+
+    td:nth-of-type(2) {
+      width: 40%
+    }
+
   }
 }
