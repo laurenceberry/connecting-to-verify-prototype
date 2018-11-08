@@ -1,0 +1,214 @@
+{% extends "product.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Components",
+        "href": "#"
+      },
+      {
+        "text": "GOV.UK Verify",
+        "href": "/product-page"
+      },
+      {
+        "text": "Support",
+        "href": "support"
+      }
+    ]
+  }) }}
+
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          GOV.UK Verify Service Level Agreement
+        </h1>
+
+        <p>
+          This page outlines the operational support service offered by GOV.UK Verify.
+        </p>
+
+        <h2 class="govuk-heading-m">
+          Service uptime and availability
+        </h2>
+      </div>
+
+      <div class="govuk-grid-column-full">
+
+        {% from "table/macro.njk" import govukTable %}
+
+        {{ govukTable({
+          caption: "Service uptime and availability",
+          captionClasses: "visually-hidden",
+          firstCellIsHeader: false,
+          head: [
+            {
+              text: "Service or component"
+            },
+            {
+              text: "Uptime",
+              format: "numeric"
+            },
+            {
+              text: "Based on"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "Hub (the end-user service)"
+              },
+              {
+                text: "99.95%",
+                format: "numeric"
+              },
+              {
+                text: "730 hours per month (excluding planned maintenance periods)"
+              }
+            ],
+            [
+              {
+                text: "Document Checking Service API"
+              },
+              {
+                text: "99.5%",
+                format: "numeric"
+              },
+              {
+                text: "730 hours per month (excluding planned maintenance periods)"
+              }
+            ]
+          ]
+        }) }}
+
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <p>
+          All planned maintenance work is carried out from 6am to 10am UTC Monday to Friday. You'll be given five working days' notice before planned work is carried out. In the event of emergency maintenance, we will provide as much notice as we can.
+        </p>
+
+        <h2 class="govuk-heading-m">
+          Support levels
+        </h2>
+
+        <p>
+          GOV.UK Verify live support hours are 8am to 6pm UTC Monday to Friday. Critical incidents that occur outside these times will be dealt by our on-call engineer.
+        </p>
+
+      </div>
+
+      <div class="govuk-grid-column-full">
+
+        {% from "table/macro.njk" import govukTable %}
+
+        {{ govukTable({
+          caption: "Support levels",
+          captionClasses: "visually-hidden",
+          firstCellIsHeader: false,
+          head: [
+            {
+              text: "Priority"
+            },
+            {
+              text: "Example"
+            },
+            {
+              text: "Response time"
+            },
+            {
+              text: "Update time"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "Critical"
+              },
+              {
+                text: "Security breach, users unable to contact all of the services or identity providers or Document Checking Service API, "
+              },
+              {
+                text: "20 minutes"
+              },
+              {
+                text: "1 hour"
+              }
+            ],
+            [
+              {
+                text: "Major"
+              },
+              {
+                text: "Users unable to connect to one service or identity provider"
+              },
+              {
+                text: "30 minutes"
+              },
+              {
+                text: "2 hours"
+              }
+            ],
+            [
+              {
+                text: "Significant"
+              },
+              {
+                text: "Users experiencing intermittent or degraded service on hub or Document Checking Service"
+              },
+              {
+                text: "2 hours"
+              },
+              {
+                text: "4 hours"
+              }
+            ],
+            [
+              {
+                text: "Minor"
+              },
+              {
+                text: "Component failure that is not immediately service impacting"
+              },
+              {
+                text: "1 business day"
+              },
+              {
+                text: "2 business days"
+              }
+            ],
+            [
+              {
+                text: "Business as usual"
+              },
+              {
+                text: "Onboarding support and queries"
+              },
+              {
+                text: "2 business days"
+              },
+              {
+                text: "2 business days"
+              }
+            ]
+          ]
+        }) }}
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+{% endblock %}

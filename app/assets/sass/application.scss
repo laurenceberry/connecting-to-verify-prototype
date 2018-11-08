@@ -353,3 +353,12 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 .govuk-breadcrumbs__link {
   font-size: 16px!important;
 }
+
+
+// fix for tables
+
+.govuk-table {
+  tr {
+    vertical-align: top;
+  }
+}
