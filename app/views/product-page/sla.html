@@ -41,9 +41,6 @@
         <h2 class="govuk-heading-m">
           Service uptime and availability
         </h2>
-      </div>
-
-      <div class="govuk-grid-column-full">
 
         {% from "table/macro.njk" import govukTable %}
 
@@ -58,9 +55,6 @@
             {
               text: "Uptime",
               format: "numeric"
-            },
-            {
-              text: "Based on"
             }
           ],
           rows: [
@@ -71,9 +65,6 @@
               {
                 text: "99.95%",
                 format: "numeric"
-              },
-              {
-                text: "730 hours per month (excluding planned maintenance periods)"
               }
             ],
             [
@@ -83,9 +74,6 @@
               {
                 text: "99.5%",
                 format: "numeric"
-              },
-              {
-                text: "730 hours per month (excluding planned maintenance periods)"
               }
             ]
           ]
