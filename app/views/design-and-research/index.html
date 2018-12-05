@@ -43,10 +43,18 @@
           You should let your users know they’re leaving your service before you send them to GOV.UK Verify. GDS has created different design patterns to help you do this.
         </p>
 
+        <h3 class="govuk-heading-m">If users can only sign in to your service with GOV.UK Verify</h3>
+
+        <p>
+          Use the <a href="example?bannerText=Example of the single sign on page&guidanceText=&returnText=Return to Design your service&goBackURL=index&exampleURL=">single sign on pattern</a> if there’s only one way to use your service.
+        </p>
+
+        <img src="../public/images/prepare-single-signon.png" alt="" class="diagram">
+
         <h3 class="govuk-heading-m">If users can sign in to your service in more than one way</h3>
 
         <p>
-          Use the <a href="example?bannerText=Example of the multiple sign in page&guidanceText=&returnText=Return to Design your service&goBackURL=index&exampleURL=">multiple sign in page pattern</a> if there’s more than one way for users to sign in to your service. For example, users can sign in to some HM Revenue and Customs services with either GOV.UK Verify or Government Gateway.
+          Use the <a href="example?bannerText=Example of the multiple sign in page&guidanceText=&returnText=Return to Design your service&goBackURL=index&exampleURL=">multiple sign in page pattern</a> if there’s more than one way for users to sign in to your service. For example, users can sign in to some HM Revenue and Customs services with either GOV.UK Verify or Government Gateway. This is only for existing services that already use Government Gateway.
         </p>
 
         <img src="../public/images/prepare-multiple-accounts.png" alt="" class="diagram">
@@ -57,15 +65,6 @@
 
         <img src="../public/images/prepare-create-account.png" alt="" class="diagram">
 
-        <h3 class="govuk-heading-m">If users can only sign in to your service with GOV.UK Verify</h3>
-
-        <p>
-          Use the <a href="example?bannerText=Example of the single sign on page&guidanceText=&returnText=Return to Design your service&goBackURL=index&exampleURL=">single sign on pattern</a> if there’s only one way to use your service.
-        </p>
-
-        <img src="../public/images/prepare-single-signon.png" alt="" class="diagram">
-
-
         <h3 class="govuk-heading-m">If a user can’t be verified</h3>
 
         <p>GOV.UK Verify will show any users who can’t be verified the other ways they can use your service, for example by phone or by post.</p>
@@ -73,28 +72,6 @@
         <p>
           See an  <a href="example?bannerText=Example of what a user will see if they can’t be verified&guidanceText=&returnText=Return to Design your service&goBackURL=index&exampleURL=/design-and-research/unsuccessful">example of what GOV.UK Verify shows a user who can’t be verified</a>.
         </p>
-
-        <form action="../get-started" method="post">
-
-          {% from "button/macro.njk" import govukButton %}
-          {% from "input/macro.njk" import govukInput %}
-
-          {% if data['email-address'] %}
-
-            {{ govukInput({
-              id: "design-your-service-complete",
-              name: "design-your-service-complete",
-              value: "true",
-              classes: "visually-hidden"
-            }) }}
-
-            {{ govukButton({
-              "text": "Mark as complete"
-            }) }}
-
-          {% endif %}
-
-        </form>
 
         <div class="govuk-!-mt-r5 govuk-!-mb-r0">
           <a href="/get-started">Return to overview</a>
