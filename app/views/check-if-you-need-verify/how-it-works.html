@@ -22,7 +22,7 @@
         <h1 class="govuk-heading-xl">How GOV.UK Verify works</h1>
 
         <p>
-          GOV.UK Verify works with different organisations, known as identity providers (or certified companies), to prove users' identities.
+          GOV.UK Verify works with different organisations, known as identity providers (or certified companies), to prove users’ identities.
         </p>
 
         <p>
@@ -43,15 +43,15 @@
           They’ll ask the user to provide evidence and answer questions about themselves. This will be checked against different records, such as their driving licence, passport, mobile phone contract or credit reference checks.
         </p>
 
-        <img src="../public/images/how-verify-works.png" alt="" class="diagram">
+        <img src="../public/images/how-verify-works-simple.png" alt="" class="diagram">
 
         <p>
-          Proving users' identities this way means the privacy of their data is protected to a high standard, because:
+          Proving users’ identities this way means the privacy of their data is protected to a high standard, because:
         </p>
 
         <ul class="govuk-list--bullet">
           <li>their data is not stored in one place</li>
-          <li>your service does not know which identity provider they've chosen</li>
+          <li>your service does not know which identity provider they’ve chosen</li>
           <li>the identity provider does not know the user is trying to use your service</li>
         </ul>
 
@@ -65,27 +65,6 @@
           <li>sign back in to your service at any time</li>
           <li>sign in to other government services that use GOV.UK Verify</li>
         </ul>
-        <form action="../get-started" method="post">
-
-          {% from "button/macro.njk" import govukButton %}
-          {% from "input/macro.njk" import govukInput %}
-
-          {% if data['email-address'] %}
-
-            {{ govukInput({
-              id: "level-of-assurance-complete",
-              name: "level-of-assurance-complete",
-              value: "true",
-              classes: "visually-hidden"
-            }) }}
-
-            {{ govukButton({
-              "text": "Mark as complete"
-            }) }}
-
-          {% endif %}
-
-        </form>
 
         <div class="govuk-!-mt-r5 govuk-!-mb-r0">
           <a href="/get-started">Return to overview</a>
