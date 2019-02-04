@@ -1,0 +1,36 @@
+{% extends "product.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-phase-banner govuk-clearfix">
+      <div class="service-info">
+        <h4 class="service-info--name govuk-heading-s">
+          Organisation name
+        </h4>
+      </div>
+      <nav role="navigation" class="service-navigation">
+        <ul class="service-navigation--list">
+          <li class="service-navigation--list-item service-navigation--list-item-active"><a id="navigation-menu-home" href="#">Link</a></li>
+          <li class="service-navigation--list-item"><a id="navigation-menu-transactions" href="#">Link</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+          You need to rotate 4 certificates
+        </h1>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

@@ -14,6 +14,7 @@ $govuk-global-styles: true;
 @import 'patterns/task-list';
 @import 'patterns/product-overview-page';
 @import 'patterns/verify-journey-diagram';
+@import 'patterns/navigation';
 
 .code {
   color: $govuk-text-colour;

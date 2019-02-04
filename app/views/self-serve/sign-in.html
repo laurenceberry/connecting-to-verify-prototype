@@ -1,0 +1,63 @@
+{% extends "product.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+          Sign in
+        </h1>
+
+        {% from "input/macro.njk" import govukInput %}
+        {% from "fieldset/macro.njk" import govukFieldset %}
+        {% from "button/macro.njk" import govukButton %}
+
+        <form action="check-your-phone">
+          {% call govukFieldset({
+            legend: {
+              text: "Sign in",
+              classes: "govuk-visually-hidden"
+            }
+          }) %}
+
+            {{ govukInput({
+              label: {
+                text: "Email address"
+              },
+              classes: "govuk-!-width-two-thirds",
+              id: "email-address",
+              name: "email-address"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Password"
+              },
+              classes: "govuk-!-width-two-thirds",
+              id: "password",
+              name: "password"
+            }) }}
+
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+
+          {% endcall %}
+        </form>
+
+        <p>
+          <a href="#">Forgot your password?</a>
+        </p>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

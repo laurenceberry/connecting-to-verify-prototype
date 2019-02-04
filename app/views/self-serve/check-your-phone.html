@@ -1,0 +1,58 @@
+{% extends "product.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+          Check your phone
+        </h1>
+
+        <p>
+          We’ve sent you a text message with a security code.
+        </p>
+
+        {% from "input/macro.njk" import govukInput %}
+        {% from "fieldset/macro.njk" import govukFieldset %}
+        {% from "button/macro.njk" import govukButton %}
+
+        <form action="dashboard">
+          {% call govukFieldset({
+            legend: {
+              text: "Text message code",
+              classes: "govuk-visually-hidden"
+            }
+          }) %}
+
+            {{ govukInput({
+              label: {
+                text: "Text message code"
+              },
+              classes: "govuk-!-width-one-quarter",
+              id: "text-message-code",
+              name: "text-message-code"
+            }) }}
+
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+
+          {% endcall %}
+        </form>
+
+        <p>
+          <a href="#">Not received a text message?</a>
+        </p>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
