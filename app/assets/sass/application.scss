@@ -12,10 +12,12 @@ $govuk-global-styles: true;
 @import 'patterns/check-your-answers';
 @import 'patterns/related-items';
 @import 'patterns/task-list';
+@import 'patterns/task-list-custom';
 @import 'patterns/product-overview-page';
 @import 'patterns/verify-journey-diagram';
 @import 'patterns/navigation';
 @import "patterns/step-by-step-navigation";
+@import "patterns/side-navigation";
 
 // Components that aren't in Frontend
 @import "components/cookie-banner";
@@ -23,9 +25,9 @@ $govuk-global-styles: true;
 
 .code {
   color: $govuk-text-colour;
-  background-color: $govuk-grey-4;
+  background-color: govuk-colour("grey-4");
 
-  text-shadow: 0 1px $govuk-white;
+  text-shadow: 0 1px govuk-colour("white");
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 14px;
   direction: ltr;
@@ -55,8 +57,8 @@ $govuk-global-styles: true;
 // Local fixes to GOV.UK frontend
 
 .markdown hr {
-  @include govuk-responsive-margin($govuk-spacing-responsive-6, "top");
-  @include govuk-responsive-margin($govuk-spacing-responsive-6, "bottom");
+  @include govuk-responsive-margin(6, "top");
+  @include govuk-responsive-margin(6, "bottom");
 }
 
 .govuk-list + .govuk-heading-l,
@@ -68,7 +70,7 @@ $govuk-global-styles: true;
 .govuk-prose-scope pre + h2,
 .govuk-prose-scope pre + h3,
 .govuk-prose-scope pre + h4 {
-  @include govuk-responsive-padding($govuk-spacing-responsive-4, "top");
+  @include govuk-responsive-padding(4, "top");
 }
 
 // Take a look at in app/assets/sass/patterns/ to see which files are imported.
@@ -166,7 +168,7 @@ nav.pagination .label{
 }
 
 .panel{
-  border-left: solid 10px $govuk-grey-3;
+  border-left: solid 10px govuk-colour("grey-3");
   padding: 0px 15px;
   margin-bottom: 25px;
   span{
