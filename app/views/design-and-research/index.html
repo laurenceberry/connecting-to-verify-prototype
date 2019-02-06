@@ -6,15 +6,16 @@
   GOV.UK prototype kit
 {% endblock %}
 
-{% block content %}
-
-<div class="govuk-width-container">
+{% block beforeContent %}
 
   {% block breadcrumbs %}
     {% include "includes/breadcrumbs.html" %}
   {% endblock %}
 
-  <main role="main" class="govuk-main-wrapper">
+{% endblock %}
+
+{% block content %}
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
@@ -147,7 +148,5 @@
 
     </div>
 
-  </main>
-</div>
 
 {% endblock %}

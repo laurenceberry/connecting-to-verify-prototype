@@ -9,7 +9,7 @@
 <div class="govuk-phase-banner govuk-clearfix govuk-!-margin-bottom-4">
   <div class="service-info">
     <h4 class="service-info--name govuk-heading-s">
-      Team name
+      {{ data["team-name"] }}
     </h4>
   </div>
   <nav role="navigation" class="service-navigation">
@@ -51,8 +51,8 @@
 
     <ul class="govuk-list">
       <li>
-        <a href="#" class="govuk-!-font-weight-bold">
-          Personal Tax Account: Integration environment
+        <a href="upload-certs" class="govuk-!-font-weight-bold">
+          {{ data["service-name"] }}: Integration environment
         </a>
         <p>
           4 certificates expire in 14 days
@@ -60,7 +60,7 @@
       </li>
       <li>
         <a href="#" class="govuk-!-font-weight-bold">
-          Personal Tax Account: Production environment
+          {{ data["service-name"] }}: Production environment
         </a>
         <p>
           2 certificates expire in 14 days

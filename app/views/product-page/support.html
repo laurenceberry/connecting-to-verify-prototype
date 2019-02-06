@@ -6,9 +6,7 @@
   GOV.UK prototype kit
 {% endblock %}
 
-{% block content %}
-
-<div class="govuk-width-container">
+{% block beforeContent %}
 
   {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
@@ -21,11 +19,18 @@
       {
         "text": "GOV.UK Verify",
         "href": "/product-page"
+      },
+      {
+        "text": "Support",
+        "href": "support"
       }
     ]
   }) }}
 
-  <main role="main" class="govuk-main-wrapper">
+{% endblock %}
+
+{% block content %}
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
@@ -80,7 +85,5 @@
       </div>
 
     </div>
-  </main>
-</div>
 
 {% endblock %}

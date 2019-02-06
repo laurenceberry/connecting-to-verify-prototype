@@ -27,7 +27,7 @@
       Rotate keys and certificates
     </span>
     <h1 class="govuk-heading-l">
-      Encryption certificate for the Matching Service Adapter
+      Encryption certificate for the service provider
     </h1>
 
     <p>Upload a certificate signing request. Do not upload your private key.</p>
@@ -35,7 +35,7 @@
     {% from "file-upload/macro.njk" import govukFileUpload %}
     {% from "button/macro.njk" import govukButton %}
 
-    <form action="cert-msa-signing">
+    <form action="cert-sp-signing">
 
       {{ govukFileUpload({
         id: "cert-msa-encryption",

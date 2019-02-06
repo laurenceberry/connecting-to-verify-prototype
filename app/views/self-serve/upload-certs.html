@@ -1,0 +1,101 @@
+{% extends "product.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-phase-banner govuk-clearfix govuk-!-margin-bottom-4">
+  <div class="service-info">
+    <h4 class="service-info--name govuk-heading-s">
+      {{ data["team-name"] }}
+    </h4>
+  </div>
+  <nav role="navigation" class="service-navigation">
+    <ul class="service-navigation--list">
+      <li class="service-navigation--list-item"><a id="navigation-menu-transactions" href="#">Switch team</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-l">
+      Rotate keys and certificates
+    </span>
+    <h1 class="govuk-heading-l">
+      {{ data["service-name"] }}: Integration environment
+    </h1>
+
+    <p>
+      You must rotate the following keys and certificates by 10 March 2019.
+    </p>
+
+    <p>
+      Do not upload your private keys.
+    </p>
+
+    <form action="cert-sp-encryption">
+
+      <h2 class="govuk-heading-m">
+        Matching Service Adapter certificates
+      </h2>
+
+      {{ govukFileUpload({
+        id: "cert-msa-encryption",
+        name: "cert-msa-encryption",
+        label: {
+          text: "Upload encryption certificate for the Matching Service Adapter"
+        }
+      }) }}
+
+      {{ govukFileUpload({
+        id: "cert-msa-signing",
+        name: "cert-msa-signing",
+        label: {
+          text: "Upload signing certificate for the Matching Service Adapter"
+        }
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Service provider certificates
+      </h2>
+
+      {{ govukFileUpload({
+        id: "cert-sp-encryption",
+        name: "cert-sp-encryption",
+        label: {
+          text: "Upload encryption certificate for the service provider"
+        }
+      }) }}
+
+      {{ govukFileUpload({
+        id: "cert-sp-signing",
+        name: "cert-sp-signing",
+        label: {
+          text: "Upload signing certificate for the service provider"
+        }
+      }) }}
+
+    </form>
+
+    <!-- <p>
+      Before you can rotate your keys, you need to generate a certificate signing request (CSR) for each of the components you run in this environment. Read the technical documentation about <a href="#">rotating your encryption and signing keys</a> to find out how to do this.
+    </p> -->
+
+    <form action="confirmation">
+
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
