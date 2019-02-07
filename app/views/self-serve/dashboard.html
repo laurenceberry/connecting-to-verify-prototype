@@ -22,12 +22,12 @@
 
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-one-quarter">
+  <div class="govuk-grid-column-one-third">
 
     <!-- <div class="side-navigation">
       <ul class="govuk-list">
         <li>
-          <a href="#">Rotate keys and certificates</a>
+          <a href="#">Rotate keys certificates</a>
         </li>
         <li>
           <a href="#">Manage team members</a>
@@ -40,30 +40,64 @@
 
   </div>
 
-  <div class="govuk-grid-column-three-quarters">
+  <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">
-      Rotate keys and certificates
+      Rotate certificates
     </h1>
 
     <h2 class="govuk-heading-m">
-      Expiring soon
+      Expiring within 14 days
     </h2>
 
-    <ul class="govuk-list">
+    <ul class="govuk-list connection-list">
       <li>
-        <a href="upload-certs" class="govuk-!-font-weight-bold">
-          {{ data["service-name"] }}: Integration environment
-        </a>
+        <!-- <a href="upload-certs" class="govuk-!-font-weight-bold"> -->
+        <h3 class="govuk-heading-s">
+          {{ data["service-name"] }}
+        </h3>
+        <div class="connection-info">
+          <dl>
+            <dt>Environment:</dt>
+            <dd>Production</dd>
+          </dl>
+          <dl>
+            <dt>Number of certificates:</dt>
+            <dd>4</dd>
+          </dl>
+          <dl>
+            <dt>Expires on:</dt>
+            <dd>14th March 2019</dd>
+          </dl>
+        </div>
         <p>
-          4 certificates expire in 14 days
+          <a href="prepare-certs">
+            Rotate certificates
+          </a>
         </p>
       </li>
       <li>
-        <a href="#" class="govuk-!-font-weight-bold">
-          {{ data["service-name"] }}: Production environment
-        </a>
+        <!-- <a href="upload-certs" class="govuk-!-font-weight-bold"> -->
+        <h3 class="govuk-heading-s">
+          {{ data["service-name"] }}
+        </h3>
+        <div class="connection-info">
+          <dl>
+            <dt>Environment:</dt>
+            <dd>Integration</dd>
+          </dl>
+          <dl>
+            <dt>Number of certificates:</dt>
+            <dd>2</dd>
+          </dl>
+          <dl>
+            <dt>Expires on:</dt>
+            <dd>18th March 2019</dd>
+          </dl>
+        </div>
         <p>
-          2 certificates expire in 14 days
+          <a href="#">
+            Rotate certificates
+          </a>
         </p>
       </li>
     </ul>
