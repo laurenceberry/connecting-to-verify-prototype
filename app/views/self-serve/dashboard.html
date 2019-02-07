@@ -6,31 +6,106 @@
 
 {% block content %}
 
-<div class="govuk-width-container">
-  <main role="main" class="govuk-main-wrapper">
-    <div class="govuk-phase-banner govuk-clearfix">
-      <div class="service-info">
-        <h4 class="service-info--name govuk-heading-s">
-          Organisation name
-        </h4>
-      </div>
-      <nav role="navigation" class="service-navigation">
-        <ul class="service-navigation--list">
-          <li class="service-navigation--list-item service-navigation--list-item-active"><a id="navigation-menu-home" href="#">Link</a></li>
-          <li class="service-navigation--list-item"><a id="navigation-menu-transactions" href="#">Link</a></li>
+<div class="govuk-phase-banner govuk-clearfix govuk-!-margin-bottom-4">
+  <div class="service-info">
+    <h4 class="service-info--name govuk-heading-s">
+      {{ data["team-name"] }}
+    </h4>
+  </div>
+  <nav role="navigation" class="service-navigation">
+    <ul class="service-navigation--list">
+      <!-- <li class="service-navigation--list-item"><a id="navigation-menu-home" href="#">Settings</a></li> -->
+      <li class="service-navigation--list-item"><a id="navigation-menu-transactions" href="#">Switch team</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-quarter">
+
+    <!-- <div class="side-navigation">
+      <ul class="govuk-list">
+        <li>
+          <a href="#">Rotate keys and certificates</a>
+        </li>
+        <li>
+          <a href="#">Manage team members</a>
+        </li>
+        <li>
+          <a href="#">Your settings</a>
+        </li>
+      </ul>
+    </div> -->
+
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-l">
+      Rotate keys and certificates
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Expiring soon
+    </h2>
+
+    <ul class="govuk-list">
+      <li>
+        <a href="upload-certs" class="govuk-!-font-weight-bold">
+          {{ data["service-name"] }}: Integration environment
+        </a>
+        <p>
+          4 certificates expire in 14 days
+        </p>
+      </li>
+      <li>
+        <a href="#" class="govuk-!-font-weight-bold">
+          {{ data["service-name"] }}: Production environment
+        </a>
+        <p>
+          2 certificates expire in 14 days
+        </p>
+      </li>
+    </ul>
+
+
+
+    <!-- task list pattern -->
+    <!-- <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">
+          Integration environment for Personal Tax Account
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <a class="app-task-list__task-name" href="cert-msa-encryption" aria-describedby="">
+              Matching Service Adapter encryption
+            </a>
+            <strong class="govuk-tag app-task-list__task-completed" id="">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <a class="app-task-list__task-name" href="#" aria-describedby="">
+              Matching Service Adapter signing
+            </a>
+            <strong class="govuk-tag app-task-list__task-completed" id="">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <a class="app-task-list__task-name" href="#" aria-describedby="">
+              Service Provider encryption
+            </a>
+            <strong class="govuk-tag app-task-list__task-completed" id="">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <a class="app-task-list__task-name" href="#" aria-describedby="">
+              Service Provider signing
+            </a>
+            <strong class="govuk-tag app-task-list__task-completed" id="">Completed</strong>
+          </li>
         </ul>
-      </nav>
-    </div>
+      </li>
+    </ol> -->
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">
-          You need to rotate 4 certificates
-        </h1>
-
-      </div>
-    </div>
-  </main>
+  </div>
 </div>
 
 {% endblock %}

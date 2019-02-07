@@ -4,14 +4,6 @@
 
 {% import "includes/macros.html" as macro %}
 
-{% block head %}
-  {% include "includes/head.html" %}
-{% endblock %}
-
-{% block cookie_message %}
-  <p>{{cookieText | safe }}</p>
-{% endblock %}
-
 {% block page_title %}
   {{ productName }}
 {% endblock %}

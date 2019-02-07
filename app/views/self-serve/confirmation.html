@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation page example
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-phase-banner govuk-clearfix govuk-!-margin-bottom-4">
+    <div class="service-info">
+      <h4 class="service-info--name govuk-heading-s">
+        {{ data["team-name"] }}
+      </h4>
+    </div>
+    <nav role="navigation" class="service-navigation">
+      <ul class="service-navigation--list">
+        <li class="service-navigation--list-item"><a id="navigation-menu-transactions" href="#">Switch team</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title govuk-!-font-size-36">Certificates uploaded</h1>
+        <div class="govuk-panel__body govuk-!-font-size-24">
+          Please wait 1 hour for the changes to be made to GOV.UK Verify's infrastructure. Then update your service's configuration.
+        </div>
+      </div>
+
+      <p>
+        We will send you a confirmation email when the changes have been made.
+      </p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p>
+        Once you have received confirmation that changes have been made to GOV.UK Verify's infrastructure, you can make the changes at your end.
+      </p>
+
+      <p>
+        <a href="dashboard">Back to dashboard</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

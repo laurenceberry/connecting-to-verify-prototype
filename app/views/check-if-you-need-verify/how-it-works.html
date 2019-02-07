@@ -6,15 +6,15 @@
   GOV.UK prototype kit
 {% endblock %}
 
-{% block content %}
-
-<div class="govuk-width-container">
+{% block beforeContent %}
 
   {% block breadcrumbs %}
     {% include "includes/breadcrumbs.html" %}
   {% endblock %}
 
-  <main role="main" class="govuk-main-wrapper govuk-body">
+{% endblock %}
+
+{% block content %}
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
@@ -49,7 +49,7 @@
           Proving users’ identities this way means the privacy of their data is protected to a high standard, because:
         </p>
 
-        <ul class="govuk-list--bullet">
+        <ul class="govuk-list govuk-list--bullet">
           <li>their data is not stored in one place</li>
           <li>your service does not know which identity provider they’ve chosen</li>
           <li>the identity provider does not know the user is trying to use your service</li>
@@ -61,7 +61,7 @@
           The user can use the account they created with an identity provider to:
         </p>
 
-        <ul class="govuk-list--bullet">
+        <ul class="govuk-list govuk-list--bullet">
           <li>sign back in to your service at any time</li>
           <li>sign in to other government services that use GOV.UK Verify</li>
         </ul>
@@ -72,8 +72,5 @@
 
       </div>
     </div>
-
-  </main>
-</div>
 
 {% endblock %}

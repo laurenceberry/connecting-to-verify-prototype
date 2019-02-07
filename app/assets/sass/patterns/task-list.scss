@@ -1,81 +1,70 @@
-// task list pattern taken from digital marketplace. the css is a bit of a mess sorry
+// Task list pattern
 
-ol.steps {
-  padding-left: 1em;
+.app-task-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  @include govuk-media-query($from: tablet) {
+    min-width: 550px;
+  }
+}
+
+.app-task-list__section {
+  display: table;
+  @include govuk-font($size:24, $weight: bold);
+}
+
+.app-task-list__section-number {
+  display: table-cell;
+
+  @include govuk-media-query($from: tablet) {
+    min-width: govuk-spacing(6);
+    padding-right: 0;
+  }
+}
+
+.app-task-list__items {
+  @include govuk-font($size: 19);
+  @include govuk-responsive-margin(9, "bottom");
   list-style: none;
   padding-left: 0;
-
-  .step-number {
-    min-width: 1.11111em;
-    float: left;
-  }
-
-  .instruction-list-item-top {
-    margin-left: 1.5em;
-    padding-left: 0;
-    margin-bottom: 5px;
-
-  }
-
-  .tick {
-    margin-left: -1.5em;
-  }
-
+  // @include govuk-media-query($from: tablet) {
+  //   padding-left: govuk-spacing(6);
+  // }
 }
 
-.tick {
-  float: left;
-  width: 15px;
-  height: 14px;
-  margin: .1875em 5px 0 0;
-}
+.app-task-list__item {
+  border-bottom: 1px solid $govuk-border-colour;
+  margin-bottom: 0 !important;
+  padding-top: govuk-spacing(2);
+  padding-bottom: govuk-spacing(2);
+  @include govuk-clearfix;
 
-
-@media (min-width: 1074px) {
-  ol.steps {
-    padding-left: 0;
+  a {
+    margin-bottom: inherit;
   }
 }
 
-.instruction-list {
-  list-style-type: decimal;
-  padding-left: 20px;
-  margin-bottom: 20px;
-  margin-top: 5px;
-}
-
-@media (min-width: 641px) {
-
-  .instruction-list {
-    @include govuk-font-regular-19;
-  }
-
-}
-
-.instruction-list-item {
-
-  h2 {
-    @include govuk-font-bold-24;
-    margin-bottom: 10px
-  }
-
-}
-
-.instruction-list .divider:first-child {
-  border-top: none;
-}
-
-.instruction-list li {
-  margin-bottom: 5px;
-}
-
-.divider {
-  padding: 20px 0 20px 0;
+.app-task-list__item:first-child {
   border-top: 1px solid $govuk-border-colour;
 }
 
-.divider p.instruction-list-item-top,
-.divider a.instruction-list-item-action,
-.divider p.instruction-list-item-box {
-    margin-top: 1em;
+.app-task-list__task-name {
+  display: block;
+  @include govuk-media-query($from: 450px) {
+    float: left;
+    width: 75%;
+  }
+}
+
+.app-task-list__task-completed {
+  margin-top: govuk-spacing(2);
+  margin-bottom: govuk-spacing(1);
+
+  @include govuk-media-query($from: 450px) {
+    float: right;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }

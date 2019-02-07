@@ -1,0 +1,79 @@
+{% extends "product.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-phase-banner govuk-clearfix govuk-!-margin-bottom-4">
+  <div class="service-info">
+    <h4 class="service-info--name govuk-heading-s">
+      {{ data["team-name"] }}
+    </h4>
+  </div>
+  <nav role="navigation" class="service-navigation">
+    <ul class="service-navigation--list">
+      <!-- <li class="service-navigation--list-item"><a id="navigation-menu-home" href="#">Settings</a></li> -->
+      <li class="service-navigation--list-item"><a id="navigation-menu-transactions" href="#">Switch team</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-quarter">
+
+    <!-- <div class="side-navigation">
+      <ul class="govuk-list">
+        <li>
+          <a href="#">Rotate keys and certificates</a>
+        </li>
+        <li>
+          <a href="#">Manage team members</a>
+        </li>
+        <li>
+          <a href="#">Your settings</a>
+        </li>
+      </ul>
+    </div> -->
+
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-l">
+      Rotate keys and certificates
+    </span>
+    <h1 class="govuk-heading-l">
+      {{ data["service-name"] }}: Integration environment
+    </h1>
+
+    <p>
+      You must rotate the following keys and certificates by 10 March 2019:
+    </p>
+
+    <ul class="govuk-list govuk-list--number">
+      <li>Encryption certificate for the Matching Service Adapter</li>
+      <li>Signing certificate for the Matching Service Adapter</li>
+      <li>Encryption certificate for the service provider</li>
+      <li>Signing certificate for the service provider</li>
+    </ul>
+
+    <p>
+      Before you can rotate your keys, you need to generate a certificate signing request (CSR) for each of the components you run in this environment. Read the technical documentation about <a href="#">rotating your encryption and signing keys</a> to find out how to do this.
+    </p>
+
+    <form action="cert-msa-encryption">
+
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

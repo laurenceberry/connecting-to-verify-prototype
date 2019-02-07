@@ -15,6 +15,10 @@ module.exports = {
   // Automatically stores form data, and send to all views
   useAutoStoreData: 'true',
 
+  // Enable cookie-based session store (persists on restart)
+  // Please note 4KB cookie limit per domain, cookies too large will silently be ignored
+  useCookieSessionStore: 'true',
+
   // Enable or disable built-in docs and examples.
   useDocumentation: 'true',
 
@@ -22,7 +26,7 @@ module.exports = {
   useHttps: 'true',
 
   // Cookie warning - update link to service's cookie page.
-  cookieText: 'GOV.UK uses cookies to make the site simpler. <a class="govuk-link" href="#">Find out more about cookies</a>',
+  cookieText: 'GOV.UK uses cookies to make the site simpler. <a href="#">Find out more about cookies</a>',
 
   // Enable or disable Browser Sync
   useBrowserSync: 'true'

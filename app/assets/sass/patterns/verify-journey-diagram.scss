@@ -3,7 +3,7 @@
 .user-journey-diagram {
 
   ol {
-    border-left: 3px solid $govuk-grey-2;
+    border-left: 3px solid govuk-colour("grey-2");
     padding: 30px 30px 0 30px;
     counter-reset: section;
 
@@ -17,8 +17,8 @@
 
     li {
       position: relative;
-      border: 2px solid $govuk-black;
-      border-top: 20px solid $govuk-black;
+      border: 2px solid govuk-colour("black");
+      border-top: 20px solid govuk-colour("black");
       padding: 5px;
       margin-bottom: 30px;
       width: 210px;
@@ -33,7 +33,7 @@
 
       .blue-bg {
         color: white;
-        background-color: $govuk-blue;
+        background-color: $govuk-brand-colour;
         height: 75%;
         margin-top: -44px;
 
@@ -90,8 +90,8 @@
   }
 
   .idp {
-    border: 2px solid $govuk-grey-1;
-    border-top: 20px solid $govuk-grey-1;
+    border: 2px solid govuk-colour("grey-1");
+    border-top: 20px solid govuk-colour("grey-1");
   }
 
   .phone {
@@ -103,9 +103,9 @@
 
     li {
       border-radius: 8px;
-      border: 2px solid $govuk-grey-1;
-      border-top: 15px solid $govuk-grey-1;
-      border-bottom: 15px solid $govuk-grey-1;
+      border: 2px solid govuk-colour("grey-1");
+      border-top: 15px solid govuk-colour("grey-1");
+      border-bottom: 15px solid govuk-colour("grey-1");
       width: 50px;
       height: 90px;
 
@@ -140,8 +140,8 @@
     top: 30px;
     left: -60px;
     font-weight: bold;
-    background-color: $govuk-white;
-    border: 3px solid $govuk-grey-2;
+    background-color: govuk-colour("white");
+    border: 3px solid govuk-colour("grey-2");
     text-align: center;
     vertical-align: middle;
     box-sizing: border-box;
@@ -177,7 +177,7 @@
   .phone:after {
     width: 325px;
     height: 3px;
-    background-color: $govuk-grey-2;
+    background-color: govuk-colour("grey-2");
     border: none;
     top: 0;
     left: -355px;

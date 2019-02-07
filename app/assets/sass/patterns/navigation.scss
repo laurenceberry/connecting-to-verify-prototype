@@ -4,7 +4,10 @@
 
 .govuk-phase-banner {
   padding: 0;
-  margin-top: - govuk-spacing(5);
+
+  @include govuk-media-query(tablet) {
+    margin-top: - govuk-spacing(5);
+  }
 }
 
 .service-info--name {
@@ -18,8 +21,11 @@
 .service-navigation {
   margin: 0;
   float: left;
-  margin: 0;
-  float: right;
+
+  @include govuk-media-query(tablet) {
+    margin: 0;
+    float: right;
+  }
 
   &--list {
     margin: 0;
@@ -29,18 +35,22 @@
 
   &--list-item {
     margin-top: govuk-spacing(2);
-    display: inline-block;
-    margin: 0 0 0 govuk-spacing(6);
-    border-bottom: 5px solid transparent;
-    border-left: 0;
-  }
+
+    @include govuk-media-query(tablet) {
+      display: inline-block;
+      margin: 0 0 0 govuk-spacing(6);
+      border-bottom: 5px solid transparent;
+      border-left: 0;
+    }
 
     a:link,
     a:visited {
+      @include govuk-font($size: 16);
       display: inline-block;
       color: $govuk-link-colour;
       text-decoration: none;
       padding: govuk-spacing(2) 0;
+      margin-bottom: 0;
     }
 
     a:focus {
@@ -52,13 +62,19 @@
     &-active {
       padding-left: govuk-spacing(1);
       border-left: 5px solid $govuk-text-colour;
-      padding-left: 0;
-      border-left: 0;
-      border-color: $govuk-text-colour;
+
+      @include govuk-media-query(tablet) {
+        padding-left: 0;
+        border-left: 0;
+        border-color: $govuk-text-colour;
+      }
     }
+  }
 }
 
-.navigation--pad-bottom {
-  margin-bottom: govuk-spacing(9);
-  padding-bottom: govuk-spacing(9);
+@include govuk-media-query(tablet) {
+  .navigation--pad-bottom {
+    margin-bottom: govuk-spacing(9);
+    padding-bottom: govuk-spacing(9);
+  }
 }

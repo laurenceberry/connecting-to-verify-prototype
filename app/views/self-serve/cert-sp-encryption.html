@@ -1,0 +1,63 @@
+{% extends "product.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-phase-banner govuk-clearfix govuk-!-margin-bottom-4">
+  <div class="service-info">
+    <h4 class="service-info--name govuk-heading-s">
+      {{ data["team-name"] }}
+    </h4>
+  </div>
+  <nav role="navigation" class="service-navigation">
+    <ul class="service-navigation--list">
+      <!-- <li class="service-navigation--list-item"><a id="navigation-menu-home" href="#">Settings</a></li> -->
+      <li class="service-navigation--list-item"><a id="navigation-menu-transactions" href="#">Switch team</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-l">
+      Rotate keys and certificates
+    </span>
+    <h1 class="govuk-heading-l">
+      Encryption certificate for the service provider
+    </h1>
+
+    <p>Upload a certificate signing request. Do not upload your private key.</p>
+
+    {% from "file-upload/macro.njk" import govukFileUpload %}
+    {% from "button/macro.njk" import govukButton %}
+
+    <form action="cert-sp-signing">
+
+      {{ govukFileUpload({
+        id: "cert-msa-encryption",
+        name: "cert-msa-encryption",
+        label: {
+          text: "Upload a file"
+        }
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    <!-- <p>
+      <a href="dashboard">
+        Back to dashboard
+      </a>
+    </p> -->
+
+  </div>
+</div>
+
+{% endblock %}
