@@ -21,12 +21,27 @@
 
 <div class="govuk-grid-row">
 
+  <!-- <div class="govuk-grid-column-one-third">
+
+    <div class="side-navigation">
+      <ul class="govuk-list">
+        <li>
+          <a href="#">Rotate certificates</a>
+        </li>
+        <li>
+          <a href="#">Manage team members</a>
+        </li>
+        <li>
+          <a href="#">Your settings</a>
+        </li>
+      </ul>
+    </div>
+
+  </div> -->
+
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">
-      Rotate certificates
-    </span>
     <h1 class="govuk-heading-l">
-      {{ data["service-name"] }}: Production environment
+      Rotate certificates for {{ data["service-name"] }}: Production environment
     </h1>
 
     <p>
@@ -49,7 +64,7 @@
     </ul>
 
     <p>
-      Before you can rotate your keys, you need to generate a certificate signing request (CSR) for each of the components you run in this environment. Read the technical documentation about <a href="#">rotating your encryption and signing keys</a> to find out how to do this.
+      Before you can rotate your keys, you need to generate new certificates for each of the components you run in this environment. Read about <a href="https://www.docs.verify.service.gov.uk/maintain-your-connection/rotate-keys/">rotating your encryption and signing keys</a> to find out how to do this.
     </p>
 
     <form action="upload-certs">
@@ -61,6 +76,12 @@
       }) }}
 
     </form>
+
+    <p>
+      <a href="dashboard">
+        Back to dashboard
+      </a>
+    </p>
 
   </div>
 </div>
