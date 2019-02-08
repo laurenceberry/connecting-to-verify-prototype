@@ -21,12 +21,12 @@
 
 <div class="govuk-grid-row">
 
-  <!-- <div class="govuk-grid-column-one-third">
+  <div class="govuk-grid-column-one-third">
 
     <div class="side-navigation">
       <ul class="govuk-list">
-        <li>
-          <a href="#">Rotate certificates</a>
+        <li class="active">
+          <a href="dashboard">Rotate certificates</a>
         </li>
         <li>
           <a href="#">Manage team members</a>
@@ -37,7 +37,7 @@
       </ul>
     </div>
 
-  </div> -->
+  </div>
 
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">
@@ -45,7 +45,7 @@
     </h1>
 
     <p>
-      The following certificates are due to expire on 14 March 2019:
+      The following certificates for {{ data["service-name"] }} are due to expire on 14 March 2019:
     </p>
 
     <ul class="govuk-list govuk-list--bullet">
@@ -76,12 +76,6 @@
       }) }}
 
     </form>
-
-    <p>
-      <a href="dashboard">
-        Back to dashboard
-      </a>
-    </p>
 
   </div>
 </div>
