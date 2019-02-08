@@ -22,18 +22,40 @@
 
 <div class="govuk-grid-row">
 
+  <div class="govuk-grid-column-one-third">
+
+    <div class="side-navigation">
+      <ul class="govuk-list">
+        <li class="active">
+          <a href="dashboard">Rotate certificates</a>
+        </li>
+        <li>
+          <a href="#">Manage team members</a>
+        </li>
+        <li>
+          <a href="#">Your settings</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">
-      Rotate keys certificates
-    </span>
     <h1 class="govuk-heading-l">
-      Encryption certificate for the Matching Service Adapter
+      Upload encryption certificate for the Matching Service Adapter
     </h1>
 
-    <p>Upload a certificate signing request. Do not upload your private key.</p>
+    <p>
+      Before uploading the encryption certificate, deploy the encryption key to your Matching Service Adapter.
+    </p>
+
+    <p>
+      Either upload a .crt file or paste the certificate text into the textarea.
+    </p>
 
     {% from "file-upload/macro.njk" import govukFileUpload %}
     {% from "button/macro.njk" import govukButton %}
+    {% from "textarea/macro.njk" import govukTextarea %}
 
     <form action="cert-msa-signing">
 
@@ -41,7 +63,17 @@
         id: "cert-msa-encryption",
         name: "cert-msa-encryption",
         label: {
-          text: "Upload a file"
+          text: "Upload .crt file"
+        }
+      }) }}
+
+      {{ govukTextarea({
+        name: "cert-msa-encryption-text",
+        id: "cert-msa-encryption-text",
+        classes: "govuk-!-width-three-quarters",
+        rows: "12",
+        label: {
+          text: "Paste certificate text"
         }
       }) }}
 
@@ -50,12 +82,6 @@
       }) }}
 
     </form>
-
-    <!-- <p>
-      <a href="dashboard">
-        Back to dashboard
-      </a>
-    </p> -->
 
   </div>
 </div>

@@ -14,7 +14,6 @@
   </div>
   <nav role="navigation" class="service-navigation">
     <ul class="service-navigation--list">
-      <!-- <li class="service-navigation--list-item"><a id="navigation-menu-home" href="#">Settings</a></li> -->
       <li class="service-navigation--list-item"><a id="navigation-menu-transactions" href="#">Switch team</a></li>
     </ul>
   </nav>
@@ -41,41 +40,37 @@
   </div>
 
   <div class="govuk-grid-column-two-thirds">
-
     <h1 class="govuk-heading-l">
-      Upload signing certificate for the Matching Service Adapter
+      Rotate certificates for the Matching Service Adapter
     </h1>
 
     <p>
-      Either upload a .crt file or paste the certificate text into the textarea.
+      The following certificates are due to expire on 14 March 2019:
     </p>
 
-    {% from "file-upload/macro.njk" import govukFileUpload %}
-    {% from "button/macro.njk" import govukButton %}
-    {% from "textarea/macro.njk" import govukTextarea %}
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        encryption certificate
+      </li>
+      <li>
+        signing certificate
+      </li>
+    </ul>
 
-    <form action="confirmation">
+    <p>
+      This component is used by 4 services: {{ data["service-name-1"] }}, {{ data["service-name-2"] }} and {{ data["service-name-3"] }}
+    </p>
 
-      {{ govukFileUpload({
-        id: "cert-msa-encryption",
-        name: "cert-msa-encryption",
-        label: {
-          text: "Upload .crt file"
-        }
-      }) }}
+    <p>
+      Before you can rotate your keys, you need to generate new certificates for each of the components you run in this environment. Read about <a href="https://www.docs.verify.service.gov.uk/maintain-your-connection/rotate-keys/">rotating your encryption and signing keys</a> to find out how to do this.
+    </p>
 
-      {{ govukTextarea({
-        name: "cert-msa-encryption-text",
-        id: "cert-msa-encryption-text",
-        classes: "govuk-!-width-three-quarters",
-        rows: "12",
-        label: {
-          text: "Paste certificate text"
-        }
-      }) }}
+    <form action="cert-msa-encryption">
+
+      {% from "button/macro.njk" import govukButton %}
 
       {{ govukButton({
-        text: "Save and continue"
+        text: "Continue"
       }) }}
 
     </form>

@@ -24,6 +24,10 @@
           }
         }) %}
 
+          <h2 class="govuk-heading-m">
+            Team
+          </h2>
+
           {{ govukInput({
             label: {
               text: "Department or team"
@@ -33,17 +37,39 @@
             name: "team-name"
           }) }}
 
+          <h2 class="govuk-heading-m">
+            Services
+          </h2>
+
           {{ govukInput({
             label: {
-              text: "Service"
+              text: "Service 1"
             },
             classes: "govuk-!-width-two-thirds",
-            id: "service-name",
-            name: "service-name"
+            id: "service-name-1",
+            name: "service-name-1"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Service 2"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "service-name-2",
+            name: "service-name-2"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Service 3"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "service-name-3",
+            name: "service-name-3"
           }) }}
 
           {{ govukButton({
-            text: "Continue"
+            text: "Save"
           }) }}
 
         {% endcall %}

@@ -14,7 +14,6 @@
   </div>
   <nav role="navigation" class="service-navigation">
     <ul class="service-navigation--list">
-      <!-- <li class="service-navigation--list-item"><a id="navigation-menu-home" href="#">Settings</a></li> -->
       <li class="service-navigation--list-item"><a id="navigation-menu-transactions" href="#">Switch team</a></li>
     </ul>
   </nav>
@@ -52,30 +51,30 @@
     <ul class="govuk-list connection-list">
       <li>
         <h3 class="govuk-heading-s">
-          {{ data["service-name"] }}
+          Matching Service Adapter
         </h3>
         <div class="connection-info">
+          <dl>
+            <dt>Used by:</dt>
+            <!-- <dd>{{ data["service-name"] }}</dd> -->
+            <dd>4 services</dd>
+          </dl>
           <dl>
             <dt>Environment:</dt>
             <dd>Production</dd>
           </dl>
           <dl>
-            <dt>Number of certificates:</dt>
-            <dd>4</dd>
-          </dl>
-          <dl>
-            <dt>Expires on:</dt>
+            <dt>Expiring on:</dt>
             <dd>14 March 2019</dd>
           </dl>
         </div>
         <p>
-          <a href="prepare-certs">
+          <a href="rotate-certs-msa">
             Rotate certificates
           </a>
         </p>
       </li>
     </ul>
-
 
     <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
       Other certificates managed by {{ data["team-name"] }}
@@ -84,48 +83,24 @@
     <ul class="govuk-list connection-list">
       <li>
         <h3 class="govuk-heading-s ">
-          {{ data["service-name"] }}
+          Service provider
         </h3>
         <div class="connection-info">
           <dl>
+            <dt>Used by:</dt>
+            <dd>4 services</dd>
+          </dl>
+          <dl>
             <dt>Environment:</dt>
-            <dd>Integration</dd>
+            <dd>Production</dd>
           </dl>
           <dl>
-            <dt>Number of certificates:</dt>
-            <dd>4</dd>
-          </dl>
-          <dl>
-            <dt>Expires on:</dt>
+            <dt>Expiring on:</dt>
             <dd>10 November 2019</dd>
           </dl>
         </div>
         <p>
           <a href="prepare-certs">
-            Rotate certificates
-          </a>
-        </p>
-      </li>
-      <li>
-        <h3 class="govuk-heading-s">
-          Service name 2
-        </h3>
-        <div class="connection-info">
-          <dl>
-            <dt>Environment:</dt>
-            <dd>Integration</dd>
-          </dl>
-          <dl>
-            <dt>Number of certificates:</dt>
-            <dd>4</dd>
-          </dl>
-          <dl>
-            <dt>Expires on:</dt>
-            <dd>25 December 2019</dd>
-          </dl>
-        </div>
-        <p>
-          <a href="#">
             Rotate certificates
           </a>
         </p>
