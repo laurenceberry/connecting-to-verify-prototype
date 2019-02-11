@@ -41,6 +41,18 @@
 
   <div class="govuk-grid-column-two-thirds">
 
+    {% from "error-summary/macro.njk" import govukErrorSummary %}
+
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: "You have already uploaded this certificate",
+          href: "#"
+        }
+      ]
+    }) }}
+
     <h1 class="govuk-heading-l">
       Upload signing certificate for the Matching Service Adapter
     </h1>
@@ -73,23 +85,11 @@
         }
       }) }}
 
-      <!-- hidden form to make completed tag appear on task list page -->
-      {{ govukInput({
-        id: "signing-cert-msa",
-        name: "signing-cert-msa",
-        value: "true",
-        classes: "govuk-visually-hidden"
-      }) }}
-
       {{ govukButton({
         text: "Save and continue"
       }) }}
 
     </form>
-
-    <p>
-      <a href="rotate-certs-msa">Back</a>
-    </p>
 
   </div>
 </div>

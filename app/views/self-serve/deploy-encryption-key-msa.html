@@ -40,49 +40,33 @@
   </div>
 
   <div class="govuk-grid-column-two-thirds">
-
     <h1 class="govuk-heading-l">
-      Upload signing certificate for the Matching Service Adapter
+      Deploy encryption key to your Matching Service Adapter
     </h1>
 
     <p>
-      Either upload a .crt file or paste the certificate text into the textarea.
+      Before uploading the encryption certificate, you must deploy the encryption key to your MSA.
+    </p>
+
+    <p>
+      Read about how to <a href="https://www.docs.verify.service.gov.uk/maintain-your-connection/rotate-keys/#rotate-your-msa-encryption-key">rotate your MSA encryption key</a>.
     </p>
 
     {% from "file-upload/macro.njk" import govukFileUpload %}
     {% from "button/macro.njk" import govukButton %}
-    {% from "textarea/macro.njk" import govukTextarea %}
+    {% from "input/macro.njk" import govukInput %}
 
     <form action="rotate-certs-msa">
 
-      {{ govukFileUpload({
-        id: "cert-msa-encryption",
-        name: "cert-msa-encryption",
-        label: {
-          text: "Upload .crt file"
-        }
-      }) }}
-
-      {{ govukTextarea({
-        name: "cert-msa-encryption-text",
-        id: "cert-msa-encryption-text",
-        classes: "govuk-!-width-three-quarters",
-        rows: "12",
-        label: {
-          text: "Paste certificate text"
-        }
-      }) }}
-
-      <!-- hidden form to make completed tag appear on task list page -->
       {{ govukInput({
-        id: "signing-cert-msa",
-        name: "signing-cert-msa",
+        id: "encryption-key-msa",
+        name: "encryption-key-msa",
         value: "true",
         classes: "govuk-visually-hidden"
       }) }}
 
       {{ govukButton({
-        text: "Save and continue"
+        text: "Mark as completed"
       }) }}
 
     </form>

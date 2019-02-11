@@ -40,52 +40,21 @@
   </div>
 
   <div class="govuk-grid-column-two-thirds">
-
     <h1 class="govuk-heading-l">
-      Upload signing certificate for the Matching Service Adapter
+      Please wait 1 hour for us to update GOV.UK Verify&rsquo;s infrastructure
     </h1>
 
     <p>
-      Either upload a .crt file or paste the certificate text into the textarea.
+      We will send you a confirmation email when the changes have been made.
     </p>
 
-    {% from "file-upload/macro.njk" import govukFileUpload %}
-    {% from "button/macro.njk" import govukButton %}
-    {% from "textarea/macro.njk" import govukTextarea %}
+    <p>
+      Once you have received confirmation that we have updated GOV.UK Verify's infrastructure, you need to deploy the signing key to your Matching Service Adapter.
+    </p>
 
-    <form action="rotate-certs-msa">
-
-      {{ govukFileUpload({
-        id: "cert-msa-encryption",
-        name: "cert-msa-encryption",
-        label: {
-          text: "Upload .crt file"
-        }
-      }) }}
-
-      {{ govukTextarea({
-        name: "cert-msa-encryption-text",
-        id: "cert-msa-encryption-text",
-        classes: "govuk-!-width-three-quarters",
-        rows: "12",
-        label: {
-          text: "Paste certificate text"
-        }
-      }) }}
-
-      <!-- hidden form to make completed tag appear on task list page -->
-      {{ govukInput({
-        id: "signing-cert-msa",
-        name: "signing-cert-msa",
-        value: "true",
-        classes: "govuk-visually-hidden"
-      }) }}
-
-      {{ govukButton({
-        text: "Save and continue"
-      }) }}
-
-    </form>
+    <p>
+      Read about how to <a href="https://www.docs.verify.service.gov.uk/maintain-your-connection/rotate-keys/#rotate-your-msa-signing-key">rotate your MSA signing key</a>.
+    </p>
 
     <p>
       <a href="rotate-certs-msa">Back</a>

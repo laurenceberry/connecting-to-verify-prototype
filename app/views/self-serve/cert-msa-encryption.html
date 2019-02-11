@@ -14,7 +14,6 @@
   </div>
   <nav role="navigation" class="service-navigation">
     <ul class="service-navigation--list">
-      <!-- <li class="service-navigation--list-item"><a id="navigation-menu-home" href="#">Settings</a></li> -->
       <li class="service-navigation--list-item"><a id="navigation-menu-transactions" href="#">Switch team</a></li>
     </ul>
   </nav>
@@ -46,10 +45,6 @@
     </h1>
 
     <p>
-      Before uploading the encryption certificate, deploy the encryption key to your Matching Service Adapter.
-    </p>
-
-    <p>
       Either upload a .crt file or paste the certificate text into the textarea.
     </p>
 
@@ -57,7 +52,7 @@
     {% from "button/macro.njk" import govukButton %}
     {% from "textarea/macro.njk" import govukTextarea %}
 
-    <form action="cert-msa-signing">
+    <form action="rotate-certs-msa">
 
       {{ govukFileUpload({
         id: "cert-msa-encryption",
@@ -77,11 +72,23 @@
         }
       }) }}
 
+      <!-- hidden form to make completed tag appear on task list page -->
+      {{ govukInput({
+        id: "encryption-cert-msa",
+        name: "encryption-cert-msa",
+        value: "true",
+        classes: "govuk-visually-hidden"
+      }) }}
+
       {{ govukButton({
         text: "Save and continue"
       }) }}
 
     </form>
+
+    <p>
+      <a href="rotate-certs-msa">Back</a>
+    </p>
 
   </div>
 </div>

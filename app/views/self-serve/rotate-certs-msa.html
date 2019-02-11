@@ -41,39 +41,71 @@
 
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">
-      Rotate certificates for the Matching Service Adapter
+      Rotate certificates for your Matching Service Adapter
     </h1>
 
     <p>
-      The following certificates are due to expire on 14 March 2019:
+      Certificates for your Matching Service Adapter (MSA) are due to expire on 14 March 2019.
+    </p>
+
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">
+          To do
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <a class="app-task-list__task-name" href="deploy-encryption-key-msa" aria-describedby="eligibility-completed">
+              Deploy encryption key to your MSA
+            </a>
+            {% if data['encryption-key-msa'] %}
+              <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <a class="app-task-list__task-name" href="cert-msa-encryption" aria-describedby="read-declaration-completed">
+              Upload encryption certificate
+            </a>
+            {% if data['encryption-cert-msa'] %}
+              <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <a class="app-task-list__task-name" href="cert-msa-signing" aria-describedby="read-declaration-completed">
+              Upload signing certificate
+            </a>
+            {% if data['signing-cert-msa'] %}
+              <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <a class="app-task-list__task-name" href="deploy-signing-key-msa" aria-describedby="read-declaration-completed">
+              Deploy signing key to your MSA
+            </a>
+            {% if data['signing-cert-msa'] %}
+              <strong class="govuk-tag app-task-list__task-completed govuk-tag-grey">Please wait</strong>
+            {% endif %}
+            {% if data['signing-key-msa'] %}
+              <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+    </ol>
+
+    <p>
+      Your MSA is used by 3 services:
     </p>
 
     <ul class="govuk-list govuk-list--bullet">
-      <li>
-        encryption certificate
-      </li>
-      <li>
-        signing certificate
-      </li>
+      <li>{{ data["connection-1-service-1"] }}</li>
+      <li>{{ data["connection-1-service-2"] }}</li>
+      <li>{{ data["connection-1-service-3"] }}</li>
     </ul>
 
-    <p>
-      This component is used by 4 services: {{ data["service-name-1"] }}, {{ data["service-name-2"] }} and {{ data["service-name-3"] }}
-    </p>
-
-    <p>
-      Before you can rotate your keys, you need to generate new certificates for each of the components you run in this environment. Read about <a href="https://www.docs.verify.service.gov.uk/maintain-your-connection/rotate-keys/">rotating your encryption and signing keys</a> to find out how to do this.
-    </p>
-
-    <form action="cert-msa-encryption">
-
-      {% from "button/macro.njk" import govukButton %}
-
-      {{ govukButton({
-        text: "Continue"
-      }) }}
-
-    </form>
+    <!-- <p>
+      Read more about <a href="https://www.docs.verify.service.gov.uk/maintain-your-connection/rotate-keys/">rotating your encryption and signing keys</a>.
+    </p> -->
 
   </div>
 </div>
