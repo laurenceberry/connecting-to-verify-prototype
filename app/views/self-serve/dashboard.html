@@ -6,19 +6,6 @@
 
 {% block content %}
 
-<div class="govuk-phase-banner govuk-clearfix govuk-!-margin-bottom-4">
-  <div class="service-info">
-    <h4 class="service-info--name govuk-heading-s">
-      {{ data["team-name"] }}
-    </h4>
-  </div>
-  <nav role="navigation" class="service-navigation">
-    <ul class="service-navigation--list">
-      <li class="service-navigation--list-item"><a id="navigation-menu-transactions" href="#">Switch team</a></li>
-    </ul>
-  </nav>
-</div>
-
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-one-third">
@@ -26,13 +13,10 @@
     <div class="side-navigation">
       <ul class="govuk-list">
         <li class="active">
-          <a href="#">Rotate certificates</a>
+          <a href="dashboard">Rotate certificates</a>
         </li>
         <li>
-          <a href="#">Manage team members</a>
-        </li>
-        <li>
-          <a href="#">Your settings</a>
+          <a href="#">Sign out</a>
         </li>
       </ul>
     </div>
@@ -49,62 +33,114 @@
     </h2>
 
     <ul class="govuk-list connection-list">
+      {% if data['confirm-encryption-cert-msa'] %}
+        <!-- show nothing -->
+      {% else %}
+        <li>
+          <h3 class="govuk-heading-s">
+            Encryption certificate for your Matching Service Adapter
+          </h3>
+          <div class="connection-info">
+            <dl>
+              <dt>Expiring on:</dt>
+              <dd>14 March 2019</dd>
+            </dl>
+            <dl>
+              <dt>Environment:</dt>
+              <dd>Production</dd>
+            </dl>
+            <dl>
+              <dt>Used by:</dt>
+              <dd>4 services</dd>
+            </dl>
+          </div>
+          <p>
+            <a href="deploy-encryption-key-msa">
+              Update certificate
+            </a>
+          </p>
+        </li>
+      {% endif %}
+      {% if data['signing-encryption-cert-msa'] %}
+        <!-- show nothing -->
+      {% else %}
       <li>
         <h3 class="govuk-heading-s">
-          {{ data["connection-1"] }}
+          Signing certificate for your Matching Service Adapter
         </h3>
         <div class="connection-info">
-          <dl>
-            <dt>Used by:</dt>
-            <dd>3 services</dd>
-          </dl>
-          <dl>
-            <dt>Environment:</dt>
-            <dd>Production</dd>
-          </dl>
           <dl>
             <dt>Expiring on:</dt>
             <dd>14 March 2019</dd>
           </dl>
-        </div>
-        <p>
-          <a href="rotate-certs-msa">
-            Rotate certificates
-          </a>
-        </p>
-      </li>
-    </ul>
-
-    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
-      Other certificates managed by {{ data["team-name"] }}
-    </h2>
-
-    <ul class="govuk-list connection-list">
-      <li>
-        <h3 class="govuk-heading-s ">
-          {{ data["connection-2"] }}
-        </h3>
-        <div class="connection-info">
-          <dl>
-            <dt>Used by:</dt>
-            <dd>3 services</dd>
-          </dl>
           <dl>
             <dt>Environment:</dt>
             <dd>Production</dd>
           </dl>
           <dl>
-            <dt>Expiring on:</dt>
-            <dd>10 November 2019</dd>
+            <dt>Used by:</dt>
+            <dd>4 services</dd>
           </dl>
         </div>
         <p>
-          <a href="prepare-certs">
-            Rotate certificates
+          <a href="upload-cert-msa-signing">
+            Update certificate
           </a>
         </p>
       </li>
+      {% endif %}
     </ul>
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+      Other certificates you manage
+    </h2>
+
+    <ul class="govuk-list connection-list">
+      <!-- if someone has uploaded this cert, show in this list -->
+      {% if data['confirm-encryption-cert-msa'] %}
+        <li>
+          <h3 class="govuk-heading-s">
+            Encryption certificate for your Matching Service Adapter
+          </h3>
+          <div class="connection-info">
+            <dl>
+              <dt>Expiring on:</dt>
+              <dd>15 March 2020</dd>
+            </dl>
+            <dl>
+              <dt>Environment:</dt>
+              <dd>Production</dd>
+            </dl>
+            <dl>
+              <dt>Used by:</dt>
+              <dd>4 services</dd>
+            </dl>
+          </div>
+        </li>
+      {% endif %}
+      {% if data['signing-encryption-cert-msa'] %}
+        <li>
+          <h3 class="govuk-heading-s">
+            Signing certificate for your Matching Service Adapter
+          </h3>
+          <div class="connection-info">
+            <dl>
+              <dt>Expiring on:</dt>
+              <dd>14 March 2019</dd>
+            </dl>
+            <dl>
+              <dt>Environment:</dt>
+              <dd>Production</dd>
+            </dl>
+            <dl>
+              <dt>Used by:</dt>
+              <dd>4 services</dd>
+            </dl>
+          </div>
+        </li>
+      {% endif %}
+    </ul>
+
 
   </div>
 </div>

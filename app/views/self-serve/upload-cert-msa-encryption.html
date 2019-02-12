@@ -5,20 +5,6 @@
 {% endblock %}
 
 {% block content %}
-
-<div class="govuk-phase-banner govuk-clearfix govuk-!-margin-bottom-4">
-  <div class="service-info">
-    <h4 class="service-info--name govuk-heading-s">
-      {{ data["team-name"] }}
-    </h4>
-  </div>
-  <nav role="navigation" class="service-navigation">
-    <ul class="service-navigation--list">
-      <li class="service-navigation--list-item"><a id="navigation-menu-transactions" href="#">Switch team</a></li>
-    </ul>
-  </nav>
-</div>
-
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-one-third">
@@ -29,10 +15,7 @@
           <a href="dashboard">Rotate certificates</a>
         </li>
         <li>
-          <a href="#">Manage team members</a>
-        </li>
-        <li>
-          <a href="#">Your settings</a>
+          <a href="#">Sign out</a>
         </li>
       </ul>
     </div>
@@ -40,9 +23,8 @@
   </div>
 
   <div class="govuk-grid-column-two-thirds">
-
     <h1 class="govuk-heading-l">
-      Upload signing certificate for the Matching Service Adapter
+      Upload encryption certificate for your Matching Service Adapter
     </h1>
 
     <p>
@@ -53,7 +35,7 @@
     {% from "button/macro.njk" import govukButton %}
     {% from "textarea/macro.njk" import govukTextarea %}
 
-    <form action="rotate-certs-msa">
+    <form action="check-cert-msa-encryption">
 
       {{ govukFileUpload({
         id: "cert-msa-encryption",
@@ -73,23 +55,11 @@
         }
       }) }}
 
-      <!-- hidden form to make completed tag appear on task list page -->
-      {{ govukInput({
-        id: "signing-cert-msa",
-        name: "signing-cert-msa",
-        value: "true",
-        classes: "govuk-visually-hidden"
-      }) }}
-
       {{ govukButton({
-        text: "Save and continue"
+        text: "Continue"
       }) }}
 
     </form>
-
-    <p>
-      <a href="rotate-certs-msa">Back</a>
-    </p>
 
   </div>
 </div>

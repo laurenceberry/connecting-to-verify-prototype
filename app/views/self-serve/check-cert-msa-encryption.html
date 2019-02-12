@@ -1,0 +1,92 @@
+{% extends "product.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <div class="side-navigation">
+      <ul class="govuk-list">
+        <li class="active">
+          <a href="dashboard">Rotate certificates</a>
+        </li>
+        <li>
+          <a href="#">Sign out</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Confirm this is the right certificate
+    </h1>
+
+    {% from "summary-list/macro.njk" import govukSummaryList %}
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Valid from"
+          },
+          value: {
+            text: "15 February 2018, 12:00am"
+          }
+        },
+        {
+          key: {
+            text: "Valid until"
+          },
+          value: {
+            text: "15 February 2019, 11:59pm"
+          }
+        },
+        {
+          key: {
+            text: "Organisation"
+          },
+          value: {
+            html: "Organisation Name"
+          }
+        },
+        {
+          key: {
+            text: "Serial number"
+          },
+          value: {
+            html: "67e9634d963e0a4227df737ff5b764e9"
+          }
+        }
+      ]
+    }) }}
+
+
+    {% from "button/macro.njk" import govukButton %}
+
+    <form action="confirmation-msa-encryption">
+
+      <!-- hidden form to change status on dashboard page -->
+      {{ govukInput({
+        id: "confirm-encryption-cert-msa",
+        name: "confirm-encryption-cert-msa",
+        value: "true",
+        classes: "govuk-visually-hidden"
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

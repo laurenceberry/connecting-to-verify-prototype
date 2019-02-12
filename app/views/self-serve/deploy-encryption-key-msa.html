@@ -6,19 +6,6 @@
 
 {% block content %}
 
-<div class="govuk-phase-banner govuk-clearfix govuk-!-margin-bottom-4">
-  <div class="service-info">
-    <h4 class="service-info--name govuk-heading-s">
-      {{ data["team-name"] }}
-    </h4>
-  </div>
-  <nav role="navigation" class="service-navigation">
-    <ul class="service-navigation--list">
-      <li class="service-navigation--list-item"><a id="navigation-menu-transactions" href="#">Switch team</a></li>
-    </ul>
-  </nav>
-</div>
-
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-one-third">
@@ -29,10 +16,7 @@
           <a href="dashboard">Rotate certificates</a>
         </li>
         <li>
-          <a href="#">Manage team members</a>
-        </li>
-        <li>
-          <a href="#">Your settings</a>
+          <a href="#">Sign out</a>
         </li>
       </ul>
     </div>
@@ -45,7 +29,11 @@
     </h1>
 
     <p>
-      Before uploading the encryption certificate, you must deploy the encryption key to your MSA.
+      Before updating your encryption certificate, you must deploy the corresponding encryption key to your MSA.
+    </p>
+
+    <p>
+      If you don't do this your connection to GOV.UK Verify will break once the new certificate is in place.
     </p>
 
     <p>
@@ -56,24 +44,13 @@
     {% from "button/macro.njk" import govukButton %}
     {% from "input/macro.njk" import govukInput %}
 
-    <form action="rotate-certs-msa">
-
-      {{ govukInput({
-        id: "encryption-key-msa",
-        name: "encryption-key-msa",
-        value: "true",
-        classes: "govuk-visually-hidden"
-      }) }}
+    <form action="upload-cert-msa-encryption">
 
       {{ govukButton({
-        text: "Mark as completed"
+        text: "Continue"
       }) }}
 
     </form>
-
-    <p>
-      <a href="rotate-certs-msa">Back</a>
-    </p>
 
   </div>
 </div>
