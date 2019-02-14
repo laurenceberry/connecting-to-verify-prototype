@@ -13,7 +13,7 @@
     <div class="side-navigation">
       <ul class="govuk-list">
         <li class="active">
-          <a href="dashboard">Rotate certificates</a>
+          <a href="dashboard">Update certificates</a>
         </li>
         <li>
           <a href="#">Sign out</a>
@@ -25,15 +25,15 @@
 
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">
-      Deploy encryption key to your Matching Service Adapter
+      Before you start
     </h1>
 
     <p>
-      Before updating your encryption certificate, you must deploy the corresponding encryption key to your MSA.
+      Before uploading your encryption certificate, you must deploy the corresponding encryption key to your Matching Service Adapter.
     </p>
 
     <p>
-      If you don't do this your connection to GOV.UK Verify will break once the new certificate is in place.
+      If you do not do this your service will be disconnected from GOV.UK Verify.
     </p>
 
     <p>
@@ -47,7 +47,7 @@
     <form action="upload-cert-msa-encryption">
 
       {{ govukButton({
-        text: "Continue"
+        text: "I have deployed the key"
       }) }}
 
     </form>

@@ -13,7 +13,7 @@
     <div class="side-navigation">
       <ul class="govuk-list">
         <li class="active">
-          <a href="dashboard">Rotate certificates</a>
+          <a href="dashboard">Update certificates</a>
         </li>
         <li>
           <a href="#">Sign out</a>
@@ -25,11 +25,11 @@
 
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">
-      Rotate certificates
+      Update certificates
     </h1>
 
     <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
-      The following certificates will expire soon
+      Certificates expiring soon
     </h2>
 
     <ul class="govuk-list connection-list">
@@ -38,7 +38,7 @@
       {% else %}
         <li>
           <h3 class="govuk-heading-s">
-            Encryption certificate for your Matching Service Adapter
+            Encryption certificate (Matching Service Adapter)
           </h3>
           <div class="connection-info">
             <dl>
@@ -51,7 +51,7 @@
             </dl>
             <dl>
               <dt>Used by:</dt>
-              <dd>4 services</dd>
+              <dd>Apply for a license, Report a medical condition, Renew a short-term license, View or share your information</dd>
             </dl>
           </div>
           <p>
@@ -66,7 +66,7 @@
       {% else %}
       <li>
         <h3 class="govuk-heading-s">
-          Signing certificate for your Matching Service Adapter
+          Signing certificate (Matching Service Adapter)
         </h3>
         <div class="connection-info">
           <dl>
@@ -79,7 +79,7 @@
           </dl>
           <dl>
             <dt>Used by:</dt>
-            <dd>4 services</dd>
+            <dd>Apply for a license, Report a medical condition, Renew a short-term license, View or share your information</dd>
           </dl>
         </div>
         <p>
@@ -96,16 +96,54 @@
     </h2>
 
     <ul class="govuk-list connection-list">
+      <li>
+        <h3 class="govuk-heading-s">
+          Encryption certificate (service provider)
+        </h3>
+        <div class="connection-info">
+          <dl>
+            <dt>Expiring on:</dt>
+            <dd>10 January 2020</dd>
+          </dl>
+          <dl>
+            <dt>Environment:</dt>
+            <dd>Production</dd>
+          </dl>
+          <dl>
+            <dt>Used by:</dt>
+            <dd>Apply for a license, Report a medical condition, Renew a short-term license, View or share your information</dd>
+          </dl>
+        </div>
+      </li>
+      <li>
+        <h3 class="govuk-heading-s">
+          Signing certificate (service provider)
+        </h3>
+        <div class="connection-info">
+          <dl>
+            <dt>Expiring on:</dt>
+            <dd>10 January 2020</dd>
+          </dl>
+          <dl>
+            <dt>Environment:</dt>
+            <dd>Production</dd>
+          </dl>
+          <dl>
+            <dt>Used by:</dt>
+            <dd>Apply for a license, Report a medical condition, Renew a short-term license, View or share your information</dd>
+          </dl>
+        </div>
+      </li>
       <!-- if someone has uploaded this cert, show in this list -->
       {% if data['confirm-encryption-cert-msa'] %}
         <li>
           <h3 class="govuk-heading-s">
-            Encryption certificate for your Matching Service Adapter
+            Encryption certificate (Matching Service Adapter)
           </h3>
           <div class="connection-info">
             <dl>
               <dt>Expiring on:</dt>
-              <dd>15 March 2020</dd>
+              <dd>14 March 2020</dd>
             </dl>
             <dl>
               <dt>Environment:</dt>
@@ -113,15 +151,15 @@
             </dl>
             <dl>
               <dt>Used by:</dt>
-              <dd>4 services</dd>
+              <dd>Apply for a license, Report a medical condition, Renew a short-term license, View or share your information</dd>
             </dl>
           </div>
         </li>
       {% endif %}
-      {% if data['signing-encryption-cert-msa'] %}
+      {% if data['confirm-signing-cert-msa'] %}
         <li>
           <h3 class="govuk-heading-s">
-            Signing certificate for your Matching Service Adapter
+            Signing certificate (Matching Service Adapter)
           </h3>
           <div class="connection-info">
             <dl>
@@ -134,13 +172,12 @@
             </dl>
             <dl>
               <dt>Used by:</dt>
-              <dd>4 services</dd>
+              <dd>Apply for a license, Report a medical condition, Renew a short-term license, View or share your information</dd>
             </dl>
           </div>
         </li>
       {% endif %}
     </ul>
-
 
   </div>
 </div>

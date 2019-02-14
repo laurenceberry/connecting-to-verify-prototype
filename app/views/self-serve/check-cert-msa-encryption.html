@@ -13,7 +13,7 @@
     <div class="side-navigation">
       <ul class="govuk-list">
         <li class="active">
-          <a href="dashboard">Rotate certificates</a>
+          <a href="dashboard">Update certificates</a>
         </li>
         <li>
           <a href="#">Sign out</a>
@@ -25,8 +25,12 @@
 
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">
-      Confirm this is the right certificate
+      Check you've uploaded the right certificate
     </h1>
+
+    <p>
+      The certificate you've uploaded contains the following information:
+    </p>
 
     {% from "summary-list/macro.njk" import govukSummaryList %}
 
@@ -81,10 +85,17 @@
       }) }}
 
       {{ govukButton({
-        text: "Continue"
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-5"
       }) }}
 
     </form>
+
+    <p>
+      <a href="upload-cert-msa-encryption">
+        Upload different certificate
+      </a>
+    </p>
 
   </div>
 </div>

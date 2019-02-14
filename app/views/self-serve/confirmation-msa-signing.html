@@ -13,7 +13,7 @@
       <div class="side-navigation">
         <ul class="govuk-list">
           <li class="active">
-            <a href="dashboard">Rotate certificates</a>
+            <a href="dashboard">Update certificates</a>
           </li>
           <li>
             <a href="#">Sign out</a>
@@ -26,7 +26,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Please wait 1 hour for us to update GOV.UK Verify's infrastructure
+        Wait 1 hour for us to update GOV.UK Verify's infrastructure
       </h1>
 
       <p>
@@ -34,15 +34,24 @@
       </p>
 
       <p>
-        Once you have received confirmation that we have updated GOV.UK Verify's infrastructure, you need to deploy the signing key to your Matching Service Adapter by the 14th March.
+        Once you receive confirmation that we have updated GOV.UK Verify's infrastructure, you can deploy the signing key to your Matching Service Adapter.
       </p>
 
-      <p>
-        If you do not do this, your connection to GOV.UK Verify will break when the old certificate expires.
-      </p>
+      {% from "warning-text/macro.njk" import govukWarningText %}
+
+      {{ govukWarningText({
+        text: "If you do not deploy the signing key by 14 March, your service will be disconnected from GOV.UK Verify.",
+        iconFallbackText: "Warning"
+      }) }}
 
       <p>
         Read about how to <a href="https://www.docs.verify.service.gov.uk/maintain-your-connection/rotate-keys/#rotate-your-msa-signing-key">rotate your MSA signing key</a>.
+      </p>
+
+      <p>
+        <a href="dashboard">
+          Update more certificates
+        </a>
       </p>
 
     </div>

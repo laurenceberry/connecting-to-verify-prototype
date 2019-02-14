@@ -220,14 +220,17 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 
       dt, dd {
         display: inline-block;
+        vertical-align: top;
+        margin-bottom: 5px;
       }
 
       dt {
-        min-width: 7em;
+        min-width: 6.5em;
       }
 
       dd {
         margin: 0;
+        max-width: 70%;
       }
     }
 
@@ -248,4 +251,14 @@ ul.govuk-list--bullet, ul.govuk-list--number{
   background-color: govuk-colour("white");
   color: $govuk-secondary-text-colour;
   border: 2px solid $govuk-secondary-text-colour;
+}
+
+.govuk-button--grey {
+  background-color: govuk-colour("grey-3");
+  color: govuk-colour("black")!important;
+  box-shadow: 0 2px 0 govuk-colour("grey-2");
+}
+
+.govuk-button--grey:hover {
+  background-color: govuk-colour("grey-4");
 }
