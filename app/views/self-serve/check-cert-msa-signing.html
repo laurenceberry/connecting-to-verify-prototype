@@ -35,13 +35,21 @@
     {% from "summary-list/macro.njk" import govukSummaryList %}
 
     {{ govukSummaryList({
-      rows: [
+        rows: [
+        {
+          key: {
+            text: "Common name"
+          },
+          value: {
+            text: "MSA SAML Signing v1"
+          }
+        },
         {
           key: {
             text: "Valid from"
           },
           value: {
-            text: "15 February 2018, 12:00am"
+            text: "11 June 2016, 12:00am"
           }
         },
         {
@@ -49,23 +57,7 @@
             text: "Valid until"
           },
           value: {
-            text: "15 February 2019, 11:59pm"
-          }
-        },
-        {
-          key: {
-            text: "Organisation"
-          },
-          value: {
-            html: "Organisation Name"
-          }
-        },
-        {
-          key: {
-            text: "Serial number"
-          },
-          value: {
-            html: "67e9634d963e0a4227df737ff5b764e9"
+            text: "11 June 2017, 11:59pm"
           }
         }
       ]
@@ -78,8 +70,8 @@
 
       <!-- hidden form to change status on dashboard page -->
       {{ govukInput({
-        id: "confirm-signing-cert-msa",
-        name: "confirm-signing-cert-msa",
+        id: "confirm-cert-msa-signing",
+        name: "confirm-cert-msa-signing",
         value: "true",
         classes: "govuk-visually-hidden"
       }) }}
@@ -92,7 +84,7 @@
     </form>
 
     <p>
-      <a href="upload-cert-msa-encryption">
+      <a href="upload-cert-msa-signing">
         Upload different certificate
       </a>
     </p>

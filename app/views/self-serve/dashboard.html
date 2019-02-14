@@ -28,12 +28,18 @@
       Update certificates
     </h1>
 
-    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
-      Certificates expiring soon
-    </h2>
+    {% if data['confirm-cert-msa-encryption'] and data['confirm-cert-msa-signing'] %}
+      <p>
+        There are currently no certificates expiring soon.
+      </p>
+    {% else %}
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+        Certificates expiring soon
+      </h2>
+    {% endif %}
 
     <ul class="govuk-list connection-list">
-      {% if data['confirm-encryption-cert-msa'] %}
+      {% if data['confirm-cert-msa-encryption'] %}
         <!-- show nothing -->
       {% else %}
         <li>
@@ -51,17 +57,17 @@
             </dl>
             <dl>
               <dt>Used by:</dt>
-              <dd>Apply for a license, Report a medical condition, Renew a short-term license, View or share your information</dd>
+              <dd>Apply for a license, Report a condition, Renew a short-term license, View or share your information</dd>
             </dl>
           </div>
           <p>
-            <a href="deploy-encryption-key-msa">
+            <a href="deploy-encryption-key-msa" class="govuk-!-body-bold">
               Update certificate
             </a>
           </p>
         </li>
       {% endif %}
-      {% if data['signing-encryption-cert-msa'] %}
+      {% if data['confirm-cert-msa-signing'] %}
         <!-- show nothing -->
       {% else %}
       <li>
@@ -79,7 +85,7 @@
           </dl>
           <dl>
             <dt>Used by:</dt>
-            <dd>Apply for a license, Report a medical condition, Renew a short-term license, View or share your information</dd>
+            <dd>Apply for a license, Report a condition, Renew a short-term license, View or share your information</dd>
           </dl>
         </div>
         <p>
@@ -111,7 +117,7 @@
           </dl>
           <dl>
             <dt>Used by:</dt>
-            <dd>Apply for a license, Report a medical condition, Renew a short-term license, View or share your information</dd>
+            <dd>Apply for a license, Report a condition, Renew a short-term license, View or share your information</dd>
           </dl>
         </div>
       </li>
@@ -130,12 +136,11 @@
           </dl>
           <dl>
             <dt>Used by:</dt>
-            <dd>Apply for a license, Report a medical condition, Renew a short-term license, View or share your information</dd>
+            <dd>Apply for a license, Report a condition, Renew a short-term license, View or share your information</dd>
           </dl>
         </div>
       </li>
-      <!-- if someone has uploaded this cert, show in this list -->
-      {% if data['confirm-encryption-cert-msa'] %}
+      {% if data['confirm-cert-msa-encryption'] %}
         <li>
           <h3 class="govuk-heading-s">
             Encryption certificate (Matching Service Adapter)
@@ -151,12 +156,12 @@
             </dl>
             <dl>
               <dt>Used by:</dt>
-              <dd>Apply for a license, Report a medical condition, Renew a short-term license, View or share your information</dd>
+              <dd>Apply for a license, Report a condition, Renew a short-term license, View or share your information</dd>
             </dl>
           </div>
         </li>
       {% endif %}
-      {% if data['confirm-signing-cert-msa'] %}
+      {% if data['confirm-cert-msa-signing'] %}
         <li>
           <h3 class="govuk-heading-s">
             Signing certificate (Matching Service Adapter)
@@ -172,7 +177,7 @@
             </dl>
             <dl>
               <dt>Used by:</dt>
-              <dd>Apply for a license, Report a medical condition, Renew a short-term license, View or share your information</dd>
+              <dd>Apply for a license, Report a condition, Renew a short-term license, View or share your information</dd>
             </dl>
           </div>
         </li>
