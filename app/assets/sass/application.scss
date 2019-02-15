@@ -246,6 +246,7 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 
 }
 
+// Grey secondary button
 
 .govuk-tag-grey {
   background-color: govuk-colour("white");
@@ -261,4 +262,35 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 
 .govuk-button--grey:hover {
   background-color: govuk-colour("grey-4");
+}
+
+// Email example
+
+.email {
+
+  p, ul, a {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  }
+
+}
+
+// Hidden link to email
+
+#link-to-confirmation-email {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+
+  a {
+    color: $govuk-secondary-text-colour;
+  }
+
+  a:hover {
+    color: govuk-colour("grey-4");
+  }
+
+  a:active {
+    color: $govuk-text-colour
+  }
+
 }

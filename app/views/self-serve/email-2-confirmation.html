@@ -1,0 +1,44 @@
+{% extends "product.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds email">
+
+        <p>
+          Hello,
+        </p>
+
+        <p>
+          GOV.​UK Verify has updated its infrastructure with the new signing certificate for your service’s Matching Service Adapter (MSA).
+        </p>
+
+        <p>
+          You can now deploy the signing key to your service’s MSA.
+        </p>
+
+        <p>
+          You must do this by 20 February or your service will be disconnected from GOV.​UK Verify.
+        </p>
+
+        <p>
+          You can find the guidance on how to rotate your MSA signing key here: <a href="https://www.docs.verify.service.gov.uk/maintain-your-connection/rotate-keys/">https://www.docs.verify.service.gov.uk/maintain-your-connection/rotate-keys/</a>
+        </p>
+
+        <p>
+          Best wishes,<br>
+          GOV.UK Verify
+        </p>
+
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "product.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds email">
+
+        <p>
+          Hello,
+        </p>
+
+        <p>
+          The following certificates are due to expire on 14 March 2019:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>encryption certificate (Matching Service Adapter)</li>
+          <li>signing certificate (Matching Service Adapter)</li>
+        </ul>
+
+        <p>
+          To ensure your service is not disconnected from GOV.​UK Verify, you need to create new certificates and upload them at <a href="sign-in">https://www.verify.service.gov.uk/sign-in</a>
+        </p>
+
+        <p>
+          Best wishes,<br>
+          GOV.UK Verify
+        </p>
+
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
