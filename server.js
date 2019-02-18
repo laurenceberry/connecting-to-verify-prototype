@@ -177,10 +177,10 @@ app.locals.useCookieSessionStore = (useCookieSessionStore === 'true')
 app.locals.cookieText = config.cookieText
 app.locals.promoMode = promoMode
 app.locals.releaseVersion = 'v' + releaseVersion
-app.locals.serviceName = config.serviceName
+app.locals.productName = config.productName
 
 // Session uses service name to avoid clashes with other prototypes
-const sessionName = 'govuk-prototype-kit-' + (Buffer.from(config.serviceName, 'utf8')).toString('hex')
+const sessionName = 'govuk-prototype-kit-' + (Buffer.from(config.productName, 'utf8')).toString('hex')
 let sessionOptions = {
   secret: sessionName,
   cookie: {
