@@ -1,16 +1,10 @@
 {% extends "layout.html" %}
 
-{% set section = "index" %}
-
-{% set productName = "Verify" %}
-
-{% set homepage_url = "/product-page" %}
-
 {% block page_title %}
   GOV.UK prototype kit
 {% endblock %}
 
-{% block content %}
+{% block main %}
 
 <div class="product-overview-intro">
   <div class="govuk-width-container">
@@ -42,12 +36,14 @@
       </div>
 
       <div class="govuk-grid-column-one-third">
-         <img class="component-logo" src="public/images/verify-product-image.svg" style="width: 100%; margin-top: 40px;">
+         <img class="component-logo" src="/public/images/verify-product-image.svg" style="width: 100%; margin-top: 40px;">
       </div>
 
     </div>
   </div>
 </div>
+
+{% block content %}
 
 <div class="govuk-width-container">
 
@@ -155,7 +151,7 @@
       </div>
 
       <div class="govuk-grid-column-one-half">
-        <img src="public/images/verify-team.jpg" />
+        <img src="/public/images/verify-team.jpg" />
       </div>
 
     </div>
@@ -225,5 +221,6 @@
 
 </div>
 
+{% endblock %}
 
 {% endblock %}

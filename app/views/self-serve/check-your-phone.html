@@ -37,6 +37,14 @@
               name: "text-message-code"
             }) }}
 
+            <!-- hidden form to change header to signed in -->
+            {{ govukInput({
+              id: "user-signed-in",
+              name: "user-signed-in",
+              value: "true",
+              classes: "govuk-visually-hidden"
+            }) }}
+
             {{ govukButton({
               text: "Continue"
             }) }}

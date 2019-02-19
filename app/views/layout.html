@@ -37,26 +37,61 @@
 {% block header %}
   {% include "includes/cookie-banner.html" %}
   {# Set productName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    productName: productName,
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container",
-    navigation: [
-      {
-        href: "/get-started",
-        text: "Get started"
-      },
-      {
-        href: "https://www.docs.verify.service.gov.uk",
-        text: "Documentation"
-      },
-      {
-        href: "/product-page/support",
-        text: "Support"
-      }
-    ]
-  }) }}
+  {% if data['user-signed-in'] %}
+    {# Show signed in header if users has gone thru sign in flow #}
+    {{ govukHeader({
+      homepageUrl: "/self-serve/dashboard",
+      productName: productName,
+      serviceUrl: "/",
+      containerClasses: "govuk-width-container",
+      navigation: [
+        {
+          href: "/get-started",
+          text: "Get started"
+        },
+        {
+          href: "https://www.docs.verify.service.gov.uk",
+          text: "Documentation"
+        },
+        {
+          href: "/product-page/support",
+          text: "Support"
+        },
+
+        {
+          href: "#",
+          text: "Sign out"
+        }
+      ]
+    }) }}
+  {% else %}
+    {# Show signed out header by default #}
+    {{ govukHeader({
+      homepageUrl: "/product-page/",
+      productName: productName,
+      serviceUrl: "/",
+      containerClasses: "govuk-width-container",
+      navigation: [
+        {
+          href: "/get-started",
+          text: "Get started"
+        },
+        {
+          href: "https://www.docs.verify.service.gov.uk",
+          text: "Documentation"
+        },
+        {
+          href: "/product-page/support",
+          text: "Support"
+        },
+
+        {
+          href: "/self-serve/sign-in",
+          text: "Sign in"
+        }
+      ]
+    }) }}
+  {% endif %}
 {% endblock %}
 
 {% if useAutoStoreData %}
