@@ -36,13 +36,62 @@
 
 {% block header %}
   {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: serviceName,
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
+  {# Set productName in config.js. #}
+  {% if data['user-signed-in'] %}
+    {# Show signed in header if users has gone thru sign in flow #}
+    {{ govukHeader({
+      homepageUrl: "/self-serve/dashboard",
+      productName: productName,
+      serviceUrl: "/",
+      containerClasses: "govuk-width-container",
+      navigation: [
+        {
+          href: "/get-started",
+          text: "Get started"
+        },
+        {
+          href: "https://www.docs.verify.service.gov.uk",
+          text: "Documentation"
+        },
+        {
+          href: "/product-page/support",
+          text: "Support"
+        },
+
+        {
+          href: "#",
+          text: "Sign out"
+        }
+      ]
+    }) }}
+  {% else %}
+    {# Show signed out header by default #}
+    {{ govukHeader({
+      homepageUrl: "/product-page/",
+      productName: productName,
+      serviceUrl: "/",
+      containerClasses: "govuk-width-container",
+      navigation: [
+        {
+          href: "/get-started",
+          text: "Get started"
+        },
+        {
+          href: "https://www.docs.verify.service.gov.uk",
+          text: "Documentation"
+        },
+        {
+          href: "/product-page/support",
+          text: "Support"
+        },
+
+        {
+          href: "/self-serve/sign-in",
+          text: "Sign in"
+        }
+      ]
+    }) }}
+  {% endif %}
 {% endblock %}
 
 {% if useAutoStoreData %}
@@ -63,43 +112,6 @@
     }) }}
   {% endblock %}
 {% endif %}
-
-{% set global_header_text = 'GOV.UK <span class="product-name">Verify</span>' | safe %}
-
-{% if example == "true" %}
-  {% block proposition_header %}
-
-    <div class="header-proposition">
-      <div class="content">
-        <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
-        <nav id="proposition-menu">
-
-          <ul id="proposition-links">
-            <li><a href="/product-page/support" >Support</a></li>
-            <li><a href="https://verify-tech-docs.cloudapps.digital" >Documentation</a></li>
-            <li><a href="/get-started" >Connect</a></li>
-          </ul>
-
-        </nav>
-      </div>
-    </div>
-
-  {% endblock %}
-{% endif %}
-
-{% block header_class %}
-  with-proposition
-{% endblock %}
-
-{% block footer_support_links %}
-  {% if useAutoStoreData %}
-    <ul>
-      <li>
-        <a href="/prototype-admin/clear-data">Clear data</a>
-      </li>
-    </ul>
-  {% endif %}
-{% endblock %}
 
 {% block bodyEnd %}
   {% block scripts %}
