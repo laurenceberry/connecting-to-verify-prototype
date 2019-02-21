@@ -18,6 +18,7 @@ $govuk-global-styles: true;
 @import 'patterns/navigation';
 @import "patterns/step-by-step-navigation";
 @import "patterns/side-navigation";
+@import "patterns/email-example";
 
 // Components that aren't in Frontend
 @import "components/cookie-banner";
@@ -262,16 +263,6 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 
 .govuk-button--grey:hover {
   background-color: govuk-colour("grey-4");
-}
-
-// Email example
-
-.email {
-
-  p, ul, a {
-    font-family: 'Helvetica Neue', Helvetica, sans-serif;
-  }
-
 }
 
 // Hidden link to email

@@ -1,0 +1,30 @@
+// Example of an email to show in user research sessions
+
+.email {
+  border: 1px solid  $govuk-border-colour;
+  margin: 40px auto 100px;
+  max-width: 640px;
+
+  .email-header {
+    padding: 10px;
+
+    h1 {
+      border-bottom: 1px solid $govuk-border-colour;
+    }
+
+  }
+
+  header {
+    padding: 0 40px;
+    margin: 0 10px;
+  }
+
+  .email-content {
+    margin: 30px 50px 40px;
+  }
+
+  p, ul, a, h1 {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  }
+
+}
