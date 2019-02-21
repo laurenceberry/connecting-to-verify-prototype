@@ -239,6 +239,10 @@ ul.govuk-list--bullet, ul.govuk-list--number{
       margin: 15px 0 5px;
     }
 
+    .status-message {
+      color: $govuk-error-colour;
+    }
+
   }
 
   li:first-of-type {

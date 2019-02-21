@@ -13,7 +13,7 @@
     <div class="side-navigation">
       <ul class="govuk-list">
         <li class="active">
-          <a href="dashboard">Update certificates</a>
+          <a href="dashboard">Manage certificates</a>
         </li>
         <li>
           <a href="#">Sign out</a>
@@ -30,8 +30,13 @@
     </h1>
 
     <p>
-      Either upload a .crt file or paste the certificate text into the text box.
+      You can either:
     </p>
+
+    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+      <li>upload a .crt file</li>
+      <li>paste the certificate text into the text box</li>
+    </ul>
 
     {% from "file-upload/macro.njk" import govukFileUpload %}
     {% from "button/macro.njk" import govukButton %}
