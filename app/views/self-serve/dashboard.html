@@ -24,13 +24,26 @@
   </div>
 
   <div class="govuk-grid-column-two-thirds">
+
     <h1 class="govuk-heading-l">
       Manage certificates
     </h1>
 
-    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
-      Certificates expiring soon
-    </h2>
+    {% if data['confirm-cert-msa-encryption'] and data['confirm-cert-msa-signing'] %}
+      <!-- show nothing -->
+    {% elif data['confirm-cert-msa-encryption'] %}
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+        1 certificate expiring soon
+      </h2>
+    {% elif data['confirm-cert-msa-signing'] %}
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+        1 certificate expiring soon
+      </h2>
+    {% else %}
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+        2 certificates expiring soon
+      </h2>
+    {% endif %}
 
     <ul class="govuk-list connection-list">
       {% if data['confirm-cert-msa-encryption'] %}
@@ -55,13 +68,48 @@
             </dl>
           </div>
           <p>
-            <a href="deploy-encryption-key-msa" class="govuk-!-body-bold">
+            <a href="before-you-start-msa-encryption" class="govuk-!-body-bold">
               Update certificate
             </a>
           </p>
         </li>
       {% endif %}
       {% if data['confirm-cert-msa-signing'] %}
+        <!-- show nothing -->
+      {% else %}
+        <li>
+          <h3 class="govuk-heading-s">
+            Signing certificate (Matching Service Adapter)
+          </h3>
+          <div class="connection-info">
+            <dl>
+              <dt>Expiring on:</dt>
+              <dd>25 March 2019, 11:59pm</dd>
+            </dl>
+            <dl>
+              <dt>Environment:</dt>
+              <dd>Production</dd>
+            </dl>
+            <dl>
+              <dt>Used by:</dt>
+              <dd>Apply for a license, Report a condition, Renew a short-term license, View or share your information</dd>
+            </dl>
+          </div>
+          <p>
+            <a href="before-you-start-msa-signing">
+              Update certificate
+            </a>
+          </p>
+        </li>
+      {% endif %}
+    </ul>
+
+    <!-- if user has completed the signing flow, show a new section displaying the certs that are bring deployed during that 1 hour period -->
+    {% if data['confirm-cert-msa-signing'] %}
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+        Certificates being deployed
+      </h2>
+      <ul class="govuk-list connection-list">
         <li>
           <h3 class="govuk-heading-s">
             Signing certificate (Matching Service Adapter)
@@ -84,33 +132,10 @@
             Deploy your private key from 11:57 today
           </p>
         </li>
-      {% else %}
-      <li>
-        <h3 class="govuk-heading-s">
-          Signing certificate (Matching Service Adapter)
-        </h3>
-        <div class="connection-info">
-          <dl>
-            <dt>Expiring on:</dt>
-            <dd>25 March 2019, 11:59pm</dd>
-          </dl>
-          <dl>
-            <dt>Environment:</dt>
-            <dd>Production</dd>
-          </dl>
-          <dl>
-            <dt>Used by:</dt>
-            <dd>Apply for a license, Report a condition, Renew a short-term license, View or share your information</dd>
-          </dl>
-        </div>
-        <p>
-          <a href="upload-cert-msa-signing">
-            Update certificate
-          </a>
-        </p>
-      </li>
-      {% endif %}
-    </ul>
+      </ul>
+    {% else %}
+      <!-- show nothing -->
+    {% endif %}
 
     <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
       Other certificates you manage
