@@ -29,15 +29,24 @@
     </h1>
 
     <p>
-      Before uploading your encryption certificate, you must deploy the corresponding encryption key to your Matching Service Adapter.
+      To update your encryption certificate:
     </p>
 
-    <p>
-      If you do not do this your service will be disconnected from GOV.UK Verify.
-    </p>
+    <ul class="govuk-list govuk-list--number">
+      <li>Create a new encryption certificate and key.</li>
+      <li>Deploy the new encryption key to your Matching Service Adapter. If your service supports dual running, you should also deploy a secondary encryption key.</li>
+      <li>Upload your new encryption certificate for your Matching Service Adapter to the GOV.UK Verify Service Admin tool.</li>
+    </ul>
+
+    {% from "warning-text/macro.njk" import govukWarningText %}
+
+    {{ govukWarningText({
+      text: "If you do not do deploy your encryption key before uploading your encryption certificate, your service will be disconnected from GOV.UK Verify.",
+      iconFallbackText: "Warning"
+    }) }}
 
     <p>
-      Read about how to <a href="https://www.docs.verify.service.gov.uk/maintain-your-connection/rotate-keys/#rotate-your-msa-encryption-key">rotate your MSA encryption key</a>.
+      For more information, read the guidance on <a href="https://www.docs.verify.service.gov.uk/maintain-your-connection/rotate-keys/#rotate-your-msa-encryption-key">rotating your MSA encryption key</a>.
     </p>
 
     {% from "file-upload/macro.njk" import govukFileUpload %}
@@ -47,7 +56,7 @@
     <form action="upload-cert-msa-encryption">
 
       {{ govukButton({
-        text: "I have deployed the key"
+        text: "I have deployed the encryption key"
       }) }}
 
     </form>
