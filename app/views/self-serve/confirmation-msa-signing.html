@@ -30,22 +30,22 @@
       </h1>
 
       <p>
-        We'll send you an email when this is done. This usually takes around 1 hour.
+        We'll email you when this is done. This usually takes around 1 hour.
       </p>
 
       <p>
-        Once you receive the email, you must deploy the signing key to your Matching Service Adapter.
+        To finish updating your signing certificate, you must add the signing key to your Matching Service Adapter. You can do this after you get the email.
       </p>
 
       {% from "warning-text/macro.njk" import govukWarningText %}
 
       {{ govukWarningText({
-        text: "If you do not deploy the signing key by 25 March, your service will be disconnected from GOV.UK Verify.",
+        text: "You must deploy your new signing key by 25 March, or your service will be disconnected from GOV.UK Verify.",
         iconFallbackText: "Warning"
       }) }}
 
       <p>
-        Read about how to <a href="https://www.docs.verify.service.gov.uk/maintain-your-connection/rotate-keys/#rotate-your-msa-signing-key">rotate your MSA signing key</a>.
+        Read about how to <a href="https://www.docs.verify.service.gov.uk/maintain-your-connection/rotate-keys/#rotate-your-msa-signing-key">update your MSA signing key</a>.
       </p>
 
       <p>
