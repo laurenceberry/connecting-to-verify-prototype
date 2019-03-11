@@ -34,13 +34,13 @@
       </p>
 
       <p>
-        To finish updating your signing certificate, you must add the signing key to your Matching Service Adapter. You can do this after you get the email.
+        To finish updating your signing certificate, you must deploy the signing key to your Matching Service Adapter. You can do this after you get the email.
       </p>
 
       {% from "warning-text/macro.njk" import govukWarningText %}
 
       {{ govukWarningText({
-        text: "You must deploy your new signing key by 25 March, or your service will be disconnected from GOV.UK Verify.",
+        text: "You must deploy the new signing key by 25 March, or your service will be disconnected from GOV.UK Verify.",
         iconFallbackText: "Warning"
       }) }}
 
