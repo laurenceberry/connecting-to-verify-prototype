@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <div class="side-navigation">
+      <ul class="govuk-list">
+        <li class="active">
+          <a href="dashboard">Manage certificates</a>
+        </li>
+        <li class="">
+          <a href="team-members">Manage team members</a>
+        </li>
+        <li>
+          <a href="#">Sign out</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Check you've uploaded the right certificate
+    </h1>
+
+    <p>
+      The certificate you've uploaded contains the following information:
+    </p>
+
+    {% from "summary-list/macro.njk" import govukSummaryList %}
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Common name"
+          },
+          value: {
+            text: "MSA SAML Encryption v4"
+          }
+        },
+        {
+          key: {
+            text: "Valid from"
+          },
+          value: {
+            text: "2 June 2016, 12:00am"
+          }
+        },
+        {
+          key: {
+            text: "Valid until"
+          },
+          value: {
+            text: "2 June 2017, 11:59pm"
+          }
+        }
+      ]
+    }) }}
+
+
+    {% from "button/macro.njk" import govukButton %}
+
+    <form action="confirmation-sp-encryption">
+
+      <!-- hidden form to change status on dashboard page -->
+      {{ govukInput({
+        id: "confirm-cert-sp-encryption",
+        name: "confirm-cert-sp-encryption",
+        value: "true",
+        classes: "govuk-visually-hidden"
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-5"
+      }) }}
+
+    </form>
+
+    <p>
+      <a href="upload-cert-sp-encryption">
+        Upload a different certificate
+      </a>
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

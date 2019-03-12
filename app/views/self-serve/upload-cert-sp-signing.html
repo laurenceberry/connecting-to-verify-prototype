@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <div class="side-navigation">
+      <ul class="govuk-list">
+        <li class="active">
+          <a href="dashboard">Manage certificates</a>
+        </li>
+        <li class="">
+          <a href="team-members">Manage team members</a>
+        </li>
+        <li>
+          <a href="#">Sign out</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Upload the signing certificate
+    </h1>
+
+    <p>
+      You can either:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+      <li>upload a .crt file</li>
+      <li>paste the certificate text into the text box</li>
+    </ul>
+
+    {% from "file-upload/macro.njk" import govukFileUpload %}
+    {% from "button/macro.njk" import govukButton %}
+    {% from "textarea/macro.njk" import govukTextarea %}
+
+    <form action="check-cert-sp-signing">
+
+      {{ govukFileUpload({
+        id: "cert-sp-encryption",
+        name: "cert-sp-encryption",
+        label: {
+          text: "Upload .crt file"
+        }
+      }) }}
+
+      {{ govukTextarea({
+        name: "cert-sp-encryption-text",
+        id: "cert-sp-encryption-text",
+        classes: "govuk-!-width-three-quarters",
+        rows: "12",
+        label: {
+          text: "Paste certificate text"
+        }
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

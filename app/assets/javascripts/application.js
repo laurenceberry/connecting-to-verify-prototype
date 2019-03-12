@@ -9,6 +9,18 @@ $(document).ready(function () {
 
   // add code here
 
+  // count certificates on dashboard
+
+  var liList = document.getElementById("expiring-certs").getElementsByTagName("li");
+  var count = liList.length
+
+  var heading = " certificate expiring soon"
+  if (count > 1) {
+    heading = " certificates expiring soon"
+  }
+
+  document.getElementById("counter").innerHTML = count+heading;
+
 	jQuery(function($) {
 
 	  $('#bookmark-this').click(function(e) {

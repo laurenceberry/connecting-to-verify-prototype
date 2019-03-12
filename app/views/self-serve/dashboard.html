@@ -31,23 +31,15 @@
       Manage certificates
     </h1>
 
-    {% if data['confirm-cert-msa-encryption'] and data['confirm-cert-msa-signing'] %}
+    {% if data['confirm-cert-msa-encryption'] and data['confirm-cert-msa-signing'] and data['confirm-cert-sp-encryption'] and data['confirm-cert-sp-signing'] %}
       <!-- show nothing -->
-    {% elif data['confirm-cert-msa-encryption'] %}
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
-        1 certificate expiring soon
-      </h2>
-    {% elif data['confirm-cert-msa-signing'] %}
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
-        1 certificate expiring soon
-      </h2>
     {% else %}
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
-        2 certificates expiring soon
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2" id="counter">
+        certificates expiring soon
       </h2>
     {% endif %}
 
-    <ul class="govuk-list connection-list">
+    <ul class="govuk-list connection-list" id="expiring-certs">
       {% if data['confirm-cert-msa-encryption'] %}
         <!-- show nothing -->
       {% else %}
@@ -104,6 +96,145 @@
           </p>
         </li>
       {% endif %}
+      {% if data['confirm-cert-sp-encryption'] %}
+        <!-- show nothing -->
+      {% else %}
+        <li>
+          <h3 class="govuk-heading-s">
+            Encryption certificate (service provider)
+          </h3>
+          <div class="connection-info">
+            <dl>
+              <dt>Expiring on:</dt>
+              <dd>10 January 2020 11:59pm</dd>
+            </dl>
+            <dl>
+              <dt>Environment:</dt>
+              <dd>Production</dd>
+            </dl>
+            <dl>
+              <dt>Used by:</dt>
+              <dd>Apply for a license, Report a condition, Renew a short-term license, View or share your information</dd>
+            </dl>
+          </div>
+          <p>
+            <a href="before-you-start-sp-encryption" class="govuk-!-body-bold">
+              Update certificate
+            </a>
+          </p>
+        </li>
+      {% endif %}
+      {% if data['confirm-cert-sp-signing'] %}
+        <!-- show nothing -->
+      {% else %}
+        <li>
+          <h3 class="govuk-heading-s">
+            Signing certificate (service provider)
+          </h3>
+          <div class="connection-info">
+            <dl>
+              <dt>Expiring on:</dt>
+              <dd>10 January 2020 11:59pm</dd>
+            </dl>
+            <dl>
+              <dt>Environment:</dt>
+              <dd>Production</dd>
+            </dl>
+            <dl>
+              <dt>Used by:</dt>
+              <dd>Apply for a license, Report a condition, Renew a short-term license, View or share your information</dd>
+            </dl>
+          </div>
+          <p>
+            <a href="before-you-start-sp-signing" class="govuk-!-body-bold">
+              Update certificate
+            </a>
+          </p>
+        </li>
+      {% endif %}
+    </ul>
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+      Staging certificates
+    </h2>
+
+    <ul class="govuk-list connection-list">
+      <li>
+        <h3 class="govuk-heading-s">
+          Encryption certificate (Matching Service Adapter)
+        </h3>
+        <div class="connection-info">
+          <dl>
+            <dt>Expiring on:</dt>
+            <dd>25 March 2019, 11:59pm</dd>
+          </dl>
+          <dl>
+            <dt>Environment:</dt>
+            <dd>Staging</dd>
+          </dl>
+          <dl>
+            <dt>Used by:</dt>
+            <dd>Apply for a license, Report a condition, Renew a short-term license, View or share your information</dd>
+          </dl>
+        </div>
+      </li>
+      <li>
+        <h3 class="govuk-heading-s">
+          Signing certificate (Matching Service Adapter)
+        </h3>
+        <div class="connection-info">
+          <dl>
+            <dt>Expiring on:</dt>
+            <dd>25 March 2019, 11:59pm</dd>
+          </dl>
+          <dl>
+            <dt>Environment:</dt>
+            <dd>Staging</dd>
+          </dl>
+          <dl>
+            <dt>Used by:</dt>
+            <dd>Apply for a license, Report a condition, Renew a short-term license, View or share your information</dd>
+          </dl>
+        </div>
+      </li>
+      <li>
+        <h3 class="govuk-heading-s">
+          Encryption certificate (service provider)
+        </h3>
+        <div class="connection-info">
+          <dl>
+            <dt>Expiring on:</dt>
+            <dd>10 January 2020 11:59pm</dd>
+          </dl>
+          <dl>
+            <dt>Environment:</dt>
+            <dd>Staging</dd>
+          </dl>
+          <dl>
+            <dt>Used by:</dt>
+            <dd>Apply for a license, Report a condition, Renew a short-term license, View or share your information</dd>
+          </dl>
+        </div>
+      </li>
+      <li>
+        <h3 class="govuk-heading-s">
+          Signing certificate (service provider)
+        </h3>
+        <div class="connection-info">
+          <dl>
+            <dt>Expiring on:</dt>
+            <dd>10 January 2020 11:59pm</dd>
+          </dl>
+          <dl>
+            <dt>Environment:</dt>
+            <dd>Staging</dd>
+          </dl>
+          <dl>
+            <dt>Used by:</dt>
+            <dd>Apply for a license, Report a condition, Renew a short-term license, View or share your information</dd>
+          </dl>
+        </div>
+      </li>
     </ul>
 
     <!-- if user has completed the signing flow, show a new section displaying the certs that are bring deployed during that 1 hour period -->
@@ -142,46 +273,49 @@
     <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
       Other certificates you manage
     </h2>
-
     <ul class="govuk-list connection-list">
-      <li>
-        <h3 class="govuk-heading-s">
-          Encryption certificate (service provider)
-        </h3>
-        <div class="connection-info">
-          <dl>
-            <dt>Expiring on:</dt>
-            <dd>10 January 2020 11:59pm</dd>
-          </dl>
-          <dl>
-            <dt>Environment:</dt>
-            <dd>Production</dd>
-          </dl>
-          <dl>
-            <dt>Used by:</dt>
-            <dd>Apply for a license, Report a condition, Renew a short-term license, View or share your information</dd>
-          </dl>
-        </div>
-      </li>
-      <li>
-        <h3 class="govuk-heading-s">
-          Signing certificate (service provider)
-        </h3>
-        <div class="connection-info">
-          <dl>
-            <dt>Expiring on:</dt>
-            <dd>10 January 2020 11:59pm</dd>
-          </dl>
-          <dl>
-            <dt>Environment:</dt>
-            <dd>Production</dd>
-          </dl>
-          <dl>
-            <dt>Used by:</dt>
-            <dd>Apply for a license, Report a condition, Renew a short-term license, View or share your information</dd>
-          </dl>
-        </div>
-      </li>
+      {% if data['confirm-cert-sp-encryption'] %}
+        <li>
+          <h3 class="govuk-heading-s">
+            Encryption certificate (service provider)
+          </h3>
+          <div class="connection-info">
+            <dl>
+              <dt>Expiring on:</dt>
+              <dd>10 January 2020 11:59pm</dd>
+            </dl>
+            <dl>
+              <dt>Environment:</dt>
+              <dd>Production</dd>
+            </dl>
+            <dl>
+              <dt>Used by:</dt>
+              <dd>Apply for a license, Report a condition, Renew a short-term license, View or share your information</dd>
+            </dl>
+          </div>
+        </li>
+      {% endif %}
+      {% if data['confirm-cert-sp-signing'] %}
+        <li>
+          <h3 class="govuk-heading-s">
+            Signing certificate (service provider)
+          </h3>
+          <div class="connection-info">
+            <dl>
+              <dt>Expiring on:</dt>
+              <dd>10 January 2020 11:59pm</dd>
+            </dl>
+            <dl>
+              <dt>Environment:</dt>
+              <dd>Production</dd>
+            </dl>
+            <dl>
+              <dt>Used by:</dt>
+              <dd>Apply for a license, Report a condition, Renew a short-term license, View or share your information</dd>
+            </dl>
+          </div>
+        </li>
+      {% endif %}
       {% if data['confirm-cert-msa-encryption'] %}
         <li>
           <h3 class="govuk-heading-s">

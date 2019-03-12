@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation page example
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+
+      <div class="side-navigation">
+        <ul class="govuk-list">
+          <li class="active">
+            <a href="dashboard">Manage certificates</a>
+          </li>
+          <li class="">
+            <a href="team-members">Manage team members</a>
+          </li>
+          <li>
+            <a href="#">Sign out</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        GOV.UK Verify is deploying your certificate
+      </h1>
+
+      <p>
+        We'll email you when this is done. This usually takes around 1 hour.
+      </p>
+
+      <p>
+        To finish updating your signing certificate, you must deploy the signing key to your Matching Service Adapter. You can do this after you get the email.
+      </p>
+
+      {% from "warning-text/macro.njk" import govukWarningText %}
+
+      {{ govukWarningText({
+        text: "You must deploy the new signing key by 25 March, or your service will be disconnected from GOV.UK Verify.",
+        iconFallbackText: "Warning"
+      }) }}
+
+      <p>
+        Read about how to <a href="https://www.docs.verify.service.gov.uk/maintain-your-connection/rotate-keys/#rotate-your-sp-signing-key">update your MSA signing key</a>.
+      </p>
+
+      <p>
+        <a href="dashboard">
+          Update more certificates
+        </a>
+      </p>
+
+    </div>
+  </div>
+
+  <div id="link-to-confirmation-email">
+    <a href="email-2-confirmation">
+      Confirmation email
+    </a>
+  </div>
+
+{% endblock %}
