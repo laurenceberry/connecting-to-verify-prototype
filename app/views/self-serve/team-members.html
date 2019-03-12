@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <div class="side-navigation">
+      <ul class="govuk-list">
+        <li class="">
+          <a href="dashboard">Manage certificates</a>
+        </li>
+        <li class="active">
+          <a href="team-members">Manage team members</a>
+        </li>
+        <li>
+          <a href="#">Sign out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Manage team members
+    </h1>
+
+    <form action="new-team-member" method="post" novalidate>
+      {% from "button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Add team member"
+      }) }}
+    </form>
+
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Email</th>
+          <th class="govuk-table__header" scope="col">Permission</th>
+          <th class="govuk-table__header" scope="col"></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        {% if data['team-member-email'] %}
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">{{data['team-member-email']}}</td>
+            <td class="govuk-table__cell">{{data['team-member-permission']}}</td>
+            <td class="govuk-table__cell"><a href=''>Edit</a></td>
+          </tr>
+        {% endif %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">jamarcus.carter@digital.cabinet-office.gov.uk</td>
+          <td class="govuk-table__cell">Admin</td>
+          <td class="govuk-table__cell"><a href=''>Edit</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">ellen.pitsilledes@digital.cabinet-office.gov.uk</td>
+          <td class="govuk-table__cell">Developer</td>
+          <td class="govuk-table__cell"><a href=''>Edit</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" scope="row">Laura.beaker@digital.cabinet-office.gov.uk</td>
+          <td class="govuk-table__cell">View only</td>
+          <td class="govuk-table__cell"><a href=''>Edit</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+</div>
+
+{% endblock %}

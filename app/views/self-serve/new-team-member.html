@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <div class="side-navigation">
+      <ul class="govuk-list">
+        <li class="">
+          <a href="dashboard">Manage certificates</a>
+        </li>
+        <li class="active">
+          <a href="dashboard">Manage team members</a>
+        </li>
+        <li>
+          <a href="#">Sign out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Add a team member
+    </h1>
+
+    <form action="team-members" method="post" novalidate>
+      {% from "radios/macro.njk" import govukRadios %}
+      {% from "button/macro.njk" import govukButton %}
+      {% from "input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+        label: {
+          text: "Email address",
+          classes: "govuk-label--m"
+        },
+        id: "team-member-email",
+        name: "team-member-email"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Job role",
+          classes: "govuk-label--m"
+        },
+        hint: {
+          text: "This is used to know who to contact if something goes wrong"
+        },
+        id: "team-member-role",
+        name: "team-member-role"
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: "team-member-permission",
+        name: "team-member-permission",
+        fieldset: {
+          legend: {
+            text: "Permission level",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Admin",
+            text: "Admin"
+          },
+          {
+            value: "Developer",
+            text: "Developer"
+          },
+          {
+            value: "View only",
+            text: "View only"
+          }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Add team member"
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
