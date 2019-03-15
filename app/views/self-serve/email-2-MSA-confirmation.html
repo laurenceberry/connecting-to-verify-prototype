@@ -1,0 +1,57 @@
+{% extends "layout_email.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="email">
+
+        <div class="email-header">
+          <h1 class="govuk-heading-m govuk-!-padding-bottom-2 govuk-!-margin-bottom-2">
+            Your certificate update
+          </h1>
+          <ul class="govuk-list govuk-body-s govuk-!-margin-bottom-0">
+            <li>GOV.UK Verify (gov.uk.verify@notifications.service.gov.uk)</li>
+            <li>25 Feb 2019, 09:00</li>
+          </ul>
+        </div>
+
+        {{ govukHeader({
+          containerClasses: "govuk-width-container"
+        }) }}
+
+        <div class="email-content">
+          <p>
+            Hello,
+          </p>
+          <p>
+            GOV.​UK Verify has deployed the new signing certificate for your service’s Matching Service Adapter (MSA).
+          </p>
+          <p>
+            You can now deploy the signing key to your service’s MSA.
+          </p>
+          <p>
+            You must do this by 20 April or your service’s connection to GOV.UK Verify will stop working.
+          </p>
+          <p>
+            For more information, read the guidance on <a href="
+https://prototype-docs.cloudapps.digital/maintain-your-connection/rotate-keys/#update-your-msa-encryption-key">updating your MSA signing key</a>.
+          </p>
+          <p>
+            Best wishes,<br>
+            GOV.UK Verify
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

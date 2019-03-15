@@ -43,12 +43,12 @@
     {% from "warning-text/macro.njk" import govukWarningText %}
 
     {{ govukWarningText({
-      text: "You must deploy your encryption key before uploading your encryption certificate, or your service will be disconnected from GOV.UK Verify.",
+      text: "You must deploy your encryption key before uploading your encryption certificate, or your service’s connection to GOV.UK Verify will stop working.",
       iconFallbackText: "Warning"
     }) }}
 
     <p>
-      For more information, read the guidance on <a href="https://www.docs.verify.service.gov.uk/maintain-your-connection/rotate-keys/#rotate-your-msa-encryption-key">updating your MSA encryption key</a>.
+      For more information, read the guidance on <a href="https://prototype-docs.cloudapps.digital/maintain-your-connection/rotate-keys/#update-your-msa-encryption-key">updating your MSA encryption key</a>.
     </p>
 
     {% from "file-upload/macro.njk" import govukFileUpload %}
