@@ -222,11 +222,12 @@ ul.govuk-list--bullet, ul.govuk-list--number{
       dt, dd {
         display: inline-block;
         vertical-align: top;
-        margin-bottom: 5px;
+        line-height: 1.4;
       }
 
       dt {
         min-width: 6.5em;
+        // font-weight: bold;
       }
 
       dd {
@@ -235,8 +236,21 @@ ul.govuk-list--bullet, ul.govuk-list--number{
       }
     }
 
-    p {
-      margin: 15px 0 5px;
+    .actions {
+
+      ul {
+        list-style: none;
+        padding: 10px 0 0;
+
+        li {
+          border-top: none;
+          border-bottom: none;
+          padding: 0 15px 0 0;
+          display: inline;
+        }
+
+      }
+
     }
 
     .status-message {

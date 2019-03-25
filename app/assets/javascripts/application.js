@@ -11,7 +11,7 @@ $(document).ready(function () {
 
   // count certificates on dashboard
 
-  var liList = document.getElementById("expiring-certs").getElementsByTagName("li");
+  var liList = document.getElementById("expiring-certs").getElementsByTagName("h3");
   var count = liList.length
 
   var heading = " certificate expiring soon"
