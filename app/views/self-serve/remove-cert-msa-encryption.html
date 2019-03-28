@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <div class="side-navigation">
+      <ul class="govuk-list">
+        <li class="active">
+          <a href="dashboard">Manage certificates</a>
+        </li>
+        <li class="">
+          <a href="team-members">Manage team members</a>
+        </li>
+        <li>
+          <a href="#">Sign out</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Are you sure you want to remove this {{ certificate }} certificate?
+    </h1>
+
+    <p>
+      Removing this certificate will cause the following services to stop working with the GOV.UK Verify Integration environment:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Apply for Universal Credit</li>
+    </ul>
+
+    <p>
+      To make it work again, you will need to create and add a new certificate.
+    </p>
+
+    {% from "button/macro.njk" import govukButton %}
+
+    <form action="removed-cert-msa-encryption">
+
+      <!-- hidden form to change status on dashboard page -->
+      {{ govukInput({
+        id: "remove-cert-msa-encryption",
+        name: "remove-cert-msa-encryption",
+        value: "true",
+        classes: "govuk-visually-hidden"
+      }) }}
+
+      {{ govukButton({
+        text: "Remove certificate",
+        classes: "govuk-!-margin-bottom-5"
+      }) }}
+
+    </form>
+
+    <p>
+      <a href="dashboard">Go back</a>
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}
