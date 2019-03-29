@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <div class="side-navigation">
+      <ul class="govuk-list">
+        <li class="active">
+          <a href="dashboard">Manage certificates</a>
+        </li>
+        <li class="">
+          <a href="team-members">Manage team members</a>
+        </li>
+        <li>
+          <a href="#">Sign out</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Manage certificates
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      4 certificates expiring soon
+    </h2>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+      Matching Service Adapter <span class="govuk-tag govuk-tag--grey">Production</span>
+    </h3>
+
+    <ul class="govuk-list">
+      <li>
+        <a href="cert-summary-msa-encryption">Encryption certificate</a> expires 10 April 2019, 11:59pm
+      </li>
+      <li>
+        <a href="#">Signing certificate</a> expires 10 April 2019, 11:59pm
+      </li>
+    </ul>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+      Service provider <span class="govuk-tag govuk-tag--grey">Production</span>
+    </h3>
+
+    <ul class="govuk-list">
+      <li>
+        <a href="#">Encryption certificate</a> expires 10 April 2019, 11:59pm
+      </li>
+      <li>
+        <a href="#">Signing certificate</a> expires 10 April 2019, 11:59pm
+      </li>
+    </ul>
+
+    <br><hr><br>
+
+    <h2 class="govuk-heading-m">
+      Other active certificates
+    </h2>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+      Matching Service Adapter <span class="govuk-tag govuk-tag--grey">Integration</span>
+    </h3>
+
+    <ul class="govuk-list">
+      <li>
+        <a href="#">Encryption certificate</a>
+      </li>
+      <li>
+        <a href="#">Signing certificate</a>
+      </li>
+    </ul>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+      Service provider <span class="govuk-tag govuk-tag--grey">Integration</span>
+    </h3>
+
+    <ul class="govuk-list">
+      <li>
+        <a href="#">Encryption certificate</a>
+      </li>
+      <li>
+        <a href="#">Signing certificate</a>
+      </li>
+    </ul>
+
+  </div>
+</div>
+
+{% endblock %}

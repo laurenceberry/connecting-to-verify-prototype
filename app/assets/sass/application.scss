@@ -205,7 +205,7 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 // list of connections / certs to Rotate
 
 .connection-list {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 
   li {
     border-bottom: 1px solid $govuk-border-colour;
@@ -265,13 +265,16 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 
 }
 
-// Grey secondary button
+// Greay
 
-.govuk-tag-grey {
+.govuk-tag--grey {
   background-color: govuk-colour("white");
   color: $govuk-secondary-text-colour;
   border: 2px solid $govuk-secondary-text-colour;
+  margin-left: 5px;
 }
+
+// Grey secondary button
 
 .govuk-button--grey {
   background-color: govuk-colour("grey-3");
@@ -302,4 +305,19 @@ ul.govuk-list--bullet, ul.govuk-list--number{
     color: $govuk-text-colour
   }
 
+}
+
+// warning links for deleting things etc.
+
+.link-warning,
+.link-warning:visited {
+  color: $govuk-error-colour;
+}
+
+.link-warning:hover {
+  color:govuk-colour("bright-red");
+}
+
+.link-warning:active {
+  color: $govuk-text-colour;
 }
