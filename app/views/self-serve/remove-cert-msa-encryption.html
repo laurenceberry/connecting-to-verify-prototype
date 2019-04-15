@@ -31,16 +31,78 @@
       Are you sure you want to remove this {{ certificate }} certificate?
     </h1>
 
-    <p>
-      Removing this certificate will cause the following services to stop working with the GOV.UK Verify Integration environment:
-    </p>
+    {% from "summary-list/macro.njk" import govukSummaryList %}
 
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Apply for Universal Credit</li>
-    </ul>
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Environment"
+          },
+          value: {
+            text: "Integration"
+          }
+        },
+        {
+          key: {
+            text: "Used by"
+          },
+          value: {
+            text: "Apply for Universal Credit"
+          }
+        },
+        {
+          key: {
+            text: "Valid from"
+          },
+          value: {
+            text: "10 July 2018, 11:59pm"
+          }
+        },
+        {
+          key: {
+            text: "Valid until"
+          },
+          value: {
+            text: "10 April 2019, 11:59pm"
+          }
+        },
+        {
+          key: {
+            text: "Common name"
+          },
+          value: {
+            text: "MSA-encryption-cert-3"
+          }
+        },
+        {
+          key: {
+            text: "Fingerprint"
+          },
+          value: {
+            text: "43:52:43:a1:c5:fc:8b:b8:0a:3a:a9:b9:0f:46:73:a8"
+          }
+        },
+        {
+          key: {
+            text: "Serial number"
+          },
+          value: {
+            text: "00946EBCBE07H201CF"
+          }
+        }
+      ]
+    }) }}
+
+    {% from "warning-text/macro.njk" import govukWarningText %}
+
+    {{ govukWarningText({
+      text: "Removing this certificate will make all connected services stop working with the GOV.UK Verify Integration environment.",
+      iconFallbackText: "Warning"
+    }) }}
 
     <p>
-      To make it work again, you will need to create and add a new certificate.
+      You can reactivate this certificate once removed, or update it with a new one.
     </p>
 
     {% from "button/macro.njk" import govukButton %}
@@ -57,7 +119,7 @@
 
       {{ govukButton({
         text: "Remove certificate",
-        classes: "govuk-!-margin-bottom-5"
+        classes: "govuk-button--warning govuk-!-margin-bottom-5"
       }) }}
 
     </form>

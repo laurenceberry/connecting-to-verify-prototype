@@ -265,7 +265,7 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 
 }
 
-// Greay
+// Grey
 
 .govuk-tag--grey {
   background-color: govuk-colour("white");
@@ -284,6 +284,26 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 
 .govuk-button--grey:hover {
   background-color: govuk-colour("grey-4");
+}
+
+// dangerous button
+
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+.govuk-button--warning {
+  background-color: $govuk-error-colour;
+  box-shadow: 0 2px 0 shade($govuk-error-colour, 50%);
+}
+
+.govuk-button--warning:hover {
+  background-color: tint($govuk-error-colour, 10%);
 }
 
 // Hidden link to email
