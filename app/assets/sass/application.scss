@@ -286,7 +286,7 @@ ul.govuk-list--bullet, ul.govuk-list--number{
   background-color: govuk-colour("grey-4");
 }
 
-// dangerous button
+// destructive button
 
 @function tint($color, $percentage) {
   @return mix(white, $color, $percentage);
@@ -297,7 +297,10 @@ ul.govuk-list--bullet, ul.govuk-list--number{
   @return mix(black, $color, $percentage);
 }
 
-.govuk-button--warning {
+.govuk-button--warning,
+.govuk-button--warning:active,
+.govuk-button--warning:focus,
+.govuk-button--warning:visited {
   background-color: $govuk-error-colour;
   box-shadow: 0 2px 0 shade($govuk-error-colour, 50%);
 }
@@ -329,15 +332,30 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 
 // warning links for deleting things etc.
 
-.link-warning,
-.link-warning:visited {
-  color: $govuk-error-colour;
+.destructive-link,
+.destructive-link:visited {
+  color: $govuk-error-colour!important;
 }
 
-.link-warning:hover {
+.destructive-link:hover {
   color:govuk-colour("bright-red");
 }
 
-.link-warning:active {
+.destructive-link:active {
   color: $govuk-text-colour;
+}
+
+// secondary links placed next to buttons
+
+.secondary-link {
+  display: inline-block;
+  padding: 9px 10px 6px 10px;
+}
+
+// border for expriring CERTS
+
+#expiring-certs {
+  border-bottom: 1px solid $govuk-border-colour;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
 }

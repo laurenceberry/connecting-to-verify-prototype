@@ -31,431 +31,75 @@
       Manage certificates
     </h1>
 
+    <!-- CERTS EXPIRING SOON HEADING -->
     {% if data['confirm-cert-msa-encryption'] and data['confirm-cert-msa-signing'] and data['confirm-cert-sp-encryption'] and data['confirm-cert-sp-signing'] %}
       <!-- show nothing -->
     {% else %}
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-2" id="counter">
+      <h2 class="govuk-heading-m" id="counter">
         certificates expiring soon
       </h2>
     {% endif %}
 
-    <ul class="govuk-list connection-list" id="expiring-certs">
-      {% if data['confirm-cert-msa-encryption'] %}
-        <!-- show nothing -->
-      {% else %}
-        <li>
-          <h3 class="govuk-heading-s">
-            Encryption certificate (Matching Service Adapter)
-          </h3>
-          <div class="connection-info">
-            <dl>
-              <dt>Expiring on:</dt>
-              <dd>20 April 2019, 11:59pm</dd>
-            </dl>
-            <dl>
-              <dt>Environment:</dt>
-              <dd>Production</dd>
-            </dl>
-            <dl>
-              <dt>Used by:</dt>
-              <dd>Apply for Universal Credit</dd>
-            </dl>
-          </div>
-          <div class="actions">
-            <ul>
-              <li>
-                <a href="before-you-start-msa-encryption" class="govuk-!-body-bold">
-                  Update
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Remove
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      {% endif %}
-      {% if data['confirm-cert-msa-signing'] %}
-        <!-- show nothing -->
-      {% else %}
-        <li>
-          <h3 class="govuk-heading-s">
-            Signing certificate (Matching Service Adapter)
-          </h3>
-          <div class="connection-info">
-            <dl>
-              <dt>Expiring on:</dt>
-              <dd>20 April 2019, 11:59pm</dd>
-            </dl>
-            <dl>
-              <dt>Environment:</dt>
-              <dd>Production</dd>
-            </dl>
-            <dl>
-              <dt>Used by:</dt>
-              <dd>Apply for Universal Credit</dd>
-            </dl>
-          </div>
-          <div class="actions">
-            <ul>
-              <li>
-                <a href="before-you-start-msa-signing">
-                  Update
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Remove
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      {% endif %}
-      {% if data['confirm-cert-sp-encryption'] %}
-        <!-- show nothing -->
-      {% else %}
-        <li>
-          <h3 class="govuk-heading-s">
-            Encryption certificate (service provider)
-          </h3>
-          <div class="connection-info">
-            <dl>
-              <dt>Expiring on:</dt>
-              <dd>20 April 2019 11:59pm</dd>
-            </dl>
-            <dl>
-              <dt>Environment:</dt>
-              <dd>Production</dd>
-            </dl>
-            <dl>
-              <dt>Used by:</dt>
-              <dd>Apply for Universal Credit</dd>
-            </dl>
-          </div>
-          <div class="actions">
-            <ul>
-              <li>
-                <a href="before-you-start-sp-encryption" class="govuk-!-body-bold">
-                  Update
-                </a>
-              </li>
-              <li>
-                <a href="#" class="govuk-!-body-bold">
-                  Remove
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      {% endif %}
-      {% if data['confirm-cert-sp-signing'] %}
-        <!-- show nothing -->
-      {% else %}
-        <li>
-          <h3 class="govuk-heading-s">
-            Signing certificate (service provider)
-          </h3>
-          <div class="connection-info">
-            <dl>
-              <dt>Expiring on:</dt>
-              <dd>20 April 2019 11:59pm</dd>
-            </dl>
-            <dl>
-              <dt>Environment:</dt>
-              <dd>Production</dd>
-            </dl>
-            <dl>
-              <dt>Used by:</dt>
-              <dd>Apply for Universal Credit</dd>
-            </dl>
-          </div>
-          <div class="actions">
-            <ul>
-              <li>
-                <a href="before-you-start-sp-signing" class="govuk-!-body-bold">
-                  Update
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Remove
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      {% endif %}
-    </ul>
+    <div id="expiring-certs">
 
-    <!-- if user has completed the signing flow, show a new section displaying the certs that are bring deployed during that 1 hour period -->
-    {% if data['confirm-cert-msa-signing'] or data['confirm-cert-sp-signing'] %}
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
-        Certificates being deployed now
+      <!-- MATCHING SERVICE ADAPTER - PRODUCTION -->
+      {% if data['confirm-cert-msa-encryption'] and data['confirm-cert-msa-signing'] %}
+        <!-- show nothing -->
+      {% else %}
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+          Matching Service Adapter <span class="govuk-tag govuk-tag--grey">Production</span>
+        </h3>
+        <ul class="govuk-list">
+          {% if data['confirm-cert-msa-encryption'] %}
+            <!-- show nothing -->
+          {% else %}
+            <li>
+              <a href="view-cert-msa-encryption">Encryption certificate</a> expires 10 April 2019, 11:59pm
+            </li>
+          {% endif %}
+          {% if data['confirm-cert-msa-signing'] %}
+            <!-- show nothing -->
+          {% else %}
+            <li>
+              <a href="view-cert-msa-signing">Signing certificate</a> expires 10 April 2019, 11:59pm
+            </li>
+          {% endif %}
+        </ul>
+      {% endif %}
+
+      <!-- SERVICE PROVIDER - PRODUCTION -->
+      {% if data['confirm-cert-sp-encryption'] and data['confirm-cert-sp-signing'] %}
+        <!-- show nothing -->
+      {% else %}
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+          Service provider <span class="govuk-tag govuk-tag--grey">Production</span>
+        </h3>
+        <ul class="govuk-list">
+          {% if data['confirm-cert-sp-encryption'] %}
+            <!-- show nothing -->
+          {% else %}
+            <li>
+              <a href="view-cert-sp-encryption">Encryption certificate</a> expires 10 April 2019, 11:59pm
+            </li>
+          {% endif %}
+          {% if data['confirm-cert-sp-signing'] %}
+            <!-- show nothing -->
+          {% else %}
+            <li>
+              <a href="#">Signing certificate</a> expires 10 April 2019, 11:59pm
+            </li>
+          {% endif %}
+        </ul>
+      {% endif %}
+
+    </div>
+
+    <div id="other-active-certs">
+      
+      <h2 class="govuk-heading-m">
+        Other active certificates
       </h2>
-      <ul class="govuk-list connection-list">
-        {% if data['confirm-cert-msa-signing'] %}
-          <li>
-            <h3 class="govuk-heading-s">
-              Signing certificate (Matching Service Adapter)
-            </h3>
-            <div class="connection-info">
-              <dl>
-                <dt>Expiring on:</dt>
-                <dd>20 April 2019, 11:59pm</dd>
-              </dl>
-              <dl>
-                <dt>Environment:</dt>
-                <dd>Production</dd>
-              </dl>
-              <dl>
-                <dt>Used by:</dt>
-                <dd>Apply for Universal Credit</dd>
-              </dl>
-            </div>
-            <p class="status-message">
-              Deploy your private key from 11:57 today
-            </p>
-          </li>
-        {% endif %}
-        {% if data['confirm-cert-sp-signing'] %}
-          <li>
-            <h3 class="govuk-heading-s">
-              Signing certificate (Service Provider)
-            </h3>
-            <div class="connection-info">
-              <dl>
-                <dt>Expiring on:</dt>
-                <dd>20 April 2019, 11:59pm</dd>
-              </dl>
-              <dl>
-                <dt>Environment:</dt>
-                <dd>Production</dd>
-              </dl>
-              <dl>
-                <dt>Used by:</dt>
-                <dd>Apply for Universal Credit</dd>
-              </dl>
-            </div>
-            <p class="status-message">
-              Deploy your private key from 11:57 today
-            </p>
-          </li>
-        {% endif %}
-      </ul>
-    {% else %}
-      <!-- show nothing -->
-    {% endif %}
 
-    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
-      Other active certificates
-    </h2>
-    <ul class="govuk-list connection-list">
-      {% if data['confirm-cert-sp-encryption'] %}
-        <li>
-          <h3 class="govuk-heading-s">
-            Encryption certificate (service provider)
-          </h3>
-          <div class="connection-info">
-            <dl>
-              <dt>Expiring on:</dt>
-              <dd>10 January 2020 11:59pm</dd>
-            </dl>
-            <dl>
-              <dt>Environment:</dt>
-              <dd>Production</dd>
-            </dl>
-            <dl>
-              <dt>Used by:</dt>
-              <dd>Apply for Universal Credit</dd>
-            </dl>
-          </div>
-          <div class="actions">
-            <ul>
-              <li>
-                <a href="#" class="govuk-!-body-bold">
-                  Update
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Remove
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      {% endif %}
-      {% if data['confirm-cert-msa-encryption'] %}
-        <li>
-          <h3 class="govuk-heading-s">
-            Encryption certificate (Matching Service Adapter)
-          </h3>
-          <div class="connection-info">
-            <dl>
-              <dt>Expiring on:</dt>
-              <dd>10 January 2020 11:59pm</dd>
-            </dl>
-            <dl>
-              <dt>Environment:</dt>
-              <dd>Production</dd>
-            </dl>
-            <dl>
-              <dt>Used by:</dt>
-              <dd>Apply for Universal Credit</dd>
-            </dl>
-          </div>
-          <div class="actions">
-            <ul>
-              <li>
-                <a href="#" class="govuk-!-body-bold">
-                  Update
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Remove
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      {% endif %}
-      <li>
-        <h3 class="govuk-heading-s">
-          Encryption certificate (Matching Service Adapter)
-        </h3>
-        <div class="connection-info">
-          <dl>
-            <dt>Expiring on:</dt>
-            <dd>10 January 2020, 11:59pm</dd>
-          </dl>
-          <dl>
-            <dt>Environment:</dt>
-            <dd>Integration</dd>
-          </dl>
-          <dl>
-            <dt>Used by:</dt>
-            <dd>Apply for Universal Credit</dd>
-          </dl>
-        </div>
-        <div class="actions">
-          <ul>
-            <li>
-              <a href="#" class="govuk-!-body-bold">
-                Update
-              </a>
-            </li>
-            <li>
-              <a href="remove-cert-msa-encryption">
-                Remove
-              </a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <h3 class="govuk-heading-s">
-          Signing certificate (Matching Service Adapter)
-        </h3>
-        <div class="connection-info">
-          <dl>
-            <dt>Expiring on:</dt>
-            <dd>10 January 2020, 11:59pm</dd>
-          </dl>
-          <dl>
-            <dt>Environment:</dt>
-            <dd>Integration</dd>
-          </dl>
-          <dl>
-            <dt>Used by:</dt>
-            <dd>Apply for Universal Credit</dd>
-          </dl>
-        </div>
-        <div class="actions">
-          <ul>
-            <li>
-              <a href="#" class="govuk-!-body-bold">
-                Update
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Remove
-              </a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <h3 class="govuk-heading-s">
-          Encryption certificate (service provider)
-        </h3>
-        <div class="connection-info">
-          <dl>
-            <dt>Expiring on:</dt>
-            <dd>10 January 2020 11:59pm</dd>
-          </dl>
-          <dl>
-            <dt>Environment:</dt>
-            <dd>Integration</dd>
-          </dl>
-          <dl>
-            <dt>Used by:</dt>
-            <dd>Apply for Universal Credit</dd>
-          </dl>
-        </div>
-        <div class="actions">
-          <ul>
-            <li>
-              <a href="#" class="govuk-!-body-bold">
-                Update
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Remove
-              </a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <h3 class="govuk-heading-s">
-          Signing certificate (service provider)
-        </h3>
-        <div class="connection-info">
-          <dl>
-            <dt>Expiring on:</dt>
-            <dd>10 January 2020 11:59pm</dd>
-          </dl>
-          <dl>
-            <dt>Environment:</dt>
-            <dd>Integration</dd>
-          </dl>
-          <dl>
-            <dt>Used by:</dt>
-            <dd>Apply for Universal Credit</dd>
-          </dl>
-        </div>
-        <div class="actions">
-          <ul>
-            <li>
-              <a href="#" class="govuk-!-body-bold">
-                Update
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Remove
-              </a>
-            </li>
-          </ul>
-        </div>
-      </li>
-    </ul>
 
   </div>
 </div>

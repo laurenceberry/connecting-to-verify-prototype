@@ -9,9 +9,27 @@ $(document).ready(function () {
 
   // add code here
 
-  // count certificates on dashboard
+	// destructive link boxes
 
-  var liList = document.getElementById("expiring-certs").getElementsByTagName("h3");
+	$('.destructive-button').hide();
+	$('.destructive-link').click(function(e){
+		$(this).hide();
+		$('.destructive-button').show();
+		e.preventDefault();
+	});
+	$('.cancel-destructive-button').click(function(e){
+		$('.destructive-button').hide();
+		$('.destructive-link').show();
+		e.preventDefault();
+	});
+
+  // $(thingToClick).event(function() {
+  //     $(thingToAffect).effect();
+  // });
+
+  // count certificates on manage certificates page
+
+  var liList = document.getElementById("expiring-certs").getElementsByTagName("li");
   var count = liList.length
 
   var heading = " certificate expiring soon"
@@ -20,6 +38,10 @@ $(document).ready(function () {
   }
 
   document.getElementById("counter").innerHTML = count+heading;
+
+
+
+
 
 	jQuery(function($) {
 
