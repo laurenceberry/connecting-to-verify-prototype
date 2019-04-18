@@ -28,7 +28,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      Matching Service Adapter: signing certificate
+      Service provider: signing certificate
     </h1>
 
     {% from "summary-list/macro.njk" import govukSummaryList %}
@@ -72,7 +72,7 @@
             text: "Common name"
           },
           value: {
-            text: "MSA-signing-cert-3"
+            text: "service-signing-cert-3"
           }
         },
         {
@@ -94,7 +94,7 @@
       ]
     }) }}
 
-    <form action="before-you-start-msa-signing">
+    <form action="before-you-start-sp-signing">
 
       {% from "button/macro.njk" import govukButton %}
 
@@ -121,8 +121,8 @@
         <form action="dashboard">
           <!-- hidden form to change status on dashboard page -->
           {{ govukInput({
-            id: "disable-cert-msa-signing",
-            name: "disable-cert-msa-signing",
+            id: "disable-cert-msa-encryption",
+            name: "disable-cert-msa-encryption",
             value: "true",
             classes: "govuk-visually-hidden"
           }) }}

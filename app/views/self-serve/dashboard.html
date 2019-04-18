@@ -31,16 +31,16 @@
       Manage certificates
     </h1>
 
-    <!-- CERTS EXPIRING SOON HEADING -->
-    {% if data['confirm-cert-msa-encryption'] and data['confirm-cert-msa-signing'] and data['confirm-cert-sp-encryption'] and data['confirm-cert-sp-signing'] %}
-      <!-- show nothing -->
-    {% else %}
-      <h2 class="govuk-heading-m" id="counter">
-        certificates expiring soon
-      </h2>
-    {% endif %}
+    <div id="expiring-certs" class="govuk-!-margin-top-7">
 
-    <div id="expiring-certs">
+      <!-- CERTS EXPIRING SOON HEADING -->
+      {% if data['confirm-cert-msa-encryption'] and data['confirm-cert-msa-signing'] and data['confirm-cert-sp-encryption'] and data['confirm-cert-sp-signing'] %}
+        <!-- show nothing -->
+      {% else %}
+        <h2 class="govuk-heading-m" id="counter">
+          certificates expiring soon
+        </h2>
+      {% endif %}
 
       <!-- MATCHING SERVICE ADAPTER - PRODUCTION -->
       {% if data['confirm-cert-msa-encryption'] and data['confirm-cert-msa-signing'] %}
@@ -50,20 +50,22 @@
           Matching Service Adapter <span class="govuk-tag govuk-tag--grey">Production</span>
         </h3>
         <ul class="govuk-list">
-          {% if data['confirm-cert-msa-encryption'] %}
-            <!-- show nothing -->
-          {% else %}
-            <li>
-              <a href="view-cert-msa-encryption">Encryption certificate</a> expires 10 April 2019, 11:59pm
-            </li>
-          {% endif %}
-          {% if data['confirm-cert-msa-signing'] %}
-            <!-- show nothing -->
-          {% else %}
-            <li>
-              <a href="view-cert-msa-signing">Signing certificate</a> expires 10 April 2019, 11:59pm
-            </li>
-          {% endif %}
+          <li>
+            <a href="view-cert-msa-encryption">Encryption certificate</a>
+            {% if data['confirm-cert-msa-encryption'] %}
+              <!-- show nothing -->
+            {% else %}
+              <span class="expiry-date">expires 10 April 2019, 11:59pm</span>
+            {% endif %}
+          </li>
+          <li>
+            <a href="view-cert-msa-signing">Signing certificate</a>
+            {% if data['confirm-cert-msa-signing'] %}
+              <!-- show nothing -->
+            {% else %}
+              <span class="expiry-date">expires 10 April 2019, 11:59pm</span>
+            {% endif %}
+          </li>
         </ul>
       {% endif %}
 
@@ -75,30 +77,101 @@
           Service provider <span class="govuk-tag govuk-tag--grey">Production</span>
         </h3>
         <ul class="govuk-list">
-          {% if data['confirm-cert-sp-encryption'] %}
-            <!-- show nothing -->
-          {% else %}
-            <li>
-              <a href="view-cert-sp-encryption">Encryption certificate</a> expires 10 April 2019, 11:59pm
-            </li>
-          {% endif %}
-          {% if data['confirm-cert-sp-signing'] %}
-            <!-- show nothing -->
-          {% else %}
-            <li>
-              <a href="#">Signing certificate</a> expires 10 April 2019, 11:59pm
-            </li>
-          {% endif %}
+          <li>
+            <a href="view-cert-sp-encryption">Encryption certificate</a>
+            {% if data['confirm-cert-sp-encryption'] %}
+              <!-- show nothing -->
+            {% else %}
+              <span class="expiry-date">expires 10 April 2019, 11:59pm</span>
+            {% endif %}
+          </li>
+          <li>
+            <a href="view-cert-sp-signing">Signing certificate</a>
+            {% if data['confirm-cert-sp-signing'] %}
+              <!-- show nothing -->
+            {% else %}
+              <span class="expiry-date">expires 10 April 2019, 11:59pm</span>
+            {% endif %}
+          </li>
         </ul>
       {% endif %}
 
     </div>
 
-    <div id="other-active-certs">
-      
-      <h2 class="govuk-heading-m">
-        Other active certificates
-      </h2>
+    <div id="other-active-certs" class="govuk-!-margin-top-9">
+
+      <!-- OTHER ACTIVE CERTS HEADING -->
+      {% if data['confirm-cert-msa-encryption'] and data['confirm-cert-msa-signing'] and data['confirm-cert-sp-encryption'] and data['confirm-cert-sp-signing'] %}
+        <!-- show nothing -->
+      {% else %}
+        <h2 class="govuk-heading-m">
+          Other active certificates
+        </h2>
+      {% endif %}
+
+      <!-- EXAMPLE CERTIFICATES THAT DON'T NEED UPDATING -->
+
+      <!-- MATCHING SERVICE ADAPTER - INTEGRATION -->
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+        Matching Service Adapter <span class="govuk-tag govuk-tag--grey">Integration</span>
+      </h3>
+      <ul class="govuk-list">
+        <li>
+          <a href="#">Encryption certificate</a>
+        </li>
+        <li>
+          <a href="#">Signing certificate</a>
+        </li>
+      </ul>
+
+      <!-- SERVICE PROVIDER - INTEGRATION -->
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+        Matching Service Adapter <span class="govuk-tag govuk-tag--grey">Integration</span>
+      </h3>
+      <ul class="govuk-list">
+        <li>
+          <a href="#">Encryption certificate</a>
+        </li>
+        <li>
+          <a href="#">Signing certificate</a>
+        </li>
+      </ul>
+
+      <!-- CERTIFICATES THAT HAVE BEEN UPDATED USING THE PROTOTYPE -->
+
+      <!-- MATCHING SERVICE ADAPTER - PRODUCTION -->
+      {% if data['confirm-cert-msa-encryption'] and data['confirm-cert-msa-signing'] %}
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+          Matching Service Adapter <span class="govuk-tag govuk-tag--grey">Production</span>
+        </h3>
+        <ul class="govuk-list">
+          <li>
+            <a href="view-cert-msa-encryption">Encryption certificate</a>
+          </li>
+          <li>
+            <a href="view-cert-msa-signing">Signing certificate</a>
+          </li>
+        </ul>
+      {% else %}
+        <!-- show nothing -->
+      {% endif %}
+
+      <!-- SERVICE PROVIDER - PRODUCTION -->
+      {% if data['confirm-cert-sp-encryption'] and data['confirm-cert-sp-signing'] %}
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+          Service provider <span class="govuk-tag govuk-tag--grey">Production</span>
+        </h3>
+        <ul class="govuk-list">
+          <li>
+            <a href="view-cert-sp-encryption">Encryption certificate</a>
+          </li>
+          <li>
+            <a href="view-cert-sp-signing">Signing certificate</a>
+          </li>
+        </ul>
+      {% else %}
+        <!-- show nothing -->
+      {% endif %}
 
 
   </div>

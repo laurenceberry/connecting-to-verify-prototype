@@ -29,7 +29,7 @@ $(document).ready(function () {
 
   // count certificates on manage certificates page
 
-  var liList = document.getElementById("expiring-certs").getElementsByTagName("li");
+  var liList = document.getElementById("expiring-certs").getElementsByClassName("expiry-date");
   var count = liList.length
 
   var heading = " certificate expiring soon"

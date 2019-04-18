@@ -353,9 +353,15 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 }
 
 // border for expriring CERTS
+//
+// #expiring-certs {
+//   // border-bottom: 1px solid $govuk-border-colour;
+//   padding-bottom: 20px;
+//   margin-bottom: 30px;
+// }
 
-#expiring-certs {
-  border-bottom: 1px solid $govuk-border-colour;
-  padding-bottom: 20px;
-  margin-bottom: 30px;
+// grey text on disabled tables
+
+.faded-text {
+  color: $govuk-secondary-text-colour;
 }
