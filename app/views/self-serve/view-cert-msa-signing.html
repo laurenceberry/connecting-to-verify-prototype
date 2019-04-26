@@ -102,11 +102,12 @@
         text: "Update certificate"
       }) }}
 
+      <span class="secondary-link">
+        <a href="#" class="destructive-link">Disable certificate</a>
+      </span>
+
     </form>
 
-    <p>
-      <a href="#" class="destructive-link">Disable certificate</a>
-    </p>
     <div class="govuk-error-summary destructive-button" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
       <h2 class="govuk-error-summary__title" id="error-summary-title">
         Are you sure you want to disable this certificate?
@@ -118,7 +119,7 @@
         <p>
           You can reactivate this certificate once disabled, or update it with a new one.
         </p>
-        <form action="dashboard">
+        <form action="disabled-cert-msa-encryption">
           <!-- hidden form to change status on dashboard page -->
           {{ govukInput({
             id: "disable-cert-msa-signing",
