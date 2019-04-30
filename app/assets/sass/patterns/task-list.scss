@@ -30,6 +30,7 @@
   @include govuk-responsive-margin(6, "bottom");
   list-style: none;
   padding-left: 0;
+  margin-top: 10px;
   // @include govuk-media-query($from: tablet) {
   //   padding-left: govuk-spacing(6);
   // }
@@ -55,7 +56,7 @@
   display: block;
   @include govuk-media-query($from: 450px) {
     float: left;
-    width: 75%;
+    width: 66%;
   }
 }
 

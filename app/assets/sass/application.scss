@@ -265,13 +265,26 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 
 }
 
-// Grey
+// Status colours for tags
 
 .govuk-tag--grey {
   background-color: govuk-colour("white");
   color: $govuk-secondary-text-colour;
   border: 2px solid $govuk-secondary-text-colour;
-  margin-left: 5px;
+}
+
+.govuk-tag--expiring {
+  background-color: $govuk-error-colour;
+}
+
+.govuk-tag--active {
+  background-color: govuk-colour("blue");
+}
+
+.govuk-tag--disabled {
+  background-color: govuk-colour("white");
+  color: $govuk-error-colour;
+  border: 2px solid $govuk-error-colour;
 }
 
 // Grey secondary button
@@ -345,6 +358,12 @@ ul.govuk-list--bullet, ul.govuk-list--number{
   color: $govuk-text-colour;
 }
 
+// grey border for error summaries
+
+.govuk-error-summary--grey {
+  border-color: $govuk-secondary-text-colour;
+}
+
 // secondary links placed next to buttons
 
 .secondary-link {
@@ -353,13 +372,12 @@ ul.govuk-list--bullet, ul.govuk-list--number{
   @include govuk-font($size: 19);
 }
 
-// border for expriring CERTS
-//
-// #expiring-certs {
-//   // border-bottom: 1px solid $govuk-border-colour;
-//   padding-bottom: 20px;
-//   margin-bottom: 30px;
-// }
+// make it so links used to expand sections don't show as visited
+
+.link-expandable:visited {
+    color: $govuk-link-colour!important;
+  }
+
 
 // grey text on disabled tables
 

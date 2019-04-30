@@ -31,75 +31,90 @@
       Matching Service Adapter: signing certificate
     </h1>
 
-    {% from "summary-list/macro.njk" import govukSummaryList %}
+    {% if data['confirm-cert-msa-signing'] %}
 
-    {{ govukSummaryList({
-      rows: [
-        {
-          key: {
-            text: "Environment"
-          },
-          value: {
-            text: "Production"
-          }
-        },
-        {
-          key: {
-            text: "Used by"
-          },
-          value: {
-            text: "Apply for Universal Credit"
-          }
-        },
-        {
-          key: {
-            text: "Valid from"
-          },
-          value: {
-            text: "10 July 2018, 11:59pm"
-          }
-        },
-        {
-          key: {
-            text: "Valid until"
-          },
-          value: {
-            text: "10 April 2019, 11:59pm"
-          }
-        },
-        {
-          key: {
-            text: "Common name"
-          },
-          value: {
-            text: "MSA-signing-cert-3"
-          }
-        },
-        {
-          key: {
-            text: "Fingerprint"
-          },
-          value: {
-            text: "43:52:43:a1:c5:fc:8b:b8:0a:3a:a9:b9:0f:46:73:a8"
-          }
-        },
-        {
-          key: {
-            text: "Serial number"
-          },
-          value: {
-            text: "00946EBCBE07H201CF"
-          }
-        }
-      ]
-    }) }}
+      <div class="govuk-error-summary govuk-error-summary--grey" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          GOV.UK Verify is deploying your certificate
+        </h2>
+        <div class="govuk-error-summary__body">
+          <p>
+            We'll email you when this is done. This usually takes around 1 hour.
+          </p>
+          <p>
+            Upon receiving this email you must deploy the new signing key by 20 April, or your service’s connection to GOV.UK Verify will stop working.
+          </p>
+          <p>
+            For more information, read about how to <a href="https://prototype-docs.cloudapps.digital/maintain-your-connection/#update-your-msa-signing-key">update your MSA signing key</a>.
+          </p>
+        </div>
+      </div>
+
+    {% endif %}
+
+    <dl class="govuk-summary-list">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Used by
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Apply for Universal Credit
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Environment
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Production
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Valid from
+        </dt>
+        <dd class="govuk-summary-list__value">
+          10 July 2018, 11:59pm
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Valid until
+        </dt>
+        <dd class="govuk-summary-list__value">
+          10 April 2019, 11:59pm
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Common name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          MSA-signing-cert-3
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="#" class="link-expandable">View more details</a>
+        </dd>
+      </div>
+
+    </dl>
 
     <form action="before-you-start-msa-signing">
 
       {% from "button/macro.njk" import govukButton %}
 
       {{ govukButton({
-        text: "Update certificate"
+        text: "Add new certificate"
       }) }}
 
       <span class="secondary-link">

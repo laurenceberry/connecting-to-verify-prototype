@@ -31,148 +31,121 @@
       Manage certificates
     </h1>
 
-    <div id="expiring-certs" class="govuk-!-margin-top-7">
+    <p id="counter"></p>
 
-      <!-- CERTS EXPIRING SOON HEADING -->
-      {% if data['confirm-cert-msa-encryption'] and data['confirm-cert-msa-signing'] and data['confirm-cert-sp-encryption'] and data['confirm-cert-sp-signing'] %}
-        <!-- show nothing -->
-      {% else %}
-        <h2 class="govuk-heading-m" id="counter">
-          certificates expiring soon
-        </h2>
-      {% endif %}
+    <h2 class="govuk-heading-m">
+      Universal Credit: production environment
+    </h2>
 
-      <!-- MATCHING SERVICE ADAPTER - PRODUCTION -->
-      {% if data['confirm-cert-msa-encryption'] and data['confirm-cert-msa-signing'] %}
-        <!-- show nothing -->
-      {% else %}
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
-          Matching Service Adapter <span class="govuk-tag govuk-tag--grey">Production</span>
-        </h3>
-        <ul class="govuk-list">
-          <li>
-            <a href="view-cert-msa-encryption">Encryption certificate</a>
-            {% if data['confirm-cert-msa-encryption'] %}
-              <!-- show nothing -->
-            {% else %}
-              <span class="expiry-date">expires 10 April 2019, 11:59pm</span>
-            {% endif %}
-          </li>
-          <li>
-            <a href="view-cert-msa-signing">Signing certificate</a>
-            {% if data['confirm-cert-msa-signing'] %}
-              <!-- show nothing -->
-            {% else %}
-              <span class="expiry-date">expires 10 April 2019, 11:59pm</span>
-            {% endif %}
-          </li>
-        </ul>
-      {% endif %}
+    <!-- MATCHING SERVICE ADAPTER - PRODUCTION -->
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Matching Service Adapter
+    </h3>
+    <ul class="app-task-list__items">
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="view-cert-msa-encryption" aria-describedby="">
+          Encryption certificate
+        </a>
+        {% if data['confirm-cert-msa-encryption'] %}
+          <strong class="govuk-tag govuk-tag--active app-task-list__task-completed" id="">Active</strong>
+        {% elseif data['disable-cert-msa-encryption'] %}
+          <strong class="govuk-tag govuk-tag--disabled app-task-list__task-completed" id="">Disabled</strong>
+        {% else %}
+          <strong class="govuk-tag govuk-tag--expiring app-task-list__task-completed" id="">Expires in 7 days</strong>
+        {% endif %}
+      </li>
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="view-cert-msa-signing" aria-describedby="">
+          Signing certificate
+        </a>
+        {% if data['confirm-cert-msa-signing'] %}
+          <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="">Deploying</strong>
+        {% elseif data['disable-cert-msa-signing'] %}
+          <strong class="govuk-tag govuk-tag--disabled app-task-list__task-completed" id="">Disabled</strong>
+        {% else %}
+          <strong class="govuk-tag govuk-tag--expiring app-task-list__task-completed" id="">Expires in 7 days</strong>
+        {% endif %}
+      </li>
+    </ul>
 
-      <!-- SERVICE PROVIDER - PRODUCTION -->
-      {% if data['confirm-cert-sp-encryption'] and data['confirm-cert-sp-signing'] %}
-        <!-- show nothing -->
-      {% else %}
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
-          Service provider <span class="govuk-tag govuk-tag--grey">Production</span>
-        </h3>
-        <ul class="govuk-list">
-          <li>
-            <a href="view-cert-sp-encryption">Encryption certificate</a>
-            {% if data['confirm-cert-sp-encryption'] %}
-              <!-- show nothing -->
-            {% else %}
-              <span class="expiry-date">expires 10 April 2019, 11:59pm</span>
-            {% endif %}
-          </li>
-          <li>
-            <a href="view-cert-sp-signing">Signing certificate</a>
-            {% if data['confirm-cert-sp-signing'] %}
-              <!-- show nothing -->
-            {% else %}
-              <span class="expiry-date">expires 10 April 2019, 11:59pm</span>
-            {% endif %}
-          </li>
-        </ul>
-      {% endif %}
+    <!-- SERVICE PROVIDER - PRODUCTION -->
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+      Service provider
+    </h3>
+    <ul class="app-task-list__items">
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="view-cert-sp-encryption" aria-describedby="">
+          Encryption certificate
+        </a>
+        {% if data['confirm-cert-sp-encryption'] %}
+          <strong class="govuk-tag govuk-tag--active app-task-list__task-completed" id="">Active</strong>
+        {% elseif data['disable-cert-sp-encryption'] %}
+          <strong class="govuk-tag govuk-tag--disabled app-task-list__task-completed" id="">Disabled</strong>
+        {% else %}
+          <strong class="govuk-tag govuk-tag--expiring app-task-list__task-completed" id="">Expires in 7 days</strong>
+        {% endif %}
+      </li>
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="view-cert-sp-signing" aria-describedby="">
+          Signing certificate
+        </a>
+        {% if data['confirm-cert-sp-signing'] %}
+          <strong class="govuk-tag govuk-tag--active app-task-list__task-completed" id="">Active</strong>
+        {% elseif data['disable-cert-sp-signing'] %}
+          <strong class="govuk-tag govuk-tag--disabled app-task-list__task-completed" id="">Disabled</strong>
+        {% else %}
+          <strong class="govuk-tag govuk-tag--expiring app-task-list__task-completed" id="">Expires in 7 days</strong>
+        {% endif %}
+      </li>
+    </ul>
 
-    </div>
+    <h2 class="govuk-heading-m govuk-!-margin-top-9">
+      Universal Credit: integration environment
+    </h2>
 
-    <div id="other-active-certs" class="govuk-!-margin-top-9">
+    <!-- MATCHING SERVICE ADAPTER - INTEGRATION -->
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Matching Service Adapter
+    </h3>
+    <ul class="app-task-list__items">
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="#" aria-describedby="">
+          Encryption certificate
+        </a>
+        <strong class="govuk-tag govuk-tag--active app-task-list__task-completed" id="">Active</strong>
+      </li>
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="#" aria-describedby="">
+          Signing certificate
+        </a>
+        <strong class="govuk-tag govuk-tag--active app-task-list__task-completed" id="">Active</strong>
+      </li>
+    </ul>
 
-      <!-- OTHER ACTIVE CERTS HEADING -->
-      {% if data['confirm-cert-msa-encryption'] and data['confirm-cert-msa-signing'] and data['confirm-cert-sp-encryption'] and data['confirm-cert-sp-signing'] %}
-        <!-- show nothing -->
-      {% else %}
-        <h2 class="govuk-heading-m">
-          Other active certificates
-        </h2>
-      {% endif %}
-
-      <!-- EXAMPLE CERTIFICATES THAT DON'T NEED UPDATING -->
-
-      <!-- MATCHING SERVICE ADAPTER - INTEGRATION -->
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
-        Matching Service Adapter <span class="govuk-tag govuk-tag--grey">Integration</span>
-      </h3>
-      <ul class="govuk-list">
-        <li>
-          <a href="#">Encryption certificate</a>
-        </li>
-        <li>
-          <a href="#">Signing certificate</a>
-        </li>
-      </ul>
-
-      <!-- SERVICE PROVIDER - INTEGRATION -->
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
-        Matching Service Adapter <span class="govuk-tag govuk-tag--grey">Integration</span>
-      </h3>
-      <ul class="govuk-list">
-        <li>
-          <a href="#">Encryption certificate</a>
-        </li>
-        <li>
-          <a href="#">Signing certificate</a>
-        </li>
-      </ul>
-
-      <!-- CERTIFICATES THAT HAVE BEEN UPDATED USING THE PROTOTYPE -->
-
-      <!-- MATCHING SERVICE ADAPTER - PRODUCTION -->
-      {% if data['confirm-cert-msa-encryption'] and data['confirm-cert-msa-signing'] %}
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
-          Matching Service Adapter <span class="govuk-tag govuk-tag--grey">Production</span>
-        </h3>
-        <ul class="govuk-list">
-          <li>
-            <a href="view-cert-msa-encryption">Encryption certificate</a>
-          </li>
-          <li>
-            <a href="view-cert-msa-signing">Signing certificate</a>
-          </li>
-        </ul>
-      {% else %}
-        <!-- show nothing -->
-      {% endif %}
-
-      <!-- SERVICE PROVIDER - PRODUCTION -->
-      {% if data['confirm-cert-sp-encryption'] and data['confirm-cert-sp-signing'] %}
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
-          Service provider <span class="govuk-tag govuk-tag--grey">Production</span>
-        </h3>
-        <ul class="govuk-list">
-          <li>
-            <a href="view-cert-sp-encryption">Encryption certificate</a>
-          </li>
-          <li>
-            <a href="view-cert-sp-signing">Signing certificate</a>
-          </li>
-        </ul>
-      {% else %}
-        <!-- show nothing -->
-      {% endif %}
-
+    <!-- SERVICE PROVIDER - INTEGRATION -->
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+      Service Provider
+    </h3>
+    <ul class="app-task-list__items">
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="#" aria-describedby="">
+          Encryption certificate
+        </a>
+        <strong class="govuk-tag govuk-tag--active app-task-list__task-completed" id="">Active</strong>
+      </li>
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="#" aria-describedby="">
+          Signing certificate
+        </a>
+        <strong class="govuk-tag govuk-tag--active app-task-list__task-completed" id="">Active</strong>
+      </li>
+      <li class="app-task-list__item">
+        <a class="app-task-list__task-name" href="#" aria-describedby="">
+          Signing certificate
+        </a>
+        <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="">Expired</strong>
+      </li>
+    </ul>
 
   </div>
 </div>
