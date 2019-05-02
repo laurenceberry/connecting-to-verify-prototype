@@ -11,11 +11,11 @@
 
         <div class="email-header">
           <h1 class="govuk-heading-m govuk-!-padding-bottom-2 govuk-!-margin-bottom-2">
-            Certificates expiring on 20 April 2019
+            Certificates expiring on {{ expiryDate }}
           </h1>
           <ul class="govuk-list govuk-body-s govuk-!-margin-bottom-0">
             <li>GOV.UK Verify (gov.uk.verify@notifications.service.gov.uk)</li>
-            <li>25 Feb 2019, 09:00</li>
+            <li>{{ todaysDate }}, 09:00</li>
           </ul>
         </div>
 
@@ -30,7 +30,7 @@
           </p>
 
           <p>
-            The following certificates are due to expire at 11:59pm on 20 April 2019:
+            The following certificates are due to expire at 11:59pm on {{ expiryDate }}:
           </p>
 
           <ul class="govuk-list govuk-list--bullet">

@@ -29,6 +29,23 @@ module.exports = {
   cookieText: 'GOV.UK uses cookies to make the site simpler. <a href="#">Find out more about cookies</a>',
 
   // Enable or disable Browser Sync
-  useBrowserSync: 'true'
+  useBrowserSync: 'true',
+
+  // Variables added to allow changing dates and names throughout the prototype
+
+  // Today's date
+  todaysDate: '2 May 2019',
+
+  // The date that the new certs expire, a year from now
+  aYearFromNow: '2 May 2020',
+
+  // Date that current certificates expire
+  expiryDate: '2 June 2019',
+
+  // Date that current certificates started
+  startDate: '2 June 2018',
+
+  // Service name (could expand to include a list in cases of multiple services)
+  serviceName: 'Universal Credit'
 
 }
