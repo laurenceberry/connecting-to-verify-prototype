@@ -35,53 +35,66 @@
       The certificate you've uploaded contains the following information:
     </p>
 
-    {% from "summary-list/macro.njk" import govukSummaryList %}
+    <dl class="govuk-summary-list">
 
-    {{ govukSummaryList({
-      rows: [
-        {
-          key: {
-            text: "Common name"
-          },
-          value: {
-            text: "MSA SAML Encryption v4"
-          }
-        },
-        {
-            key: {
-              text: "Fingerprint"
-            },
-            value: {
-              text: "43:52:43:a1:c5:fc:8b:b8:0a:3a:a9:b9:0f:46:73:a8"
-            }
-          },
-          {
-              key: {
-                text: "Serial number"
-              },
-              value: {
-                text: "00946EBCBE07H201CF"
-              }
-            },
-        {
-          key: {
-            text: "Valid from"
-          },
-          value: {
-            text: "20 April 2019, 12:00am"
-          }
-        },
-        {
-          key: {
-            text: "Valid until"
-          },
-          value: {
-            text: "20 April 2020, 11:59pm"
-          }
-        }
-      ]
-    }) }}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Used by
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Apply for Universal Credit
+        </dd>
+      </div>
 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Environment
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Production
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Valid from
+        </dt>
+        <dd class="govuk-summary-list__value">
+          10 July 2019, 11:59pm
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Valid until
+        </dt>
+        <dd class="govuk-summary-list__value">
+          10 April 2020, 11:59pm
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Common name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          MSA-encryption-cert-4
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="#" class="link-expandable">View more details</a>
+        </dd>
+      </div>
+
+    </dl>
+
+    <p>
+      If you have already deployed your encryption key, uploading this certificate will update our infrastructure with no disruption to your service.
+    </p>
 
     {% from "button/macro.njk" import govukButton %}
 
@@ -96,7 +109,7 @@
       }) }}
 
       {{ govukButton({
-        text: "Continue",
+        text: "Use this certificate",
         classes: "govuk-!-margin-bottom-5"
       }) }}
 

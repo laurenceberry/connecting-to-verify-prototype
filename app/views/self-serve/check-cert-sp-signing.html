@@ -35,53 +35,66 @@
       The certificate you've uploaded contains the following information:
     </p>
 
-    {% from "summary-list/macro.njk" import govukSummaryList %}
+    <dl class="govuk-summary-list">
 
-    {{ govukSummaryList({
-        rows: [
-        {
-          key: {
-            text: "Common name"
-          },
-          value: {
-            text: "SP SAML Signing v1"
-          }
-        },
-        {
-            key: {
-              text: "Fingerprint"
-            },
-            value: {
-              text: "42:52:43:c1:b5:fc:8c:b8:0a:3a:a9:b4:0f:46:73:a8"
-            }
-          },
-          {
-              key: {
-                text: "Serial number"
-              },
-              value: {
-                text: "00946EACDE07H231BF"
-              }
-            },
-            {
-          key: {
-            text: "Valid from"
-          },
-          value: {
-            text: "20 April 2019, 12:00am"
-          }
-        },
-        {
-          key: {
-            text: "Valid until"
-          },
-          value: {
-            text: "20 April 2020, 11:59pm"
-          }
-        }
-      ]
-    }) }}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Used by
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Apply for Universal Credit
+        </dd>
+      </div>
 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Environment
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Production
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Valid from
+        </dt>
+        <dd class="govuk-summary-list__value">
+          10 July 2019, 11:59pm
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Valid until
+        </dt>
+        <dd class="govuk-summary-list__value">
+          10 April 2020, 11:59pm
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Common name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          sp-signing-cert-4
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="#" class="link-expandable">View more details</a>
+        </dd>
+      </div>
+
+    </dl>
+
+    <p>
+      Uploading this certificate will update our infrastructure within 1 hour. We will email you when this is done. To avoid disruption you will need to deploy the new signing key to your service by 20 April.
+    </p>
 
     {% from "button/macro.njk" import govukButton %}
 
@@ -96,7 +109,7 @@
       }) }}
 
       {{ govukButton({
-        text: "Continue",
+        text: "Use this certificate",
         classes: "govuk-!-margin-bottom-5"
       }) }}
 
