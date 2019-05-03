@@ -46,6 +46,14 @@ module.exports = {
   startDate: '2 June 2018',
 
   // Service name (could expand to include a list in cases of multiple services)
-  serviceName: 'Universal Credit'
+  serviceName: 'Universal Credit',
+
+  // Slug for example URLS
+  serviceSlug: 'universal-credit',
+
+  // Deparment name
+  departmentName: 'Department for Work and Pensions'
+
+
 
 }

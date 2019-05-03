@@ -53,7 +53,7 @@
       {% from "warning-text/macro.njk" import govukWarningText %}
 
       {{ govukWarningText({
-        text: "You must deploy the new signing key by 20 April, or your service’s connection to GOV.UK Verify will stop working.",
+        text: "You must deploy the new signing key by {{ aYearFromNow }}, or your service’s connection to GOV.UK Verify will stop working.",
         iconFallbackText: "Warning"
       }) }}
 

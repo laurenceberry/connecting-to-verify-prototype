@@ -183,6 +183,8 @@ app.locals.aYearFromNow = config.aYearFromNow
 app.locals.expiryDate = config.expiryDate
 app.locals.startDate = config.startDate
 app.locals.serviceName = config.serviceName
+app.locals.serviceSlug = config.serviceSlug
+app.locals.departmentName = config.departmentName
 
 // Session uses service name to avoid clashes with other prototypes
 const sessionName = 'govuk-prototype-kit-' + (Buffer.from(config.productName, 'utf8')).toString('hex')
