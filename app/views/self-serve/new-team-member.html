@@ -16,10 +16,7 @@
           <a href="dashboard">Manage certificates</a>
         </li>
         <li class="active">
-          <a href="team-members">Manage team members</a>
-        </li>
-        <li>
-          <a href="#">Sign out</a>
+          <a href="team-members">Team members</a>
         </li>
       </ul>
     </div>
@@ -27,8 +24,10 @@
 
   <div class="govuk-grid-column-two-thirds">
 
+    <a href="team-members" class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-5">Back</a>
+
     <h1 class="govuk-heading-l">
-      Add a team member
+      Invite a team member
     </h1>
 
     <form action="team-members" method="post" novalidate>
@@ -38,54 +37,40 @@
 
       {{ govukInput({
         label: {
-          text: "Email address",
-          classes: "govuk-label--m"
+          text: "Email address"
         },
         id: "team-member-email",
         name: "team-member-email"
       }) }}
 
-      {{ govukInput({
-        label: {
-          text: "Job role",
-          classes: "govuk-label--m"
-        },
-        hint: {
-          text: "For example: service manager, developer, performance analyst"
-        },
-        id: "team-member-role",
-        name: "team-member-role"
-      }) }}
+      {% from "checkboxes/macro.njk" import govukCheckboxes %}
 
-      {{ govukRadios({
-        idPrefix: "team-member-permission",
-        name: "team-member-permission",
+      {{ govukCheckboxes({
+        idPrefix: "new-team-member",
+        name: "new-team-member",
         fieldset: {
           legend: {
-            text: "Permission level",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
+            text: "Permissions",
+            isPageHeading: false
           }
         },
         items: [
           {
-            value: "Administrator",
-            text: "Administrator: create accounts, manage certificates and view data reports"
+            value: "can-manage-certificates",
+            name: "can-manage-certificates",
+            text: "Manage certificates"
           },
           {
-            value: "Developer",
-            text: "Developer: manage certificates and view data reports"
-          },
-          {
-            value: "View",
-            text: "View: view certificates and data reports"
+            value: "can-manage-team-members",
+            name: "can-manage-team-members",
+            text: "Add, edit and remove team members"
           }
         ]
       }) }}
 
 
       {{ govukButton({
-        text: "Add team member"
+        text: "Send invitation email"
       }) }}
     </form>
 

@@ -16,10 +16,7 @@
           <a href="dashboard">Manage certificates</a>
         </li>
         <li class="active">
-          <a href="team-members">Manage team members</a>
-        </li>
-        <li>
-          <a href="#">Sign out</a>
+          <a href="team-members">Team members</a>
         </li>
       </ul>
     </div>
@@ -27,51 +24,107 @@
 
   <div class="govuk-grid-column-two-thirds">
 
+    {% if data['team-member-email'] %}
+      <div class="govuk-error-summary govuk-error-summary--success" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          Team member added
+        </h2>
+        <div class="govuk-error-summary__body">
+            <p class="govuk-!-margin-bottom-1">
+              GOV.UK Verify has sent an email invitation to {{ data['team-member-email'] }}.
+            </p>
+        </div>
+      </div>
+    {% else %}
+
+    {% endif %}
+
     <h1 class="govuk-heading-l">
-      Manage team members
+      Team members
     </h1>
+
+    <div class="user-list">
+
+      <div class="user-list-item">
+        <h3 class="govuk-heading-s">
+          Firstname Lastname
+          <span class="hint govuk-body">(you)</span>
+        </h3>
+        <ul class="govuk-list tick-cross-list">
+          <div class="tick-cross-list-permissions">
+            <li>
+              <span class="tick-cross-tick">
+                <span class="govuk-visually-hidden">Can</span>
+                Manage certificates
+              </span>
+            </li>
+            <li>
+              <span class="tick-cross-tick">
+                <span class="govuk-visually-hidden">Can</span>
+                Add, edit and remove team members
+              </span>
+            </li>
+          </div>
+        </ul>
+      </div>
+
+      {% if data['team-member-email'] %}
+        <div class="user-list-item">
+          <h3 class="govuk-heading-s">
+            <span class="hint govuk-body">{{ data['team-member-email'] }} (invited)</span>
+          </h3>
+          <ul class="govuk-list tick-cross-list">
+            <div class="tick-cross-list-permissions">
+              {% if data['can-manage-certificates'] %}
+                <li>
+                  <span class="tick-cross-tick">
+                    <span class="govuk-visually-hidden">Can</span>
+                    Manage certificates
+                  </span>
+                </li>
+              {% else %}
+                <li>
+                  <span class="tick-cross-cross">
+                    <span class="govuk-visually-hidden">Cannot</span>
+                    Manage certificates
+                  </span>
+                </li>
+              {% endif %}
+              {% if data['can-manage-team-members'] %}
+                <li>
+                  <span class="tick-cross-tick">
+                    <span class="govuk-visually-hidden">Can</span>
+                    Add, edit and remove team members
+                  </span>
+                </li>
+              {% else %}
+                <li>
+                  <span class="tick-cross-cross">
+                    <span class="govuk-visually-hidden">Cannot</span>
+                    Add, edit and remove team members
+                  </span>
+                </li>
+              {% endif %}
+            </div>
+            <li class="tick-cross-list-edit-link">
+              <a href="#">Edit team member</a>
+            </li>
+          </ul>
+        </div>
+      {% else %}
+
+      {% endif %}
+
+
+    </div>
 
     <form action="new-team-member" method="post" novalidate>
       {% from "button/macro.njk" import govukButton %}
       {{ govukButton({
-        text: "Add team member"
+        text: "Invite a team member",
+        classes: "govuk-button--secondary"
       }) }}
     </form>
-
-
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col">Email</th>
-          <th class="govuk-table__header" scope="col">Permission level</th>
-          <th class="govuk-table__header" scope="col"></th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        {% if data['team-member-email'] %}
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row">{{data['team-member-email']}}</td>
-            <td class="govuk-table__cell">{{data['team-member-permission']}}</td>
-            <td class="govuk-table__cell"><a href=''>Edit</a></td>
-          </tr>
-        {% endif %}
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">jamarcus.carter@digital.cabinet-office.gov.uk</td>
-          <td class="govuk-table__cell">Administrator</td>
-          <td class="govuk-table__cell"><a href=''>Edit</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">ellen.pitsilledes@digital.cabinet-office.gov.uk</td>
-          <td class="govuk-table__cell">Developer</td>
-          <td class="govuk-table__cell"><a href=''>Edit</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" scope="row">laura.beaker@digital.cabinet-office.gov.uk</td>
-          <td class="govuk-table__cell">View</td>
-          <td class="govuk-table__cell"><a href=''>Edit</a></td>
-        </tr>
-      </tbody>
-    </table>
 
 
   </div>
