@@ -19,6 +19,7 @@ $govuk-global-styles: true;
 @import "patterns/step-by-step-navigation";
 @import "patterns/side-navigation";
 @import "patterns/email-example";
+@import "patterns/team-members";
 
 // Components that aren't in Frontend
 @import "components/cookie-banner";
@@ -362,6 +363,12 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 
 .govuk-error-summary--grey {
   border-color: $govuk-secondary-text-colour;
+}
+
+// green border
+
+.govuk-error-summary--success {
+  border-color: #00823b;
 }
 
 // secondary links placed next to buttons
