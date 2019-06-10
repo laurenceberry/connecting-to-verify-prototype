@@ -51,9 +51,10 @@ module.exports = {
   // Slug for example URLS
   serviceSlug: 'universal-credit',
 
-  // Deparment name
-  departmentName: 'Department for Work and Pensions'
+  // Department name
+  departmentName: 'Department for Work and Pensions',
 
-
+  // Team name
+  teamName: 'Universal Credit team'
 
 }

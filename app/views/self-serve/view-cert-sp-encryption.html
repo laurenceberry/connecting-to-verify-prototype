@@ -5,6 +5,17 @@
 {% endblock %}
 
 {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="navigation-service">
+      <div class="navigation-service-name">
+        {{ teamName }}
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-one-third">
@@ -23,6 +34,10 @@
   </div>
 
   <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-body-s govuk-!-margin-bottom-0">
+      Service provider | Encryption certificate | Production
+    </p>
 
     <h1 class="govuk-heading-l">
       Service provider: encryption certificate
@@ -183,7 +198,7 @@ Ptjj7SVHlftm6IJ3vZ8Ov1bVLPdiRn4Pk2ULenZHlwtMyfKF6x4rFC7KXF/SFyM6
 </code></pre></div>
     </details>
 
-    <form action="before-you-start-sp-encryption">
+    <form action="dual-running-sp-encryption">
 
       {% from "button/macro.njk" import govukButton %}
 
@@ -191,42 +206,7 @@ Ptjj7SVHlftm6IJ3vZ8Ov1bVLPdiRn4Pk2ULenZHlwtMyfKF6x4rFC7KXF/SFyM6
         text: "Replace certificate"
       }) }}
 
-      <span class="secondary-link">
-        <a href="#" class="destructive-link">Disable certificate</a>
-      </span>
-
     </form>
-
-    <div class="govuk-error-summary destructive-button" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
-      <h2 class="govuk-error-summary__title" id="error-summary-title">
-        Are you sure you want to disable this certificate?
-      </h2>
-      <div class="govuk-error-summary__body">
-        <p>
-          This will make any connected services stop working with the Production environment.
-        </p>
-        <p>
-          You can reactivate this certificate once disabled, or update it with a new one.
-        </p>
-        <form action="dashboard">
-          <!-- hidden form to change status on dashboard page -->
-          {{ govukInput({
-            id: "disable-cert-sp-encryption",
-            name: "disable-cert-sp-encryption",
-            value: "true",
-            classes: "govuk-visually-hidden"
-          }) }}
-          <!-- button -->
-          {{ govukButton({
-            text: "Disable certificate",
-            classes: "govuk-button--warning govuk-!-margin-bottom-1"
-          }) }}
-          <span class="secondary-link">
-            <a class="cancel-destructive-button" href="#">Cancel</a>
-          </span>
-        </form>
-      </div>
-    </div>
 
   </div>
 </div>

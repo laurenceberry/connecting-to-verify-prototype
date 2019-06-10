@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="navigation-service">
+      <div class="navigation-service-name">
+        {{ teamName }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <div class="side-navigation">
+      <ul class="govuk-list">
+        <li class="active">
+          <a href="dashboard">Manage certificates</a>
+        </li>
+        <li class="">
+          <a href="team-members">Team members</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-body-s">
+      Service provider | Encryption certificate | Production
+    </p>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="dual-running-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Does your service support dual running?
+          </h1>
+        </legend>
+        <!-- <span id="dual-running-hint" class="govuk-hint">
+          This includes changing your last name or spelling your name differently.
+        </span> -->
+        <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="dual-running-1" name="dual-running" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="dual-running-1">
+              Yes
+            </label> </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="dual-running-2" name="dual-running" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="dual-running-2">
+              No
+            </label> </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+  </div>
+</div>
+
+{% endblock %}

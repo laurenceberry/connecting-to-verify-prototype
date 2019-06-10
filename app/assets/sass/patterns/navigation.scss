@@ -78,3 +78,15 @@
     padding-bottom: govuk-spacing(9);
   }
 }
+
+.navigation-service {
+  padding: 11px 0 9px 0;
+  border-bottom: 1px solid #bfc1c3;
+  margin: -30px 0 15px;
+  position: relative;
+}
+
+.navigation-service-name {
+  @extend %govuk-heading-s;
+  margin-bottom: 0;
+}
