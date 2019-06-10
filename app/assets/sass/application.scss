@@ -20,6 +20,7 @@ $govuk-global-styles: true;
 @import "patterns/side-navigation";
 @import "patterns/email-example";
 @import "patterns/team-members";
+@import "patterns/certificate-details";
 
 // Components that aren't in Frontend
 @import "components/cookie-banner";
@@ -388,7 +389,7 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 
 // grey text on disabled tables
 
-.faded-text {
+.grey-text {
   color: $govuk-secondary-text-colour;
 }
 

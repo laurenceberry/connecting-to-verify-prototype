@@ -34,6 +34,16 @@
   </div>
 
   <div class="govuk-grid-column-two-thirds">
+
+    <dl class="certificate-details">
+      <dt class="govuk-visually-hidden">Environment</dt>
+      <dd>Production</dd>
+      <dt class="govuk-visually-hidden">Component</dt>
+      <dd>Matching Service Adapter</dd>
+      <dt class="govuk-visually-hidden">Certificate</dt>
+      <dd>Encryption certificate</dd>
+    </dl>
+    
     <h1 class="govuk-heading-l">
       Check you've uploaded the right certificate
     </h1>
@@ -43,24 +53,6 @@
     </p>
 
     <dl class="govuk-summary-list">
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Used by
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ serviceName }}
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Environment
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Production
-        </dd>
-      </div>
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -218,13 +210,13 @@ Ptjj7SVHlftm6IJ3vZ8Ov1bVLPdiRn4Pk2ULenZHlwtMyfKF6x4rFC7KXF/SFyM6
         classes: "govuk-!-margin-bottom-5"
       }) }}
 
-    </form>
+      <span class="secondary-link">
+        <a href="upload-cert-msa-encryption">
+          Upload a different certificate
+        </a>
+      </span>
 
-    <p>
-      <a href="upload-cert-msa-encryption">
-        Upload a different certificate
-      </a>
-    </p>
+    </form>
 
   </div>
 </div>

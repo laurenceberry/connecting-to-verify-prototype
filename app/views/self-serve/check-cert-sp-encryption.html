@@ -36,7 +36,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     <p class="govuk-body-s govuk-!-margin-bottom-0">
-      Service provider | Encryption certificate | Production
+      Production | Service provider | Encryption certificate
     </p>
 
     <h1 class="govuk-heading-l">
@@ -48,24 +48,6 @@
     </p>
 
     <dl class="govuk-summary-list">
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Used by
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ serviceName }}
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Environment
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Production
-        </dd>
-      </div>
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -224,13 +206,13 @@ Ptjj7SVHlftm6IJ3vZ8Ov1bVLPdiRn4Pk2ULenZHlwtMyfKF6x4rFC7KXF/SFyM6
         classes: "govuk-!-margin-bottom-5"
       }) }}
 
-    </form>
+      <span class="secondary-link">
+        <a href="upload-cert-sp-encryption">
+          Upload a different certificate
+        </a>
+      </span>
 
-    <p>
-      <a href="upload-cert-sp-encryption">
-        Upload a different certificate
-      </a>
-    </p>
+    </form>
 
   </div>
 </div>

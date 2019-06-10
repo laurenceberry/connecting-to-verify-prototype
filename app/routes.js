@@ -41,6 +41,21 @@ router.post('/account-created', function (req, res) {
   }
 })
 
+// Branching depending on whether they dual run or not
+router.post('/self-serve/dual-running-answer', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let dualRunning = req.session.data['dual-running']
+
+  if (dualRunning === 'true') {
+    res.redirect('/docs/examples/branching/under-18')
+  } else {
+    res.redirect('/docs/examples/branching/over-18')
+  }
+})
+
 // Add your routes here - above the module.exports line
 
 module.exports = router
