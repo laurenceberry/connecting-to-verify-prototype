@@ -55,6 +55,6 @@ module.exports = {
   departmentName: 'Department for Work and Pensions',
 
   // Team name
-  teamName: 'Universal Credit team'
+  teamName: 'Universal Credit'
 
 }

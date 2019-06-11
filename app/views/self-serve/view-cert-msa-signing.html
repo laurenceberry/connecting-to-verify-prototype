@@ -39,6 +39,23 @@
       Matching Service Adapter: signing certificate
     </h1>
 
+    {% if data['confirm-cert-msa-signing'] %}
+      <div class="govuk-error-summary govuk-error-summary--orange" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          Delete the old key pair in your MSA config before deleting this certificate
+        </h2>
+        <div class="govuk-error-summary__body">
+          <p>
+            Text
+          </p>
+          <p>
+            For more information, read about how to <a href="https://prototype-docs.cloudapps.digital/maintain-your-connection/msa/#update-the-signing-keys-and-certificate">update your MSA signing key</a>.
+          </p>
+        </div>
+      </div>
+    {% else %}
+    {% endif %}
+
     <dl class="govuk-summary-list">
 
       <div class="govuk-summary-list__row">
@@ -194,22 +211,24 @@ Ptjj7SVHlftm6IJ3vZ8Ov1bVLPdiRn4Pk2ULenZHlwtMyfKF6x4rFC7KXF/SFyM6
 </code></pre></div>
     </details>
 
-    <form action="before-you-start-msa-signing">
 
-      {% from "button/macro.njk" import govukButton %}
-
-      {{ govukButton({
-        text: "Add new certificate"
-      }) }}
 
       {% if data['confirm-cert-msa-signing'] %}
-        <span class="secondary-link">
+        <p>
           <a href="#">Stop using this certificate</a>
-        </span>
+        </p>
       {% else %}
+        <form action="before-you-start-msa-signing">
+
+          {% from "button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Add new certificate"
+          }) }}
+        </form>
       {% endif %}
 
-    </form>
+
 
   </div>
 </div>

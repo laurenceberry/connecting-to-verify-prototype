@@ -35,9 +35,14 @@
 
   <div class="govuk-grid-column-two-thirds">
 
-    <p class="govuk-body-s govuk-!-margin-bottom-0">
-      Production | Service provider | Encryption certificate
-    </p>
+    <dl class="certificate-details">
+      <dt class="govuk-visually-hidden">Environment</dt>
+      <dd>Production</dd>
+      <dt class="govuk-visually-hidden">Component</dt>
+      <dd>Service provider</dd>
+      <dt class="govuk-visually-hidden">Certificate</dt>
+      <dd>Encryption certificate</dd>
+    </dl>
 
     <h1 class="govuk-heading-l">
       Check you've uploaded the right certificate
@@ -184,10 +189,19 @@ Ptjj7SVHlftm6IJ3vZ8Ov1bVLPdiRn4Pk2ULenZHlwtMyfKF6x4rFC7KXF/SFyM6
 </code></pre></div>
     </details>
 
-    <p>
-      If you have already deployed your encryption key, uploading this certificate will update our infrastructure immediately with no disruption to your service.
-    </p>
+    {% if data['dual-running']==='true' %}
 
+      <p>
+        If you have already deployed your encryption key, using this certificate will update our infrastructure immediately with no disruption to your service.
+      </p>
+
+    {% else %}
+
+      <p>
+        Because your service provider does not support dual running, your service will be disrupted etc. etc.
+      </p>
+
+    {% endif %}
 
     {% from "button/macro.njk" import govukButton %}
 

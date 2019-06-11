@@ -56,12 +56,13 @@
         <li>Deploy the new signing key to your service provider.</li>
       </ul>
 
-      {% from "warning-text/macro.njk" import govukWarningText %}
-
-      {{ govukWarningText({
-        text: "You must deploy the new signing key by {{ aYearFromNow }}, or your service’s connection to GOV.UK Verify will stop working.",
-        iconFallbackText: "Warning"
-      }) }}
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          You must deploy the new signing key by {{ expiryDate }}, or your service’s connection to GOV.UK Verify will stop working.
+        </strong>
+      </div>
 
       <p>
         For more information, read about how to <a href="https://prototype-docs.cloudapps.digital/maintain-your-connection/service-provider/#update-the-signing-keys-and-certificate">update your service provider signing key</a>.

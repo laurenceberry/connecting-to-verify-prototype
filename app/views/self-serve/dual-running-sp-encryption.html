@@ -35,16 +35,16 @@
 
   <div class="govuk-grid-column-two-thirds">
 
-    <dl class="certificate-details govuk-!-margin-bottom-3">
+    <dl class="certificate-details govuk-!-margin-bottom-4">
       <dt class="govuk-visually-hidden">Environment</dt>
       <dd>Production</dd>
       <dt class="govuk-visually-hidden">Component</dt>
-      <dd>Matching Service Adapter</dd>
+      <dd>Service provider</dd>
       <dt class="govuk-visually-hidden">Certificate</dt>
       <dd>Encryption certificate</dd>
     </dl>
 
-    <form action="dual-running-answer" method="post" class="form">
+    <form action="before-you-start-sp-encryption">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="dual-running-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -52,20 +52,22 @@
               Does your service provider support dual running?
             </h1>
           </legend>
-          <!-- <span id="dual-running-hint" class="govuk-hint">
-            This includes changing your last name or spelling your name differently.
-          </span> -->
+          <span id="dual-running-hint" class="govuk-hint">
+            This means it can decrypt messages from the GOV.UK Verify Hub using both the old and new encryption keys.
+          </span>
           <div class="govuk-radios govuk-radios--inline">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="dual-running-yes" name="dual-running" type="radio" value="true">
               <label class="govuk-label govuk-radios__label" for="dual-running-yes">
                 Yes
-              </label> </div>
+              </label>
+            </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="dual-running-no" name="dual-running" type="radio" value="false">
               <label class="govuk-label govuk-radios__label" for="dual-running-no">
                 No
-              </label> </div>
+              </label>
+            </div>
           </div>
         </fieldset>
       </div>

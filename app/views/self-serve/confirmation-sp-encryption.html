@@ -35,16 +35,29 @@
 
     <div class="govuk-grid-column-two-thirds">
 
-      <p class="govuk-body-s govuk-!-margin-bottom-2">
-        Production | Service provider | Encryption certificate
-      </p>
+      <dl class="certificate-details govuk-!-margin-bottom-2">
+        <dt class="govuk-visually-hidden">Environment</dt>
+        <dd>Production</dd>
+        <dt class="govuk-visually-hidden">Component</dt>
+        <dd>Service provider</dd>
+        <dt class="govuk-visually-hidden">Certificate</dt>
+        <dd>Encryption certificate</dd>
+      </dl>
 
-      <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title govuk-!-font-size-36">Certificate updated</h1>
-        <div class="govuk-panel__body govuk-!-font-size-24">
-          If your service provider supports dual running, you should also delete the old encryption key and certificate. We’ll send you an email to tell you when you can do this.
+      {% if data['dual-running']==='true' %}
+
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title govuk-!-font-size-36">Certificate updated</h1>
+          <div class="govuk-panel__body govuk-!-font-size-24">
+            Wait for an e-mail confirming that the your new certificate is in use. You should then delete the old encryption key and certificate from your configuration.
+          </div>
         </div>
-      </div>
+
+      {% else %}
+
+
+
+      {% endif %}
 
       <p>
         <a href="dashboard">

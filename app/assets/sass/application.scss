@@ -50,6 +50,17 @@ $govuk-global-styles: true;
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+$dark-orange: #CB4B0B;
+
+// Fix for error message spacing cos I've been using p tags inside them
+
+@media (min-width: 40.0625em) {
+  .govuk-error-summary {
+    padding: 20px 20px 0;
+  }
+}
+
+
 .govuk-c-breadcrumbs__link{
   font-size: 16px;
 }
@@ -283,10 +294,10 @@ ul.govuk-list--bullet, ul.govuk-list--number{
   background-color: govuk-colour("blue");
 }
 
-.govuk-tag--disabled {
+.govuk-tag--secondary {
   background-color: govuk-colour("white");
-  color: $govuk-error-colour;
-  border: 2px solid $govuk-error-colour;
+  color: $dark-orange;
+  border: 2px solid $dark-orange;
 }
 
 // Grey secondary button
@@ -360,16 +371,18 @@ ul.govuk-list--bullet, ul.govuk-list--number{
   color: $govuk-text-colour;
 }
 
-// grey border for error summaries
+// border colours for error summaries
 
 .govuk-error-summary--grey {
   border-color: $govuk-secondary-text-colour;
 }
 
-// green border
-
 .govuk-error-summary--success {
   border-color: #00823b;
+}
+
+.govuk-error-summary--orange {
+  border-color: $dark-orange;
 }
 
 // secondary links placed next to buttons

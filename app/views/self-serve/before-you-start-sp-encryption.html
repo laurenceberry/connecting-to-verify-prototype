@@ -35,45 +35,74 @@
 
   <div class="govuk-grid-column-two-thirds">
 
-    <p class="govuk-body-s govuk-!-margin-bottom-0">
-      Production | Service provider | Encryption certificate
-    </p>
+    <dl class="certificate-details">
+      <dt class="govuk-visually-hidden">Environment</dt>
+      <dd>Production</dd>
+      <dt class="govuk-visually-hidden">Component</dt>
+      <dd>Service provider</dd>
+      <dt class="govuk-visually-hidden">Certificate</dt>
+      <dd>Encryption certificate</dd>
+    </dl>
 
     <h1 class="govuk-heading-l">
       Before you start
     </h1>
 
-    <p>
-      Before you update your service provider encryption certificate, you must do the following:
-    </p>
+    {% if data['dual-running']==='true' %}
 
-    <ul class="govuk-list govuk-list--number">
-      <li>Create a new key and certificate.</li>
-      <li>Deploy your new encryption key to your service provider. If your service provider does not support dual running, you should do this when there is low traffic to your service.</li>
-    </ul>
+      <p>
+        Before you update your service provider encryption certificate, you must do the following:
+      </p>
 
-    {% from "warning-text/macro.njk" import govukWarningText %}
+      <ul class="govuk-list govuk-list--number">
+        <li>Create a new key and certificate.</li>
+        <li>Deploy your new encryption key to your service provider.</li>
+      </ul>
 
-    {{ govukWarningText({
-      text: "You must deploy your encryption key before uploading your encryption certificate, or your service’s connection to GOV.UK Verify will stop working.",
-      iconFallbackText: "Warning"
-    }) }}
+      {% from "warning-text/macro.njk" import govukWarningText %}
 
-    <p>
-      For more information, read the guidance on <a href="https://prototype-docs.cloudapps.digital/maintain-your-connection/service-provider/#update-the-encryption-key-and-certificate">updating your service provider encryption key and certificate</a>.
-    </p>
+      {{ govukWarningText({
+        text: "You must deploy your encryption key before uploading your encryption certificate, or your service’s connection to GOV.UK Verify will stop working.",
+        iconFallbackText: "Warning"
+      }) }}
+
+      <p>
+        For more information, read the guidance on <a href="https://prototype-docs.cloudapps.digital/maintain-your-connection/service-provider/#update-the-encryption-key-and-certificate">updating your service provider encryption key and certificate</a>.
+      </p>
+
+      <form action="upload-cert-sp-encryption">
+        {{ govukButton({
+          text: "I have deployed the encryption key"
+        }) }}
+      </form>
+
+    {% else %}
+
+      <p>
+        Before you update your service provider encryption certificate, you must create a new signing key and certificate.
+      </p>
+
+      <p>
+        For more information, read the guidance on <a href="https://prototype-docs.cloudapps.digital/maintain-your-connection/service-provider/#update-the-encryption-key-and-certificate">updating your service provider encryption key and certificate</a>.
+      </p>
+
+      <form action="upload-cert-sp-encryption">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+    {% endif %}
+
+
+
+
 
     {% from "file-upload/macro.njk" import govukFileUpload %}
     {% from "button/macro.njk" import govukButton %}
     {% from "input/macro.njk" import govukInput %}
 
-    <form action="upload-cert-sp-encryption">
 
-      {{ govukButton({
-        text: "I have deployed the encryption key"
-      }) }}
-
-    </form>
 
   </div>
 </div>

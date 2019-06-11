@@ -35,6 +35,23 @@
 
   <div class="govuk-grid-column-two-thirds">
 
+    {% if data['confirm-cert-sp-signing'] %}
+      <div class="govuk-error-summary govuk-error-summary--orange" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          Replace the old key pair in your service provider config before deleting this certificate
+        </h2>
+        <div class="govuk-error-summary__body">
+          <p>
+            Text
+          </p>
+          <p>
+            For more information, read about how to <a href="https://prototype-docs.cloudapps.digital/maintain-your-connection/msa/#update-the-signing-keys-and-certificate">update your MSA signing key</a>.
+          </p>
+        </div>
+      </div>
+    {% else %}
+    {% endif %}
+
     <h1 class="govuk-heading-l">
       Service provider: signing certificate
     </h1>

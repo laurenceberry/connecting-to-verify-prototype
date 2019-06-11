@@ -54,7 +54,7 @@
           Encryption certificate
         </a>
         {% if data['confirm-cert-msa-encryption'] %}
-          <strong class="govuk-tag govuk-tag--In use app-task-list__task-completed" id="">In use</strong>
+          <strong class="govuk-tag app-task-list__task-completed" id="">In use</strong>
         {% else %}
           <strong class="govuk-tag govuk-tag--expiring app-task-list__task-completed" id="">Expires in 7 days</strong>
         {% endif %}
@@ -76,7 +76,11 @@
           {% else %}
           {% endif %}
         </a>
-        <strong class="govuk-tag govuk-tag--expiring app-task-list__task-completed" id="">Expires in 7 days</strong>
+        {% if data['confirm-cert-msa-signing'] %}
+          <strong class="govuk-tag govuk-tag--secondary app-task-list__task-completed" id="">Expires in 7 days</strong>
+        {% else %}
+          <strong class="govuk-tag govuk-tag--expiring app-task-list__task-completed" id="">Expires in 7 days</strong>
+        {% endif %}
       </li>
 
     </ul>
@@ -91,7 +95,7 @@
           Encryption certificate
         </a>
         {% if data['confirm-cert-sp-encryption'] %}
-          <strong class="govuk-tag govuk-tag--In use app-task-list__task-completed" id="">In use</strong>
+          <strong class="govuk-tag app-task-list__task-completed" id="">In use</strong>
         {% else %}
           <strong class="govuk-tag govuk-tag--expiring app-task-list__task-completed" id="">Expires in 7 days</strong>
         {% endif %}
@@ -113,7 +117,11 @@
           {% else %}
           {% endif %}
         </a>
-        <strong class="govuk-tag govuk-tag--expiring app-task-list__task-completed" id="">Expires in 7 days</strong>
+        {% if data['confirm-cert-sp-signing'] %}
+          <strong class="govuk-tag govuk-tag--secondary app-task-list__task-completed" id="">Expires in 7 days</strong>
+        {% else %}
+          <strong class="govuk-tag govuk-tag--expiring app-task-list__task-completed" id="">Expires in 7 days</strong>
+        {% endif %}
       </li>
     </ul>
 
@@ -130,13 +138,13 @@
         <a class="app-task-list__task-name" href="#" aria-describedby="">
           Encryption certificate
         </a>
-        <strong class="govuk-tag govuk-tag--In use app-task-list__task-completed" id="">In use</strong>
+        <strong class="govuk-tag app-task-list__task-completed" id="">In use</strong>
       </li>
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="#" aria-describedby="">
           Signing certificate
         </a>
-        <strong class="govuk-tag govuk-tag--In use app-task-list__task-completed" id="">In use</strong>
+        <strong class="govuk-tag app-task-list__task-completed" id="">In use</strong>
       </li>
     </ul>
 
@@ -149,13 +157,13 @@
         <a class="app-task-list__task-name" href="#" aria-describedby="">
           Encryption certificate
         </a>
-        <strong class="govuk-tag govuk-tag--In use app-task-list__task-completed" id="">In use</strong>
+        <strong class="govuk-tag app-task-list__task-completed" id="">In use</strong>
       </li>
       <li class="app-task-list__item">
         <a class="app-task-list__task-name" href="#" aria-describedby="">
           Signing certificate
         </a>
-        <strong class="govuk-tag govuk-tag--In use app-task-list__task-completed" id="">In use</strong>
+        <strong class="govuk-tag app-task-list__task-completed" id="">In use</strong>
       </li>
     </ul>
 
