@@ -33,15 +33,11 @@ $(document).ready(function () {
   var count = liList.length
 
   var heading = " certificate expiring soon."
-  if (count > 1) {
+  if (count > 1 || count < 0) {
     heading = " certificates expiring soon."
   }
 
   document.getElementById("counter").innerHTML = count+heading;
-
-
-
-
 
 	jQuery(function($) {
 

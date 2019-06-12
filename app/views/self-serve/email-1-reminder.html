@@ -11,7 +11,7 @@
 
         <div class="email-header">
           <h1 class="govuk-heading-m govuk-!-padding-bottom-2 govuk-!-margin-bottom-2">
-            Certificates expiring on {{ expiryDate }}
+            4 certificates expiring on {{ expiryDate }}
           </h1>
           <ul class="govuk-list govuk-body-s govuk-!-margin-bottom-0">
             <li>GOV.UK Verify (gov.uk.verify@notifications.service.gov.uk)</li>
@@ -26,22 +26,33 @@
         <div class="email-content">
 
           <p>
-            Hello Universal Credit team,
+            Hello {{ teamName }} team,
           </p>
 
           <p>
-            The following certificates are due to expire at 11:59pm on {{ expiryDate }}:
+            4 certificates are due to expire at 11:59pm on {{ expiryDate }}.
+          </p>
+
+          <p>
+            Matching Service Adapter (Production):
           </p>
 
           <ul class="govuk-list govuk-list--bullet">
-            <li>encryption certificate (Matching Service Adapter)</li>
-            <li>signing certificate (Matching Service Adapter)</li>
-            <li>encryption certificate (service provider)</li>
-            <li>signing certificate (service provider)</li>
+            <li>encryption certificate</li>
+            <li>signing certificate</li>
           </ul>
 
           <p>
-            To ensure your service is not disconnected from GOV.​UK Verify, you need to update your certificates. You should allow 2 hours to complete the process.
+            Service provider (Production):
+          </p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>encryption certificate</li>
+            <li>signing certificate</li>
+          </ul>
+
+          <p>
+            To ensure your service is not disconnected from GOV.​UK Verify, you need to update these certificates. You should allow 2 hours to complete the process.
           </p>
 
           <p>

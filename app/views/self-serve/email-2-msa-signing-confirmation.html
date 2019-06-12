@@ -25,16 +25,19 @@
 
         <div class="email-content">
           <p>
-            Hello,
+            Hello {{ teamName }} team,
           </p>
           <p>
-            GOV.​UK Verify has deployed the new signing certificate for your service’s Matching Service Adapter (MSA).
+            GOV.​UK Verify has deployed the new signing certificate for your Matching Service Adapter (MSA).
           </p>
           <p>
-            You can now deploy the signing key to your service’s MSA.
+            You can now deploy the signing key to your MSA in production.
           </p>
           <p>
-            You must do this by 11:59pm on {{ expiryDate }} or your service’s connection to GOV.UK Verify will stop working.
+            You must do this by 11:59pm on {{ expiryDate }} or your connection to GOV.UK Verify will stop working.
+          </p>
+          <p>
+            Once you have done this, sign in to the <a href="sign-in" target="_blank">GOV.​UK Verify Service Admin tool</a> to tell us to stop using the old signing certificate.
           </p>
           <p>
             For more information, read the guidance on <a href="
