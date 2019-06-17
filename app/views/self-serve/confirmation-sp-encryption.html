@@ -49,13 +49,40 @@
         <div class="govuk-panel govuk-panel--confirmation">
           <h1 class="govuk-panel__title govuk-!-font-size-36">Certificate updated</h1>
           <div class="govuk-panel__body govuk-!-font-size-24">
-            Wait for an e-mail confirming that the your new certificate is in use. You should then delete the old encryption key and certificate from your configuration.
+            Wait for an email confirming your new encryption certificate is in use. You should then delete the old encryption key and certificate from your configuration.
           </div>
         </div>
 
       {% else %}
 
+        <h1 class="govuk-heading-l">
+          GOV.UK Verify is deploying your certificate
+        </h1>
 
+        <p>
+          We'll email you when this is done. This usually takes around 1 hour.
+        </p>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            Because your service does not support dual-running, this will break your connection to GOV.UK Verify. To minimise disruption, update your config soon after receiving the email confirmation.
+          </strong>
+        </div>
+
+        <h2 class="govuk-heading-m">
+          Next steps
+        </h2>
+
+        <p>
+          To finish updating your signing certificate, you must follow these steps:
+        </p>
+
+        <ul class="govuk-list govuk-list--number">
+          <li>Wait for the email from GOV.UK Verify confirming your new signing certificate is in use.</li>
+          <li>Deploy the new signing key to your service provider.</li>
+        </ul>
 
       {% endif %}
 
