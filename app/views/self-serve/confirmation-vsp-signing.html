@@ -45,7 +45,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        GOV.UK Verify is deploying your certificate
+        GOV.UK Verify is adding your certificate to its configuration
       </h1>
 
       <p>
@@ -58,13 +58,13 @@
 
       <ul class="govuk-list govuk-list--number">
         <li>Wait for the email from GOV.UK Verify confirming your new signing certificate is in use.</li>
-        <li>Deploy the new signing key to your Verify Service Provider (VSP).</li>
+        <li>Add the new signing key to your Verify Service Provider (VSP).</li>
       </ul>
 
       {% from "warning-text/macro.njk" import govukWarningText %}
 
       {{ govukWarningText({
-        text: "You must deploy the new signing key by {{ expiryDate }}, or your service’s connection to GOV.UK Verify will stop working.",
+        text: "You must add the new signing key by {{ expiryDate }}, or your service’s connection to GOV.UK Verify will stop working.",
         iconFallbackText: "Warning"
       }) }}
 

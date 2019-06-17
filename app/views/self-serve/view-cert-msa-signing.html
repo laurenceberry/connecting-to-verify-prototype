@@ -35,18 +35,14 @@
 
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">
-      Matching Service Adapter: signing certificate
-    </h1>
-
     {% if data['confirm-cert-msa-signing'] %}
       <div class="govuk-error-summary govuk-error-summary--orange" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
         <h2 class="govuk-error-summary__title" id="error-summary-title">
-          Delete the old key pair in your MSA config before deleting this certificate
+          Wait for an email from GOV.UK Verify before deleting this certificate
         </h2>
         <div class="govuk-error-summary__body">
           <p>
-            Text
+            This usually takes around 1 hour from the time you uploaded the new signing certificate.
           </p>
           <p>
             For more information, read about how to <a href="https://prototype-docs.cloudapps.digital/maintain-your-connection/msa/#update-the-signing-keys-and-certificate">update your MSA signing key</a>.
@@ -55,6 +51,14 @@
       </div>
     {% else %}
     {% endif %}
+
+    <h1 class="govuk-heading-l">
+      Matching Service Adapter: signing certificate
+        {% if data['confirm-cert-msa-signing'] %}
+          (secondary)
+        {% else %}
+        {% endif %}
+    </h1>
 
     <dl class="govuk-summary-list">
 
@@ -214,9 +218,6 @@ Ptjj7SVHlftm6IJ3vZ8Ov1bVLPdiRn4Pk2ULenZHlwtMyfKF6x4rFC7KXF/SFyM6
 
 
       {% if data['confirm-cert-msa-signing'] %}
-        <p>
-          <a href="#">Stop using this certificate</a>
-        </p>
       {% else %}
         <form action="before-you-start-msa-signing">
 

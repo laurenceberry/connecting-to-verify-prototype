@@ -43,14 +43,10 @@
       <dt class="govuk-visually-hidden">Certificate</dt>
       <dd>Signing certificate</dd>
     </dl>
-    
+
     <h1 class="govuk-heading-l">
       Check you've uploaded the right certificate
     </h1>
-
-    <p>
-      The certificate you've uploaded contains the following information:
-    </p>
 
     <dl class="govuk-summary-list">
 
@@ -190,7 +186,7 @@ Ptjj7SVHlftm6IJ3vZ8Ov1bVLPdiRn4Pk2ULenZHlwtMyfKF6x4rFC7KXF/SFyM6
     </details>
 
     <p>
-      Using this certificate will update our infrastructure within 1 hour. We will email you when this is done. To avoid disruption you will need to deploy the new signing key to your service by {{ expiryDate }}.
+      Using this certificate will update our infrastructure within 1 hour. We will email you when this is done. You then need to update your MSA configuration with the new signing key by {{ expiryDate }}. If you do not do this your service will be disrupted.
     </p>
 
     {% from "button/macro.njk" import govukButton %}

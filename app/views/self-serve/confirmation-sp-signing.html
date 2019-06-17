@@ -45,7 +45,7 @@
       </dl>
 
       <h1 class="govuk-heading-l">
-        GOV.UK Verify is deploying your certificate
+        GOV.UK Verify is adding your certificate to its configuration
       </h1>
 
       <p>
@@ -62,14 +62,14 @@
 
       <ul class="govuk-list govuk-list--number">
         <li>Wait for the email from GOV.UK Verify confirming your new signing certificate is in use.</li>
-        <li>Deploy the new signing key to your service provider.</li>
+        <li>Add the new signing key to your service provider.</li>
       </ul>
 
       <div class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
           <span class="govuk-warning-text__assistive">Warning</span>
-          You must deploy the new signing key by {{ expiryDate }}, or your service’s connection to GOV.UK Verify will stop working.
+          You must update your service provider configuration by {{ expiryDate }}, or your service’s connection to GOV.UK Verify will stop working.
         </strong>
       </div>
 

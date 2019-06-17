@@ -1,12 +1,13 @@
 .certificate-details {
-  @extend %govuk-body-s;
-  margin-bottom: 0;
+  font-size: 0;
+  margin-bottom: 25px;
 
   dd {
-    margin: 0;
+    @extend %govuk-body-s;
+    margin: 0 8px 0 0;
+    padding: 3px 8px 2px;
     display: inline;
-    padding-right: 0.5em;
-    color: $govuk-secondary-text-colour;
+    background-color:  govuk-colour("grey-3");
   }
 
 }
