@@ -23,10 +23,10 @@
       <div class="side-navigation">
         <ul class="govuk-list">
           <li class="active">
-            <a href="dashboard">Manage certificates</a>
+            <a href="dashboard" class="govuk-link--no-visited-state">Manage certificates</a>
           </li>
           <li class="">
-            <a href="team-members">Team members</a>
+            <a href="team-members" class="govuk-link--no-visited-state">Team members</a>
           </li>
         </ul>
       </div>
@@ -56,10 +56,6 @@
         Next steps
       </h2>
 
-      <p>
-        To finish updating your signing key and certificate, you must follow these steps:
-      </p>
-
       <ul class="govuk-list govuk-list--number">
         <li>Wait for the email from GOV.UK Verify confirming your new signing certificate is in use.</li>
         <li>Add the new signing key and certificate to your Matching Service Adapter (MSA) configuration.</li>
@@ -69,7 +65,7 @@
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
           <span class="govuk-warning-text__assistive">Warning</span>
-          You must update your MSA configuration by {{ expiryDate }}, or your service’s connection to GOV.UK Verify will stop working.
+          You must update your MSA configuration by {{ expiryDate }}, or your service’s connection to GOV.UK Verify will break.
         </strong>
       </div>
 

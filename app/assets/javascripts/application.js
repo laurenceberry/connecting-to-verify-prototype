@@ -34,9 +34,9 @@ $(document).ready(function () {
   var liList = document.getElementsByClassName("govuk-tag--expiring");
   var count = liList.length
 
-  var heading = " certificate expiring soon."
+  var heading = " certificate is expiring soon."
   if (count > 1 || count < 0) {
-    heading = " certificates expiring soon."
+    heading = " certificates are expiring soon."
   }
 
   document.getElementById("counter").innerHTML = count+heading;

@@ -29,10 +29,10 @@
     <div class="side-navigation">
       <ul class="govuk-list">
         <li class="active">
-          <a href="dashboard">Manage certificates</a>
+          <a href="dashboard" class="govuk-link--no-visited-state">Manage certificates</a>
         </li>
         <li class="">
-          <a href="team-members">Team members</a>
+          <a href="team-members" class="govuk-link--no-visited-state">Team members</a>
         </li>
       </ul>
     </div>
@@ -82,13 +82,10 @@
         name: "how-contacted",
         fieldset: {
           legend: {
-            text: "Upload the encryption certificate",
+            text: "Upload the signing certificate",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
-        },
-        hint: {
-          text: "Choose how you prefer to upload the certificate."
         },
         items: [
           {

@@ -23,10 +23,10 @@
     <div class="side-navigation">
       <ul class="govuk-list">
         <li class="active">
-          <a href="dashboard">Manage certificates</a>
+          <a href="dashboard" class="govuk-link--no-visited-state">Manage certificates</a>
         </li>
         <li class="">
-          <a href="team-members">Team members</a>
+          <a href="team-members" class="govuk-link--no-visited-state">Team members</a>
         </li>
       </ul>
     </div>
@@ -96,7 +96,7 @@ Certificate:
         Serial Number:
             57:s5:f8:c9:97:ef:c9:aa:c3:a5:b7:1d:eb:d3:e3:96
     Signature Algorithm: sha256WithRSAEncryption
-        Issuer: C=GB, O=Cabinet Office, OU=GDS, CN=IDAP Relying Party Test CA
+        Issuer: C=GB, O={{departmentName}}, OU={{departmentName}}, CN=IDAP Relying Party Test CA
         Validity
             Not Before: {{ startDate }} 00:00:00 2019 GMT
             Not After : {{ endDate }} 23:59:59 2020 GMT
@@ -190,7 +190,7 @@ Ptjj7SVHlftm6IJ3vZ8Ov1bVLPdiRn4Pk2ULenZHlwtMyfKF6x4rFC7KXF/SFyM6
     </details>
 
     <p>
-      If you have already updated your MSA configuration with the new key and certificate, using this certificate will update our infrastructure immediately with no disruption to your service.
+      Using this certificate will automatically update GOV.UK Verify's infrastructure to use the new encryption certificate.
     </p>
 
     {% from "button/macro.njk" import govukButton %}

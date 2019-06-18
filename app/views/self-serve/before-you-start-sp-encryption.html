@@ -23,10 +23,10 @@
     <div class="side-navigation">
       <ul class="govuk-list">
         <li class="active">
-          <a href="dashboard">Manage certificates</a>
+          <a href="dashboard" class="govuk-link--no-visited-state">Manage certificates</a>
         </li>
         <li class="">
-          <a href="team-members">Team members</a>
+          <a href="team-members" class="govuk-link--no-visited-state">Team members</a>
         </li>
       </ul>
     </div>
@@ -51,7 +51,7 @@
     {% if data['dual-running']==='true' %}
 
       <p>
-        Before you update your service provider encryption certificate, you must do the following:
+        You need to do 2 things before you replace your service provider encryption certificate.
       </p>
 
       <ul class="govuk-list govuk-list--number">
@@ -59,16 +59,16 @@
         <li>Add your new encryption key and certificate to your service provider configuration.</li>
       </ul>
 
+      <p>
+        There is guidance on <a href="https://prototype-docs.cloudapps.digital/maintain-your-connection/service-provider/#update-the-encryption-key-and-certificate">updating your service provider encryption key and certificate</a>.
+      </p>
+
       {% from "warning-text/macro.njk" import govukWarningText %}
 
       {{ govukWarningText({
-        text: "You must update your service provider configuration before uploading your encryption certificate, or your service’s connection to GOV.UK Verify will stop working.",
+        text: "You must update your service provider configuration before going to the next step, or your service's connection to GOV.UK Verify will break.",
         iconFallbackText: "Warning"
       }) }}
-
-      <p>
-        For more information, read the guidance on <a href="https://prototype-docs.cloudapps.digital/maintain-your-connection/service-provider/#update-the-encryption-key-and-certificate">updating your service provider encryption key and certificate</a>.
-      </p>
 
       <form action="upload-cert-sp-encryption">
         {{ govukButton({
