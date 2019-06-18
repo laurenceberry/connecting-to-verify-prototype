@@ -6,6 +6,12 @@
 
 {% block content %}
 
+{% from "file-upload/macro.njk" import govukFileUpload %}
+{% from "button/macro.njk" import govukButton %}
+{% from "textarea/macro.njk" import govukTextarea %}
+{% from "radios/macro.njk" import govukRadios %}
+{% from "input/macro.njk" import govukInput %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <div class="navigation-service">
@@ -44,41 +50,62 @@
       <dd>Encryption certificate</dd>
     </dl>
 
-    <h1 class="govuk-heading-l">
-      Upload the encryption certificate
-    </h1>
-
-    <p>
-      You can either:
-    </p>
-
-    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-      <li>upload a .crt file</li>
-      <li>paste the certificate text into the text box</li>
-    </ul>
-
-    {% from "file-upload/macro.njk" import govukFileUpload %}
-    {% from "button/macro.njk" import govukButton %}
-    {% from "textarea/macro.njk" import govukTextarea %}
-
     <form action="check-cert-msa-encryption">
 
-      {{ govukFileUpload({
-        id: "cert-msa-encryption",
-        name: "cert-msa-encryption",
-        label: {
-          text: "Upload .crt file"
-        }
-      }) }}
+      {% set uploadHtml %}
+        {{ govukFileUpload({
+          id: "cert-msa-encryption",
+          name: "cert-msa-encryption",
+          classes: "govuk-!-padding-top-2 govuk-!-padding-bottom-3",
+          label: {
+            text: "Upload .crt file",
+            classes: "govuk-visually-hidden"
+          }
+        }) }}
+      {% endset -%}
 
-      {{ govukTextarea({
-        name: "cert-msa-encryption-text",
-        id: "cert-msa-encryption-text",
-        classes: "govuk-!-width-three-quarters",
-        rows: "12",
-        label: {
-          text: "Paste certificate text"
-        }
+      {% set pasteHtml %}
+        {{ govukTextarea({
+          name: "cert-msa-encryption-text",
+          id: "cert-msa-encryption-text",
+          classes: "govuk-!-width-three-quarters",
+          rows: "20",
+          label: {
+            text: "Paste certificate text",
+            classes: "govuk-visually-hidden"
+          }
+        }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "how-contacted-conditional",
+        name: "how-contacted",
+        fieldset: {
+          legend: {
+            text: "Upload the encryption certificate",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Choose how you prefer to upload the certificate."
+        },
+        items: [
+          {
+            value: "upload",
+            text: "Upload a .crt file",
+            conditional: {
+              html: uploadHtml
+            }
+          },
+          {
+            value: "paste",
+            text: "Paste certificate text into a text box",
+            conditional: {
+              html: pasteHtml
+            }
+          }
+        ]
       }) }}
 
       {{ govukButton({
