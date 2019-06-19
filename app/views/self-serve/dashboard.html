@@ -62,27 +62,36 @@
       {% if data['confirm-cert-msa-signing'] %}
         <li class="app-task-list__item">
           <a class="app-task-list__task-name govuk-link--no-visited-state" href="view-cert-msa-signing-new" aria-describedby="">
-            Signing certificate (primary)
+            Signing certificate
+            {% if data ['stop-using-old-msa-signing'] %}
+            {% else %}
+              (primary)
+            {% endif %}
           </a>
-          <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="">Deploying</strong>
+          {% if data['msa-signing-deployed'] %}
+            <strong class="govuk-tag app-task-list__task-completed" id="">In use</strong>
+          {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="">Deploying</strong>
+          {% endif %}
         </li>
       {% else %}
       {% endif %}
-      <li class="app-task-list__item">
-        <a class="app-task-list__task-name govuk-link--no-visited-state" href="view-cert-msa-signing" aria-describedby="">
-          Signing certificate
+      {% if data ['stop-using-old-msa-signing'] %}
+      {% else %}
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name govuk-link--no-visited-state" href="view-cert-msa-signing" aria-describedby="">
+            Signing certificate
+            {% if data['confirm-cert-msa-signing'] %}
+              (secondary)
+            {% endif %}
+          </a>
           {% if data['confirm-cert-msa-signing'] %}
-            (secondary)
+            <strong class="govuk-tag govuk-tag--expiring app-task-list__task-completed" id="">Expires in 7 days</strong>
           {% else %}
+            <strong class="govuk-tag govuk-tag--expiring app-task-list__task-completed" id="">Expires in 7 days</strong>
           {% endif %}
-        </a>
-        {% if data['confirm-cert-msa-signing'] %}
-          <strong class="govuk-tag govuk-tag--expiring app-task-list__task-completed" id="">Expires in 7 days</strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--expiring app-task-list__task-completed" id="">Expires in 7 days</strong>
-        {% endif %}
-      </li>
-
+        </li>
+      {% endif %}
     </ul>
 
     <!-- SERVICE PROVIDER - PRODUCTION -->
@@ -105,7 +114,11 @@
           <a class="app-task-list__task-name govuk-link--no-visited-state" href="view-cert-sp-signing-new" aria-describedby="">
             Signing certificate (primary)
           </a>
-          <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="">Deploying</strong>
+          {% if data['sp-signing-deployed'] %}
+            <strong class="govuk-tag app-task-list__task-completed" id="">In use</strong>
+          {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="">Deploying</strong>
+          {% endif %}
         </li>
       {% else %}
       {% endif %}

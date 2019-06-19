@@ -36,9 +36,14 @@
           <p>
             You must do this by 11:59pm on {{ expiryDate }} or your connection to GOV.UK Verify will break.
           </p>
-          <p>
-            Once you have done this, sign in to the <a href="sign-in" target="_blank">GOV.​UK Verify Service Admin tool</a> to tell us to stop using the old signing certificate.
-          </p>
+          <div class="submit-fake-form-in-email">
+            Once you have done this, sign in to the
+              <form action="sign-in">
+                <input class="govuk-input govuk-visually-hidden" id="msa-signing-deployed" name="msa-signing-deployed" type="text" value="true">
+                <button>GOV.​UK Verify Service Admin tool</button>
+              </form>
+            to tell us to stop using the old signing certificate.
+          </div>
           <p>
             For more information, read the guidance on <a href="
 https://prototype-docs.cloudapps.digital/maintain-your-connection/msa/#update-the-signing-keys-and-certificate">updating your MSA signing key</a>.

@@ -406,3 +406,35 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 .grey-text {
   color: $govuk-secondary-text-colour;
 }
+
+
+// making buttons look like links so i can pass data through to dashboard page from emails
+
+.submit-fake-form-in-email {
+  @extend %govuk-body-m;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+
+  form, input, button {
+    display: inline;
+  }
+
+  button {
+    font-family: inherit;
+    color: $govuk-link-colour;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+    border: none;
+    background: none;
+    text-align: start;
+    text-transform: none;
+    text-decoration: underline;
+    box-sizing: content-box;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+}

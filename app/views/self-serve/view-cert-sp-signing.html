@@ -37,17 +37,34 @@
 
     {% if data['confirm-cert-sp-signing'] %}
       <div class="govuk-error-summary govuk-error-summary--orange" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
-        <h2 class="govuk-error-summary__title" id="error-summary-title">
-          Wait for an email from GOV.UK Verify before deleting this certificate
-        </h2>
-        <div class="govuk-error-summary__body">
-          <p>
-            This usually takes around 1 hour from the time you uploaded the new signing certificate.
-          </p>
-          <p>
-            Find out more about <a href="https://prototype-docs.cloudapps.digital/maintain-your-connection/sp/#update-the-signing-keys-and-certificate">updating your service provider signing key</a> in the documentation.
-          </p>
-        </div>
+        {% if data['sp-signing-deployed'] %}
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            Replace the old signing key in your service provider with the new one
+          </h2>
+          <div class="govuk-error-summary__body">
+            <p>
+              When you have done this you should stop GOV.UK Verify using this secondary certificate.
+            </p>
+            <p>
+              Find out more about <a href="https://prototype-docs.cloudapps.digital/maintain-your-connection/sp/#update-the-signing-keys-and-certificate">updating your service provider signing key and certificate</a> in the documentation.
+            </p>
+          </div>
+        {% else %}
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            Wait for an email from GOV.UK Verify confirming your new signing certificate is in use
+          </h2>
+          <div class="govuk-error-summary__body">
+            <p>
+              This usually takes around 1 hour from the time you uploaded the new signing certificate.
+            </p>
+            <p>
+              Then replace the old signing key in your service provider with the new one.
+            <p>
+            <p>
+              Find out more about <a href="https://prototype-docs.cloudapps.digital/maintain-your-connection/sp/#update-the-signing-keys-and-certificate">updating your service provider signing key and certificate</a> in the documentation.
+            </p>
+          </div>
+        {% endif %}
       </div>
     {% else %}
     {% endif %}
@@ -211,19 +228,38 @@ Ptjj7SVHlftm6IJ3vZ8Ov1bVLPdiRn4Pk2ULenZHlwtMyfKF6x4rFC7KXF/SFyM6
 </code></pre></div>
     </details>
 
-    <form action="before-you-start-sp-signing">
+    {% if data['confirm-cert-sp-signing'] %}
 
-      {% from "button/macro.njk" import govukButton %}
+      {% if data['msa-signing-deployed'] %}
+        <form action="dashboard">
 
-      {{ govukButton({
-        text: "Add new certificate"
-      }) }}
+          {% from "button/macro.njk" import govukButton %}
 
-      <span class="secondary-link">
-        <a href="#">Stop using this certificate</a>
-      </span>
+          <!-- hidden form to change status on dashboard page -->
+          <!-- {{ govukInput({
+            id: "confirm-cert-sp-signing",
+            name: "confirm-cert-sp-signing",
+            value: "",
+            classes: "govuk-visually-hidden"
+          }) }} -->
 
-    </form>
+          {{ govukButton({
+            text: "Stop using this certificate"
+          }) }}
+        </form>
+      {% else %}
+      {% endif %}
+
+    {% else %}
+
+      <form action="before-you-start-sp-signing">
+        {% from "button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Add new certificate"
+        }) }}
+      </form>
+    {% endif %}
 
   </div>
 </div>
