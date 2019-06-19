@@ -76,7 +76,7 @@
         name: "how-contacted",
         fieldset: {
           legend: {
-            text: "Upload the encryption certificate",
+            text: "Upload the signing certificate",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
@@ -84,7 +84,7 @@
         items: [
           {
             value: "upload",
-            text: "Upload a .crt file",
+            html: "Upload a <code>.crt</code> file",
             conditional: {
               html: uploadHtml
             }

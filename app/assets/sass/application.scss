@@ -21,6 +21,7 @@ $govuk-global-styles: true;
 @import "patterns/email-example";
 @import "patterns/team-members";
 @import "patterns/certificate-details";
+@import "patterns/code";
 
 // Components that aren't in Frontend
 @import "components/cookie-banner";
@@ -404,28 +405,4 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 
 .grey-text {
   color: $govuk-secondary-text-colour;
-}
-
-
-// code examples in details expandable things
-
-.govuk-details__code {
-  color: $govuk-text-colour;
-  background-color: govuk-colour("grey-4");
-  border: 1px solid $govuk-border-colour;
-  font-size: 15px;
-  padding: 0 15px;
-  margin-top: 15px;
-  overflow-x: auto;
-  white-space: pre-wrap;
-  white-space: -moz-pre-wrap;
-  white-space: -pre-wrap;
-  white-space: -o-pre-wrap;
-  word-wrap: break-word;
-
-  pre, code  {
-    margin: 0;
-    padding: 0;
-  }
-
 }

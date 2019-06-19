@@ -192,17 +192,17 @@ Ptjj7SVHlftm6IJ3vZ8Ov1bVLPdiRn4Pk2ULenZHlwtMyfKF6x4rFC7KXF/SFyM6
     {% if data['dual-running']==='true' %}
 
       <p>
-        Using this certificate will automatically update GOV.UK Verify's infrastructure to use the new encryption certificate.
+        Using this certificate will automatically replace your old encryption certificate in GOV.UK Verify's configuration.
       </p>
 
     {% else %}
 
       <p>
-        Using this certificate will update GOV.UK Verify's infrastructure to use the new encryption certificate within 1 hour.
+        Using this certificate will automatically replace your old encryption certificate in GOV.UK Verify's configuration.
       </p>
 
       <p>
-        Because your service provider does not support dual running, your service will break when this happens.
+        Because your service provider does not support dual running, your connection will break when the GOV.UK Verify starts using your new certificate.
       </p>
 
     {% endif %}
