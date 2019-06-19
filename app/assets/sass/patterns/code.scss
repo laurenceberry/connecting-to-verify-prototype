@@ -2,7 +2,7 @@ code {
   font-family: monaco, Consolas, "Lucida Console", monospace;
   background-color: govuk-colour("grey-4");
   padding: 3px 5px;
-  font-size: 16px;
+  font-size: 15px;
   color: #a71d5d;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -29,6 +29,7 @@ code {
     margin: 0;
     padding: 0;
     border: none;
+    color: $govuk-text-colour;
   }
 
 }
