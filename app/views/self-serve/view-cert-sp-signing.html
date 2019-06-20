@@ -230,24 +230,25 @@ Ptjj7SVHlftm6IJ3vZ8Ov1bVLPdiRn4Pk2ULenZHlwtMyfKF6x4rFC7KXF/SFyM6
 
     {% if data['confirm-cert-sp-signing'] %}
 
-      {% if data['msa-signing-deployed'] %}
+      {% if data['sp-signing-deployed'] %}
         <form action="dashboard">
 
           {% from "button/macro.njk" import govukButton %}
 
           <!-- hidden form to change status on dashboard page -->
-          <!-- {{ govukInput({
-            id: "confirm-cert-sp-signing",
-            name: "confirm-cert-sp-signing",
-            value: "",
+          {{ govukInput({
+            id: "stop-using-old-sp-signing",
+            name: "stop-using-old-sp-signing",
+            value: "true",
             classes: "govuk-visually-hidden"
-          }) }} -->
+          }) }}
 
           {{ govukButton({
             text: "Stop using this certificate"
           }) }}
         </form>
       {% else %}
+
       {% endif %}
 
     {% else %}
