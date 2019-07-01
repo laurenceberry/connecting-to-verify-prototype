@@ -45,17 +45,17 @@
       <dt class="govuk-visually-hidden">Environment</dt>
       <dd>Production</dd>
       <dt class="govuk-visually-hidden">Component</dt>
-      <dd>MSA</dd>
+      <dd>VSP</dd>
       <dt class="govuk-visually-hidden">Certificate</dt>
       <dd>Encryption certificate</dd>
     </dl>
 
-    <form action="check-cert-msa-encryption">
+    <form action="check-cert-vsp-encryption">
 
       {% set uploadHtml %}
         {{ govukFileUpload({
-          id: "cert-msa-encryption",
-          name: "cert-msa-encryption",
+          id: "cert-vsp-encryption",
+          name: "cert-vsp-encryption",
           classes: "govuk-!-padding-top-2 govuk-!-padding-bottom-3",
           label: {
             text: "Upload .crt file",
@@ -66,8 +66,8 @@
 
       {% set pasteHtml %}
         {{ govukTextarea({
-          name: "cert-msa-encryption-text",
-          id: "cert-msa-encryption-text",
+          name: "cert-vsp-encryption-text",
+          id: "cert-vsp-encryption-text",
           classes: "govuk-!-width-three-quarters",
           rows: "20",
           label: {

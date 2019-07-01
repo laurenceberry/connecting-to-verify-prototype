@@ -20,15 +20,6 @@
 
     <div class="govuk-grid-column-one-third">
 
-      <dl class="certificate-details">
-        <dt class="govuk-visually-hidden">Environment</dt>
-        <dd>Production</dd>
-        <dt class="govuk-visually-hidden">Component</dt>
-        <dd>VSP</dd>
-        <dt class="govuk-visually-hidden">Certificate</dt>
-        <dd>Signing certificate</dd>
-      </dl>
-
       <div class="side-navigation">
         <ul class="govuk-list">
           <li class="active">
@@ -44,6 +35,15 @@
 
     <div class="govuk-grid-column-two-thirds">
 
+      <dl class="certificate-details">
+        <dt class="govuk-visually-hidden">Environment</dt>
+        <dd>Production</dd>
+        <dt class="govuk-visually-hidden">Component</dt>
+        <dd>VSP</dd>
+        <dt class="govuk-visually-hidden">Certificate</dt>
+        <dd>Signing certificate</dd>
+      </dl>
+
       <h1 class="govuk-heading-l">
         GOV.UK Verify is adding your certificate to its configuration
       </h1>
@@ -52,21 +52,22 @@
         This usually takes around 1 hour. We'll email you when this is done.
       </p>
 
-      <p>
-        To finish rotating your signing certificate, you must follow these steps:
-      </p>
+      <h2 class="govuk-heading-m">
+        Next steps
+      </h2>
 
       <ul class="govuk-list govuk-list--number">
         <li>Wait for the email from GOV.UK Verify confirming your new signing certificate is in use</li>
         <li>Add the new signing key to your Verify Service Provider (VSP)</li>
       </ul>
 
-      {% from "warning-text/macro.njk" import govukWarningText %}
-
-      {{ govukWarningText({
-        text: "You must add the new signing key by {{ expiryDate }}, or your service’s connection to GOV.UK Verify will break.",
-        iconFallbackText: "Warning"
-      }) }}
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          You must add the new signing key by {{ expiryDate }}, or your service’s connection to GOV.UK Verify will break.
+        </strong>
+      </div>
 
       <p>
         Find out more about <a href="https://prototype-docs.cloudapps.digital/rotating-your-keys-and-certificates/vsp-signing/#rotate-your-vsp-signing-key-and-certificate">rotating your VSP signing key</a> in the documentation.
@@ -82,7 +83,7 @@
   </div>
 
   <div id="link-to-confirmation-email">
-    <a href="email-2-confirmation">
+    <a href="email-4-vsp-signing-confirmation">
       Confirmation email
     </a>
   </div>

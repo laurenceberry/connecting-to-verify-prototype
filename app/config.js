@@ -34,27 +34,27 @@ module.exports = {
   // Variables added to allow changing dates and names throughout the prototype
 
   // Today's date
-  todaysDate: '20 June 2019',
+  todaysDate: '2 July 2019',
 
   // The date that the new certs expire, a year from now
-  aYearFromNow: '20 June 2020',
+  aYearFromNow: '2 July 2020',
 
   // Date that current certificates expire
-  expiryDate: '20 July 2019',
+  expiryDate: '2 August 2019',
 
   // Date that current certificates started
-  startDate: '20 July 2018',
+  startDate: '2 July 2018',
 
   // Service name (could expand to include a list in cases of multiple services)
-  serviceName: 'Universal Credit',
+  serviceName: 'Total Reward Scheme',
 
   // Slug for example URLS
   serviceSlug: 'universal-credit',
 
   // Department name
-  departmentName: 'Department for Work and Pensions',
+  departmentName: 'NHS',
 
   // Team name
-  teamName: 'Universal Credit'
+  teamName: 'NHS'
 
 }

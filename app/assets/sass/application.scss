@@ -438,3 +438,11 @@ ul.govuk-list--bullet, ul.govuk-list--number{
     cursor: pointer;
   }
 }
+
+
+// supporting text for component names on dashboard page
+
+.component-supporting-text {
+  font-weight: 300;
+  padding-left: 0.15em;
+}
