@@ -46,7 +46,11 @@
   text-align: right;
   position: absolute;
   top: -25px;
-  right: -135px;
+  right: -150px;
+
+  li {
+    padding-bottom: 5px;
+  }
 }
 
 .tick-cross-tick,
@@ -73,5 +77,5 @@
   text-align: right;
   position: absolute;
   top: -35px;
-  right: -135px;
+  right: -150px;
 }

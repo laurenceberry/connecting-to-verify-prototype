@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="navigation-service">
+      <div class="navigation-service-name">
+        {{ teamName }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <div class="side-navigation">
+      <ul class="govuk-list">
+        <li class="">
+          <a href="dashboard" class="govuk-link--no-visited-state">Manage certificates</a>
+        </li>
+        <li class="active">
+          <a href="team-members" class="govuk-link--no-visited-state">Team members</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="team-members" class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-5">Back</a>
+
+    <h1 class="govuk-heading-l">
+      Chris Thomas
+    </h1>
+
+    <p>
+      chris.thomas@department.gov.uk <a class="govuk-!-padding-left-1" href="team-member-edit-email">Change<span class="govuk-visually-hidden">email address</span></a>
+    </p>
+
+    <form action="team-members" method="post" novalidate>
+      {% from "radios/macro.njk" import govukRadios %}
+      {% from "button/macro.njk" import govukButton %}
+      {% from "input/macro.njk" import govukInput %}
+
+      {% from "checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+        idPrefix: "new-team-member",
+        name: "new-team-member",
+        fieldset: {
+          legend: {
+            text: "Permissions",
+            isPageHeading: false
+          }
+        },
+        items: [
+          {
+            value: "can-manage-certificates",
+            name: "can-manage-certificates",
+            text: "Manage certificates",
+            checked: true
+          },
+          {
+            value: "can-manage-team-members",
+            name: "can-manage-team-members",
+            text: "Add, edit and remove team members"
+          }
+        ]
+      }) }}
+
+      <ul class="govuk-list">
+        <li>
+          <a href="team-member-reset-password">Reset password</a>
+        </li>
+        <li>
+          <a href="#">Reset multi-factor authentication</a>
+        </li>
+      </ul>
+
+
+      {{ govukButton({
+        text: "Save"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -40,9 +40,9 @@
           Team member added
         </h2>
         <div class="govuk-error-summary__body">
-            <p class="govuk-!-margin-bottom-1">
-              GOV.UK Verify has sent an email invitation to {{ data['team-member-email'] }}.
-            </p>
+          <p>
+            GOV.UK Verify has sent an email invitation to {{ data['team-member-email'] }}.
+          </p>
         </div>
       </div>
     {% else %}
@@ -57,8 +57,8 @@
 
       <div class="user-list-item">
         <h3 class="govuk-heading-s">
-          Firstname Lastname
-          <span class="hint govuk-body">(you)</span>
+          Dev Eloper
+          <span class="hint govuk-body govuk-!-padding-left-1">(you)</span>
         </h3>
         <ul class="govuk-list tick-cross-list">
           <div class="tick-cross-list-permissions">
@@ -75,6 +75,32 @@
               </span>
             </li>
           </div>
+        </ul>
+      </div>
+
+      <div class="user-list-item">
+        <h3 class="govuk-heading-s">
+          Chris Thomas
+          <span class="hint govuk-body govuk-!-padding-left-1">chris.thomas@department.gov.uk</span>
+        </h3>
+        <ul class="govuk-list tick-cross-list">
+          <div class="tick-cross-list-permissions">
+            <li>
+              <span class="tick-cross-tick">
+                <span class="govuk-visually-hidden">Can</span>
+                Manage certificates
+              </span>
+            </li>
+            <li>
+              <span class="tick-cross-cross">
+                <span class="govuk-visually-hidden">Cannot</span>
+                Add, edit and remove team members
+              </span>
+            </li>
+          </div>
+          <li class="tick-cross-list-edit-link">
+            <a href="team-member-edit">Change details</a>
+          </li>
         </ul>
       </div>
 
@@ -116,9 +142,14 @@
                 </li>
               {% endif %}
             </div>
-            <li class="tick-cross-list-edit-link">
-              <a href="#">Edit team member</a>
-            </li>
+            <div class="tick-cross-list-edit-link">
+              <li>
+                <a href="#">Re-send invitation</a>
+              </li>
+              <li>
+                <a href="#">Cancel invitation</a>
+              </li>
+            </div>
           </ul>
         </div>
       {% else %}
