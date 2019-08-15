@@ -13,15 +13,15 @@ $(document).ready(function () {
 
 	// destructive link boxes
 
-	$('.destructive-button').hide();
-	$('.destructive-link').click(function(e){
+	$('#confirm-remove-team-member').hide();
+	$('#remove-team-member').click(function(e){
 		$(this).hide();
-		$('.destructive-button').show();
+		$('#confirm-remove-team-member').show();
 		e.preventDefault();
 	});
-	$('.cancel-destructive-button').click(function(e){
-		$('.destructive-button').hide();
-		$('.destructive-link').show();
+	$('#cancel-remove-team-member').click(function(e){
+		$('#confirm-remove-team-member').hide();
+		$('#remove-team-member').show();
 		e.preventDefault();
 	});
 

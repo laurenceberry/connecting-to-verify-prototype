@@ -36,13 +36,38 @@
 
     <a href="team-members" class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-5">Back</a>
 
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary" id="confirm-remove-team-member">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        Are you sure you want to remove Chris Thomas?
+      </h2>
+      <div class="govuk-error-summary__body">
+        <form action="team-members">
+          <button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
+            Yes, remove
+          </button>
+          <span class="secondary-link">
+            <a href="#" id="cancel-remove-team-member">Cancel</a>
+          </span>
+        </form>
+      </div>
+    </div>
+
     <h1 class="govuk-heading-l">
       Chris Thomas
     </h1>
 
     <p>
-      chris.thomas@department.gov.uk <a class="govuk-!-padding-left-1" href="team-member-edit-email">Change<span class="govuk-visually-hidden">email address</span></a>
+      chris.thomas@department.gov.uk <a class="govuk-!-padding-left-1 govuk-link--no-visited-state" href="team-member-edit-email">Change<span class="govuk-visually-hidden">email address</span></a>
     </p>
+
+    <ul class="govuk-list">
+      <li>
+        <a href="team-member-reset-password" class="govuk-link--no-visited-state">Reset password</a>
+      </li>
+      <li>
+        <a href="team-member-reset-mfa" class="govuk-link--no-visited-state">Reset multi-factor authentication</a>
+      </li>
+    </ul>
 
     <form action="team-members" method="post" novalidate>
       {% from "radios/macro.njk" import govukRadios %}
@@ -75,19 +100,15 @@
         ]
       }) }}
 
-      <ul class="govuk-list">
-        <li>
-          <a href="team-member-reset-password">Reset password</a>
-        </li>
-        <li>
-          <a href="#">Reset multi-factor authentication</a>
-        </li>
-      </ul>
-
-
       {{ govukButton({
         text: "Save"
       }) }}
+
+      <span class="secondary-link">
+        <a class="destructive-link" href="#" id="remove-team-member">
+          Remove this team member
+        </a>
+      </span>
 
     </form>
 
