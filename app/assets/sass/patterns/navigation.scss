@@ -89,4 +89,8 @@
 .navigation-service-name {
   @extend %govuk-heading-s;
   margin-bottom: 0;
+
+  a {
+      font-weight: normal;
+  }
 }

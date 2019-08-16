@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row" style="margin-top: -30px">
+
+  <div class="govuk-grid-column-full">
+
+    <a href="dashboard" class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-6">Back</a>
+
+    <h1 class="govuk-heading-l">
+      Your profile
+    </h1>
+
+    {% from "components/table/macro.njk" import govukTable %}
+
+    {{ govukTable({
+      caption: "Dates and amounts",
+      captionClasses: "govuk-visually-hidden",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Item",
+          classes: "govuk-visually-hidden"
+        },
+        {
+          text: "Your details",
+          classes: "govuk-visually-hidden"
+        },
+        {
+          text: "Action",
+          classes: "govuk-visually-hidden"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "Name"
+          },
+          {
+            text: "Dev Eloper"
+          },
+          {
+            html: "<a href='profile-change-name'>Change</a>"
+          }
+        ],
+        [
+          {
+            text: "Email address"
+          },
+          {
+            text: "dev.elepor@department.gov.uk"
+          },
+          {
+            html: "<a href='profile-change-email'>Change</a>"
+          }
+        ],
+        [
+          {
+            text: "Password"
+          },
+          {
+            text: "Last changed 53 days ago"
+          },
+          {
+            html: "<a href='profile-change-password'>Change</a>"
+          }
+        ]
+      ]
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
