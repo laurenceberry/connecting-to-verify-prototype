@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row" style="margin-top: -30px">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="profile" class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-6">Back</a>
+
+    <h1 class="govuk-heading-l">
+      Reset multi-factor authentication
+    </h1>
+
+    <p>
+      You will be sent an email with instructions on how to reset your multi-factor authentication.
+    </p>
+
+    <form action="team-members" method="post" novalidate>
+
+      {{ govukButton({
+        text: "Reset multi-factor authentication"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
