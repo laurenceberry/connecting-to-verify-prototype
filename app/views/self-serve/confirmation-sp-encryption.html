@@ -74,16 +74,34 @@
       {% else %}
 
         <p>
-          This usually takes around 10 minutes. Because your service provider does not support dual running, your connection to GOV.UK Verify will break when the GOV.UK Verify Hub starts using your new encryption certificate.
+          Because your service provider does not support dual running, your connection to GOV.UK Verify will break when the GOV.UK Verify Hub starts using your new encryption certificate.
+        </p>
+
+        <p>
+          This usually takes around 10 minutes.
         </p>
 
         <h2 class="govuk-heading-m">
           Next steps
         </h2>
 
+        <h3 class="govuk-heading-s">
+          If you have already added the new key and certificate to your service provider configuration:
+        </h3>
+
         <ul class="govuk-list govuk-list--number">
           <li>Wait for your connection to GOV.UK Verify to break.</li>
-          <li>Add the new signing key and certificate to your service provider to fix the connection.</li>
+          <li>Apply the changes to fix the connection.</li>
+        </ul>
+
+        <h3 class="govuk-heading-s">
+          If you have not already added the new key and certificate to your service provider configuration:
+        </h3>
+
+        <ul class="govuk-list govuk-list--number">
+          <li>Add the new signing key and certificate to your service provider.</li>
+          <li>Wait for your connection to GOV.UK Verify to break.</li>
+          <li>Apply the changes to fix the connection.</li>
         </ul>
 
         <p>
