@@ -452,3 +452,9 @@ ul.govuk-list--bullet, ul.govuk-list--number{
 #confirm-remove-team-member {
   display: none;
 }
+
+// override govuk-hint to be black
+
+.govuk-hint__black {
+  color: $govuk-text-colour;
+}
